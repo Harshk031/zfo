@@ -12,7 +12,7 @@ const SideVideos = ({ scrollYProgress }) => {
       {/* LEFT video */}
       <motion.div
         style={{ y: leftY, opacity }}
-        className="absolute left-10 top-1/2 -translate-y-1/2 z-40"
+        className="hidden lg:block absolute left-10 top-1/2 -translate-y-1/2 z-40"
       >
         <video
           src={video1} // imported directly
@@ -27,7 +27,7 @@ const SideVideos = ({ scrollYProgress }) => {
       {/* RIGHT video */}
       <motion.div
         style={{ y: rightY, opacity }}
-        className="absolute right-10 top-1/2 -translate-y-1/2 z-40"
+        className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-40"
       >
         <video
           src={video4} // imported directly
