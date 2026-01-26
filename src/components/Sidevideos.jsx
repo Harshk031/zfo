@@ -1,0 +1,45 @@
+import { motion, useTransform } from "framer-motion";
+import video1 from "../assets/video1.mp4";
+import video4 from "../assets/video4.mp4";
+
+const SideVideos = ({ scrollYProgress }) => {
+  const leftY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const rightY = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4, 0.8], [1, 1, 0]);
+
+  return (
+    <>
+      {/* LEFT video */}
+      <motion.div
+        style={{ y: leftY, opacity }}
+        className="absolute left-10 top-1/2 -translate-y-1/2 z-40"
+      >
+        <video
+          src={video1} // imported directly
+          className="w-72 h-96 rounded-xl object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </motion.div>
+
+      {/* RIGHT video */}
+      <motion.div
+        style={{ y: rightY, opacity }}
+        className="absolute right-10 top-1/2 -translate-y-1/2 z-40"
+      >
+        <video
+          src={video4} // imported directly
+          className="w-72 h-96 rounded-xl object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </motion.div>
+    </>
+  );
+};
+
+export default SideVideos;

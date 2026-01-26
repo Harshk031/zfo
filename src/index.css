@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* FAST BUBBLE FLOAT */
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-140%);
+    opacity: 1;
+  }
+}
+
+.animate-bubble {
+  animation: bubble linear infinite;
+}
+
+/* BUBBLE STYLE */
+.bubble {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 1);
+  pointer-events: none;
+}
