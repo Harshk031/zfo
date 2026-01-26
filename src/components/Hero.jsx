@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import CursorBottle from "./Cursorbottle";
+import CursorBottle from "./CursorBottle";
 import { heroLines } from "../data/text";
 import { useEffect, useState } from "react";
 
@@ -16,7 +16,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen bg-black overflow-hidden">
-      
+
       {/* Background video */}
       <video
         autoPlay
@@ -31,7 +31,7 @@ const Hero = () => {
       {/* ❌ BubbleLayer removed from Hero */}
 
       <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-        
+
         {/* TEXT BLOCK */}
         <motion.div
           key={index}
