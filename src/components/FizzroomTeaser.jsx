@@ -8,7 +8,7 @@ const FizzroomTeaser = () => {
     const recentPosts = fizzPosts.slice(0, 3);
 
     return (
-        <section className="py-24 bg-black text-white relative border-t border-white/10">
+        <section className="py-24 bg-black text-white relative z-20 border-t border-white/10">
             <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/5 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6">
