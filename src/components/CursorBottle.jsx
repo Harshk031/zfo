@@ -23,7 +23,7 @@ const CursorBottle = () => {
     >
       <motion.img
         src="/bottle3.png"
-        alt="Freshozz Bottle"
+        alt="ZfO Premium Masala Soda Glass Bottle - Artisanal Indian Craft Beverage"
         style={{
           rotateX,
           rotateY,

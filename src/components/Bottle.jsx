@@ -13,7 +13,7 @@ const Bottle = ({ scrollYProgress }) => {
     >
       <img
         src={bottle}
-        alt="Freshroz Bottle"
+        alt="ZfO Masala Soda Bottle - Premium Glass Bottle Craft Beverage"
         className="h-[70vh] object-contain z-20 mx-auto"
       />
     </motion.div>
