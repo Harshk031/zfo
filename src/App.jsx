@@ -1,9 +1,9 @@
 import Hero from "./components/Hero";
-import PromoSection from "./components/Promosection";
-import LaunchTeaser from "./components/Launchteaser";
+import PromoSection from "./components/PromoSection";
+import LaunchTeaser from "./components/LaunchTeaser";
 import BubbleCursor from "./components/BubbleCursor";
-import HeroScene from "./components/Heroscene";
-import ProductDetails from "./components/Productdetails";
+import HeroScene from "./components/HeroScene";
+import ProductDetails from "./components/ProductDetails";
 import Footer from "./components/Footer";
 
 const App = () => {
