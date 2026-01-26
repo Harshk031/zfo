@@ -8,7 +8,7 @@ const HeroScene = () => {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end start"],
   });
 
   // Bottle subtle scale
