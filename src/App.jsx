@@ -11,7 +11,7 @@ const App = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log("Build Version: v0.0.1 - Timestamp: " + new Date().toISOString());
+    console.log("Build Version: v0.0.1 - TIMESTAMP: " + new Date().toISOString() + " - BOTTLE_ROTATION_FIX");
     window.scrollTo(0, 0);
   }, [pathname]);
 
