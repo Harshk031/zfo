@@ -2,8 +2,8 @@ import { motion, useTransform } from "framer-motion";
 import bottle from "../assets/bottle.png";
 
 const Bottle = ({ scrollYProgress }) => {
-  // Always render, no null check
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 15]); // small rotation
+  // Full 360-degree rotation on scroll
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);  // subtle scale
 
   return (
