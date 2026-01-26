@@ -4,7 +4,7 @@ import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="relative bg-black text-white pt-20 pb-10 px-6 overflow-hidden">
-      
+
       {/* Divider line */}
       <div className="max-w-7xl mx-auto border-t border-white/10 mb-14" />
 
@@ -15,7 +15,7 @@ const Footer = () => {
         viewport={{ once: true }}
         className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
       >
-        
+
         {/* Brand */}
         <div className="text-center md:text-left">
           <h2 className="text-2xl font-extrabold tracking-widest text-yellow-400">
@@ -29,7 +29,9 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-8 text-xl">
           <a
-            href="#"
+            href="https://www.instagram.com/drinkzfo"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white/60 hover:text-yellow-400 transition"
             aria-label="Instagram"
           >
@@ -37,19 +39,13 @@ const Footer = () => {
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/company/freshozz-beverages/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white/60 hover:text-yellow-400 transition"
             aria-label="LinkedIn"
           >
             <FaLinkedinIn />
-          </a>
-
-          <a
-            href="#"
-            className="text-white/60 hover:text-yellow-400 transition"
-            aria-label="Twitter"
-          >
-            <FaTwitter />
           </a>
         </div>
 
@@ -59,10 +55,10 @@ const Footer = () => {
             For partnerships & investment
           </p>
           <a
-            href="#"
+            href="mailto:beverages@zfo.co.in"
             className="mt-2 inline-block text-yellow-400 hover:underline text-sm tracking-wide"
           >
-            Connect on LinkedIn →
+            beverages@zfo.co.in →
           </a>
         </div>
       </motion.div>
