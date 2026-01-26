@@ -30,23 +30,22 @@ const products = [
 
 const ProductDetails = () => {
   return (
-    <section className="bg-white py-24 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-8">
+    <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
         {products.map((prod, index) => {
           const isEven = index % 2 === 0;
           return (
             <div
               key={index}
-              className={`flex flex-col md:flex-row items-center mb-28 ${
-                !isEven ? "md:flex-row-reverse" : ""
-              }`}
+              className={`flex flex-col md:flex-row items-center mb-16 md:mb-28 ${!isEven ? "md:flex-row-reverse" : ""
+                }`}
             >
               <div className="relative md:w-1/2 flex justify-center mb-8 md:mb-0">
-                <div className="w-64 h-64 rounded-full bg-black flex items-center justify-center relative">
+                <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-black flex items-center justify-center relative">
                   <img
                     src={prod.image}
                     alt={prod.name}
-                    className="object-contain w-40 h-40"
+                    className="object-contain w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40"
                   />
                   <span className="absolute w-10 h-10 bg-black rounded-full -top-4 -left-4"></span>
                   <span className="absolute w-8 h-8 bg-black rounded-full -bottom-4 -right-6"></span>
@@ -55,24 +54,24 @@ const ProductDetails = () => {
               </div>
 
               <div className="md:w-1/2 md:px-12 text-center md:text-left">
-                <h3 className="text-3xl md:text-4xl font-bold mb-2 text-black">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-black">
                   {prod.name}
                 </h3>
 
-                <p className="italic text-lg mb-4 text-gray-700">
+                <p className="italic text-base sm:text-lg mb-4 text-gray-700">
                   {prod.tagline}
                 </p>
 
                 {prod.headings.map((heading, idx) => (
                   <h4
                     key={idx}
-                    className="text-2xl font-semibold mb-3 text-black"
+                    className="text-xl sm:text-2xl font-semibold mb-3 text-black"
                   >
                     {heading}
                   </h4>
                 ))}
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {prod.description}
                 </p>
               </div>

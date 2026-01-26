@@ -3,22 +3,22 @@ import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black text-white pt-20 pb-10 px-6 overflow-hidden">
+    <footer className="relative bg-black text-white pt-16 md:pt-20 pb-8 md:pb-10 px-6 overflow-hidden">
 
       {/* Divider line */}
-      <div className="max-w-7xl mx-auto border-t border-white/10 mb-14" />
+      <div className="max-w-7xl mx-auto border-t border-white/10 mb-10 md:mb-14" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
+        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12"
       >
 
         {/* Brand */}
         <div className="text-center md:text-left">
-          <h2 className="text-2xl font-extrabold tracking-widest text-yellow-400">
+          <h2 className="text-xl md:text-2xl font-extrabold tracking-widest text-yellow-400">
             ZFO
           </h2>
           <p className="mt-3 text-sm text-white/60 max-w-xs">
@@ -56,7 +56,7 @@ const Footer = () => {
           </p>
           <a
             href="mailto:beverages@zfo.co.in"
-            className="mt-2 inline-block text-yellow-400 hover:underline text-sm tracking-wide"
+            className="mt-2 inline-block text-yellow-400 hover:underline text-xs sm:text-sm tracking-wide"
           >
             beverages@zfo.co.in →
           </a>
@@ -64,7 +64,7 @@ const Footer = () => {
       </motion.div>
 
       {/* Bottom */}
-      <div className="mt-16 text-center text-xs text-white/40">
+      <div className="mt-12 md:mt-16 text-center text-xs text-white/40">
         © {new Date().getFullYear()} ZfO · Crafted in India
       </div>
     </footer>

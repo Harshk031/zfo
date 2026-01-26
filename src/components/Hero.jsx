@@ -38,22 +38,24 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full md:w-1/2 text-left max-w-xl"
+          className="w-full md:w-1/2 text-left max-w-xl px-4 md:px-0"
         >
           {/* Brand identity */}
-          <p className="text-xl md:text-2xl font-extrabold tracking-[0.12em] text-white/90 mb-2">
+          <p className="text-lg md:text-2xl font-extrabold tracking-[0.1em] md:tracking-[0.12em] text-white/90 mb-3">
             ZFO — The Art of Fizz
           </p>
 
           {/* Hero emotion line */}
-          <h1 className="mt-6 text-4xl md:text-6xl font-bold text-yellow-400 leading-tight">
+          <h1 className="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-6xl font-bold text-yellow-400 leading-tight">
             {heroLines[index]}
           </h1>
         </motion.div>
 
         {/* CURSOR BOTTLE */}
-        <div className="w-full md:w-1/2 flex justify-center items-center mt-16 md:mt-0">
-          <CursorBottle />
+        <div className="w-full md:w-1/2 flex justify-center items-center mt-12 md:mt-0">
+          <div className="scale-90 sm:scale-100">
+            <CursorBottle />
+          </div>
         </div>
       </div>
     </section>

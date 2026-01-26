@@ -26,14 +26,14 @@ const LaunchTeaser = () => {
   };
 
   return (
-    <section className="relative h-screen bg-black flex flex-col items-center justify-center text-center overflow-hidden">
-      <h1 className="text-5xl font-bold text-yellow-400 relative z-10">
+    <section className="relative h-screen bg-black flex flex-col items-center justify-center text-center overflow-hidden px-6">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-yellow-400 relative z-10">
         ZfO is arriving soon.
       </h1>
 
       <button
         onClick={explodeFizz}
-        className="mt-10 px-12 py-4 rounded-full border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition relative z-10"
+        className="mt-8 md:mt-10 px-8 sm:px-12 py-3 sm:py-4 rounded-full border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition relative z-10 text-sm sm:text-base font-bold tracking-wider"
       >
         FEEL THE FIZZ
       </button>
