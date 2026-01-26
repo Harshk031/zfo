@@ -11,8 +11,8 @@ const Home = () => {
             <Hero />
             <PromoSection />
             <ProductDetails />
-            <HeroScene />
             <FizzroomTeaser />
+            <HeroScene />
             <LaunchTeaser />
         </>
     );
