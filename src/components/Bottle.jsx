@@ -2,8 +2,8 @@ import { motion, useTransform } from "framer-motion";
 import bottle from "../assets/bottle.png";
 
 const Bottle = ({ scrollYProgress }) => {
-  // Enhanced 360-degree rotation on scroll - ensure full rotation
-  const rotate = useTransform(scrollYProgress, [0, 0.8], [0, 360]); // Start rotation earlier to ensure full completion
+  // ENHANCED 360-DEGREE ROTATION - FULL CIRCLE COMPLETION
+  const rotate = useTransform(scrollYProgress, [0, 0.8], [0, 360]); // Full rotation from 0 to 80% scroll
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);  // subtle scale
 
   return (
@@ -13,7 +13,7 @@ const Bottle = ({ scrollYProgress }) => {
     >
       <img
         src={bottle}
-        alt="ZfO Masala Soda Bottle - Premium Glass Bottle Craft Beverage"
+        alt="ZfO Masala Soda Bottle - PREMIUM 360 ROTATION - Premium Glass Bottle Craft Beverage"
         className="h-[70vh] object-contain z-20 mx-auto"
       />
     </motion.div>
