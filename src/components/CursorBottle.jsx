@@ -29,9 +29,9 @@ const CursorBottle = () => {
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        animate={{ rotateZ: [0, 3, -3, 0] }}
+        animate={{ rotateZ: 360 }}
         transition={{
-          rotateZ: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+          rotateZ: { duration: 20, repeat: Infinity, ease: "linear" },
           type: "spring",
           stiffness: 120,
           damping: 14,
