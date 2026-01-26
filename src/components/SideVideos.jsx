@@ -15,13 +15,16 @@ const SideVideos = ({ scrollYProgress }) => {
         className="hidden lg:block absolute left-10 top-1/2 -translate-y-1/2 z-40"
       >
         <video
-          src={video1} // imported directly
+          src={video1}
           className="w-72 h-96 rounded-xl object-cover"
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+        >
+          <source src={video1} type="video/mp4" />
+        </video>
       </motion.div>
 
       {/* RIGHT video */}
@@ -30,13 +33,16 @@ const SideVideos = ({ scrollYProgress }) => {
         className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-40"
       >
         <video
-          src={video4} // imported directly
+          src={video4}
           className="w-72 h-96 rounded-xl object-cover"
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+        >
+          <source src={video4} type="video/mp4" />
+        </video>
       </motion.div>
     </>
   );
