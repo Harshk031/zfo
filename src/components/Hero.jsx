@@ -39,22 +39,41 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full md:w-1/2 text-left max-w-xl px-4 md:px-0"
+          className="w-full md:w-1/2 text-left z-10 pt-20 md:pt-0"
         >
           {/* Brand identity */}
-          <p className="text-lg md:text-2xl font-extrabold tracking-[0.1em] md:tracking-[0.12em] text-white/90 mb-3">
-            ZFO — The Art of Fizz
+          <p className="text-sm md:text-xl font-bold tracking-[0.2em] text-white/60 mb-4 ml-1">
+            EST. 2024
           </p>
 
           {/* Hero emotion line */}
-          <h1 className="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-6xl font-bold text-yellow-400 leading-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-700 leading-[0.9] tracking-tighter mix-blend-screen drop-shadow-2xl">
             {heroLines[index]}
           </h1>
+
+          {/* SUB-TEXT / DESCRIPTION */}
+          <p className="mt-6 text-white/80 text-lg md:text-xl font-light max-w-sm leading-relaxed">
+            Indian craft soda. Small batch. <br className="hidden md:block" />
+            Big character.
+          </p>
+
+          {/* MAGNETIC CTA */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-8 px-8 py-4 rounded-full border border-yellow-400/30 bg-yellow-400/10 backdrop-blur-md text-yellow-400 font-bold tracking-widest uppercase text-sm hover:bg-yellow-400 hover:text-black transition-all duration-300 relative group overflow-hidden"
+          >
+            <span className="relative z-10">Experience the Fizz</span>
+            <div className="absolute inset-0 bg-yellow-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+          </motion.button>
         </motion.div>
 
         {/* CURSOR BOTTLE */}
-        <div className="w-full md:w-1/2 flex justify-center items-center mt-12 md:mt-0">
-          <div className="scale-90 sm:scale-100">
+        <div className="w-full md:w-1/2 flex justify-center items-center mt-8 md:mt-0 relative z-0">
+          {/* Mobile glow behind bottle */}
+          <div className="absolute inset-0 bg-yellow-500/20 blur-[80px] md:hidden rounded-full transform scale-75" />
+
+          <div className="scale-[0.85] sm:scale-90 md:scale-110 md:translate-x-12 translate-y-4 md:translate-y-0">
             <CursorBottle />
           </div>
         </div>

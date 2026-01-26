@@ -10,7 +10,7 @@ const CursorBottle = () => {
 
   return (
     <div
-      className="relative z-20 perspective-"
+      className="relative z-20 perspective-1000"
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         x.set(e.clientX - rect.left - rect.width / 2);

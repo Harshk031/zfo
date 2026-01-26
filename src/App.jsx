@@ -1,20 +1,30 @@
-import Hero from "./components/Hero";
-import PromoSection from "./components/PromoSection";
-import LaunchTeaser from "./components/LaunchTeaser";
-import BubbleCursor from "./components/BubbleCursor";
-import HeroScene from "./components/HeroScene";
-import ProductDetails from "./components/ProductDetails";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BubbleCursor from "./components/BubbleCursor";
+import Home from "./pages/Home";
+import Fizzroom from "./pages/Fizzroom";
+import FizzroomPost from "./pages/FizzroomPost";
 
 const App = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="bg-black text-white overflow-x-hidden">
+      <Navbar />
       <BubbleCursor />
-      <Hero />
-      <PromoSection />
-      <ProductDetails />
-      <HeroScene />
-      <LaunchTeaser />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/fizzroom" element={<Fizzroom />} />
+        <Route path="/fizzroom/:id" element={<FizzroomPost />} />
+      </Routes>
+
       <Footer />
     </div>
   );

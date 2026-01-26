@@ -1,71 +1,63 @@
-import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black text-white pt-16 md:pt-20 pb-8 md:pb-10 px-6 overflow-hidden">
+    <footer
+      id="footer"
+      className="relative bg-black text-white pt-20 md:pt-32 pb-10 px-6 overflow-hidden flex flex-col justify-between"
+    >
+      {/* MASSIVE BACKGROUND BRANDING */}
+      <div className="absolute bottom-20 left-0 w-full text-center text-[25vw] font-black text-white/[0.03] select-none pointer-events-none leading-none tracking-tighter">
+        ZFO
+      </div>
 
-      {/* Divider line */}
-      <div className="max-w-7xl mx-auto border-t border-white/10 mb-10 md:mb-14" />
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+          {/* Brand Info */}
+          <div>
+            <h2 className="text-3xl font-bold tracking-[0.2em] text-white mb-2">
+              ZFO
+            </h2>
+            <p className="text-white/50 text-sm tracking-wide uppercase">
+              The Art of Fizz · Est. 2024
+            </p>
+          </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12"
-      >
-
-        {/* Brand */}
-        <div className="text-center md:text-left">
-          <h2 className="text-xl md:text-2xl font-extrabold tracking-widest text-yellow-400">
-            ZFO
-          </h2>
-          <p className="mt-3 text-sm text-white/60 max-w-xs">
-            The Art of Fizz
-          </p>
+          {/* Social Links */}
+          <div className="flex gap-8">
+            {[
+              { icon: <FaInstagram />, href: "https://www.instagram.com/drinkzfo" },
+              { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/freshozz-beverages/" },
+              { icon: <FaTwitter />, href: "#" }
+            ].map((social, i) => (
+              <a
+                key={i}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl text-white/40 hover:text-yellow-400 transition-colors duration-300"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* Social Links */}
-        <div className="flex gap-8 text-xl">
-          <a
-            href="https://www.instagram.com/drinkzfo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/60 hover:text-yellow-400 transition"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
+        {/* Divider */}
+        <div className="w-full h-px bg-white/10 my-10" />
 
-          <a
-            href="https://www.linkedin.com/company/freshozz-beverages/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/60 hover:text-yellow-400 transition"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
+        <div className="flex flex-col md:flex-row justify-between text-xs sm:text-sm text-white/30 tracking-widest uppercase gap-4">
+          <p>© {new Date().getFullYear()} ZfO Beverages.</p>
+
+          <div className="flex gap-6">
+            <a href="mailto:beverages@zfo.co.in" className="hover:text-white transition-colors">
+              Contact
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy
+            </a>
+          </div>
         </div>
-
-        {/* Professional presence */}
-        <div className="text-center md:text-right">
-          <p className="text-sm text-white/50">
-            For partnerships & investment
-          </p>
-          <a
-            href="mailto:beverages@zfo.co.in"
-            className="mt-2 inline-block text-yellow-400 hover:underline text-xs sm:text-sm tracking-wide"
-          >
-            beverages@zfo.co.in →
-          </a>
-        </div>
-      </motion.div>
-
-      {/* Bottom */}
-      <div className="mt-12 md:mt-16 text-center text-xs text-white/40">
-        © {new Date().getFullYear()} ZfO · Crafted in India
       </div>
     </footer>
   );

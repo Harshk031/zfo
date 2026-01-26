@@ -8,11 +8,7 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.zfo.co.in/logo.png</image:loc>
-      <image:title>ZfO Logo - Premium Masala Soda</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.zfo.co.in/bottle3.png</image:loc>
-      <image:title>ZfO Glass Bottle - Artisanal Masala Soda</image:title>
+      <image:title>ZfO Logo</image:title>
     </image:image>
   </url>
 </urlset>

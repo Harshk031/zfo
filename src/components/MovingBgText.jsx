@@ -6,7 +6,7 @@ const MovingBgText = () => {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
       <motion.div
-        className="flex whitespace-nowrap text-[4vw] font-medium uppercase tracking-[0.25em] gap-6"
+        className="flex whitespace-nowrap text-[20vw] md:text-[8vw] font-black uppercase tracking-tighter gap-10 md:gap-20"
         animate={{ x: ["0%", "-100%"] }}
         transition={{
           repeat: Infinity,

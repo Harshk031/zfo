@@ -17,7 +17,7 @@ const HeroScene = () => {
   return (
     <section
       ref={heroRef}
-      className="relative h-[90vh] bg-black overflow-hidden"
+      className="relative min-h-screen bg-black overflow-hidden flex flex-col justify-center"
     >
       {/* Floating text */}
       <MovingBgText />
