@@ -27,7 +27,7 @@ Your body deserves better than liquid sugar. Drink different.`
         excerpt: "Dry skin. Brain fog. Zero rizz. Dehydration is ruining your game. Here's how to fix it.",
         date: "Jan 25, 2026",
         category: "REAL TALK",
-        image: "/hydration-rizz.jpg",
+        image: "/article-2-thumbnail.png",
         metaDescription: "Dehydration kills your rizz. Here's why staying hydrated matters for your glow up.",
         content: `Your skin is dull. Your energy is nonexistent. Your texts hit different when you're parched.
 
@@ -87,7 +87,7 @@ Choose glass. The future isn't optional.`
         excerpt: "The manifesto. The mission. Why we chose masala over mediocrity.",
         date: "Jan 22, 2026",
         category: "MANIFESTO",
-        image: "/zfo-manifesto.jpg",
+        image: "/article-3-thumbnail.png",
         metaDescription: "ZfO's mission: why we chose craft masala soda over corporate mediocrity.",
         content: `We could have made another generic cola. Could have played it safe. Could have followed the formula.
 
