@@ -23,15 +23,15 @@ const FizzroomPost = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="text-yellow-400 font-bold tracking-[0.2em] uppercase mb-4 block text-sm">{post.category}</span>
-                    <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-[0.9] text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-700 mix-blend-screen drop-shadow-xl">
+                    <span className="inline-block px-4 py-1 bg-[#c41e3a] text-white font-bold tracking-[0.3em] uppercase mb-6 text-xs rounded-full">{post.category}</span>
+                    <h1 className="headline-xl text-distressed mb-6" style={{backgroundColor: '#fafafa'}}>
                         {post.title}
                     </h1>
 
-                    <div className="flex items-center space-x-4 text-white/40 font-mono text-sm mb-12 border-b border-white/10 pb-8">
+                    <div className="flex items-center space-x-4 text-[#a0a0a0] text-sm mb-12 border-b border-white/10 pb-8">
                         <span>{post.date}</span>
-                        <span>•</span>
-                        <span>5 Min Read</span>
+                        <span className="text-[#c41e3a]">•</span>
+                        <span>2 Min Read</span>
                     </div>
                 </motion.div>
 
@@ -48,10 +48,18 @@ const FizzroomPost = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="prose prose-invert prose-lg max-w-none text-white/80 font-light"
+                    className="space-y-8"
                 >
-                    <p className="lead text-2xl mb-8 text-white">{post.excerpt}</p>
-                    <p className="whitespace-pre-line leading-relaxed">{post.content}</p>
+                    <p className="text-3xl md:text-4xl font-bold text-[#c41e3a] leading-tight tracking-tight">
+                        {post.excerpt}
+                    </p>
+                    <div className="text-[#fafafa] text-lg md:text-xl font-medium leading-loose space-y-6 whitespace-pre-line">
+                        {post.content.split('\n\n').map((paragraph, index) => (
+                            <p key={index} className="border-l-2 border-[#c41e3a] pl-6 hover:border-white transition-colors duration-300">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
                 </motion.div>
             </div>
         </article>
