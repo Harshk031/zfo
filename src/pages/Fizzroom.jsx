@@ -15,7 +15,7 @@ const Fizzroom = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-6xl md:text-9xl font-black uppercase tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-700 mix-blend-screen drop-shadow-2xl"
+                        className="text-6xl md:text-9xl font-black uppercase tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-br from-gray-300 via-gray-500 to-gray-700 mix-blend-screen drop-shadow-2xl"
                     >
                         FIZZROOM.
                     </motion.h1>

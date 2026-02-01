@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Dancing+Script:wght@400;700&display=swap');
 
+/* RUKOLA FONT - Premium Editorial */
+@font-face {
+  font-family: 'Rukola';
+  src: url('https://fonts.cdnfonts.com/s/29946/Rukola.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* DRUK HEAVY STYLE FONT */
 @font-face {
   font-family: 'Druk Heavy';
@@ -10,11 +19,17 @@
   font-display: swap;
 }
 
-/* LAGUNITAS TYPOGRAPHY */
+/* RUKOLA TYPOGRAPHY - All Headings */
 .font-display {
-  font-family: 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+}
+
+/* ALL HEADINGS USE RUKOLA */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
+  letter-spacing: 2px;
 }
 
 .font-script {
@@ -48,23 +63,23 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* HEADLINE STYLES - DRUK HEAVY */
+/* HEADLINE STYLES - RUKOLA */
 .headline-xl {
-  font-family: 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
   font-size: clamp(3rem, 9vw, 8rem);
   line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-weight: 900;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .headline-lg {
-  font-family: 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
   font-size: clamp(2rem, 6vw, 5rem);
   line-height: 0.95;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-weight: 900;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 /* SUBTITLE STYLES */

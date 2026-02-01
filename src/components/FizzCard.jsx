@@ -11,7 +11,7 @@ const FizzCard = ({ post, index }) => {
             className="group relative block"
         >
             <Link to={`/fizzroom/${post.id}`} className="block h-full">
-                <div className="relative overflow-hidden aspect-[4/5] md:aspect-square mb-4 rounded-lg bg-white/5 border border-white/10 group-hover:border-yellow-400/50 transition-colors duration-500">
+                <div className="relative overflow-hidden aspect-[4/5] md:aspect-square mb-4 rounded-lg bg-white/5 border border-white/10 group-hover:border-gray-400/50 transition-colors duration-500">
                     <img
                         src={post.image}
                         alt={post.title}
@@ -19,7 +19,7 @@ const FizzCard = ({ post, index }) => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
-                    <div className="absolute top-4 left-4 bg-yellow-400 text-black text-xs font-bold px-3 py-1 uppercase tracking-widest transform -skew-x-12">
+                    <div className="absolute top-4 left-4 bg-gray-300 text-black text-xs font-bold px-3 py-1 uppercase tracking-widest transform -skew-x-12">
                         {post.category}
                     </div>
                 </div>
@@ -30,14 +30,14 @@ const FizzCard = ({ post, index }) => {
                         <span>•</span>
                         <span>By Team ZFO</span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-black leading-tight group-hover:text-yellow-400 transition-colors uppercase tracking-tighter">
+                    <h3 className="text-xl md:text-2xl font-black leading-tight group-hover:text-gray-300 transition-colors uppercase tracking-tighter">
                         {post.title}
                     </h3>
                     <p className="text-white/60 text-sm line-clamp-2 font-light">
                         {post.excerpt}
                     </p>
                     <div className="pt-2">
-                        <span className="inline-block border-b border-white/30 text-xs uppercase tracking-widest group-hover:border-yellow-400 group-hover:text-yellow-400 transition-all pb-0.5">
+                        <span className="inline-block border-b border-white/30 text-xs uppercase tracking-widest group-hover:border-gray-400 group-hover:text-gray-300 transition-all pb-0.5">
                             SPILL THE TEA →
                         </span>
                     </div>

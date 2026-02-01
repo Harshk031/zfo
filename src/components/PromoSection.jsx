@@ -26,7 +26,7 @@ const PromoSection = () => {
         className="relative z-10 text-5xl sm:text-7xl md:text-9xl font-black text-black tracking-tighter leading-[0.9] uppercase"
       >
         SODA <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-black">
           UNLEARNED
         </span>
       </motion.h2>
@@ -40,7 +40,7 @@ const PromoSection = () => {
       >
         <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 max-w-4xl px-4 leading-tight tracking-tight">
           "They mass-produced <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600">mediocrity.</span><br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-black">mediocrity.</span><br className="hidden md:block" />
           We brewed rebellion."
         </p>
 
