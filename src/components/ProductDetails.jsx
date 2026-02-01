@@ -30,7 +30,7 @@ const products = [
 
 const ProductDetails = () => {
   return (
-    <section id="productdetails" className="bg-[#fffcf5] py-20 md:py-32 relative overflow-hidden">
+    <section id="productdetails" className="bg-[#f5f5f0] py-20 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {products.map((prod, index) => {
           const isEven = index % 2 === 0;

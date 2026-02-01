@@ -9,7 +9,7 @@ const PromoSection = () => {
     <section
       ref={ref}
       id="promosection"
-      className="relative py-32 md:py-48 bg-[#fffcf5] flex flex-col items-center text-center px-6 overflow-hidden"
+      className="relative py-32 md:py-48 bg-[#f5f5f0] flex flex-col items-center text-center px-6 overflow-hidden"
     >
       {/* DECORATIVE BACKGROUND TEXT */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03]">
