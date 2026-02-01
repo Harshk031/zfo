@@ -5,7 +5,7 @@ export const fizzPosts = [
         excerpt: "India consumes over ₹60,000 crore worth of soda every year. Most of it is liquid sugar, artificial flavoring, and empty calories.",
         date: "Jan 26, 2026",
         category: "TRUTH BOMB",
-        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2574&auto=format&fit=crop",
+        image: "/truth-bomb-thumbnail.jpg",
         metaDescription: "90% of sodas in India are loaded with sugar and chemicals. ZfO is building a clean, premium masala soda with zero preservatives and bold flavor for Gen Z.",
         content: `India consumes over ₹60,000 crore worth of soda every year.
 Most of it is liquid sugar, artificial flavoring, and empty calories wrapped in shiny branding.
