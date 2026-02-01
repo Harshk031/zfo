@@ -25,7 +25,6 @@ const Hero = () => {
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/logo.png"
       >
         <source src="/polar-bear.mp4" type="video/mp4" />
         Your browser does not support the video tag.
