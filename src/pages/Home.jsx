@@ -1,4 +1,4 @@
-import VideoHero from "../components/VideoHero";
+import Hero from "../components/Hero";
 import PromoSection from "../components/PromoSection";
 import LaunchTeaser from "../components/LaunchTeaser";
 import HeroScene from "../components/HeroScene";
@@ -8,7 +8,7 @@ import FizzroomTeaser from "../components/FizzroomTeaser";
 const Home = () => {
     return (
         <>
-            <VideoHero />
+            <Hero />
             <PromoSection />
             <ProductDetails />
             <FizzroomTeaser />
