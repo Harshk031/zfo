@@ -17,16 +17,16 @@ const Fizzroom = () => {
                         transition={{ duration: 0.8 }}
                         className="text-6xl md:text-9xl font-black uppercase tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-yellow-500 to-yellow-700 mix-blend-screen drop-shadow-2xl"
                     >
-                        The Fizzroom
+                        FIZZROOM.
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto font-light"
+                        className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto font-light uppercase tracking-wider"
                     >
-                        Culture. Flavors. The ZFO Lifestyle. <br className="hidden md:block" />
-                        Dive into what makes us pop.
+                        Hot takes. Cold truths.<br className="hidden md:block" />
+                        Read at your own risk.
                     </motion.p>
                 </div>
 

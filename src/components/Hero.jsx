@@ -40,8 +40,8 @@ const Hero = () => {
           className="w-full md:w-1/2 text-left z-10 pt-20 md:pt-0"
         >
           {/* Brand identity */}
-          <p className="subtitle-script text-[#c41e3a] mb-2">
-            Premium Craft Soda
+          <p className="subtitle-script text-[#c41e3a] mb-2 uppercase tracking-widest text-sm font-bold">
+            UNAPOLOGETICALLY BOLD.
           </p>
 
           {/* Hero emotion line - Lagunitas Style with Texture */}
@@ -51,8 +51,8 @@ const Hero = () => {
 
           {/* SUB-TEXT / DESCRIPTION */}
           <p className="mt-6 text-[#a0a0a0] text-lg md:text-xl font-light max-w-sm leading-relaxed">
-            Indian craft soda. Small batch. <br className="hidden md:block" />
-            Big character.
+            Masala craft soda. <br className="hidden md:block" />
+            Zero fake. All bite.
           </p>
         </motion.div>
 

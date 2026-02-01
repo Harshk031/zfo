@@ -15,7 +15,7 @@ const FizzroomPost = () => {
         <article className="min-h-screen bg-black text-white pt-32 pb-20">
             <div className="max-w-4xl mx-auto px-6">
                 <Link to="/fizzroom" className="inline-flex items-center text-white/50 hover:text-white transition-colors mb-8 uppercase text-sm tracking-widest">
-                    <FaArrowLeft className="mr-2" /> Back to The Fizzroom
+                    <FaArrowLeft className="mr-2" /> ← EXIT ARTICLE
                 </Link>
 
                 <motion.div

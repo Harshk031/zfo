@@ -1,7 +1,7 @@
 export const heroLines = [
-  "THE FIZZROOM IS LIVE.",
-  "Where Soda meets memory.",
-  "Crafted in glass.",
-  "Born to bubble.",
-  "Old days, refined.",
+  "SODA GOT A REBRAND.",
+  "YOUR THIRST CALLED. IT'S PICKY NOW.",
+  "TRASH SODA IS CANCELED.",
+  "FIZZ THAT HITS DIFFERENT.",
+  "GLASS BOTTLE ONLY. NO CAP.",
 ];

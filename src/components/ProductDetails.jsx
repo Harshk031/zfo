@@ -3,7 +3,7 @@ import bottle1 from "../assets/b.png.png";
 
 const products = [
   {
-    name: "Why ZfO Exists",
+    name: "REAL TALK.",
     tagline: "The philosophy behind the fizz",
     headings: ["Reclaiming the soul of soda"],
     description:

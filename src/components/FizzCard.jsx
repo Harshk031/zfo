@@ -38,7 +38,7 @@ const FizzCard = ({ post, index }) => {
                     </p>
                     <div className="pt-2">
                         <span className="inline-block border-b border-white/30 text-xs uppercase tracking-widest group-hover:border-yellow-400 group-hover:text-yellow-400 transition-all pb-0.5">
-                            Read The Fizz
+                            SPILL THE TEA →
                         </span>
                     </div>
                 </div>

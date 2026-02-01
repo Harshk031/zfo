@@ -15,15 +15,15 @@ const FizzroomTeaser = () => {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16">
                     <div>
                         <h2 className="text-sm font-bold tracking-[0.2em] text-yellow-400 mb-4 uppercase">
-                            The ZFO Edit
+                            Reality Check.
                         </h2>
                         <h3 className="text-4xl md:text-6xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40">
-                            The Fizzroom
+                            THE FIZZROOM.
                         </h3>
                     </div>
 
                     <Link to="/fizzroom" className="hidden md:flex items-center space-x-2 text-white/60 hover:text-yellow-400 transition-colors uppercase text-xs tracking-widest border border-white/20 px-6 py-3 rounded-full hover:border-yellow-400/50">
-                        <span>View All Articles</span>
+                        <span>ENTER THE VOID ↗</span>
                         <FaArrowRight />
                     </Link>
                 </div>
@@ -61,7 +61,7 @@ const FizzroomTeaser = () => {
 
                 <div className="mt-12 md:hidden">
                     <Link to="/fizzroom" className="flex items-center justify-center space-x-2 text-white hover:text-yellow-400 transition-colors uppercase text-sm tracking-widest border border-white/20 py-4 rounded-full w-full">
-                        <span>Enter The Fizzroom</span>
+                        <span>DIVE IN ↗</span>
                         <FaArrowRight />
                     </Link>
                 </div>

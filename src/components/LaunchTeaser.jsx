@@ -27,8 +27,8 @@ const LaunchTeaser = () => {
 
   return (
     <section className="relative h-screen bg-black flex flex-col items-center justify-center text-center overflow-hidden px-6">
-      <h2 className="text-5xl sm:text-7xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 relative z-10 tracking-tighter mb-10 leading-none">
-        ARRIVING <br /> SOON.
+      <h2 className="text-5xl sm:text-7xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 relative z-10 tracking-tighter mb-10 leading-none uppercase">
+        IT'S BREWING.
       </h2>
 
       <motion.button
@@ -37,7 +37,7 @@ const LaunchTeaser = () => {
         whileTap={{ scale: 0.95 }}
         className="px-10 py-5 rounded-full bg-yellow-400 text-black font-black tracking-widest uppercase text-lg hover:bg-white transition-colors duration-300 relative z-10 shadow-[0_0_40px_-10px_rgba(250,204,21,0.5)]"
       >
-        FEEL THE FIZZ
+        DROP ME A HINT →
       </motion.button>
 
       {bubbles.map((b) => (

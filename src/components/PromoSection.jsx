@@ -23,11 +23,11 @@ const PromoSection = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} // smooth easeOutQuint-ish
-        className="relative z-10 text-5xl sm:text-7xl md:text-9xl font-black text-black tracking-tighter leading-[0.9]"
+        className="relative z-10 text-5xl sm:text-7xl md:text-9xl font-black text-black tracking-tighter leading-[0.9] uppercase"
       >
-        THE ART <br />
+        SODA <br />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600">
-          OF FIZZ
+          UNLEARNED
         </span>
       </motion.h2>
 
@@ -38,18 +38,19 @@ const PromoSection = () => {
         transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 mt-12 md:mt-16 flex flex-col items-center"
       >
-        <p className="text-2xl sm:text-3xl md:text-5xl font-light text-gray-900 max-w-4xl px-4 italic leading-tight">
-          "Crafted soda. Honest flavour. <br className="hidden md:block" />
-          <span className="font-bold not-italic text-black">Real refreshment.</span>"
+        <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 max-w-4xl px-4 leading-tight tracking-tight">
+          "They mass-produced <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600">mediocrity.</span><br className="hidden md:block" />
+          We brewed rebellion."
         </p>
 
         {/* Separator */}
         <div className="w-1 bg-black/10 h-24 my-10 md:my-16" />
 
         {/* Description */}
-        <p className="text-sm sm:text-base md:text-lg font-medium text-gray-600 max-w-lg px-6 leading-relaxed uppercase tracking-widest">
-          ZfO reimagines Indian soda culture with balanced fizz, refined masala,
-          and a premium glass bottle experience.
+        <p className="text-sm sm:text-base md:text-lg font-black text-gray-800 max-w-lg px-6 leading-relaxed uppercase tracking-widest">
+          No plastic. No sugar bombs. <br className="hidden md:block" />
+          Just real masala in real glass.
         </p>
       </motion.div>
     </section>
