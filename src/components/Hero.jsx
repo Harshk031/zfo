@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen bg-[#0a0a0a] overflow-hidden">
+    <section className="relative h-screen bg-[#0a0a0a]">
 
       {/* Background video */}
       <video
@@ -37,7 +37,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full md:w-1/2 text-left z-10 pt-20 md:pt-0"
+          className="w-full md:w-1/2 text-left z-10 pt-20 md:pt-0 px-4 sm:px-0 overflow-visible"
         >
           {/* Brand identity */}
           <p className="subtitle-script text-[#c41e3a] mb-2 uppercase tracking-widest text-sm font-bold">
@@ -45,7 +45,7 @@ const Hero = () => {
           </p>
 
           {/* Hero emotion line - Lagunitas Style with Texture */}
-          <h1 className="headline-xl text-distressed drop-shadow-2xl" style={{backgroundColor: '#fafafa'}}>
+          <h1 className="headline-xl text-distressed drop-shadow-2xl break-words" style={{backgroundColor: '#fafafa'}}>
             {heroLines[index]}
           </h1>
 
