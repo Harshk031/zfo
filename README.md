@@ -1,8 +1,13 @@
-# ZfO - The Art of Fizz 🥤
+# ZfO - Premium Craft Soda in Glass Bottles 🥤
 
-**Premium masala soda reimagined for the modern palate**
+[![Live Site](https://img.shields.io/badge/Live%20Site-zfo.co.in-blue?style=flat-square)](https://www.zfo.co.in)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-Latest-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 
-A stunning landing page for ZfO, India's premium craft soda brand. Built with React, Vite, and Framer Motion for a smooth, engaging user experience.
+> **Premium masala soda reimagined for the modern palate**
+
+ZfO is India's premier craft soda brand, delivering authentic masala flavors in elegant glass bottles. This repository contains the official landing page built with modern web technologies for a premium user experience.
 
 🌐 **Live Site:** [www.zfo.co.in](https://www.zfo.co.in)
 
