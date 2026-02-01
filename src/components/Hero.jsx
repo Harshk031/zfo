@@ -44,8 +44,8 @@ const Hero = () => {
             Premium Craft Soda
           </p>
 
-          {/* Hero emotion line - Lagunitas Style */}
-          <h1 className="headline-xl text-[#fafafa] drop-shadow-2xl">
+          {/* Hero emotion line - Lagunitas Style with Texture */}
+          <h1 className="headline-xl text-distressed drop-shadow-2xl" style={{backgroundColor: '#fafafa'}}>
             {heroLines[index]}
           </h1>
 
