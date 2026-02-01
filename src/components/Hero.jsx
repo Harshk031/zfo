@@ -74,17 +74,40 @@ const Hero = () => {
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Audio Toggle Button */}
+      {/* Audio Toggle Button - Modern Styled */}
       <button
         onClick={toggleMute}
-        className="absolute top-6 right-6 z-50 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-black/70 transition-all"
+        className="absolute top-6 right-6 z-50 group"
         aria-label={isMuted ? "Unmute video" : "Mute video"}
       >
-        {isMuted ? (
-          <FaVolumeMute className="text-white text-lg" />
-        ) : (
-          <FaVolumeUp className="text-white text-lg" />
-        )}
+        {/* Glow effect */}
+        <div className={`absolute inset-0 rounded-full blur-md transition-all duration-500 ${isMuted ? 'bg-gray-500/30' : 'bg-white/20'}`} />
+        
+        {/* Button container */}
+        <div className="relative w-11 h-11 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-lg shadow-black/20 group-hover:border-white/40 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300">
+          {/* Icon */}
+          <div className="relative">
+            {isMuted ? (
+              <FaVolumeMute className="text-white/70 text-base group-hover:text-white transition-colors" />
+            ) : (
+              <FaVolumeUp className="text-white text-base transition-colors" />
+            )}
+            
+            {/* Sound wave animation when unmuted */}
+            {!isMuted && (
+              <div className="absolute -right-1 top-1/2 -translate-y-1/2 flex gap-0.5">
+                <span className="w-0.5 h-2 bg-white/60 rounded-full animate-pulse" />
+                <span className="w-0.5 h-3 bg-white/60 rounded-full animate-pulse delay-75" />
+                <span className="w-0.5 h-1.5 bg-white/60 rounded-full animate-pulse delay-150" />
+              </div>
+            )}
+          </div>
+        </div>
+        
+        {/* Tooltip */}
+        <span className="absolute top-full mt-2 right-0 text-[10px] text-white/50 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+          {isMuted ? 'Unmute' : 'Mute'}
+        </span>
       </button>
 
       <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
