@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Bottle from "./Bottle";
-import SideVideos from "./SideVideos";
 import MovingBgText from "./MovingBgText";
 
 const HeroScene = () => {
@@ -22,12 +21,8 @@ const HeroScene = () => {
       {/* Floating text */}
       <MovingBgText />
 
-      {/* Bottle + side videos container */}
+      {/* Center bottle */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {/* Side videos */}
-        <SideVideos scrollYProgress={scrollYProgress} stayVisible />
-
-        {/* Center bottle */}
         <motion.div style={{ scale: bottleScale }}>
           <Bottle scrollYProgress={scrollYProgress} />
         </motion.div>
