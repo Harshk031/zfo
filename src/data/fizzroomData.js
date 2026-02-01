@@ -6,7 +6,7 @@ export const fizzPosts = [
         date: "Jan 26, 2026",
         category: "TRUTH BOMB",
         image: "/truth-bomb-thumbnail.jpg",
-        metaDescription: "90% of sodas are sugar and chemicals. ZfO makes real masala soda - clean, bold, honest.",
+        metaDescription: "Discover the truth about soda beverages. ZfO offers premium craft soda in glass bottles with honest ingredients. The best alternative to sugary drinks.",
         content: `Let's be real. That soda you're holding? It's 90% sugar and chemicals dressed up in fancy packaging.
 
 Cheap sweeteners. Artificial fizz. Zero nutrition. All hype.
@@ -48,7 +48,7 @@ Level up your water game. Your future self will slide into your DMs with gratitu
         date: "Jan 24, 2026",
         category: "CULTURE",
         image: "/masala-history.jpg",
-        metaDescription: "The wild history of masala soda from Indian streets to cult status.",
+        metaDescription: "Explore the history of India's favorite soda beverage. From street corners to premium glass bottles, discover how masala soda became a cultural icon.",
         content: `Picture this: 1950s India. Street vendors crushing ice. Hand-pulled soda machines hissing. That first spicy-sweet hit that made you forget the heat.
 
 Masala soda wasn't invented in a boardroom. It was born from necessity—and perfected by hustlers.
@@ -68,7 +68,7 @@ This isn't nostalgia. This is restoration.`
         date: "Jan 23, 2026",
         category: "CLIMATE",
         image: "/plastic-cancelled.jpg",
-        metaDescription: "Plastic bottles are destroying the planet. ZfO uses 100% glass. Always.",
+        metaDescription: "Why glass bottles are the only choice for premium beverages. ZfO soda in glass bottles - sustainable, pure taste, infinitely recyclable.",
         content: `You've seen the tweets. You've watched the documentaries. And yet—that soda fridge at your office is still all plastic.
 
 Let's talk numbers. One million plastic bottles bought every minute worldwide. Less than 9% actually recycled. The rest? In oceans. In landfills. In your food chain.
