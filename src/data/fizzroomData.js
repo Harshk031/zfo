@@ -27,7 +27,7 @@ Your body deserves better than liquid sugar. Drink different.`
         excerpt: "Dry skin. Brain fog. Zero rizz. Dehydration is ruining your game. Here's how to fix it.",
         date: "Jan 25, 2026",
         category: "REAL TALK",
-        image: "/article-2-thumbnail.png",
+        image: "/article-1-thumbnail.jpg",
         metaDescription: "Dehydration kills your rizz. Here's why staying hydrated matters for your glow up.",
         content: `Your skin is dull. Your energy is nonexistent. Your texts hit different when you're parched.
 
