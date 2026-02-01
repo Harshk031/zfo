@@ -15,7 +15,7 @@ const products = [
     tagline: "Where craft meets restraint",
     headings: ["Soda treated like a culinary product"],
     description:
-      "ZfO treats soda as a craft — not a commodity. From controlled carbonation and layered spice profiles to clean sweetness and aroma release, every element is engineered for sensory satisfaction. This is fizz with depth, not noise. Refreshment that respects flavour, experience, and balance.",
+      "ZfO treats soda as a craft — not a commodity. From controlled carbonation and layered spice profiles to clean sweetness and aroma release, every element is engineered for sensory satisfaction. This is fizz with depth, not noise. Refreshment that respects flavor, experience, and balance.",
     image: bottle1,
   },
   {

@@ -43,7 +43,7 @@ Level up your water game. Your future self will slide into your DMs with gratitu
     },
     {
         id: 2,
-        title: "MASAKA SODA HISTORY: FROM STREETS TO SAVAGE.",
+        title: "MASALA SODA HISTORY: FROM STREETS TO SAVAGE.",
         excerpt: "How a roadside refresher became India's OG culture drink. The story hits harder than you think.",
         date: "Jan 24, 2026",
         category: "CULTURE",
