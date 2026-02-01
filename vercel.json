@@ -4,9 +4,7 @@
     "outputDirectory": "dist",
     "framework": null,
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
-        }
+        { "handle": "filesystem" },
+        { "src": "/(.*)", "dest": "/index.html" }
     ]
 }
