@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import CursorBottle from "./CursorBottle";
 import { heroLines } from "../data/text";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
   // rotating hero lines
   useEffect(() => {
@@ -14,13 +17,51 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Try autoplay with audio, fallback to muted
+  useEffect(() => {
+    const tryAutoplay = async () => {
+      if (videoRef.current) {
+        try {
+          videoRef.current.muted = false;
+          await videoRef.current.play();
+          setIsMuted(false);
+        } catch (err) {
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.play().catch(() => {});
+          }
+          setIsMuted(true);
+        }
+      }
+    };
+    tryAutoplay();
+  }, []);
+
+  const toggleMute = async () => {
+    if (videoRef.current) {
+      if (isMuted) {
+        try {
+          videoRef.current.muted = false;
+          await videoRef.current.play();
+          setIsMuted(false);
+        } catch (err) {
+          console.log("Could not unmute:", err);
+        }
+      } else {
+        videoRef.current.muted = true;
+        setIsMuted(true);
+      }
+    }
+  };
+
   return (
-    <section className="relative h-screen bg-[#0a0a0a]">
+    <section className="relative h-screen bg-[#0a0a0a] overflow-hidden">
 
       {/* Background Video - Polar Bear Launch Announcement */}
       <video
+        ref={videoRef}
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         preload="auto"
@@ -32,6 +73,19 @@ const Hero = () => {
 
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
+
+      {/* Audio Toggle Button */}
+      <button
+        onClick={toggleMute}
+        className="absolute top-6 right-6 z-50 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-black/70 transition-all"
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+      >
+        {isMuted ? (
+          <FaVolumeMute className="text-white text-lg" />
+        ) : (
+          <FaVolumeUp className="text-white text-lg" />
+        )}
+      </button>
 
       <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
 
