@@ -87,7 +87,7 @@ Choose glass. The future isn't optional.`
         excerpt: "The manifesto. The mission. Why we chose masala over mediocrity.",
         date: "Jan 22, 2026",
         category: "MANIFESTO",
-        image: "/article-3-thumbnail.png",
+        image: "/article-4-thumbnail.png",
         metaDescription: "ZfO's mission: why we chose craft masala soda over corporate mediocrity.",
         content: `We could have made another generic cola. Could have played it safe. Could have followed the formula.
 
