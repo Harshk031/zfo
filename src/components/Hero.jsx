@@ -17,9 +17,22 @@ const Hero = () => {
   return (
     <section className="relative h-screen bg-[#0a0a0a]">
 
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black" />
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_transparent_70%)]" />
+      {/* Background Video - Polar Bear Launch Announcement */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover"
+        poster="/logo.png"
+      >
+        <source src="/polar-bear.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
 
