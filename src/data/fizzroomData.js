@@ -47,7 +47,7 @@ Level up your water game. Your future self will slide into your DMs with gratitu
         excerpt: "How a roadside refresher became India's OG culture drink. The story hits harder than you think.",
         date: "Jan 24, 2026",
         category: "CULTURE",
-        image: "/masala-history.jpg",
+        image: "/article-2-thumbnail.png",
         metaDescription: "Explore the history of India's favorite soda beverage. From street corners to premium glass bottles, discover how masala soda became a cultural icon.",
         content: `Picture this: 1950s India. Street vendors crushing ice. Hand-pulled soda machines hissing. That first spicy-sweet hit that made you forget the heat.
 
@@ -67,7 +67,7 @@ This isn't nostalgia. This is restoration.`
         excerpt: "Microplastics in your blood. Ocean doom. Zero excuses. Glass is the only option.",
         date: "Jan 23, 2026",
         category: "CLIMATE",
-        image: "/plastic-cancelled.jpg",
+        image: "/article-3-thumbnail.png",
         metaDescription: "Why glass bottles are the only choice for premium beverages. ZfO soda in glass bottles - sustainable, pure taste, infinitely recyclable.",
         content: `You've seen the tweets. You've watched the documentaries. And yet—that soda fridge at your office is still all plastic.
 
