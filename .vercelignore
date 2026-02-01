@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+package-lock.json
+
+# Build outputs (will be built by Vercel)
+dist
+
+# Development files
+.env
+.env.local
+*.log
+
+# Lint and test files
+lint_output.txt
+lint_report.json
+lint_components.txt
+lint_launch_teaser.txt
+lint_layer_error.txt
+
+# Documentation
+README.md
+CONTRIBUTING.md
+
+# Vercel specific
+.vercel
