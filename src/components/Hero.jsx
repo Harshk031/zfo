@@ -54,16 +54,6 @@ const Hero = () => {
             Indian craft soda. Small batch. <br className="hidden md:block" />
             Big character.
           </p>
-
-          {/* MAGNETIC CTA */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-8 px-8 py-4 border border-[#fafafa]/30 bg-transparent text-[#fafafa] font-bold tracking-widest uppercase text-sm hover:bg-[#fafafa] hover:text-[#0a0a0a] transition-all duration-300 relative group overflow-hidden"
-          >
-            <span className="relative z-10">Experience the Fizz</span>
-            <div className="absolute inset-0 bg-[#fafafa] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-          </motion.button>
         </motion.div>
 
         {/* CURSOR BOTTLE */}
