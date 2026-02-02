@@ -22,15 +22,25 @@ const STATIC_ASSETS = [
   '/sitemap.xml'
 ];
 
-// Image assets to cache
+// Image assets to cache (pre-cache critical images)
 const IMAGE_ASSETS = [
   '/bottle3.png',
+  '/logo.png',
   '/article-1-thumbnail.jpg',
   '/article-2-thumbnail.png',
   '/article-3-thumbnail.png',
   '/article-4-thumbnail.png',
   '/truth-bomb-thumbnail.jpg'
 ];
+
+// Video assets to cache
+const VIDEO_ASSETS = [
+  '/polar-bear.mp4'
+];
+
+// Precache configuration for media
+const PRECACHE_STRATEGY = 'cache-first';
+const MEDIA_CACHE_DURATION = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 // Font assets
 const FONT_ASSETS = [];
@@ -50,6 +60,11 @@ self.addEventListener('install', (event) => {
       caches.open(CACHE_NAMES.images).then(cache => {
         console.log('[SW] Caching image assets');
         return cache.addAll(IMAGE_ASSETS);
+      }),
+      // Cache videos
+      caches.open(CACHE_NAMES.dynamic).then(cache => {
+        console.log('[SW] Caching video assets');
+        return cache.addAll(VIDEO_ASSETS);
       })
     ])
     .then(() => {
