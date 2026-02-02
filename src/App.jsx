@@ -1,21 +1,32 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BubbleCursor from "./components/BubbleCursor";
-import LeadCapture from "./components/LeadCapture";
-import SocialProof from "./components/SocialProof";
-import WhatsAppLead from "./components/WhatsAppLead";
-import ChatBot from "./components/ChatBot";
-import Home from "./pages/Home";
-import Fizzroom from "./pages/Fizzroom";
-import FizzroomPost from "./pages/FizzroomPost";
+
+// Lazy load lead generation components for code splitting
+const LeadCapture = lazy(() => import("./components/LeadCapture"));
+const SocialProof = lazy(() => import("./components/SocialProof"));
+const WhatsAppLead = lazy(() => import("./components/WhatsAppLead"));
+const ChatBot = lazy(() => import("./components/ChatBot"));
+
+// Lazy load page components
+const Home = lazy(() => import("./pages/Home"));
+const Fizzroom = lazy(() => import("./pages/Fizzroom"));
+const FizzroomPost = lazy(() => import("./pages/FizzroomPost"));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-black">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ffcc00]"></div>
+  </div>
+);
 
 const App = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log("Build Version: v0.0.2 - LEAD_GEN_INFRASTRUCTURE - TIMESTAMP: " + new Date().toISOString());
+    console.log("Build Version: v0.0.3 - PERFORMANCE_OPTIMIZED - TIMESTAMP: " + new Date().toISOString());
     window.scrollTo(0, 0);
     
     // Track page view in analytics
@@ -37,17 +48,28 @@ const App = () => {
       <Navbar />
       <BubbleCursor />
       
-      {/* Lead Generation Infrastructure */}
-      <LeadCapture />
-      <SocialProof />
-      <WhatsAppLead />
-      <ChatBot />
+      {/* Lead Generation Infrastructure - Lazy Loaded */}
+      <Suspense fallback={null}>
+        <LeadCapture />
+        <SocialProof />
+      </Suspense>
+      
+      {/* Defer non-critical components */}
+      <Suspense fallback={null}>
+        <div style={{ contentVisibility: 'auto' }}>
+          <WhatsAppLead />
+          <ChatBot />
+        </div>
+      </Suspense>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/fizzroom" element={<Fizzroom />} />
-        <Route path="/fizzroom/:id" element={<FizzroomPost />} />
-      </Routes>
+      {/* Main Routes with Code Splitting */}
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/fizzroom" element={<Fizzroom />} />
+          <Route path="/fizzroom/:id" element={<FizzroomPost />} />
+        </Routes>
+      </Suspense>
 
       <Footer />
     </div>
