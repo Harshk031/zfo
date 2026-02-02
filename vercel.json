@@ -3,6 +3,68 @@
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
     "framework": null,
+    "headers": [
+        {
+            "source": "/sw.js",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+                { "key": "Service-Worker-Allowed", "value": "/" }
+            ]
+        },
+        {
+            "source": "/(.*)",
+            "has": [{ "type": "header", "key": "Purpose", "value": "prefetch" }],
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+            ]
+        },
+        {
+            "source": "/(.*\\.(js|css|json))",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+                { "key": "ETag", "value": "W/\"${buildId}\"" },
+                { "key": "Vary", "value": "Accept-Encoding" }
+            ]
+        },
+        {
+            "source": "/(.*\\.(png|jpg|jpeg|gif|svg|webp|avif))",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" },
+                { "key": "ETag", "value": "W/\"${buildId}\"" },
+                { "key": "Vary", "value": "Accept, Accept-Encoding" }
+            ]
+        },
+        {
+            "source": "/(.*\\.(woff|woff2|ttf|otf|eot))",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+                { "key": "ETag", "value": "W/\"${buildId}\"" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+            ]
+        },
+        {
+            "source": "/(.*\\.(mp4|webm|ogv))",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=2592000" },
+                { "key": "Accept-Ranges", "value": "bytes" }
+            ]
+        },
+        {
+            "source": "/index.html",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+                { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+                { "key": "X-Content-Type-Options", "value": "nosniff" },
+                { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+            ]
+        },
+        {
+            "source": "/manifest.json",
+            "headers": [
+                { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+            ]
+        }
+    ],
     "routes": [
         { "handle": "filesystem" },
         { "src": "/(.*)", "dest": "/index.html" }
