@@ -11,6 +11,7 @@ const pages = [
     '/',
     '/fizzroom',
     '/faq',
+    '/infographics/craft-soda-vs-regular-soda',
     // Individual posts can be dynamically added here in a real app,
     // for now we just add the main blog listing.
 ];

@@ -31,4 +31,14 @@
       <image:title>ZfO Logo</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.zfo.co.in/infographics/craft-soda-vs-regular-soda</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.zfo.co.in/logo.png</image:loc>
+      <image:title>ZfO Logo</image:title>
+    </image:image>
+  </url>
 </urlset>

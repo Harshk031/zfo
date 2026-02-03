@@ -15,6 +15,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Fizzroom = lazy(() => import("./pages/Fizzroom"));
 const FizzroomPost = lazy(() => import("./pages/FizzroomPost"));
 const FAQ = lazy(() => import("./pages/FAQ"));
+const Infographics = lazy(() => import("./pages/Infographics"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -70,6 +71,7 @@ const App = () => {
           <Route path="/fizzroom" element={<Fizzroom />} />
           <Route path="/fizzroom/:id" element={<FizzroomPost />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/infographics/:slug" element={<Infographics />} />
         </Routes>
       </Suspense>
 
