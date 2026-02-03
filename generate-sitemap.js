@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { fizzPosts } from './src/data/fizzroomData.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -12,8 +13,8 @@ const pages = [
     '/fizzroom',
     '/faq',
     '/infographics/craft-soda-vs-regular-soda',
-    // Individual posts can be dynamically added here in a real app,
-    // for now we just add the main blog listing.
+    // Add all individual blog posts
+    ...fizzPosts.map(post => `/fizzroom/${post.id}`)
 ];
 
 const generateSitemap = () => {
@@ -24,11 +25,15 @@ const generateSitemap = () => {
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${pages
             .map((page) => {
+                // Set priority based on page type
+                const priority = page === '/' ? '1.0' : page.startsWith('/fizzroom/') ? '0.7' : '0.8';
+                const changefreq = page === '/' ? 'weekly' : 'monthly';
+                
                 return `  <url>
     <loc>${DOMAIN}${page}</loc>
     <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>${page === '/' ? '1.0' : '0.8'}</priority>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
     <image:image>
       <image:loc>${DOMAIN}/logo.png</image:loc>
       <image:title>ZfO Logo</image:title>
@@ -40,6 +45,7 @@ ${pages
 
     fs.writeFileSync(SITEMAP_PATH, sitemapContent);
     console.log('✅ Sitemap generated successfully at public/sitemap.xml');
+    console.log(`✅ Included ${pages.length} pages in sitemap`);
 };
 
 generateSitemap();
