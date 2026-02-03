@@ -7,6 +7,7 @@ const navLinks = [
     { name: "Our Story", href: "/#promosection" },
     { name: "Flavours", href: "/#productdetails" },
     { name: "The Fizzroom", href: "/fizzroom" },
+    { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "#footer" },
 ];
 

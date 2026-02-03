@@ -7,6 +7,7 @@
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as Navbar } from './Navbar';
 export { default as Footer } from './Footer';
+export { default as Breadcrumb } from './Breadcrumb';
 
 // Media Components
 export { default as OptimizedImage } from './OptimizedImage';

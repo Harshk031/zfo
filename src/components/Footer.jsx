@@ -1,4 +1,5 @@
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -49,6 +50,9 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} ZfO Beverages.</p>
 
           <div className="flex gap-6 items-center">
+            <Link to="/faq" className="hover:text-white transition-colors">
+              FAQ
+            </Link>
             <a href="mailto:beverages@zfo.co.in" className="hover:text-white transition-colors">
               Contact
             </a>

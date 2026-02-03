@@ -10,7 +10,8 @@ const DOMAIN = 'https://www.zfo.co.in';
 const pages = [
     '/',
     '/fizzroom',
-    // Individual posts can be dynamically added here in a real app, 
+    '/faq',
+    // Individual posts can be dynamically added here in a real app,
     // for now we just add the main blog listing.
 ];
 
