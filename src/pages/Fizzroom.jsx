@@ -1,14 +1,30 @@
 import { motion } from "framer-motion";
 import { fizzPosts } from "../data/fizzroomData";
 import FizzCard from "../components/FizzCard";
+import { Breadcrumb } from "../components";
+import { useSEO } from "../hooks/useSEO";
 
 const Fizzroom = () => {
+    useSEO({
+        title: "The Fizzroom | ZfO Craft Soda Blog - Articles on Craft Beverages",
+        description: "Explore the ZfO Fizzroom - our craft soda blog featuring articles on sustainable beverages, glass bottle packaging, masala soda history, and craft vs corporate soda. Written by ZfO team.",
+        keywords: ["craft soda blog", "sustainable beverages", "glass bottle soda", "masala soda", "craft vs corporate soda", "ZfO articles"],
+        ogType: "website",
+        canonicalUrl: `${window.location.origin}/fizzroom`
+    });
+    
     return (
         <div className="min-h-screen pt-24 pb-20 px-4 md:px-12 bg-black text-white relative overflow-hidden">
             {/* Background Ambient Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="relative max-w-7xl mx-auto">
+                {/* Breadcrumb */}
+                <Breadcrumb items={[
+                    { label: "Home", url: `${window.location.origin}/` },
+                    { label: "Fizzroom", url: `${window.location.origin}/fizzroom` }
+                ]} />
+
                 {/* Header */}
                 <div className="mb-20 text-center">
                     <motion.h1

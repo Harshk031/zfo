@@ -13,7 +13,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % heroLines.length);
-    }, 2600);
+    }, 4500);
     return () => clearInterval(timer);
   }, []);
 
@@ -118,7 +118,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full md:w-1/2 text-left z-10 pt-20 md:pt-0 px-4 sm:px-0 overflow-visible"
+          className="w-full md:w-1/2 text-left z-10 pt-28 md:pt-0 px-4 sm:px-0 overflow-visible"
         >
           {/* Brand identity */}
           <p className="subtitle-script text-[#c41e3a] mb-2 uppercase tracking-widest text-sm font-bold">
