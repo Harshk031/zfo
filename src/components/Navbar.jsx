@@ -102,8 +102,8 @@ const Navbar = () => {
                 className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center overflow-hidden"
             >
                 {/* Background Decorative Elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-                <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-yellow-500/10 rounded-full blur-2xl md:blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-56 md:w-80 h-56 md:h-80 bg-blue-500/10 rounded-full blur-2xl md:blur-3xl translate-y-1/2 -translate-x-1/2" />
 
                 <motion.ul
                     variants={containerVariants}

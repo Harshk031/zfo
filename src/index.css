@@ -92,6 +92,26 @@ h1, h2, h3, h4, h5, h6 {
 /* GLOBAL FONT RESET */
 * {
   font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive body text - minimum readable on mobile */
+body {
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: 1.6;
+}
+
+/* Ensure images and media are responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* FAST BUBBLE FLOAT */

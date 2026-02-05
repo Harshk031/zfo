@@ -65,14 +65,14 @@ const Hero = () => {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src="/polar-bear.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Audio Toggle Button - Modern Styled */}
       <button
@@ -105,7 +105,7 @@ const Hero = () => {
         </div>
         
         {/* Tooltip */}
-        <span className="absolute top-full mt-2 right-0 text-[10px] text-white/50 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+        <span className="absolute top-full mt-2 right-0 text-xs text-white/50 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           {isMuted ? 'Unmute' : 'Mute'}
         </span>
       </button>
@@ -115,10 +115,10 @@ const Hero = () => {
         {/* TEXT BLOCK */}
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="w-full md:w-1/2 text-left z-10 pt-24 md:pt-0 px-4 sm:px-0 overflow-hidden"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-1/2 text-left z-30 pt-20 md:pt-0 px-4 sm:px-0 overflow-hidden"
         >
           {/* Brand identity */}
           <p className="subtitle-script text-[#c41e3a] mb-2 uppercase tracking-widest text-sm font-bold mt-4 md:mt-0">
@@ -138,11 +138,11 @@ const Hero = () => {
         </motion.div>
 
         {/* CURSOR BOTTLE */}
-        <div className="w-full md:w-1/2 flex justify-center items-center mt-8 md:mt-0 relative z-0">
+        <div className="w-full md:w-1/2 flex justify-center items-center mt-8 md:mt-0 relative z-20">
           {/* Mobile glow behind bottle */}
-          <div className="absolute inset-0 bg-white/10 blur-[80px] md:hidden rounded-full transform scale-75" />
+          <div className="absolute inset-0 bg-white/10 blur-3xl md:blur-[100px] rounded-full transform scale-75" />
 
-          <div className="scale-[0.85] sm:scale-90 md:scale-110 md:translate-x-12 translate-y-4 md:translate-y-0">
+          <div className="scale-[0.65] sm:scale-75 md:scale-110 lg:scale-125 md:translate-x-8 lg:translate-x-12 translate-y-2 md:translate-y-0">
             <CursorBottle />
           </div>
         </div>
