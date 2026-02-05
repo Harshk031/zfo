@@ -3,6 +3,25 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 
+// SSG plugin for static site generation
+export const ssgOptions = {
+  includedRoutes(paths, routes) {
+    // Include all routes for pre-rendering
+    return routes.flatMap(route => {
+      // Generate static routes for dynamic paths
+      if (route.path.includes(':id')) {
+        // Map fizzroom/:id to actual article IDs
+        const articleIds = [1, 2, 3, 4, 5];
+        return articleIds.map(id => route.path.replace(':id', id));
+      }
+      if (route.path.includes(':slug')) {
+        return [route.path.replace(':slug', 'craft-soda-vs-regular-soda')];
+      }
+      return route.path;
+    });
+  }
+};
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -16,6 +35,9 @@ export default defineConfig({
     })
   ],
   base: './',
+  
+  // SSG configuration
+  ssgOptions,
   
   // Build optimizations
   build: {

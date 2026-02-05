@@ -21,7 +21,7 @@ const FizzroomPost = () => {
 
     // SEO configuration for article page
     useSEO({
-        title: `${post.title} | ZfO Fizzroom`,
+        title: post.title + ' | ZfO Fizzroom',
         description: post.excerpt,
         keywords: post.keywords || [post.category, "craft soda", "ZfO"],
         ogType: "article",
@@ -31,14 +31,14 @@ const FizzroomPost = () => {
             section: post.category,
             tag: post.keywords || [post.category]
         },
-        canonicalUrl: `${window.location.origin}/fizzroom/${id}`
+        canonicalUrl: 'https://www.zfo.co.in/fizzroom/' + id
     });
 
     // Breadcrumb items for this article
     const breadcrumbItems = [
-        { label: "Home", url: `${window.location.origin}/" },
-        { label: "Fizzroom", url: `${window.location.origin}/fizzroom` },
-        { label: post.title, url: `${window.location.origin}/fizzroom/${id}` }
+        { label: "Home", url: 'https://www.zfo.co.in/' },
+        { label: "Fizzroom", url: 'https://www.zfo.co.in/fizzroom' },
+        { label: post.title, url: 'https://www.zfo.co.in/fizzroom/' + id }
     ];
 
     return (

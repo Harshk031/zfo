@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Gift, Clock, Fire } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Gift, Clock, Flame } from 'lucide-react';
 
 // A/B Test Configuration
 const CTA_VARIANTS = {
