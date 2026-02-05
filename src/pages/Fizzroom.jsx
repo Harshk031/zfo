@@ -33,7 +33,7 @@ const Fizzroom = () => {
                         transition={{ duration: 0.8 }}
                         className="text-6xl md:text-9xl font-black uppercase tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-br from-gray-300 via-gray-500 to-gray-700 mix-blend-screen drop-shadow-2xl"
                     >
-                        FIZZROOM.
+                        FIZZROOM. / STORIES
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -41,8 +41,7 @@ const Fizzroom = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto font-light uppercase tracking-wider"
                     >
-                        Hot takes. Cold truths.<br className="hidden md:block" />
-                        Read at your own risk.
+                        Latest articles & perspectives
                     </motion.p>
                 </div>
 
