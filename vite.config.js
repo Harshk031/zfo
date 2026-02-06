@@ -54,14 +54,23 @@ export default defineConfig({
     // Code splitting
     rollupOptions: {
       output: {
-        // Manual chunks for better caching
-        manualChunks: {
+        // Manual chunks for better caching (only for client build, not SSR)
+        manualChunks: (id, { getModuleInfo, chunk }) => {
+          // Skip manual chunks during SSR build
+          if (process.env.SSR) return;
+          
           // React core
-          'vendor': ['react', 'react-dom', 'react-router-dom'],
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
+            return 'vendor';
+          }
           // Animation libraries
-          'animation': ['framer-motion'],
+          if (id.includes('node_modules/framer-motion')) {
+            return 'animation';
+          }
           // Icons
-          'icons': ['lucide-react'],
+          if (id.includes('node_modules/lucide-react')) {
+            return 'icons';
+          }
         },
         // Chunk file naming with content hash
         chunkFileNames: 'assets/js/[name]-[hash].js',
