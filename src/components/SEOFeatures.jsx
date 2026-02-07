@@ -5,22 +5,22 @@ import { useInView } from "framer-motion";
 const features = [
     {
         title: "Premium Glass Bottles",
-        description: "Experience the finest soda in elegant glass bottles. Glass preserves flavor, keeps beverages colder longer, and is infinitely recyclable. Unlike plastic bottles, our glass packaging ensures zero chemical leaching and maintains the authentic taste of premium craft soda.",
+        description: "Taste purity in every sip. Glass preserves the authentic flavor, keeps it colder, and is 100% recyclable. Zero plastic, zero leaching—just premium craft soda.",
         keywords: ["glass bottles", "premium soda", "craft beverages", "recyclable packaging"]
     },
     {
         title: "Authentic Masala Flavors",
-        description: "Our masala soda features authentic Indian spices and natural ingredients. Zero artificial flavors, zero fake ingredients. Experience traditional masala soda reimagined with balanced fizz, refined spice profiles, and honest flavors that respect India's beverage heritage.",
+        description: "Real spices, real taste. No fake flavors or artificial nasties. We reimagined traditional masala soda with balanced fizz and honest ingredients that respect the heritage.",
         keywords: ["masala soda", "Indian soda", "authentic flavors", "natural ingredients"]
     },
     {
         title: "Craft Soda Excellence",
-        description: "ZfO is India's premium craft soda brand, treating soda as a culinary product. Every bottle features controlled carbonation, layered flavor profiles, and artisanal quality. This is craft soda that competes with the world's best beverages.",
+        description: "Soda treated as culinary art. Controlled carbonation, layered spice profiles, and artisanal quality. A craft beverage that stands tall against the world's best.",
         keywords: ["craft soda", "premium beverages", "artisanal soda", "Indian craft drinks"]
     },
     {
         title: "Perfect for Every Occasion",
-        description: "Ideal for street food pairings, café culture, summer refreshment, and sophisticated gatherings. Our soda in glass bottles elevates any dining experience. Whether you're enjoying spicy chaat or hosting dinner parties, ZfO delivers premium refreshment.",
+        description: "From street food to sophisticated dinners. ZfO elevates the moment. Whether it's spicy chaat or a house party, it's the ultimate refreshment.",
         keywords: ["beverage pairing", "refreshing drinks", "premium soft drinks", "glass bottle soda"]
     }
 ];
