@@ -14,6 +14,7 @@ const Bottle = ({ scrollYProgress }) => {
       <img
         src={bottle}
         alt="ZfO Masala Soda Bottle - PREMIUM 360 ROTATION - Premium Glass Bottle Craft Beverage"
+        decoding="async"
         className="h-[70vh] object-contain z-20 mx-auto"
       />
     </motion.div>
