@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { fizzPosts } from "../data/fizzroomData";
 import { FaArrowRight } from "react-icons/fa";
+import ProgressiveImage from "./ProgressiveImage";
 
 const FizzroomTeaser = () => {
     // Show only first 3 posts
@@ -39,12 +40,10 @@ const FizzroomTeaser = () => {
                             className="group block"
                         >
                             <Link to={`/fizzroom/${post.id}`}>
-                                <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6 border border-white/10 group-hover:border-gray-400/30 transition-colors">
-                                    <img
+                                <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6 border border-white/10 group-hover:border-gray-400/30 transition-colors bg-gray-900">
+                                    <ProgressiveImage
                                         src={post.image}
                                         alt={post.title}
-                                        loading="lazy"
-                                        decoding="async"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                                     />
                                 </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import bottle1 from "../assets/b.png.png";
+import ProgressiveImage from "./ProgressiveImage";
 
 const products = [
   {
@@ -47,11 +48,9 @@ const ProductDetails = () => {
 
                 <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
                   <div className="absolute inset-0 bg-black rounded-full scale-90" />
-                  <img
+                  <ProgressiveImage
                     src={prod.image}
                     alt="ZfO Premium Craft Soda in Glass Bottle - Authentic Masala Soda with Natural Ingredients"
-                    loading="lazy"
-                    decoding="async"
                     className="relative object-contain h-[120%] -rotate-12 hover:rotate-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   />
                 </div>
