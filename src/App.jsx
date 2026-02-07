@@ -4,12 +4,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BubbleCursor from "./components/BubbleCursor";
 
-// Lazy load lead generation components for code splitting
-const LeadCapture = lazy(() => import("./components/LeadCapture"));
-const SocialProof = lazy(() => import("./components/SocialProof"));
-const WhatsAppLead = lazy(() => import("./components/WhatsAppLead"));
-const ChatBot = lazy(() => import("./components/ChatBot"));
-
 // Lazy load page components
 const Home = lazy(() => import("./pages/Home"));
 const Fizzroom = lazy(() => import("./pages/Fizzroom"));
@@ -26,9 +20,9 @@ const App = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log("Build Version: v0.0.3 - PERFORMANCE_OPTIMIZED - TIMESTAMP: " + new Date().toISOString());
+    console.log("Build Version: v0.0.4 - CLEAN - TIMESTAMP: " + new Date().toISOString());
     window.scrollTo(0, 0);
-    
+
     // Track page view in analytics
     if (window.gtag) {
       window.gtag('config', 'GA_MEASUREMENT_ID', {
@@ -37,7 +31,7 @@ const App = () => {
         page_title: document.title
       });
     }
-    
+
     if (window.fbq) {
       window.fbq('track', 'PageView');
     }
@@ -47,20 +41,6 @@ const App = () => {
     <div className="bg-black text-white overflow-x-hidden">
       <Navbar />
       <BubbleCursor />
-      
-      {/* Lead Generation Infrastructure - Lazy Loaded */}
-      <Suspense fallback={null}>
-        <LeadCapture />
-        <SocialProof />
-      </Suspense>
-      
-      {/* Defer non-critical components */}
-      <Suspense fallback={null}>
-        <div style={{ contentVisibility: 'auto' }}>
-          <WhatsAppLead />
-          <ChatBot />
-        </div>
-      </Suspense>
 
       {/* Main Routes with Code Splitting */}
       <Suspense fallback={<PageLoader />}>
