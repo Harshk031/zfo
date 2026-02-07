@@ -42,9 +42,11 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
   background-position: center;
   background-size: cover;
+  background-color: #ffffff;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: white;
   text-transform: uppercase;
   text-align: center;
   -webkit-font-smoothing: antialiased;
