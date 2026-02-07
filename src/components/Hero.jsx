@@ -110,7 +110,7 @@ const Hero = () => {
         </span>
       </button>
 
-      <div className="relative z-20 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-center md:justify-between py-20 md:py-0">
+      <div className="relative z-20 min-h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between py-20 md:py-0 px-4 md:px-12">
 
         {/* TEXT BLOCK */}
         <motion.div
