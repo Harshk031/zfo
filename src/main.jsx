@@ -11,10 +11,12 @@ if ('serviceWorker' in navigator) {
   registerSW();
 }
 
-<ErrorBoundary>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-</ErrorBoundary>
-  </React.StrictMode >
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ErrorBoundary>
+  </React.StrictMode>
 );
