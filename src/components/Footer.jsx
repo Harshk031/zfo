@@ -18,45 +18,44 @@ const Footer = () => {
             <h2 className="text-3xl font-bold tracking-[0.2em] text-white mb-2">
               ZFO
             </h2>
-            <p className="text-white/50 text-sm tracking-wide uppercase">
-              Est. 2024 · No 🧢
-            </p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex gap-8">
-            {[
-              { icon: <FaInstagram />, href: "https://www.instagram.com/drinkzfo" },
-              { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/freshozz-beverages/" }
-            ].map((social, i) => (
-              <a
-                key={i}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl text-white/40 hover:text-gray-300 transition-colors duration-300"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
+            Est. 2024 · Founded by Harsh Katiyar
+          </p>
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-white/10 my-10" />
-
-        <div className="flex flex-col md:flex-row justify-between text-xs sm:text-sm text-white/30 tracking-widest uppercase gap-4">
-          <p>© {new Date().getFullYear()} ZfO Beverages.</p>
-
-          <div className="flex gap-6 items-center">
-            <a href="mailto:beverages@zfo.co.in" className="hover:text-white transition-colors">
-              Slide into DMs
+        {/* Social Links */}
+        <div className="flex gap-8">
+          {[
+            { icon: <FaInstagram />, href: "https://www.instagram.com/drinkzfo" },
+            { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/freshozz-beverages/" }
+          ].map((social, i) => (
+            <a
+              key={i}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl text-white/40 hover:text-gray-300 transition-colors duration-300"
+            >
+              {social.icon}
             </a>
-            <span className="text-white/50 text-lg">®</span>
-          </div>
+          ))}
         </div>
       </div>
-    </footer>
+
+      {/* Divider */}
+      <div className="w-full h-px bg-white/10 my-10" />
+
+      <div className="flex flex-col md:flex-row justify-between text-xs sm:text-sm text-white/30 tracking-widest uppercase gap-4">
+        <p>© {new Date().getFullYear()} ZfO Beverages.</p>
+
+        <div className="flex gap-6 items-center">
+          <a href="mailto:beverages@zfo.co.in" className="hover:text-white transition-colors">
+            Slide into DMs
+          </a>
+          <span className="text-white/50 text-lg">®</span>
+        </div>
+      </div>
+    </div>
+    </footer >
   );
 };
 
