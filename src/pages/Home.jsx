@@ -4,6 +4,7 @@ import LaunchTeaser from "../components/LaunchTeaser";
 import HeroScene from "../components/HeroScene";
 import ProductDetails from "../components/ProductDetails";
 import FizzroomTeaser from "../components/FizzroomTeaser";
+import SEOFeatures from "../components/SEOFeatures";
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Hero />
             <PromoSection />
             <ProductDetails />
+            <SEOFeatures />
             <FizzroomTeaser />
             <HeroScene />
             <LaunchTeaser />
