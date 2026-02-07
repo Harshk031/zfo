@@ -24,20 +24,21 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://connect.facebook.net" />
   <link rel="dns-prefetch" href="https://snap.licdn.com" />
-  
+
   <!-- Preconnect to Critical Origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="preconnect" href="https://www.google-analytics.com" />
-  
+
   <!-- Prefetch Critical Resources -->
   <link rel="prefetch" href="/logo.png" as="image" />
   <link rel="prefetch" href="/bottle3.png" as="image" />
-  
+
   <!-- Preload Critical Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
-  
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    as="style" />
+
   <!-- Resource hints for faster navigation -->
   <link rel="prefetch" href="/fizzroom" />
 
@@ -90,6 +91,14 @@
       "url": "https://www.zfo.co.in",
       "logo": "https://www.zfo.co.in/logo.png",
       "description": "Premium masala soda crafted in glass bottles with balanced fizz and refined flavors",
+      "founder": {
+        "@type": "Person",
+        "name": "Harsh Katiyar",
+        "jobTitle": "Founder & CEO",
+        "sameAs": [
+          "https://www.linkedin.com/in/harsh-katiyar"
+        ]
+      },
       "sameAs": [
         "https://www.instagram.com/drinkzfo",
         "https://www.linkedin.com/company/freshozz-beverages/"
@@ -182,6 +191,27 @@
           }
         }
       ]
+    }
+    </script>
+
+  <!-- Structured Data - Person (Founder) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Harsh Katiyar",
+      "jobTitle": "Founder & CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ZfO - Freshozz Beverages",
+        "url": "https://www.zfo.co.in"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/harsh-katiyar",
+        "https://www.instagram.com/drinkzfo"
+      ],
+      "description": "Founder of ZfO, India's premium craft soda brand. Creating authentic masala soda in glass bottles with honest flavors and zero artificial ingredients.",
+      "knowsAbout": ["Craft Beverages", "Soda Manufacturing", "Indian Beverages", "Premium Drinks", "Entrepreneurship"]
     }
     </script>
 </head>
