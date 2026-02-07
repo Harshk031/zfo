@@ -28,7 +28,7 @@ const Hero = () => {
         } catch (err) {
           if (videoRef.current) {
             videoRef.current.muted = true;
-            videoRef.current.play().catch(() => {});
+            videoRef.current.play().catch(() => { });
           }
           setIsMuted(true);
         }
@@ -82,7 +82,7 @@ const Hero = () => {
       >
         {/* Glow effect */}
         <div className={`absolute inset-0 rounded-full blur-md transition-all duration-500 ${isMuted ? 'bg-gray-500/30' : 'bg-white/20'}`} />
-        
+
         {/* Button container */}
         <div className="relative w-11 h-11 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-lg shadow-black/20 group-hover:border-white/40 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300">
           {/* Icon */}
@@ -92,7 +92,7 @@ const Hero = () => {
             ) : (
               <FaVolumeUp className="text-white text-base transition-colors" />
             )}
-            
+
             {/* Sound wave animation when unmuted */}
             {!isMuted && (
               <div className="absolute -right-1 top-1/2 -translate-y-1/2 flex gap-0.5">
@@ -103,7 +103,7 @@ const Hero = () => {
             )}
           </div>
         </div>
-        
+
         {/* Tooltip */}
         <span className="absolute top-full mt-2 right-0 text-[10px] text-white/50 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           {isMuted ? 'Unmute' : 'Mute'}
@@ -126,7 +126,7 @@ const Hero = () => {
           </p>
 
           {/* Hero emotion line - Lagunitas Style with Texture */}
-          <h1 className="headline-xl text-distressed drop-shadow-2xl break-words" style={{backgroundColor: '#fafafa'}}>
+          <h1 className="headline-xl text-distressed drop-shadow-2xl break-words text-white">
             {heroLines[index]}
           </h1>
 
