@@ -64,7 +64,7 @@ const Hero = () => {
         muted={isMuted}
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover md:object-contain"
       >
         <source src="/polar-bear.mp4" type="video/mp4" />
