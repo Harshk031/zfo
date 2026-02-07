@@ -11,16 +11,10 @@ if ('serviceWorker' in navigator) {
   registerSW();
 }
 
-import { HelmetProvider } from 'react-helmet-async';
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <HelmetProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </HelmetProvider>
-    </ErrorBoundary>
-  </React.StrictMode>
+<ErrorBoundary>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+</ErrorBoundary>
+  </React.StrictMode >
 );
