@@ -1,45 +1,28 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),
-    // Bundle analyzer (only in analyze mode)
-    process.env.ANALYZE === 'true' && visualizer({
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    })
+    tailwindcss()
   ],
   base: './',
-  
+
   // Build optimizations
   build: {
-    // Enable minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug'],
-      },
-    },
-    
+    // Enable minification with esbuild (faster and more reliable)
+    minify: 'esbuild',
+
     // Code splitting
     rollupOptions: {
       output: {
-        // Manual chunks for better caching
         manualChunks: {
           // React core
           'vendor': ['react', 'react-dom', 'react-router-dom'],
           // Animation libraries
-          'animation': ['framer-motion'],
-          // Icons
-          'icons': ['lucide-react'],
+          'animation': ['framer-motion']
         },
         // Chunk file naming with content hash
         chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -60,21 +43,21 @@ export default defineConfig({
         },
       },
     },
-    
+
     // Target modern browsers for smaller bundles
     target: 'es2020',
-    
+
     // Optimize chunks
     chunkSizeWarningLimit: 500,
-    
+
     // CSS optimization
     cssCodeSplit: true,
     cssMinify: true,
-    
+
     // Source maps for production debugging (optional)
     sourcemap: false,
   },
-  
+
   // Development optimizations
   server: {
     // Enable compression
@@ -82,25 +65,24 @@ export default defineConfig({
     // Optimize deps
     preTransformRequests: true,
   },
-  
+
   // Optimize dependencies
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
       'react-router-dom',
-      'framer-motion',
-      'lucide-react',
+      'framer-motion'
     ],
     exclude: [],
   },
-  
+
   // Performance features
   esbuild: {
     // Drop console in production
     drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
   },
-  
+
   // CSS optimization
   css: {
     devSourcemap: true,
