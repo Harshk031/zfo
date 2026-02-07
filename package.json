@@ -36,6 +36,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "rollup-plugin-visualizer": "^6.0.5",
-    "@rollup/rollup-linux-x64-gnu": "^4.34.6"
+    "@rollup/rollup-linux-x64-gnu": "^4.34.6",
+    "lightningcss-linux-x64-gnu": "^1.28.2"
   }
 }
