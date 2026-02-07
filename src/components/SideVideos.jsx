@@ -16,12 +16,13 @@ const SideVideos = ({ scrollYProgress }) => {
       >
         <video
           src={video1}
-          className="w-72 h-96 rounded-xl object-cover"
+          className="w-72 h-96 rounded-xl object-cover transition-opacity duration-700 opacity-0"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          onCanPlay={(e) => e.currentTarget.style.opacity = 1}
         >
           <source src={video1} type="video/mp4" />
         </video>
@@ -34,12 +35,13 @@ const SideVideos = ({ scrollYProgress }) => {
       >
         <video
           src={video4}
-          className="w-72 h-96 rounded-xl object-cover"
+          className="w-72 h-96 rounded-xl object-cover transition-opacity duration-700 opacity-0"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          onCanPlay={(e) => e.currentTarget.style.opacity = 1}
         >
           <source src={video4} type="video/mp4" />
         </video>

@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { fizzPosts } from "../data/fizzroomData";
 import { motion } from "framer-motion";
 import { FaArrowLeft } from "react-icons/fa";
+import ProgressiveImage from "../components/ProgressiveImage";
 
 const FizzroomPost = () => {
     const { id } = useParams();
@@ -24,7 +25,7 @@ const FizzroomPost = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="inline-block px-4 py-1 bg-[#c41e3a] text-white font-bold tracking-[0.3em] uppercase mb-6 text-xs rounded-full">{post.category}</span>
-                    <h1 className="headline-xl text-distressed mb-6" style={{backgroundColor: '#fafafa'}}>
+                    <h1 className="headline-xl text-distressed mb-6" style={{ backgroundColor: '#fafafa' }}>
                         {post.title}
                     </h1>
 
@@ -41,7 +42,11 @@ const FizzroomPost = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="w-full aspect-video rounded-xl overflow-hidden mb-12 border border-white/10"
                 >
-                    <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                    <ProgressiveImage
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                    />
                 </motion.div>
 
                 <motion.div

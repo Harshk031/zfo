@@ -1,5 +1,6 @@
 import { motion, useTransform } from "framer-motion";
 import bottle from "../assets/bottle.png";
+import ProgressiveImage from "./ProgressiveImage";
 
 const Bottle = ({ scrollYProgress }) => {
   // ENHANCED 360-DEGREE ROTATION - FULL CIRCLE COMPLETION
@@ -11,10 +12,10 @@ const Bottle = ({ scrollYProgress }) => {
       style={{ rotate, scale }}
       className="flex items-center justify-center w-full h-full pointer-events-none"
     >
-      <img
+      <ProgressiveImage
         src={bottle}
         alt="ZfO Masala Soda Bottle - PREMIUM 360 ROTATION - Premium Glass Bottle Craft Beverage"
-        decoding="async"
+        bgColor="bg-transparent"
         className="h-[70vh] object-contain z-20 mx-auto"
       />
     </motion.div>

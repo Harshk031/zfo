@@ -65,7 +65,10 @@ const Hero = () => {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover"
+        onCanPlay={() => {
+          if (videoRef.current) videoRef.current.style.opacity = 1;
+        }}
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
       >
         <source src="/polar-bear.mp4" type="video/mp4" />
         Your browser does not support the video tag.
