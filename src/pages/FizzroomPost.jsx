@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { FaArrowLeft } from "react-icons/fa";
 import ProgressiveImage from "../components/ProgressiveImage";
 
+import SEO from "../components/SEO";
+
 const FizzroomPost = () => {
     const { id } = useParams();
     const post = fizzPosts.find((p) => p.id === parseInt(id));
@@ -12,8 +14,30 @@ const FizzroomPost = () => {
         return <div className="text-white text-center pt-40">Fizz not found.</div>;
     }
 
+    // Article Schema
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "image": post.image,
+        "datePublished": "2024-01-01", // Placeholder, ideally from post data
+        "author": {
+            "@type": "Organization",
+            "name": "ZfO Team"
+        },
+        "description": post.excerpt
+    };
+
     return (
         <article className="min-h-screen bg-black text-white pt-32 pb-20">
+            <SEO
+                title={post.title}
+                description={post.excerpt}
+                image={post.image}
+                url={`/fizzroom/${post.id}`}
+                type="article"
+                schema={articleSchema}
+            />
             <div className="max-w-4xl mx-auto px-6">
                 <Link to="/fizzroom" className="inline-flex items-center text-white/50 hover:text-white transition-colors mb-8 uppercase text-sm tracking-widest">
                     <FaArrowLeft className="mr-2" /> ← EXIT ARTICLE

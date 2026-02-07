@@ -23,11 +23,11 @@ const PromoSection = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} // smooth easeOutQuint-ish
-        className="relative z-10 text-5xl sm:text-7xl md:text-9xl font-black text-black tracking-tighter leading-[0.9] uppercase"
+        className="relative z-10 text-6xl sm:text-8xl md:text-[10rem] font-black text-black tracking-[-0.05em] leading-[0.85] uppercase"
       >
         SODA <br />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-black">
-          UNLEARNED
+          UNFILTERED
         </span>
       </motion.h2>
 
@@ -39,9 +39,8 @@ const PromoSection = () => {
         className="relative z-10 mt-12 md:mt-16 flex flex-col items-center"
       >
         <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 max-w-4xl px-4 leading-tight tracking-tight">
-          "They mass-produced <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-black">mediocrity.</span><br className="hidden md:block" />
-          We brewed rebellion."
+          "They gave you <span className="text-gray-400 line-through decoration-2 decoration-red-500 decoration-wavy">NPC energy</span>. <br className="hidden md:block" />
+          We gave you <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 font-black italic">MAIN CHARACTER ENERGY</span>."
         </p>
 
         {/* Separator */}
@@ -49,8 +48,8 @@ const PromoSection = () => {
 
         {/* Description */}
         <p className="text-sm sm:text-base md:text-lg font-black text-gray-800 max-w-lg px-6 leading-relaxed uppercase tracking-widest">
-          No plastic. No sugar bombs. <br className="hidden md:block" />
-          Just real masala in real glass.
+          No plastic. No chemical icks. <br className="hidden md:block" />
+          Just immaculate vibes in glass.
         </p>
       </motion.div>
     </section>

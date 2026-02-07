@@ -19,7 +19,7 @@ const Footer = () => {
               ZFO
             </h2>
             <p className="text-white/50 text-sm tracking-wide uppercase">
-              The Art of Fizz · Est. 2024
+              Est. 2024 · No 🧢
             </p>
           </div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
 
           <div className="flex gap-6 items-center">
             <a href="mailto:beverages@zfo.co.in" className="hover:text-white transition-colors">
-              Contact
+              Slide into DMs
             </a>
             <span className="text-white/50 text-lg">®</span>
           </div>

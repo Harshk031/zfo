@@ -125,7 +125,7 @@ const Hero = () => {
         >
           {/* Brand identity */}
           <p className="subtitle-script text-[#c41e3a] mb-3 md:mb-2 uppercase tracking-widest text-xs sm:text-sm font-bold">
-            UNAPOLOGETICALLY BOLD.
+            GATEKEEPING FLAVOR.
           </p>
 
           {/* Hero emotion line - Lagunitas Style with Texture */}
@@ -134,9 +134,10 @@ const Hero = () => {
           </h1>
 
           {/* SUB-TEXT / DESCRIPTION */}
-          <p className="mt-4 md:mt-6 text-[#a0a0a0] text-base sm:text-lg md:text-xl font-light max-w-sm mx-auto md:mx-0 leading-relaxed">
-            Masala craft soda. <br className="hidden md:block" />
-            Zero fake. All bite.
+          {/* SUB-TEXT / DESCRIPTION - Adjusted for readability with new fonts */}
+          <p className="mt-6 md:mt-8 text-[#a0a0a0] text-lg sm:text-xl md:text-2xl font-light max-w-md mx-auto md:mx-0 leading-relaxed tracking-wide">
+            Masala soda that <span className="text-white font-bold italic">actually</span> <span className="text-[#ffcc00] font-black">SLAPS</span>. <br className="hidden md:block" />
+            No <span className="text-red-500 font-bold line-through decoration-2 decoration-red-500">NPCs</span> allowed.
           </p>
         </motion.div>
 

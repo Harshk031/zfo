@@ -5,22 +5,22 @@ import { useInView } from "framer-motion";
 const features = [
     {
         title: "Premium Glass Bottles",
-        description: "Taste purity in every sip. Glass preserves the authentic flavor, keeps it colder, and is 100% recyclable. Zero plastic, zero leaching—just premium craft soda.",
+        description: "Taste purity in every sip. Glass preserves the <span className='font-bold text-white'>authentic flavor</span>. <span className='text-red-400 font-bold'>Plastic is a 🚩</span>. Zero leaching, just premium craft soda.",
         keywords: ["glass bottles", "premium soda", "craft beverages", "recyclable packaging"]
     },
     {
         title: "Authentic Masala Flavors",
-        description: "Real spices, real taste. No fake flavors or artificial nasties. We reimagined traditional masala soda with balanced fizz and honest ingredients that respect the heritage.",
+        description: "Real spices, real taste. No fake flavors or artificial nasties. We reimagined traditional masala soda with balanced fizz and honest ingredients. <span className='text-yellow-400 font-bold'>It hits different.</span>",
         keywords: ["masala soda", "Indian soda", "authentic flavors", "natural ingredients"]
     },
     {
         title: "Craft Soda Excellence",
-        description: "Soda treated as culinary art. Controlled carbonation, layered spice profiles, and artisanal quality. A craft beverage that stands tall against the world's best.",
+        description: "Soda treated as culinary art. Controlled carbonation, layered spice profiles, and artisanal quality. <span className='font-bold italic'>Main character energy</span> in a bottle.",
         keywords: ["craft soda", "premium beverages", "artisanal soda", "Indian craft drinks"]
     },
     {
         title: "Perfect for Every Occasion",
-        description: "From street food to sophisticated dinners. ZfO elevates the moment. Whether it's spicy chaat or a house party, it's the ultimate refreshment.",
+        description: "From street food to sophisticated dinners. ZfO elevates the moment. Whether it's spicy chaat or a house party, it's the <span className='font-bold text-green-400'>green flag</span> you need.",
         keywords: ["beverage pairing", "refreshing drinks", "premium soft drinks", "glass bottle soda"]
     }
 ];
@@ -43,7 +43,7 @@ const SEOFeatures = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16 md:mb-24"
                 >
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-white mb-8 leading-[0.9] tracking-tight">
                         Why Choose ZfO Premium <br className="hidden md:block" />
                         <span className="text-[#ffcc00]">Craft Soda in Glass Bottles</span>
                     </h2>
@@ -65,9 +65,10 @@ const SEOFeatures = () => {
                             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                                 {feature.title}
                             </h3>
-                            <p className="text-white/70 leading-relaxed mb-6">
-                                {feature.description}
-                            </p>
+                            <p
+                                className="text-white/70 leading-relaxed mb-6"
+                                dangerouslySetInnerHTML={{ __html: feature.description }}
+                            />
                             {/* SEO Keywords (hidden but crawlable) */}
                             <div className="sr-only" aria-hidden="true">
                                 {feature.keywords.join(", ")}

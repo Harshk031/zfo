@@ -15,12 +15,12 @@ const FizzroomTeaser = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16">
                     <div>
-                        <h2 className="text-sm font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
+                        <h3 className="text-sm font-bold tracking-[0.2em] text-gray-400 mb-4 uppercase">
                             Reality Check.
-                        </h2>
-                        <h3 className="text-4xl md:text-6xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40">
-                            THE FIZZROOM.
                         </h3>
+                        <h2 className="text-4xl md:text-6xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40">
+                            THE FIZZROOM.
+                        </h2>
                     </div>
 
                     <Link to="/fizzroom" className="hidden md:flex items-center space-x-2 text-white/60 hover:text-gray-300 transition-colors uppercase text-xs tracking-widest border border-white/20 px-6 py-3 rounded-full hover:border-gray-400/50">

@@ -4,11 +4,11 @@ import ProgressiveImage from "./ProgressiveImage";
 
 const products = [
   {
-    name: "REAL TALK.",
-    tagline: "The philosophy behind the fizz",
+    name: "NO CAP.",
+    tagline: "The Lore Behind the Fizz",
     headings: ["Reclaiming the soul of soda"],
     description:
-      "Soda was never meant to be a sugar bomb in plastic bottles. It began as a ritual — glass bottles, crown caps, sharp fizz, citrus brightness, and spice warmth. Over time, mass production replaced character. ZfO was born from a simple belief: soda can feel honest again. Crafted thoughtfully, balanced carefully, and designed for people who care about what they drink.",
+      "Soda was never meant to be a <span className='font-bold text-red-500'>sugar bomb</span> in plastic. It began as a ritual — glass bottles, crown caps, and immaculate vibes. Mass production gave us the ick. ZfO is the <span className='font-bold text-black'>clapback</span>. Crafted thoughtfully, balanced carefully, for people who pass the vibe check.",
     image: bottle1,
   },
   {
@@ -16,7 +16,7 @@ const products = [
     tagline: "Where craft meets restraint",
     headings: ["Soda treated like a culinary product"],
     description:
-      "ZfO treats soda as a craft — not a commodity. From controlled carbonation and layered spice profiles to clean sweetness and aroma release, every element is engineered for sensory satisfaction. This is fizz with depth, not noise. Refreshment that respects flavor, experience, and balance.",
+      "ZfO treats soda as high art, not content. From controlled carbonation to layered spice profiles, every element is engineered for <span className='font-bold italic'>sensory satisfaction</span>. This is fizz with depth, not noise. It's giving <span className='font-black'>luxury</span>.",
     image: bottle1,
   },
   {
@@ -24,7 +24,7 @@ const products = [
     tagline: "India’s classic, refined",
     headings: ["A modern expression of a street icon"],
     description:
-      "Our first expression redefines masala soda for modern taste. Crisp citrus acidity, subtle spice warmth, smooth carbonation, and a clean finish — no syrupy heaviness, no artificial punch. Built for street food pairings, café culture, summer heat, and slow sipping alike.",
+      "Our first drop redefines masala soda for modern taste. Crisp citrus acidity, subtle spice warmth, and a clean finish — no syrupy heaviness, no artificial punch. It hits different at street food spots, cafés, or just <span className='font-bold text-yellow-600'>doomscrolling</span> at home.",
     image: bottle1,
   },
 ];
@@ -33,6 +33,7 @@ const ProductDetails = () => {
   return (
     <section id="productdetails" className="bg-[#f5f5f0] py-20 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <h2 className="sr-only">Our Premium Soda Collection</h2>
         {products.map((prod, index) => {
           const isEven = index % 2 === 0;
           return (
@@ -62,7 +63,7 @@ const ProductDetails = () => {
                   0{index + 1}
                 </span>
 
-                <h3 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 text-black leading-none tracking-tight">
+                <h3 className="text-5xl sm:text-6xl md:text-7xl font-black mb-6 text-black leading-[0.9] tracking-tighter">
                   {prod.name}
                 </h3>
 
@@ -79,9 +80,10 @@ const ProductDetails = () => {
                   </h4>
                 ))}
 
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-md mx-auto md:mx-0">
-                  {prod.description}
-                </p>
+                <p
+                  className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-md mx-auto md:mx-0"
+                  dangerouslySetInnerHTML={{ __html: prod.description }}
+                />
               </div>
             </div>
           );

@@ -37,7 +37,7 @@ const LaunchTeaser = () => {
         whileTap={{ scale: 0.95 }}
         className="px-10 py-5 rounded-full bg-gray-200 text-black font-black tracking-widest uppercase text-lg hover:bg-white transition-colors duration-300 relative z-10 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
       >
-        DROP ME A HINT →
+        SPILL THE TEA →
       </motion.button>
 
       {bubbles.map((b) => (

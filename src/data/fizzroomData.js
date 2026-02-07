@@ -1,8 +1,8 @@
 export const fizzPosts = [
     {
         id: 5,
-        title: "The Soda Industry Lied: 90% Sugar and Chemicals Exposed",
-        excerpt: "Discover the shocking truth about mass-market soda. What's really in your can? Lab-created flavors, liquid sugar, and chemicals. Learn why craft soda in glass bottles is the only honest choice.",
+        title: "We Checked The Receipt: Your Soda Is Lying To You",
+        excerpt: "Bestie, that 'natural flavor' is a whole lie. We're exposing the 90% sugar scam and serving the tea on why glass bottles are the only green flag.",
         date: "Jan 26, 2026",
         category: "TRUTH BOMB",
         image: "/truth-bomb-thumbnail.jpg",
@@ -94,8 +94,8 @@ Craft soda in glass bottles isn't just a trend—it's a return to what soda shou
     },
     {
         id: 1,
-        title: "Dehydration and Dating: How Hydration Affects Your Attractiveness",
-        excerpt: "Dry skin, brain fog, low energy - dehydration is sabotaging your dating life. Discover the science-backed connection between hydration and attraction, plus how ZfO makes hydration enjoyable.",
+        title: "Why You're Being Left On Read (It's Dehydration, Bestie)",
+        excerpt: "Dry skin and zero energy? That's not a vibe. We're breaking down why hydration is the secret to your glow up and why soda water is the ultimate wingman.",
         date: "Jan 25, 2026",
         category: "REAL TALK",
         image: "/article-1-thumbnail.jpg",
@@ -239,8 +239,8 @@ Your crush isn't texting back because your skin is dull, your energy is low, or 
     },
     {
         id: 2,
-        title: "The Complete History of Masala Soda: India's Original Craft Beverage",
-        excerpt: "From British colonial pharmacies to Mumbai street corners, discover the fascinating 150-year journey of masala soda. Learn how this iconic Indian beverage is making a comeback in premium glass bottles.",
+        title: "Masala Soda Lore: The Original Craft Beverage",
+        excerpt: "Before your fav influencer discovered 'craft beverages', Indian street vendors were already serving the GOAT. 150 years of flavor history that slaps harder than your morning coffee.",
         date: "Jan 24, 2026",
         category: "CULTURE",
         image: "/article-2-thumbnail.png",
@@ -460,8 +460,8 @@ Masala soda isn't just a drink—it's 150 years of Indian history, culture, and 
     },
     {
         id: 3,
-        title: "Why Glass Bottles Are the Only Sustainable Choice for Beverages",
-        excerpt: "Plastic bottles contain microplastics that end up in your body. Learn why glass bottles are superior for taste, health, and the environment. Discover the science behind sustainable beverage packaging.",
+        title: "Glass Bottles: The Main Character of Sustainability",
+        excerpt: "Plastic bottles are giving toxic ex energy. We're explaining why glass is the only valid choice for your drink (and the planet). No microplastics, just immaculate vibes.",
         date: "Jan 23, 2026",
         category: "CLIMATE",
         image: "/article-3-thumbnail.png",
@@ -691,8 +691,8 @@ At ZfO, we've made our choice. We hope you'll join us.
     },
     {
         id: 4,
-        title: "The ZfO Manifesto: Why We Chose Craft Over Corporate",
-        excerpt: "We could have made another generic cola. Instead, we're disrupting the $400 billion soda industry with honest ingredients, glass bottles, and zero compromises. This is our story.",
+        title: "The ZfO Manifesto: Choosing Chaos Over Corporate",
+        excerpt: "We could've made generic cola. Instead, we chose violence against the $400B soda industry. Honest ingredients, glass bottles, and zero compromises. Welcome to the rebellion.",
         date: "Jan 22, 2026",
         category: "MANIFESTO",
         image: "/article-4-thumbnail.png",

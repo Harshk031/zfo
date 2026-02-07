@@ -32,6 +32,8 @@ const ProgressiveImage = ({ src, alt, className, ...props }) => {
                     alt={alt}
                     className={`w-full h-full object-cover ${className}`}
                     {...props}
+                    loading="lazy"
+                    decoding="async"
                 />
             )}
         </div>

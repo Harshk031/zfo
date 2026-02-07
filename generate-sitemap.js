@@ -7,11 +7,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITEMAP_PATH = path.join(__dirname, 'public', 'sitemap.xml');
 const DOMAIN = 'https://www.zfo.co.in';
 
+import { fizzPosts } from './src/data/fizzroomData.js';
+
 const pages = [
     '/',
     '/fizzroom',
-    // Individual posts can be dynamically added here in a real app, 
-    // for now we just add the main blog listing.
+    ...fizzPosts.map(post => `/fizzroom/${post.id}`)
 ];
 
 const generateSitemap = () => {

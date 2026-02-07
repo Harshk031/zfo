@@ -1,35 +1,22 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
-/* RUKOLA FONT - Premium Editorial */
-@font-face {
-  font-family: 'Rukola';
-  src: url('https://fonts.cdnfonts.com/s/29946/Rukola.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* DRUK HEAVY STYLE FONT */
-@font-face {
-  font-family: 'Druk Heavy';
-  src: url('https://fonts.cdnfonts.com/s/15388/Druk-Heavy.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* RUKOLA TYPOGRAPHY - All Headings */
+/* RUKOLA TYPOGRAPHY - Kept for specific branding but primary headers now Syne */
 .font-display {
-  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Syne', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
 }
 
-/* ALL HEADINGS USE RUKOLA */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
-  letter-spacing: 2px;
+/* ALL HEADINGS USE SYNE - Art Gallery Vibe */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -1px;
 }
 
 .font-script {
@@ -38,7 +25,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* DISTRESSED TEXT EFFECT WITH TEXTURE */
 .text-distressed {
-  font-family: 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
   background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
   background-position: center;
   background-size: cover;
@@ -53,7 +41,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-distressed-red {
-  font-family: 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
   background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
   background-position: center;
   background-size: cover;
@@ -65,35 +54,36 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
 }
 
-/* HEADLINE STYLES - RUKOLA */
+/* HEADLINE STYLES - SYNE */
 .headline-xl {
-  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(3rem, 9vw, 8rem);
   line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 400;
+  letter-spacing: -2px;
+  font-weight: 800;
 }
 
 .headline-lg {
-  font-family: 'Rukola', 'Druk Heavy', 'Oswald', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(2rem, 6vw, 5rem);
   line-height: 0.95;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 400;
+  letter-spacing: -1px;
+  font-weight: 700;
 }
 
 /* SUBTITLE STYLES */
 .subtitle-script {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  font-weight: 400;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
 /* GLOBAL FONT RESET */
 * {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 /* FAST BUBBLE FLOAT */

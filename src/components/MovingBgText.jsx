@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const statements = ["CRACK THE FIZZ", "DRINK THE CHAOS", "GEN-Z ENERGY"];
+const statements = ["NO CAP", "MAIN CHARACTER ENERGY", "GATEKEEPING FLAVOR", "RED FLAG: PLASTIC"];
 
 const MovingBgText = () => {
   return (
