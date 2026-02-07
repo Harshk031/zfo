@@ -23,22 +23,7 @@ const ChatBot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Initial welcome message
-  useEffect(() => {
-    if (isOpen && messages.length === 0) {
-      addBotMessage({
-        text: "Hi there! 👋 I'm ZfO Assistant. I can help you find the perfect soda or answer any questions. What brings you here today?",
-        options: [
-          { label: "Buy for Home", value: "home", icon: "🏠" },
-          { label: "Bulk/Corporate Order", value: "bulk", icon: "🏢" },
-          { label: "Become a Distributor", value: "distributor", icon: "🚚" },
-          { label: "Stock in My Store", value: "retail", icon: "🏪" },
-          { label: "Just Browsing", value: "browse", icon: "👀" }
-        ]
-      });
-    }
-  }, [isOpen]);
-
+  // Message handlers
   const addBotMessage = (message) => {
     setIsTyping(true);
     setTimeout(() => {
@@ -50,6 +35,27 @@ const ChatBot = () => {
   const addUserMessage = (text) => {
     setMessages(prev => [...prev, { type: 'user', text, timestamp: new Date() }]);
   };
+
+  // Initial welcome message - using ref to track if message was sent
+  const hasSentWelcomeRef = useRef(false);
+
+  useEffect(() => {
+    if (isOpen && messages.length === 0 && !hasSentWelcomeRef.current) {
+      hasSentWelcomeRef.current = true;
+      setTimeout(() => {
+        addBotMessage({
+          text: "Hi there! 👋 I'm ZfO Assistant. I can help you find the perfect soda or answer any questions. What brings you here today?",
+          options: [
+            { label: "Buy for Home", value: "home", icon: "🏠" },
+            { label: "Bulk/Corporate Order", value: "bulk", icon: "🏢" },
+            { label: "Become a Distributor", value: "distributor", icon: "🚚" },
+            { label: "Stock in My Store", value: "retail", icon: "🏪" },
+            { label: "Just Browsing", value: "browse", icon: "👀" }
+          ]
+        });
+      }, 100);
+    }
+  }, [isOpen, messages.length]);
 
   // Qualification Flow Logic
   const handleQualification = (value, text) => {

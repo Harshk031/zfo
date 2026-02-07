@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vite SSG temp files
+.vite-ssg-temp
+
+# Environment variables
+.env*
+!.env.example
+
+# Cache directories
+.cache
+.parcel-cache
+
+# Temporary files
+*.tmp
+*.temp

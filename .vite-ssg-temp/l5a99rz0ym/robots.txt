@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://www.zfo.co.in/sitemap.xml
-
-# Disallow admin or test pages (if any in future)
-# User-agent: *
-# Disallow: /admin/
