@@ -38,7 +38,7 @@ const App = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-black text-white overflow-x-hidden">
+    <div className="bg-black text-white w-full min-h-screen">
       <Navbar />
       <BubbleCursor />
 
