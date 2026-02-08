@@ -52,6 +52,7 @@ const ProductDetails = () => {
                     src={prod.image}
                     alt="ZfO Premium Craft Soda in Glass Bottle - Authentic Masala Soda with Natural Ingredients"
                     className="relative object-contain h-[120%] -rotate-12 hover:rotate-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    style={{ mixBlendMode: 'multiply' }}
                   />
                 </div>
               </div>
