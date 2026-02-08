@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.zfo.co.in/</loc>
     <lastmod>2026-02-08</lastmod>
@@ -10,6 +11,14 @@
       <image:loc>https://www.zfo.co.in/logo.png</image:loc>
       <image:title>ZfO Logo</image:title>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.zfo.co.in/polar-bear-poster.jpg</video:thumbnail_loc>
+      <video:title>ZfO Launch - Polar Bear</video:title>
+      <video:description>Introducing ZfO Premium Masala Soda with real spices. A refreshing take on authentic Indian flavors.</video:description>
+      <video:player_loc>https://www.zfo.co.in/polar-bear.mp4</video:player_loc>
+      <video:duration>8</video:duration>
+      <video:live>no</video:live>
+    </video:video>
   </url>
   <url>
     <loc>https://www.zfo.co.in/fizzroom</loc>
