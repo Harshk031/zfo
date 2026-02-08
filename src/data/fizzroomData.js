@@ -56,7 +56,7 @@ Your taste buds aren't the problem. Industrial food engineering is. Once you res
         excerpt: "Dry skin, zero energy, and that tired look? We investigated the connection between dehydration and dating success. The science is... concerning.",
         date: "Jan 25, 2026",
         category: "THE STUDY",
-        image: "/article-5-thumbnail.jpg",
+        image: "/article-5-thumbnail.webp",
         metaDescription: "The science of how dehydration affects your appearance, energy, and confidence. Learn why proper hydration might be the dating advantage you're missing.",
         keywords: "dehydration effects, hydration and appearance, energy and confidence, skin hydration, dating and health, natural hydration drinks",
         content: `## The Research Nobody Asked For (But Needed)
