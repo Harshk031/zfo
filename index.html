@@ -144,11 +144,34 @@
       "material": "Glass",
       "offers": {
         "@type": "Offer",
-        "availability": "https://schema.org/PreOrder",
+        "url": "https://www.zfo.co.in",
         "priceCurrency": "INR",
+        "price": "40.00",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/PreOrder",
         "seller": {
           "@type": "Organization",
           "name": "ZfO"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "INR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IN"
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": "7",
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
         }
       },
       "aggregateRating": {
