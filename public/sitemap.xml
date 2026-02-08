@@ -22,16 +22,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.zfo.co.in/fizzroom/5</loc>
-    <lastmod>2026-02-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.zfo.co.in/logo.png</image:loc>
-      <image:title>ZfO Logo</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.zfo.co.in/fizzroom/1</loc>
     <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -63,6 +53,16 @@
   </url>
   <url>
     <loc>https://www.zfo.co.in/fizzroom/4</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.zfo.co.in/logo.png</image:loc>
+      <image:title>ZfO Logo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.zfo.co.in/fizzroom/5</loc>
     <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
