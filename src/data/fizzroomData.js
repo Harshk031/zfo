@@ -51,7 +51,7 @@ Ready to taste your drink again? [Try ZfO with real spices](/)`
         title: "Why Your Crush Isn't Texting Back (The Hydration Hypothesis)",
         excerpt: "Dry skin, zero energy, and that tired look? We investigated the connection between dehydration and dating success. The science is... concerning.",
         date: "Jan 25, 2026",
-        category: "THE STUDY",
+        category: "THE CONSPIRACY",
         image: "/article-5-thumbnail.webp",
         metaDescription: "The science of how dehydration affects your appearance, energy, and confidence. Learn why proper hydration might be the dating advantage you're missing.",
         keywords: "dehydration effects, hydration and appearance, energy and confidence, skin hydration, dating and health, natural hydration drinks",
