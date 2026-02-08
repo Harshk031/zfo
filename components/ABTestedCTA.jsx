@@ -46,7 +46,7 @@ const CTA_VARIANTS = {
     subheadline: '4.8★ Rating from 1,000+ Reviews',
     ctaText: 'Start Your Order',
     icon: <Fire className="w-5 h-5" />,
-    color: 'from-yellow-500 to-orange-600',
+    color: 'from-gray-400 to-orange-600',
     badge: '⭐ Rated 4.8/5',
     urgencyMessage: '23 people ordered today'
   }

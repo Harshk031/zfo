@@ -23,7 +23,7 @@ export default function AboutPage() {
                 {/* Story */}
                 <div className="prose prose-invert prose-lg max-w-none space-y-8">
                     <section>
-                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-yellow-400 pl-4">The Problem</h2>
+                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-gray-300 pl-4">The Problem</h2>
                         <p className="text-gray-400 leading-relaxed">
                             Soda was never meant to be a sugar bomb in plastic. It began as a ritual — glass bottles, crown caps, and immaculate vibes. Mass production gave us the ick. Chemical-laden, plastic-wrapped, soul-less drinks that treat your body like a trash can.
                         </p>
@@ -33,7 +33,7 @@ export default function AboutPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-yellow-400 pl-4">The Vision</h2>
+                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-gray-300 pl-4">The Vision</h2>
                         <p className="text-gray-400 leading-relaxed">
                             ZfO isn't just another beverage brand. It's a rebellion against the $400B soda industry that prioritizes profit over people. We treat soda as <span className="text-white italic">culinary art</span> — controlled carbonation, layered spice profiles, and artisanal quality in every bottle.
                         </p>
@@ -43,10 +43,10 @@ export default function AboutPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-yellow-400 pl-4">The Founder</h2>
+                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-gray-300 pl-4">The Founder</h2>
                         <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                             <h3 className="text-2xl font-bold mb-2">Harsh Katiyar</h3>
-                            <p className="text-yellow-400 uppercase text-sm tracking-widest mb-4">Founder & CEO</p>
+                            <p className="text-gray-300 uppercase text-sm tracking-widest mb-4">Founder & CEO</p>
                             <p className="text-gray-400 leading-relaxed">
                                 Harsh founded ZfO in 2024 with a simple mission: create the soda he wished existed. Frustrated by synthetic flavors and plastic waste, he spent months perfecting the recipe — testing carbonation levels, sourcing authentic spices, and selecting the perfect glass bottle.
                             </p>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                                 href="https://www.linkedin.com/in/harsh-k-13a5a1340"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block mt-4 text-yellow-400 hover:text-yellow-300 transition"
+                                className="inline-block mt-4 text-gray-300 hover:text-gray-200 transition"
                             >
                                 Connect on LinkedIn →
                             </a>
@@ -65,31 +65,31 @@ export default function AboutPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-yellow-400 pl-4">Our Values</h2>
+                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-gray-300 pl-4">Our Values</h2>
                         <ul className="space-y-4">
                             <li className="flex items-start space-x-4">
-                                <span className="text-yellow-400 text-2xl">✓</span>
+                                <span className="text-gray-300 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Zero Artificial Ingredients</h3>
                                     <p className="text-gray-400">Real spices, real taste. If we can't pronounce it, we don't use it.</p>
                                 </div>
                             </li>
                             <li className="flex items-start space-x-4">
-                                <span className="text-yellow-400 text-2xl">✓</span>
+                                <span className="text-gray-300 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Glass Over Plastic</h3>
                                     <p className="text-gray-400">Premium packaging that preserves taste and protects the planet.</p>
                                 </div>
                             </li>
                             <li className="flex items-start space-x-4">
-                                <span className="text-yellow-400 text-2xl">✓</span>
+                                <span className="text-gray-300 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Craft Quality</h3>
                                     <p className="text-gray-400">Every batch is quality-tested. No compromises, no shortcuts.</p>
                                 </div>
                             </li>
                             <li className="flex items-start space-x-4">
-                                <span className="text-yellow-400 text-2xl">✓</span>
+                                <span className="text-gray-300 text-2xl">✓</span>
                                 <div>
                                     <h3 className="font-bold text-xl mb-1">Radical Honesty</h3>
                                     <p className="text-gray-400">We tell you exactly what's in the bottle. No marketing BS.</p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-yellow-400 pl-4">Join the Movement</h2>
+                        <h2 className="text-3xl font-bold mb-4 border-l-4 border-gray-300 pl-4">Join the Movement</h2>
                         <p className="text-gray-400 leading-relaxed">
                             ZfO is for people who refuse NPC energy. For those who demand better ingredients, better packaging, and better vibes. For anyone tired of drinking chemical soup from plastic bottles.
                         </p>

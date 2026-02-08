@@ -1,11 +1,8 @@
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BubbleCursor from '@/components/BubbleCursor';
 import ErrorBoundary from '@/components/ErrorBoundary';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
     metadataBase: new URL('https://www.zfo.co.in'),
@@ -97,7 +94,7 @@ export default function RootLayout({ children }) {
                     }}
                 />
             </head>
-            <body className={`${inter.className} bg-black text-white w-full min-h-screen`}>
+            <body className="bg-black text-white w-full min-h-screen">
                 <ErrorBoundary>
                     <Navbar />
                     <BubbleCursor />

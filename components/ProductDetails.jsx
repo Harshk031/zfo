@@ -25,7 +25,7 @@ const products = [
     tagline: "India's classic, refined",
     headings: ["A modern expression of a street icon"],
     description:
-      "Our first drop redefines masala soda for modern taste. Crisp citrus acidity, subtle spice warmth, and a clean finish — no syrupy heaviness, no artificial punch. It hits different at street food spots, cafés, or just <span className='font-bold text-yellow-600'>doomscrolling</span> at home.",
+      "Our first drop redefines masala soda for modern taste. Crisp citrus acidity, subtle spice warmth, and a clean finish — no syrupy heaviness, no artificial punch. It hits different at street food spots, cafés, or just <span className='font-bold text-gray-500'>doomscrolling</span> at home.",
     image: "/bottle.png",
   },
 ];
@@ -75,7 +75,7 @@ const ProductDetails = () => {
                 {prod.headings.map((heading, idx) => (
                   <h4
                     key={idx}
-                    className="text-lg font-bold mb-4 uppercase tracking-wider text-black border-l-2 border-yellow-400 pl-4"
+                    className="text-lg font-bold mb-4 uppercase tracking-wider text-black border-l-2 border-gray-300 pl-4"
                   >
                     {heading}
                   </h4>

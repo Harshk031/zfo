@@ -42,7 +42,7 @@ const PromoSection = () => {
       >
         <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 max-w-4xl px-4 leading-tight tracking-tight">
           "They gave you <span className="text-gray-400 line-through decoration-2 decoration-red-500 decoration-wavy">NPC energy</span>. <br className="hidden md:block" />
-          We gave you <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 font-black italic">MAIN CHARACTER ENERGY</span>."
+          We gave you <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-orange-500 to-red-500 font-black italic">MAIN CHARACTER ENERGY</span>."
         </p>
 
         {/* Separator */}

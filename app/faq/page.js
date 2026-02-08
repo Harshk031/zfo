@@ -71,7 +71,7 @@ export default function FAQPage() {
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="border-l-2 border-yellow-400 pl-6 py-4"
+                            className="border-l-2 border-gray-300 pl-6 py-4"
                         >
                             <h2 className="text-2xl font-bold mb-3">{faq.question}</h2>
                             <p className="text-gray-400 leading-relaxed">{faq.answer}</p>

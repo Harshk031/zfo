@@ -12,7 +12,7 @@ const features = [
     },
     {
         title: "Authentic Masala Flavors",
-        description: "Real spices, real taste. No fake flavors or artificial nasties. We reimagined traditional masala soda with balanced fizz and honest ingredients. <span className='text-yellow-400 font-bold'>It hits different.</span>",
+        description: "Real spices, real taste. No fake flavors or artificial nasties. We reimagined traditional masala soda with balanced fizz and honest ingredients. <span className='text-gray-300 font-bold'>It hits different.</span>",
         keywords: ["masala soda", "Indian soda", "authentic flavors", "natural ingredients"]
     },
     {

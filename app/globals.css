@@ -1,32 +1,134 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
-/* RUKOLA TYPOGRAPHY - Kept for specific branding but primary headers now Syne */
-.font-display {
-  font-family: 'Syne', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+/* ============================================
+   PREMIUM TYPOGRAPHY - FUTURA BOOK
+   ============================================ */
+
+@font-face {
+  font-family: 'Futura Book';
+  font-display: swap;
+  src: local('Futura Book'), local('Futura-Book'),
+    local('Futura'), local('FuturaBT-Book');
+  font-weight: 400;
+  font-style: normal;
+  /* Fallback to system Futura if available */
 }
 
-/* ALL HEADINGS USE SYNE - Art Gallery Vibe */
+@font-face {
+  font-family: 'Futura Medium';
+  font-display: swap;
+  src: local('Futura Medium'), local('Futura-Medium'),
+    local('FuturaBT-Medium');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura Bold';
+  font-display: swap;
+  src: local('Futura Bold'), local('Futura-Bold'),
+    local('FuturaBT-Bold');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ============================================
+   GLOBAL TYPOGRAPHY RESET
+   ============================================ */
+
+* {
+  font-family: 'Futura Book', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* HEADINGS - FUTURA BOLD */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Syne', sans-serif;
-  letter-spacing: -1px;
+  font-family: 'Futura Bold', 'Futura Book', sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
-.font-script {
-  font-family: 'Dancing Script', cursive;
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+
+.font-display {
+  font-family: 'Futura Bold', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* DISTRESSED TEXT EFFECT WITH TEXTURE */
+.headline-xl {
+  font-family: 'Futura Bold', sans-serif;
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.headline-lg {
+  font-family: 'Futura Bold', sans-serif;
+  font-size: clamp(2rem, 6vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+}
+
+.subtitle-mono {
+  font-family: 'Futura Medium', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   SOPHISTICATED COLOR SCHEME (NO YELLOW)
+   ============================================ */
+
+/* Premium White/Gray Palette */
+.text-premium {
+  color: #f5f5f5;
+}
+
+.text-muted {
+  color: #a0a0a0;
+}
+
+.text-accent {
+  color: #c0c0c0;
+  /* Silver accent instead of yellow */
+}
+
+.border-premium {
+  border-color: #2a2a2a;
+}
+
+.border-accent {
+  border-color: #404040;
+  /* Dark gray instead of yellow */
+}
+
+/* Background gradients - monochrome luxury */
+.bg-gradient-premium {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+/* ============================================
+   DISTRESSED TEXT EFFECTS
+   ============================================ */
+
 .text-distressed {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
+  font-family: 'Futura Bold', sans-serif;
+  font-weight: 700;
   background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
   background-position: center;
   background-size: cover;
@@ -40,53 +142,24 @@ h6 {
   -webkit-font-smoothing: antialiased;
 }
 
-.text-distressed-red {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
+.text-distressed-silver {
+  font-family: 'Futura Bold', sans-serif;
+  font-weight: 700;
   background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
   background-position: center;
   background-size: cover;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-color: #c41e3a;
+  background-color: #c0c0c0;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
 
-/* HEADLINE STYLES - SYNE */
-.headline-xl {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(3rem, 9vw, 8rem);
-  line-height: 0.9;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-  font-weight: 800;
-}
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 
-.headline-lg {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(2rem, 6vw, 5rem);
-  line-height: 0.95;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: 700;
-}
-
-/* SUBTITLE STYLES */
-.subtitle-script {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-}
-
-/* GLOBAL FONT RESET */
-* {
-  font-family: 'Space Grotesk', sans-serif;
-}
-
-/* FAST BUBBLE FLOAT */
 @keyframes bubble {
   0% {
     transform: translateY(0) scale(0.9);
@@ -103,10 +176,48 @@ h6 {
   animation: bubble linear infinite;
 }
 
-/* BUBBLE STYLE */
 .bubble {
   position: absolute;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 1);
   pointer-events: none;
+}
+
+/* ============================================
+   PREMIUM BUTTON STYLES
+   ============================================ */
+
+.btn-premium {
+  font-family: 'Futura Medium', sans-serif;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #ffffff;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+.btn-outline-premium {
+  font-family: 'Futura Medium', sans-serif;
+  background: transparent;
+  color: #c0c0c0;
+  border: 2px solid #404040;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-premium:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
 }

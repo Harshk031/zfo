@@ -103,7 +103,7 @@ const Navbar = () => {
                 className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center overflow-hidden"
             >
                 {/* Background Decorative Elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gray-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
                 <motion.ul
@@ -119,7 +119,7 @@ const Navbar = () => {
                             <a
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block text-4xl sm:text-5xl md:text-7xl font-extrabold text-white hover:text-yellow-400 transition-colors tracking-tight uppercase"
+                                className="block text-4xl sm:text-5xl md:text-7xl font-extrabold text-white hover:text-gray-300 transition-colors tracking-tight uppercase"
                             >
                                 <span className="text-xs sm:text-sm md:text-lg font-light text-white/40 align-top mr-2 md:mr-4">
                                     0{index + 1}

@@ -31,11 +31,11 @@ class ErrorBoundary extends Component {
           <h1 className="text-3xl font-bold mb-4">Something went wrong</h1>
 
           <div className="bg-gray-900 p-6 rounded-lg max-w-2xl w-full text-left overflow-auto border border-gray-800 mb-8">
-            <p className="font-mono text-yellow-400 mb-2">ERROR:</p>
+            <p className="font-mono text-gray-300 mb-2">ERROR:</p>
             <pre className="text-red-400 whitespace-pre-wrap mb-4 font-mono text-sm">
               {this.state.error && this.state.error.toString()}
             </pre>
-            <p className="font-mono text-yellow-400 mb-2">STACK:</p>
+            <p className="font-mono text-gray-300 mb-2">STACK:</p>
             <pre className="text-gray-400 whitespace-pre-wrap font-mono text-xs">
               {this.state.errorInfo && this.state.errorInfo.componentStack}
             </pre>

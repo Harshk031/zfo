@@ -19,7 +19,7 @@ const MovingBgText = () => {
         {[...statements, ...statements, ...statements].map((text, i) => (
           <span
             key={i}
-            className={i % 2 === 0 ? "text-white/70" : "text-yellow-400/50"}
+            className={i % 2 === 0 ? "text-white/70" : "text-gray-300/50"}
           >
             {text}
           </span>
