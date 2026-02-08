@@ -12,7 +12,7 @@ const Bottle = ({ scrollYProgress }) => {
       className="flex items-center justify-center w-full h-full pointer-events-none"
     >
       <ProgressiveImage
-        src="/product-0bg.png"
+        src="/product-0bg.png?v=2"
         alt="ZfO Masala Soda Bottle - PREMIUM 360 ROTATION - Premium Glass Bottle Craft Beverage"
         bgColor="bg-transparent"
         className="h-[70vh] object-contain z-20 mx-auto"
