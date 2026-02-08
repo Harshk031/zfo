@@ -2,7 +2,17 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const ProgressiveImage = ({ src, alt, className, bgColor = "bg-gray-900", ...props }) => {
-    // ... logic ...
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [imgSrc, setImgSrc] = useState(null);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            setImgSrc(src);
+            setIsLoaded(true);
+        };
+    }, [src]);
 
     return (
         <div className={`relative overflow-hidden ${bgColor} ${className}`}>
