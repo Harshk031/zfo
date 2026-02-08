@@ -22,7 +22,7 @@ const CursorBottle = () => {
       }}
     >
       <motion.img
-        src="/product-1.jpeg"
+        src="/product-0bg.jpeg"
         alt="ZfO Premium Masala Soda Glass Bottle - ARTISANAL 360 ROTATION - Artisanal Indian Craft Beverage"
         style={{
           rotateX,
