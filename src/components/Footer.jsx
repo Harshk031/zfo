@@ -18,44 +18,45 @@ const Footer = () => {
             <h2 className="text-3xl font-bold tracking-[0.2em] text-white mb-2">
               ZFO
             </h2>
-            Est. 2024 · Founded by Harsh Katiyar
-          </p>
+            <p className="text-white/[0.02] text-xs hover:text-white/10 transition-colors duration-500 cursor-default select-none">
+              Est. 2024 · Founded by Harsh Katiyar
+            </p>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex gap-8">
+            {[
+              { icon: <FaInstagram />, href: "https://www.instagram.com/drinkzfo" },
+              { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/freshozz-beverages/" }
+            ].map((social, i) => (
+              <a
+                key={i}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl text-white/40 hover:text-gray-300 transition-colors duration-300"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* Social Links */}
-        <div className="flex gap-8">
-          {[
-            { icon: <FaInstagram />, href: "https://www.instagram.com/drinkzfo" },
-            { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/freshozz-beverages/" }
-          ].map((social, i) => (
-            <a
-              key={i}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl text-white/40 hover:text-gray-300 transition-colors duration-300"
-            >
-              {social.icon}
+        {/* Divider */}
+        <div className="w-full h-px bg-white/10 my-10" />
+
+        <div className="flex flex-col md:flex-row justify-between text-xs sm:text-sm text-white/30 tracking-widest uppercase gap-4">
+          <p>© {new Date().getFullYear()} ZfO Beverages.</p>
+
+          <div className="flex gap-6 items-center">
+            <a href="mailto:beverages@zfo.co.in" className="hover:text-white transition-colors">
+              Slide into DMs
             </a>
-          ))}
+            <span className="text-white/50 text-lg">®</span>
+          </div>
         </div>
       </div>
-
-      {/* Divider */}
-      <div className="w-full h-px bg-white/10 my-10" />
-
-      <div className="flex flex-col md:flex-row justify-between text-xs sm:text-sm text-white/30 tracking-widest uppercase gap-4">
-        <p>© {new Date().getFullYear()} ZfO Beverages.</p>
-
-        <div className="flex gap-6 items-center">
-          <a href="mailto:beverages@zfo.co.in" className="hover:text-white transition-colors">
-            Slide into DMs
-          </a>
-          <span className="text-white/50 text-lg">®</span>
-        </div>
-      </div>
-    </div>
-    </footer >
+    </footer>
   );
 };
 
