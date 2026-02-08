@@ -21,7 +21,7 @@ const SideVideos = ({ scrollYProgress }) => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           onCanPlay={(e) => e.currentTarget.style.opacity = 1}
         >
           <source src={video1} type="video/mp4" />
@@ -40,7 +40,7 @@ const SideVideos = ({ scrollYProgress }) => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           onCanPlay={(e) => e.currentTarget.style.opacity = 1}
         >
           <source src={video4} type="video/mp4" />
