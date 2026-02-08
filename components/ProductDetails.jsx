@@ -54,7 +54,7 @@ const ProductDetails = () => {
                     src={prod.image}
                     alt="ZfO Premium Small-Batch Craft Masala Soda in Glass - Limited Edition"
                     className="relative object-contain h-[120%] -rotate-12 hover:rotate-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                    style={{ mixBlendMode: 'lighten', filter: 'brightness(1.1) contrast(1.05)' }}
+                    style={{ mixBlendMode: 'screen', filter: 'brightness(1.3) contrast(1.2) saturate(1.1)' }}
                   />
                 </div>
               </div>

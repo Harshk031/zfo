@@ -30,8 +30,8 @@ const CursorBottle = () => {
           rotateX,
           rotateY,
           transformStyle: "preserve-3d",
-          mixBlendMode: 'lighten',
-          filter: 'brightness(1.1)',
+          mixBlendMode: 'screen',
+          filter: 'brightness(1.3) contrast(1.2)',
         }}
         animate={{ rotateZ: 360 }}
         transition={{

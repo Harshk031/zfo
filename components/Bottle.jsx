@@ -18,7 +18,7 @@ const Bottle = ({ scrollYProgress }) => {
         alt="ZfO Masala Soda Bottle - PREMIUM 360 ROTATION - Premium Glass Bottle Craft Beverage"
         bgColor="bg-transparent"
         className="h-[70vh] object-contain z-20 mx-auto"
-        style={{ mixBlendMode: 'lighten', filter: 'brightness(1.1)' }}
+        style={{ mixBlendMode: 'screen', filter: 'brightness(1.3) contrast(1.2)' }}
       />
     </motion.div>
   );
