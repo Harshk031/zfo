@@ -1,26 +1,43 @@
 import { fizzPosts } from '@/data/fizzroomData';
 
-export default function sitemap() {
-    const posts = fizzPosts.map((post) => ({
-        url: `https://www.zfo.co.in/fizzroom/${post.id}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.8,
-    }));
+export default async function sitemap() {
+    const baseUrl = 'https://www.zfo.co.in';
 
-    return [
+    // Static pages
+    const staticPages = [
         {
-            url: 'https://www.zfo.co.in',
+            url: baseUrl,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1,
         },
         {
-            url: 'https://www.zfo.co.in/fizzroom',
+            url: `${baseUrl}/fizzroom`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.9,
         },
-        ...posts,
+        {
+            url: `${baseUrl}/about`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/faq`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
     ];
+
+    // Dynamic blog post pages
+    const blogPosts = fizzPosts.map((post) => ({
+        url: `${baseUrl}/fizzroom/${post.id}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+    }));
+
+    return [...staticPages, ...blogPosts];
 }

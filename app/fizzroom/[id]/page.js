@@ -37,6 +37,20 @@ export function generateMetadata({ params }) {
             description: post.excerpt,
             images: [post.image],
             type: 'article',
+            publishedTime: new Date(post.date).toISOString(),
+            authors: ['Team ZFO'],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: post.title,
+            description: post.excerpt,
+            images: [post.image],
+        },
+        // Article structured data
+        other: {
+            'article:published_time': new Date(post.date).toISOString(),
+            'article:author': 'Team ZFO',
+            'article:section': post.category,
         },
     };
 }
