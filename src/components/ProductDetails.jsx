@@ -16,7 +16,7 @@ const products = [
     headings: ["Soda treated like a culinary product"],
     description:
       "ZfO treats soda as high art, not content. From controlled carbonation to layered spice profiles, every element is engineered for <span className='font-bold italic'>sensory satisfaction</span>. This is fizz with depth, not noise. It's giving <span className='font-black'>luxury</span>.",
-    image: "/product-0bg.jpeg",
+    image: "/product-0bg.png",
   },
   {
     name: "Masala Soda, Reimagined",
@@ -24,7 +24,7 @@ const products = [
     headings: ["A modern expression of a street icon"],
     description:
       "Our first drop redefines masala soda for modern taste. Crisp citrus acidity, subtle spice warmth, and a clean finish — no syrupy heaviness, no artificial punch. It hits different at street food spots, cafés, or just <span className='font-bold text-yellow-600'>doomscrolling</span> at home.",
-    image: "/product-0bg.jpeg",
+    image: "/product-0bg.png",
   },
 ];
 
