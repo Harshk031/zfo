@@ -124,22 +124,35 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="w-full md:w-1/2 text-center md:text-left z-10 mb-8 md:mb-0"
         >
-          {/* Brand identity */}
-          <p className="subtitle-script text-[#c41e3a] mb-3 md:mb-2 uppercase tracking-widest text-xs sm:text-sm font-bold">
-            GATEKEEPING FLAVOR.
-          </p>
+          {/* EXCLUSIVE LAUNCH BADGE */}
+          <div className="inline-flex items-center gap-3 mb-6 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-xs md:text-sm tracking-widest uppercase text-white/80 font-medium">
+              Available Only at <span className="text-[#ffcc00] font-bold">IGNITIA</span>
+            </span>
+          </div>
 
           {/* Hero emotion line - Lagunitas Style with Texture */}
           <h1 className="headline-xl text-distressed drop-shadow-2xl break-words text-white px-4 md:px-0 leading-tight max-w-full overflow-hidden">
             {heroLines[index]}
           </h1>
 
-          {/* SUB-TEXT / DESCRIPTION */}
-          {/* SUB-TEXT / DESCRIPTION - Adjusted for readability with new fonts */}
-          <p className="mt-6 md:mt-8 text-[#a0a0a0] text-lg sm:text-xl md:text-2xl font-light max-w-md mx-auto md:mx-0 leading-relaxed tracking-wide">
-            We remember when it was <span className="text-white font-bold italic">actually special</span>. So we made that again. <br className="hidden md:block" />
-            <span className="text-black font-black">Real spices</span>. Real care. That's it.
-          </p>
+          {/* PRICE REVEAL - PREMIUM STYLE */}
+          <div className="mt-8 flex flex-col md:flex-row items-center gap-6">
+            <div className="flex items-baseline gap-4">
+              <span className="text-2xl text-white/40 line-through decoration-red-500/80 decoration-2 font-light">₹99</span>
+              <span className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#ffcc00] to-white drop-shadow-[0_0_15px_rgba(255,204,0,0.3)]">
+                ₹40
+              </span>
+            </div>
+
+            <div className="h-px w-12 bg-white/20 hidden md:block" />
+
+            <p className="text-white/60 text-sm tracking-wide font-light max-w-[200px] text-center md:text-left">
+              Exclusive launch price. <br />
+              <span className="text-white/90 font-medium">Limited batch only.</span>
+            </p>
+          </div>
         </motion.div>
 
         {/* CURSOR BOTTLE */}
