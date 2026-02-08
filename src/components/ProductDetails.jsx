@@ -3,27 +3,27 @@ import ProgressiveImage from "./ProgressiveImage";
 
 const products = [
   {
-    name: "The Legacy",
-    tagline: "Where it all started",
-    headings: ["From street corners to craft movement"],
+    name: "How We Got Here",
+    tagline: "The honest origin story",
+    headings: ["Remember when soda wasn't trash?"],
     description:
-      "Masala soda used to mean something. Glass bottles that clinked. Crown caps that hissed. Spices you could <span className='font-bold text-black'>actually taste</span>. Then mass production turned it into <span className='font-bold text-black line-through'>fizzy regret</span>. We're bringing back the ritual—crafted with real ingredients, balanced flavor profiles, and the kind of <span className='font-black text-black'>attention to detail</span> your childhood drink deserved all along.",
+      "Yeah, so... masala soda used to be <span className='font-bold text-black'>a whole vibe</span>. Street vendors. Glass bottles. That satisfying hiss when they popped the cap. Real spices you could actually taste. Then somewhere along the way, it became this <span className='font-bold text-black line-through'>overly sweet mess</span> in plastic bottles. We got tired of it. Started making what we wished existed—the masala soda we remembered, but done right. Took us way longer than we thought it would.",
     image: "/product-1.jpeg",
   },
   {
-    name: "The Craft",
-    tagline: "Obsessive attention to detail",
-    headings: ["When soda becomes culinary art"],
+    name: "What We're Doing",
+    tagline: "The obsessive part",
+    headings: ["Turns out, good soda takes effort"],
     description:
-      "We don't fill bottles and call it a day. Every batch starts with <span className='font-bold italic text-black'>real spices</span>—not flavor extracts. Carbonation levels are dialed in with precision. Acid balance gets tasted, adjusted, tasted again. This is what happens when you treat masala soda like a <span className='font-black text-black'>craft product</span>, not a commodity. The result? Layers of flavor that actually deserve your attention.",
+      "Here's the thing—we're a little obsessive. Every batch gets tasted <span className='font-bold italic text-black'>multiple times</span>. Carbonation? We dial it in like it's a science experiment. Spices? Actually ground from real ingredients, not some lab-made extract. The acid balance alone took us months to get right. Is it overkill? Maybe. But when you taste it, you'll get why we're <span className='font-black text-black'>this particular</span> about a bottle of soda.",
     image: "/product-2.jpeg",
   },
   {
-    name: "The Experience",
-    tagline: "Made for moments that matter",
-    headings: ["Your drink grew up with you"],
+    name: "What You Get",
+    tagline: "The actual experience",
+    headings: ["It just works. Anywhere."],
     description:
-      "Whether you're at a street food joint, unwinding after work, or just scrolling through life—this isn't background noise. Clean citrus notes. Warm spice depth. A finish that doesn't leave you thirsty again in 5 minutes. No <span className='font-bold text-black line-through'>sugar crash</span>. No artificial aftertaste. Just a masala soda that <span className='font-black text-black'>passes the vibe check</span> every single time.",
+      "Works with street food. Works when you're unwinding after a long day. Works when you're just hanging out. Clean citrus up front, warm spices in the back, doesn't leave you feeling gross after. No weird aftertaste that makes you reach for water. Just... <span className='font-black text-black'>tastes good</span>. Which sounds basic, but you'd be surprised how rare that is. We're not claiming it'll change your life. It's just really solid masala soda.",
     image: "/product-1.jpeg",
   },
 ];

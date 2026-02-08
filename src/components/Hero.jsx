@@ -136,8 +136,8 @@ const Hero = () => {
           {/* SUB-TEXT / DESCRIPTION */}
           {/* SUB-TEXT / DESCRIPTION - Adjusted for readability with new fonts */}
           <p className="mt-6 md:mt-8 text-[#a0a0a0] text-lg sm:text-xl md:text-2xl font-light max-w-md mx-auto md:mx-0 leading-relaxed tracking-wide">
-            India's <span className="text-white font-bold italic">heritage drink</span>, reimagined for people who <span className="text-black font-black">actually care about flavor</span>. <br className="hidden md:block" />
-            Crafted with real spices. <span className="text-white font-bold">Zero compromises</span>.
+            Remember when masala soda was <span className="text-white font-bold italic">actually good</span>? We do. <br className="hidden md:block" />
+            Made with <span className="text-black font-black">real spices</span>. No shortcuts.
           </p>
         </motion.div>
 
