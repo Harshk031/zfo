@@ -10,7 +10,7 @@ const products = [
     headings: ["Precision-crafted for the discerning palate"],
     description:
       "Street vendors had the idea. We had the obsession to perfect it. <span class='font-bold text-black'>Lab-tested carbonation levels</span>. <span class='font-bold text-black'>Precision spice extraction</span>. Ingredients sourced from farms that supply <span class='italic'>Michelin restaurants</span>, not soda factories. This isn't nostalgia—it's evolution. Premium masala soda that didn't exist until now.",
-    image: "/bottle.png",
+    image: "/bottle3.png",
   },
   {
     name: "THE CRAFT",
@@ -18,7 +18,7 @@ const products = [
     headings: ["Limited by intention, refined by obsession"],
     description:
       "Every batch is <span class='font-bold italic'>limited</span> because quality doesn't scale. We cold-press <span class='font-bold'>Nagpur oranges</span>, source <span class='font-bold'>Himalayan black salt</span> (not table salt), and carbonate to <span class='font-bold'>exact PSI levels</span> craft brewers use. Glass bottles aren't aesthetic—they preserve the flavor profile plastic destroys. This is craft soda energy with Indian soul.",
-    image: "/bottle.png",
+    image: "/bottle3.png",
   },
   {
     name: "THE STATUS",
@@ -26,7 +26,7 @@ const products = [
     headings: ["For those who demand excellence, not convenience"],
     description:
       "Not everyone gets why paying premium for soda matters. You do. You recognize the difference between <span class='font-bold'>real cumin</span> and cumin 'flavor'. You choose experiences, not just drinks. ZfO is for  people who won't settle for <span class='italic'>mass-produced mediocrity</span>. Limited availability. No subscriptions. Just rare drops for those in the know.",
-    image: "/bottle.png",
+    image: "/bottle3.png",
   },
 ];
 
