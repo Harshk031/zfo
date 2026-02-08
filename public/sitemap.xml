@@ -11,6 +11,10 @@
       <image:loc>https://www.zfo.co.in/logo.png</image:loc>
       <image:title>ZfO Logo</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://www.zfo.co.in/bottle3.png</image:loc>
+      <image:title>ZfO Premium Masala Soda Bottle</image:title>
+    </image:image>
     <video:video>
       <video:thumbnail_loc>https://www.zfo.co.in/polar-bear-poster.jpg</video:thumbnail_loc>
       <video:title>ZfO Launch - Polar Bear</video:title>
