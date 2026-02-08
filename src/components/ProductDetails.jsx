@@ -3,27 +3,27 @@ import ProgressiveImage from "./ProgressiveImage";
 
 const products = [
   {
-    name: "How We Got Here",
-    tagline: "The honest origin story",
-    headings: ["Remember when soda wasn't trash?"],
+    name: "Look, This Made Us Angry",
+    tagline: "Why we started",
+    headings: ["Masala soda deserved better than this"],
     description:
-      "Yeah, so... masala soda used to be <span className='font-bold text-black'>a whole vibe</span>. Street vendors. Glass bottles. That satisfying hiss when they popped the cap. Real spices you could actually taste. Then somewhere along the way, it became this <span className='font-bold text-black line-through'>overly sweet mess</span> in plastic bottles. We got tired of it. Started making what we wished existed—the masala soda we remembered, but done right. Took us way longer than we thought it would.",
+      "We grew up on this stuff. <span className='font-bold text-black'>Actual glass bottles</span>. The sound of the cap popping off. Spices that hit different. Then we watched it turn into... what? Overly sweet garbage in plastic. We tried everything on the market. All disappointing. So one day we just said screw it, <span className='font-bold text-black'>let's make what we actually want to drink</span>. Took forever to get right. Worth every late night.",
     image: "/product-1.jpeg",
   },
   {
-    name: "What We're Doing",
-    tagline: "The obsessive part",
-    headings: ["Turns out, good soda takes effort"],
+    name: "We Got Obsessed",
+    tagline: "Honestly can't help it",
+    headings: ["When good enough isn't good enough"],
     description:
-      "Here's the thing—we're a little obsessive. Every batch gets tasted <span className='font-bold italic text-black'>multiple times</span>. Carbonation? We dial it in like it's a science experiment. Spices? Actually ground from real ingredients, not some lab-made extract. The acid balance alone took us months to get right. Is it overkill? Maybe. But when you taste it, you'll get why we're <span className='font-black text-black'>this particular</span> about a bottle of soda.",
+      "Listen, we know we're too intense about this. We've heard it. But when you care about something, you just... care. Spent <span className='font-bold italic text-black'>months</span> on the carbonation alone. Every spice gets tested, like, dozens of times. Our friends make fun of us for how many versions we tasted before launching. But you know what? When you crack open a bottle and it's <span className='font-black text-black'>exactly what you wanted</span>—that feeling is everything. That's why we do this.",
     image: "/product-2.jpeg",
   },
   {
-    name: "What You Get",
-    tagline: "The actual experience",
-    headings: ["It just works. Anywhere."],
+    name: "It's Just... Right",
+    tagline: "Hard to explain, you'll see",
+    headings: ["When you know, you know"],
     description:
-      "Works with street food. Works when you're unwinding after a long day. Works when you're just hanging out. Clean citrus up front, warm spices in the back, doesn't leave you feeling gross after. No weird aftertaste that makes you reach for water. Just... <span className='font-black text-black'>tastes good</span>. Which sounds basic, but you'd be surprised how rare that is. We're not claiming it'll change your life. It's just really solid masala soda.",
+      "First sip, you'll get it. That <span className='font-bold text-black'>clean citrus hit</span>. Then the spices come through—not overpowering, just there. Doesn't matter if you're having it with street food or after work or just because. It works. And here's the thing—it doesn't make you feel gross after. No sugar crash. No weird aftertaste. Just leaves you thinking 'yeah, that was <span className='font-black text-black'>actually good</span>.' Which is literally all we wanted. Mission accomplished.",
     image: "/product-1.jpeg",
   },
 ];
