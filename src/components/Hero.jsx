@@ -140,7 +140,7 @@ const Hero = () => {
           {/* PRICE REVEAL - PREMIUM STYLE */}
           <div className="mt-8 flex flex-col md:flex-row items-center gap-6">
             <div className="flex items-baseline gap-4">
-              <span className="text-2xl text-white/40 line-through decoration-red-500/80 decoration-2 font-light">₹99</span>
+              <span className="text-2xl text-white/40 line-through decoration-red-500/80 decoration-2 font-light">₹50</span>
               <span className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#ffcc00] to-white drop-shadow-[0_0_15px_rgba(255,204,0,0.3)]">
                 ₹40
               </span>
