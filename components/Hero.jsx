@@ -127,7 +127,7 @@ const Hero = () => {
         >
           {/* Brand identity */}
           <p className="subtitle-script text-[#c41e3a] mb-3 md:mb-2 uppercase tracking-widest text-xs sm:text-sm font-bold">
-            GATEKEEPING FLAVOR.
+            INDIA'S FIRST PREMIUM CRAFT SODA.
           </p>
 
           {/* Hero emotion line - Lagunitas Style with Texture */}
