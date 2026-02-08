@@ -13,7 +13,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % heroLines.length);
-    }, 2600);
+    }, 4500);
     return () => clearInterval(timer);
   }, []);
 
@@ -129,7 +129,7 @@ const Hero = () => {
           </p>
 
           {/* Hero emotion line - Lagunitas Style with Texture */}
-          <h1 className="headline-xl text-distressed drop-shadow-2xl break-words text-white px-2 md:px-0">
+          <h1 className="headline-xl text-distressed drop-shadow-2xl break-words text-white px-4 md:px-0 leading-tight max-w-full overflow-hidden">
             {heroLines[index]}
           </h1>
 
