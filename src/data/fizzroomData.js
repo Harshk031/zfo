@@ -1,942 +1,528 @@
 export const fizzPosts = [
     {
-        id: 5,
-        title: "We Checked The Receipt: Your Soda Is Lying To You",
-        excerpt: "Bestie, that 'natural flavor' is a whole lie. We're exposing the 90% sugar scam and serving the tea on why glass bottles are the only green flag.",
-        date: "Jan 26, 2026",
-        category: "TRUTH BOMB",
-        image: "/truth-bomb-thumbnail.jpg",
-        metaDescription: "Discover the truth about soda beverages. What's really in mass-market soda? Learn why ZfO craft soda in glass bottles with natural ingredients is the healthy alternative to sugary drinks.",
-        keywords: "soda ingredients, what's in soda, craft soda vs regular soda, healthy soda alternatives, natural soda, glass bottle soda, ZfO soda ingredients",
-        content: `## What's Really In Your Soda Can?
-
-Let's cut through the marketing speak. That "refreshing" soda you're holding? It's mostly sugar, chemicals, and artificial flavors dressed up in pretty packaging. The soda industry has been lying to us for decades, and it's time you knew the truth.
-
-### The Shocking Truth About Soda Ingredients
-
-**High Fructose Corn Syrup (HFCS)** - This laboratory-created sweetener is the primary ingredient in most sodas. Unlike natural sugars, HFCS goes straight to your liver and converts to fat. Studies link it to obesity, diabetes, and fatty liver disease.
-
-**Artificial Colors** - That caramel color? It's not from real caramel. It's created by heating ammonia and sulfites under high pressure. Classified as a carcinogen in California.
-
-**Phosphoric Acid** - Creates the tangy bite you taste. Also strips calcium from your bones and erodes tooth enamel. Dentists call it "liquid cavity creator."
-
-**"Natural Flavors"** - A catch-all term that can include over 100 chemicals. Since when is laboratory-synthesized flavor "natural"?
-
-**Carbonated Water with... Chemicals** - Yes, even the bubbles are enhanced with additives to make them last longer in plastic bottles.
-
-### Why Mass-Market Soda Is Bad For You
-
-The average soda contains 39 grams of sugar per can—that's 10 teaspoons. The American Heart Association recommends no more than 9 teaspoons per day for men and 6 for women. One can puts you over your daily limit.
-
-But it's not just about sugar. It's about:
-- **Metabolic disruption** - Your body doesn't process HFCS like natural sugar
-- **Addiction cycle** - The sugar-caffeine combo is literally designed to create dependency
-- **Zero nutrition** - Empty calories that displace real food
-- **Chemical load** - Your liver works overtime processing artificial ingredients
-
-### The History of Soda: From Medicine to Menace
-
-Soda started as medicinal tonics in the 1800s. Pharmacists added carbonation to make mineral water taste better. Then came the 20th century and mass production.
-
-Coca-Cola was invented in 1886. Pepsi in 1893. These were originally small-batch, naturally flavored beverages. But as corporations scaled up, corners were cut:
-
-- Real sugar became expensive high-fructose corn syrup
-- Natural flavors became chemical concoctions
-- Glass bottles became cheap plastic
-- Quality became... optional
-
-### The Craft Soda Revolution
-
-But there's hope. The craft soda movement—led by brands like ZfO—is bringing soda back to its roots:
-
-**Real Ingredients** - Spices you can pronounce. Citrus from actual fruit. Sweetness from natural sources.
-
-**Glass Bottles** - Infinitely recyclable, zero chemical leaching, keeps soda fresher longer.
-
-**No Artificial Anything** - If it's not in nature, it's not in our bottles.
-
-**Honest Flavor** - No "flavor enhancers" or chemical boosters. Just real taste.
-
-### Why ZfO Is Different
-
-We started ZfO because we were tired of the lies. Tired of "beverages" that were more chemistry than refreshment. Tired of plastic bottles that poison the planet.
-
-**Our Promise:**
-- Only real spices and natural ingredients
-- Glass bottles exclusively
-- No artificial colors, flavors, or preservatives
-- Transparent sourcing
-- Taste that comes from quality, not chemicals
-
-### How to Choose a Healthy Soda
-
-Next time you're craving fizz, check the label:
-
-✅ **Good signs:** Real ingredients, glass bottles, natural sweeteners, recognizable spices
-❌ **Red flags:** High fructose corn syrup, artificial colors, phosphoric acid, "natural flavors," plastic bottles
-
-### The Bottom Line
-
-You deserve better than liquid sugar and chemicals. Your body deserves real ingredients. The planet deserves less plastic.
-
-Craft soda in glass bottles isn't just a trend—it's a return to what soda should be: refreshing, natural, and honestly made.
-
-**Ready to taste the difference?** [Explore ZfO's craft soda collection](/)
-
----
-
-*Have questions about soda ingredients? Contact us at beverages@zfo.co.in*
-
-**Related Articles:**
-- [Why Glass Bottles Matter](/fizzroom/3)
-- [The History of Masala Soda](/fizzroom/2)
-- [Our Mission: Real Ingredients Only](/fizzroom/4)`
-    },
-    {
         id: 1,
-        title: "Why You're Being Left On Read (It's Dehydration, Bestie)",
-        excerpt: "Dry skin and zero energy? That's not a vibe. We're breaking down why hydration is the secret to your glow up and why soda water is the ultimate wingman.",
-        date: "Jan 25, 2026",
+        title: "When Everything Tastes Fake and You Can't Figure Out Why",
+        excerpt: "Ever feel like you can't taste real flavor anymore? We got obsessed with figuring out what happened to our taste buds—and it led us down a rabbit hole about what's actually in our drinks.",
+        date: "Jan 26, 2026",
         category: "REAL TALK",
         image: "/article-1-thumbnail.jpg",
-        metaDescription: "Dehydration affects your skin, energy, and confidence. Learn the science of hydration and how proper fluid intake can improve your dating life and overall attractiveness.",
-        keywords: "hydration benefits, dehydration effects, healthy skin hydration, energy and hydration, natural hydration drinks, flavored sparkling water",
-        content: `## The Hidden Reason Your Crush Isn't Texting Back
+        metaDescription: "Why modern sodas taste artificial and what it does to your palate. Learn how industrial ingredients affect taste perception and why real ingredients matter for authentic flavor.",
+        keywords: "why soda tastes fake, artificial flavors taste, real vs fake ingredients, taste bud sensitivity, craft soda taste, natural vs artificial soda",
+        content: `## Okay So Here's What Nobody Tells You
 
-Let's talk about something nobody mentions: dehydration is killing your dating game. While you're worrying about what to text, your body is crying out for water—and it's showing in ways you don't even realize.
+We started noticing something weird a few years back. After drinking regular soda, nothing else tasted... right. Like our taste buds were broken or something.
 
-### The Science of Dehydration and Appearance
+Turns out, they kind of were. And it wasn't our fault.
 
-Your skin is 64% water. When you're dehydrated, your body pulls water from your skin to maintain critical organ function. The result?
+### Your Taste Buds Are Getting Hijacked
 
-**Dull, Dry Skin** - Without adequate hydration, skin loses elasticity and glow. Fine lines become more prominent. That "tired" look? Often just dehydration.
+Here's what's happening: The stuff in most sodas—high fructose corn syrup, artificial flavors, "natural" flavor chemicals—they're engineered to be <span className='font-bold text-black'>intensely satisfying</span>. So satisfying that real food starts tasting bland.
 
-**Dark Under-Eye Circles** - Dehydration makes the skin under your eyes thinner and darker. No amount of concealer fixes what water can.
+It's not an accident. It's literally designed that way.
 
-**Chapped Lips** - Your lips don't have oil glands. They dry out first. Not exactly kissable.
+**What we found out:**
+- Industrial sweeteners are 600x sweeter than sugar
+- Your brain gets used to that intensity
+- Real flavors (like actual lemon or spices) seem weak in comparison
+- You need more and more artificial stuff to feel satisfied
 
-**Bad Breath** - Dehydration reduces saliva production, allowing bacteria to flourish. Mouthwash can't fix what hydration prevents.
+It's the same principle as scrolling TikTok for hours—your brain gets used to constant dopamine hits, then real life feels boring.
 
-### Dehydration Kills Your Energy (And Your Vibe)
+### We Started Reading Labels and Got Angry
 
-Even mild dehydration—just 1-2% of body weight—causes:
+So we went to the store and actually read what was in our drinks. Not the front label—the ingredient list on the back.
 
-- **Brain fog** - Your brain is 73% water. Dehydration impairs concentration and short-term memory.
-- **Fatigue** - Water carries nutrients to cells. Without it, you're running on empty.
-- **Irritability** - Studies show dehydrated people report higher anxiety and lower mood.
-- **Poor physical performance** - Muscles need water to function. Dehydration reduces endurance by up to 30%.
+**What we saw:**
+- <span className='font-bold text-black line-through'>Ingredients we couldn't pronounce</span>
+- "Natural flavors" (which can legally mean 100+ synthetic chemicals)
+- Colors made from... ammonia and sulfites? What?
+- Preservatives linked to health issues
+- Sugar levels that would make a dentist cry
 
-Translation? You're not bringing your best self to that date or conversation.
+One soda had SEVENTEEN ingredients. Our grandparents' masala soda? Five ingredients. All actual food.
 
-### How Much Water Do You Actually Need?
+### When We Finally Understood the Problem
 
-The "8 glasses a day" rule is outdated. Your needs depend on:
+The more we researched, the clearer it got:
 
-- **Body weight** - Larger bodies need more water
-- **Activity level** - Exercise increases needs
-- **Climate** - Hot weather = more sweating
-- **Diet** - High protein or salt increases water needs
+**Mass-market soda is designed for:**
+- Maximum addiction potential
+- Lowest production cost
+- Longest shelf life
+- Consistent taste (even if that taste is artificial)
 
-**Better rule:** Drink enough that your urine is pale yellow. Dark yellow? You're dehydrated. Clear? You might be overdoing it.
+**NOT designed for:**
+- Your health
+- Actually tasting good
+- Real ingredients
+- You enjoying it long-term
 
-### Why Plain Water Isn't Enough (Sometimes)
+They're optimizing for profit, not for you.
 
-Here's the problem: plain water is boring. And when beverages are boring, we don't drink enough of them.
+### What Real Ingredients Actually Taste Like
 
-Your body also needs electrolytes—minerals that help regulate hydration:
-- **Sodium** - Helps retain water
-- **Potassium** - Regulates fluid balance
-- **Magnesium** - Supports muscle and nerve function
+When we made our first batch with actual spices—like, spices you could buy at a store, not a chemical lab—the difference was shocking.
 
-Plain water lacks these. That's why athletes drink sports drinks (though most commercial ones are loaded with sugar).
+<span className='font-bold italic text-black'>You could taste layers</span>. The citrus hit first. Then the spices came through—cumin, black salt, a little pepper. Then carbonation that actually refreshed instead of burned.
 
-### The Solution: Hydration That Tastes Good
+It didn't need to be overpoweringly sweet because there was actual flavor to experience.
 
-What if hydration wasn't a chore? What if your daily water intake was something you actually looked forward to?
+### Why We're Telling You This
 
-**Sparkling water** adds carbonation for a satisfying mouthfeel.
-**Natural flavors** from fruit and spices make drinking enjoyable.
-**Proper mineral content** supports optimal hydration.
+Look, we're not saying this to sell you something (okay, we are a business, but hear us out). We're telling you because once you understand what's happening, you can't unsee it.
 
-This is where ZfO comes in.
+Try this: Drink a regular soda. Then eat an apple. Notice how the apple tastes kind of... nothing? That's the issue.
 
-### How ZfO Makes Hydration Enjoyable
+**Your taste buds deserve better.** They're supposed to detect subtle flavors, complex combinations, natural sweetness. Not just get blasted with artificial intensity.
 
-Our craft sodas aren't just refreshing—they're designed for optimal hydration:
-
-**Zero Sugar Crash** - Unlike energy drinks or sugary sodas, ZfO won't spike your blood sugar and then leave you crashing.
-
-**Natural Electrolytes** - Our masala blend includes minerals that support hydration.
-
-**Glass Bottles** - Keeps your beverage colder longer, making it more refreshing.
-
-**Flavor Without Compromise** - Real spices and citrus mean you enjoy every sip.
-
-**Bubbles That Satisfy** - The carbonation makes you feel full and satisfied, helping you drink more water overall.
-
-### The 7-Day Hydration Challenge
-
-Want to see how hydration affects your life? Try this:
-
-**Days 1-2:** Drink 3 liters of water daily. Note your energy, skin, and mood.
-**Days 3-4:** Replace 1 liter with ZfO or sparkling water. Track changes.
-**Days 5-7:** Find your optimal mix. Most people do best with 2L water + 1L flavored sparkling.
-
-Track these metrics:
-- Morning energy (1-10)
-- Afternoon focus (1-10)
-- Skin clarity (1-10)
-- Overall mood (1-10)
-
-We guarantee you'll see improvement.
-
-### Real Talk: The Confidence Connection
-
-Here's what nobody tells you: when you feel good, you project confidence. And confidence is attractive.
-
-Hydration affects:
-- **Posture** - Dehydration causes fatigue, which leads to slouching
-- **Eye contact** - Brain fog makes it harder to focus on conversations
-- **Conversation quality** - Mental clarity means wittier, more engaging dialogue
-- **Physical presence** - Energy levels affect how you move and carry yourself
-
-When you're properly hydrated, you show up as your best self. And that's magnetic.
-
-### Beyond Dating: Hydration for Life
-
-Even if you're not dating, hydration matters for:
-- **Work performance** - Better focus = better output
-- **Exercise** - Proper hydration improves endurance and recovery
-- **Mental health** - Dehydration is linked to anxiety and depression
-- **Longevity** - Chronic dehydration stresses every system in your body
-
-### How to Build a Hydration Habit
-
-1. **Start your day with water** - Before coffee, before anything. 500ml immediately upon waking.
-
-2. **Make it accessible** - Keep ZfO or water at your desk, in your car, everywhere.
-
-3. **Tie it to habits** - Drink water before every meal, after every bathroom break, during every meeting.
-
-4. **Track it** - Use an app or simple tally. Awareness changes behavior.
-
-5. **Make it enjoyable** - If plain water bores you, drink ZfO. Enjoyment ensures consistency.
-
-### The Bottom Line
-
-Your crush isn't texting back because your skin is dull, your energy is low, or your confidence is off. Fix the hydration, fix the foundation.
-
-**Ready to glow up?** [Shop ZfO Hydration](/)
-
----
-
-*Have hydration tips to share? Tag us @drinkzfo*
-
-**Related Articles:**
-- [What's Really In Your Soda?](/fizzroom/5)
-- [Why We Use Glass Bottles](/fizzroom/3)
-- [The ZfO Mission](/fizzroom/4)`
-    },
-    {
-        id: 2,
-        title: "Masala Soda Lore: The Original Craft Beverage",
-        excerpt: "Before your fav influencer discovered 'craft beverages', Indian street vendors were already serving the GOAT. 150 years of flavor history that slaps harder than your morning coffee.",
-        date: "Jan 24, 2026",
-        category: "CULTURE",
-        image: "/article-2-thumbnail.png",
-        metaDescription: "Explore the complete history of masala soda, India's beloved craft beverage. From colonial origins to street culture revival, learn about the cultural icon being reborn in glass bottles.",
-        keywords: "masala soda history, Indian soda culture, craft soda India, traditional Indian beverages, masala soda origin, Indian street drinks",
-        content: `## The Untold Story of India's Favorite Soda
-
-Before Coca-Cola conquered the world, there was masala soda. This spicy, citrusy, effervescent drink has been cooling down Indians for over 150 years. But its story—like most great Indian stories—is far more complex and fascinating than you'd expect.
-
-### Colonial Origins: Medicine Masquerading as Refreshment (1880s)
-
-The story begins with the British East India Company. In the scorching Indian summers, British soldiers and administrators suffered from heat exhaustion and digestive troubles. Local "pandits" (wise men) recommended a mixture of:
-
-- **Soda water** - For hydration and cooling
-- **Spices** - Black salt, cumin, and pepper for digestion
-- **Lemon** - For vitamin C and flavor
-- **Sugar** - To make it palatable
-
-British apothecaries commercialized this formula, selling it as "Indian Tonic Water" and "Digestive Soda" in pharmacies across Bombay, Calcutta, and Madras.
-
-**Key fact:** The original masala soda was marketed as medicine, not refreshment. Advertisements claimed it cured "tropical fatigue," "liver complaints," and "bilious disorders."
-
-### The Street Vendor Revolution (1920s-1940s)
-
-By the 1920s, something interesting happened: Indians took ownership of the beverage.
-
-Street vendors—locally called "soda-wallahs"—began hand-pulling soda machines on street corners. These weren't corporate franchises; they were family businesses passed down through generations.
-
-**The Process Was Theater:**
-1. Heavy glass siphons were pulled by hand, creating a distinctive "pssst" sound
-2. Spices were ground fresh daily on stone mortars
-3. Each vendor had a secret family recipe
-4. Ice was hand-crushed from massive blocks delivered by horse cart
-
-The sound of a soda-wallah setting up became synonymous with evening relief from the heat. In Mumbai's Girgaum district, over 200 vendors operated within a one-mile radius.
-
-### Regional Variations: India's Diverse Palates
-
-As masala soda spread across India, each region added its own twist:
-
-**Mumbai Style**
-- Heavy on black salt (kala namak)
-- Extra lemon
-- Sometimes served with a pinch of chaat masala
-- Known for being bold and aggressive
-
-**Delhi Style**
-- More cumin (jeera) forward
-- Often includes mint
-- Sweeter than Mumbai versions
-- Popular at wedding functions
-
-**South Indian Style**
-- Lighter, more citrus-focused
-- Sometimes includes ginger
-- Less sweet overall
-- Often paired with spicy snacks
-
-**Calcutta Style**
-- Influenced by British colonial preferences
-- More carbonation
-- Often served with a lemon slice
-- Popular at cricket matches
-
-**Punjab Style**
-- Heavy spice blend
-- Sometimes includes rock salt
-- Extra kick of pepper
-- Known for being "strong"
-
-### The Golden Age: 1950s-1970s
-
-Post-independence India saw masala soda reach its peak popularity. Bollywood stars endorsed brands. Cricket stadiums sold thousands of bottles per match. It was the drink of:
-
-- **College students** - Affordable at 10-15 paise per glass
-- **Office workers** - Afternoon pick-me-up
-- **Families** - Weekend treat
-- **Weddings** - Signature welcome drink
-
-**Famous brands of the era:**
-- Bovonto (South India)
-- Thums Up (before Coca-Cola acquisition)
-- Gold Spot
-- Limca
-
-Each city had local favorites, creating fierce brand loyalties that persist today.
-
-### The Corporate Takeover: 1980s-2000s
-
-Then came the multinational invasion.
-
-Coca-Cola re-entered India in 1993 (after being forced out in 1977). Pepsi followed. These giants had:
-- Massive marketing budgets
-- Consistent products
-- Plastic bottles (cheaper to transport)
-- Sweet formulas designed for addiction
-
-**The result:** Local masala soda brands couldn't compete. By 2000, over 60% of traditional soda brands had disappeared or been acquired.
-
-**What was lost:**
-- Regional flavor variations
-- Hand-crafted quality
-- Glass bottles
-- Cultural authenticity
-
-### The Craft Revival: 2010s-Present
-
-But you can't keep a good drink down.
-
-Starting in the 2010s, a counter-movement emerged:
-
-**2012:** First craft soda brewery opens in Bangalore
-**2015:** "Buy local" movement gains traction in major cities
-**2018:** Instagram culture drives demand for "authentic" experiences
-**2020:** Pandemic increases focus on health and ingredient transparency
-**2023:** ZfO launches with mission to restore masala soda's glory
-
-**What's different this time:**
-- **Quality over quantity** - Small batches, premium ingredients
-- **Transparency** - Consumers demand to know what's in their drinks
-- **Sustainability** - Glass bottles return as eco-conscious choice
-- **Cultural pride** - "Made in India" is now a selling point
-
-### Masala Soda in Popular Culture
-
-The beverage has left its mark on Indian culture:
-
-**Bollywood:**
-- Featured in over 200 films as the "common man" drink
-- Iconic scene in *Sholay* (1975) with soda bottles
-- Recent films like *Gully Boy* (2019) feature craft soda resurgence
-
-**Literature:**
-- Mentioned in Salman Rushdie's *Midnight's Children*
-- Featured in multiple short stories about Mumbai life
-
-**Music:**
-- Referenced in indie music about urban Indian life
-- Subject of multiple advertising jingles
-
-### The Science of Masala Soda
-
-Why does this combination work so well?
-
-**Digestive Benefits:**
-- **Black salt** - Aids digestion, reduces bloating
-- **Cumin** - Stimulates digestive enzymes
-- **Lemon** - Vitamin C aids iron absorption
-- **Carbonation** - Can help with indigestion
-
-**Cooling Effect:**
-- Spices create mild sweating, which cools the body
-- Carbonation provides instant refreshment
-- Citrus adds vitamin C for energy
-
-**Flavor Science:**
-- Spicy + sweet + sour = complex, satisfying taste
-- Bubbles carry aromatics to nose
-- Cold temperature enhances flavor perception
-
-### ZfO: Continuing the Legacy
-
-When we created ZfO, we studied the history. We interviewed old-school soda-wallahs. We tested dozens of spice combinations.
-
-**Our approach:**
-1. **Research traditional recipes** - Found variations from 12 different regions
-2. **Source authentic spices** - Black salt from Himachal, cumin from Gujarat
-3. **Perfect the carbonation** - Enough fizz for satisfaction, not so much it hurts
-4. **Glass only** - As it was always meant to be
-5. **No shortcuts** - If our grandparents wouldn't recognize an ingredient, we don't use it
-
-The result? A masala soda that honors its 150-year heritage while meeting modern standards for quality and transparency.
-
-### The Future of Masala Soda
-
-Where is this all heading?
-
-**Trends we're seeing:**
-- **Premiumization** - Consumers willing to pay more for quality
-- **Health focus** - Natural ingredients over artificial
-- **Sustainability** - Glass bottles, local sourcing
-- **Cultural pride** - "Indian-made" as premium positioning
-- **Mixology** - Craft sodas as cocktail mixers
-
-**Our prediction:** Within 5 years, craft masala soda will capture 15% of India's premium beverage market. ZfO intends to lead that charge.
-
-### How to Experience Authentic Masala Soda
-
-Want to taste the real deal?
-
-**Look for:**
-- Glass bottles (not plastic)
-- Real spice ingredients listed
-- Regional variations
-- Small-batch production
-
-**Avoid:**
-- "Flavored" sodas with artificial ingredients
-- Plastic bottles
-- Mass-produced "Indian" sodas owned by multinationals
-- Anything with high fructose corn syrup
-
-### The Bottom Line
-
-Masala soda isn't just a drink—it's 150 years of Indian history, culture, and entrepreneurship. From British medicine to street-corner staple to craft revival, it's a story of adaptation, resilience, and ultimately, authenticity.
-
-**Ready to taste history?** [Explore ZfO's Masala Soda](/)
-
----
-
-*Know an old-school soda recipe? Share with us: beverages@zfo.co.in*
-
-**Related Articles:**
-- [The Truth About Soda Ingredients](/fizzroom/5)
-- [Why Glass Bottles Matter](/fizzroom/3)
-- [The ZfO Mission](/fizzroom/4)`
-    },
-    {
-        id: 3,
-        title: "Glass Bottles: The Main Character of Sustainability",
-        excerpt: "Plastic bottles are giving toxic ex energy. We're explaining why glass is the only valid choice for your drink (and the planet). No microplastics, just immaculate vibes.",
-        date: "Jan 23, 2026",
-        category: "CLIMATE",
-        image: "/article-3-thumbnail.png",
-        metaDescription: "Glass bottles vs plastic: the complete analysis. Learn why glass bottles are better for your health, taste, and the planet. ZfO soda exclusively in sustainable glass packaging.",
-        keywords: "glass bottles vs plastic, sustainable packaging, microplastics health, eco-friendly beverages, recyclable packaging, glass bottle benefits",
-        content: `## The Plastic Problem: Why Your Soda Bottle Is Poisoning You
-
-That plastic bottle in your hand? It's not just bad for the planet—it's bad for your body. And the beverage industry has been hiding this from you for decades.
-
-### The Microplastics Crisis: You're Eating Your Trash
-
-Here's a horrifying fact: You consume approximately one credit card's worth of plastic every week. Most of it comes from—you guessed it—plastic bottles.
-
-**The Science:**
-When plastic bottles sit in heat or sunlight, they leach microplastics and chemicals into the beverage. These particles are too small to see but large enough to cause damage:
-
-- **Microplastics** - Plastic fragments under 5mm
-- **Nanoplastics** - Even smaller particles that can enter cells
-- **Chemical additives** - BPA, phthalates, and other endocrine disruptors
-
-**Where they end up:**
-- Your bloodstream
-- Your lungs (when you breathe near plastic)
-- Your digestive system
-- Human placentas (yes, really)
-- Breast milk
-
-Recent studies found microplastics in:
-- 93% of bottled water samples
-- 90% of salt brands worldwide
-- 80% of tested human blood samples
-
-### Health Risks of Plastic Bottle Exposure
-
-The health impacts are just beginning to be understood, but early research shows:
-
-**Hormone Disruption:**
-- BPA and phthalates mimic estrogen
-- Linked to infertility, early puberty, hormone-sensitive cancers
-- Can affect fetal development
-
-**Inflammation:**
-- Microplastics trigger immune responses
-- Chronic inflammation linked to heart disease, diabetes, autoimmune disorders
-
-**Cellular Damage:**
-- Nanoplastics can enter cell nuclei
-- Potential DNA damage (still being studied)
-- Oxidative stress
-
-**Chemical Exposure:**
-- Plastic bottles contain 100+ chemicals
-- Many are classified as "chemicals of concern"
-- Long-term effects unknown
-
-### The Environmental Disaster
-
-Beyond personal health, plastic bottles are an ecological catastrophe:
-
-**The Numbers:**
-- 1 million plastic bottles bought every minute globally
-- 480 billion bottles sold annually
-- Less than 9% actually recycled
-- 91% end up in landfills, oceans, or burned
-
-**Ocean Impact:**
-- 8 million metric tons enter oceans yearly
-- By 2050, more plastic than fish in the ocean
-- Marine life mistakes plastic for food
-- Entire ecosystems contaminated
-
-**Landfill Reality:**
-- Plastic takes 450+ years to decompose
-- Releases methane (greenhouse gas) as it breaks down
-- Leaches chemicals into soil and groundwater
-
-**Recycling Myth:**
-Most "recycled" plastic bottles are actually "downcycled"—turned into lower-quality products that can't be recycled again. True circular recycling is rare.
-
-### Why Glass Bottles Are Superior
-
-Glass isn't just better—it's the gold standard for beverage packaging. Here's why:
-
-**1. Zero Chemical Leaching**
-- Glass is inert
-- No chemicals to migrate into your drink
-- Taste stays pure from bottling to consumption
-
-**2. Infinite Recyclability**
-- Glass can be recycled endlessly without quality loss
-- 80% of recovered glass is recycled into new containers
-- Recycling process uses 30% less energy than new glass
-
-**3. Preserves Taste**
-- No plastic taste or odor
-- Maintains carbonation longer
-- Keeps beverages colder
-
-**4. Health Benefits**
-- No microplastics
-- No chemical exposure
-- Safe for all temperatures
-
-**5. Environmental Impact**
-- Made from abundant natural materials (sand, soda ash, limestone)
-- Biodegradable over time (though recycling is preferred)
-- Lower carbon footprint over multiple uses
-
-### The Economics of Glass vs. Plastic
-
-"But glass is more expensive!" Not when you look at the full picture:
-
-**True Cost of Plastic:**
-- Environmental cleanup: $13 billion/year globally
-- Health costs from chemical exposure: Unknown but significant
-- Lost marine ecosystem value: Incalculable
-- Carbon emissions from production: High
-
-**True Cost of Glass:**
-- Higher initial purchase price
-- Lower long-term environmental cost
-- Recyclable value (glass has scrap value)
-- Health cost savings (priceless)
-
-When you factor in externalities, glass is actually cheaper for society.
-
-### Common Myths About Glass Bottles
-
-**Myth: "Glass breaks too easily"**
-Reality: Modern glass bottles are engineered for durability. They're thicker and stronger than vintage bottles. Plus, breaking means it's biodegradable—unlike plastic that persists for centuries.
-
-**Myth: "Glass is too heavy to ship"**
-Reality: While heavier than plastic, glass bottles are often transported locally (supporting local economies) and can be reused. The carbon footprint balances out.
-
-**Myth: "Glass recycling is energy-intensive"**
-Reality: Making new glass from recycled material uses 30% less energy than virgin glass. Even better than aluminum (which saves 95% but has mining impacts).
-
-**Myth: "Plastic is more convenient"**
-Reality: Is cancer convenient? Is environmental destruction convenient? Short-term convenience creates long-term catastrophe.
-
-### The ZfO Commitment to Glass
-
-When we started ZfO, we made a non-negotiable decision: glass bottles only. Here's why:
-
-**Our Standards:**
-- **100% glass packaging** - Zero plastic
-- **Recyclable materials only** - Labels, caps, everything
-- **Local sourcing** - Reduces shipping carbon footprint
-- **Return programs** - Working on bottle deposit/return systems
-
-**The Cost:**
-Yes, glass costs us more. About 3x more than plastic. We absorb that cost because:
-1. Your health is worth it
-2. The planet is worth it
-3. Taste is worth it
-4. Integrity is worth it
-
-**The Future:**
-We're investing in:
-- Refillable bottle programs
-- Local production facilities
-- Innovative lightweight glass
-- Consumer education
+When we switched to making soda with <span className='font-black text-black'>actual real ingredients</span>, we started tasting food again. Like, actually tasting it.
 
 ### What You Can Do
 
-Individual choices matter. Here's how to reduce plastic bottle use:
-
-**Immediate Actions:**
-1. **Switch to glass** - Choose beverages in glass when available
-2. **Carry a reusable bottle** - Fill with tap or filtered water
-3. **Buy in bulk** - Reduces packaging per unit
-4. **Support glass-only brands** - Vote with your wallet
-
-**Spread the Word:**
-- Share articles like this one
-- Talk to friends and family
-- Post on social media
-- Request glass options at restaurants/stores
-
-**Systemic Change:**
-- Support bottle deposit legislation
-- Advocate for plastic bans
-- Pressure corporations to switch
-- Vote for environmental policies
-
-### The Bigger Picture: Circular Economy
-
-Glass bottles fit perfectly into a circular economic model:
-
-**Linear Economy (Current):**
-Take → Make → Waste → Pollute
-
-**Circular Economy (Future):**
-Take → Make → Use → Return → Recycle → Remake
-
-With glass:
-- Bottles are used
-- Returned to facility
-- Washed and sterilized (reuse) OR
-- Crushed and melted (recycle)
-- Made into new bottles
-- Zero waste
-
-This is how beverage packaging worked for centuries before plastic. It's time to return to what works.
-
-### Bottom Line
-
-Plastic bottles are a failed experiment that's poisoning our bodies and planet. Glass bottles are the solution we had all along.
-
-**The choice is yours:**
-- Continue supporting the plastic industry and its consequences
-- Join the glass revolution and demand better
-
-At ZfO, we've made our choice. We hope you'll join us.
-
-**Ready to switch to glass?** [Shop ZfO in Glass Bottles](/)
-
----
-
-*Want to learn more about sustainable packaging? Email us: beverages@zfo.co.in*
-
-**Related Articles:**
-- [The Truth About Soda Ingredients](/fizzroom/5)
-- [Masala Soda History](/fizzroom/2)
-- [The ZfO Mission](/fizzroom/4)`
-    },
-    {
-        id: 4,
-        title: "The ZfO Manifesto: Choosing Chaos Over Corporate",
-        excerpt: "We could've made generic cola. Instead, we chose violence against the $400B soda industry. Honest ingredients, glass bottles, and zero compromises. Welcome to the rebellion.",
-        date: "Jan 22, 2026",
-        category: "MANIFESTO",
-        image: "/article-4-thumbnail.png",
-        metaDescription: "The ZfO mission: disrupting the soda industry with craft masala soda in glass bottles. Real ingredients, honest flavors, zero compromises. Join the beverage revolution.",
-        keywords: "ZfO mission, craft soda brand, Indian craft beverage, soda industry disruption, honest ingredients, glass bottle soda brand",
-        content: `## Why We Started ZfO: A Manifesto for Better Beverages
-
-We could have played it safe. Could have followed the formula. Could have created another generic, syrupy, plastic-bottled beverage and called it innovation.
-
-We chose chaos.
-
-This is the story of why ZfO exists—and why we're not just another soda company.
-
-### The Problem: An Industry Built on Lies
-
-The global soda industry is worth over $400 billion. It's also built on:
-
-**Deception:**
-- "Natural flavors" that aren't natural
-- "Healthy" options with 39g of sugar
-- Marketing that targets children
-- Greenwashing environmental destruction
-
-**Exploitation:**
-- Plastic pollution that communities pay to clean
-- Water extraction from drought-stricken regions
-- Labor practices that would make you sick
-- Tax avoidance while profiting from public health crises
-
-**Stagnation:**
-- The same flavors for 50+ years
-- Zero innovation in ingredients
-- Packaging that prioritizes profit over planet
-- A race to the bottom on quality
-
-We got tired of watching it happen. So we decided to change it.
-
-### The Moment of Truth
-
-Our founder's story:
-
-"I was at a family wedding in Mumbai. Hot day, crowded venue, traditional ceremony. After hours of sweating, someone handed me a masala soda.
-
-It was from a local vendor—not a corporate brand. Glass bottle. Hand-mixed. The spices hit first, then the citrus, then the perfect carbonation.
-
-I realized: this is what soda is supposed to taste like. Not the chemical concoction I'd been drinking my whole life.
-
-I spent the next year researching. Visiting soda-wallahs. Studying ingredients. Learning about the industry's decline from craft to commodity.
-
-The more I learned, the angrier I got. Then the more determined I became.
-
-ZfO started that day."
-
-### Our Non-Negotiables
-
-When building ZfO, we established principles we refuse to compromise:
-
-**1. Real Ingredients Only**
-If you can't pronounce it, we don't use it. If it doesn't exist in nature, it doesn't go in our bottles. No exceptions.
-
-**2. Glass Bottles Exclusively**
-Plastic is non-negotiable. It's bad for health, bad for taste, bad for the planet. We're all-glass, always.
-
-**3. Small Batch Production**
-Quality over quantity. We make soda the way it should be made: carefully, intentionally, with attention to every detail.
-
-**4. Transparent Sourcing**
-We tell you where ingredients come from. No secrets, no proprietary "formulas" hiding chemical cocktails.
-
-**5. Fair Pricing**
-We're premium but not exploitative. Fair wages for workers, fair prices for customers, sustainable margins for growth.
-
-**6. Community First**
-We hire locally. Source locally when possible. Support the communities that support us.
-
-### Why Masala Soda?
-
-Of all the beverages we could have chosen, why masala soda?
-
-**Cultural Significance:**
-Masala soda is quintessentially Indian. It represents:
-- 150 years of beverage history
-- Regional diversity and pride
-- Street culture and entrepreneurship
-- The perfect blend of spice and refreshment
-
-**Flavor Complexity:**
-Unlike one-note colas, masala soda offers:
-- Spicy (black salt, pepper)
-- Sour (lemon, lime)
-- Sweet (natural sugars)
-- Savory (cumin, spices)
-- Effervescent (perfect carbonation)
-
-**Health Benefits:**
-Traditional masala ingredients offer:
-- Digestive aid (black salt, cumin)
-- Vitamin C (citrus)
-- Electrolytes (minerals in spices)
-- No artificial chemicals
-
-**Differentiation:**
-In a market of:
-- 50 cola variations
-- 30 lemon-lime copies
-- 20 orange sodas
-
-Masala soda stands alone. It's distinctive, memorable, and delicious.
-
-### The ZfO Difference
-
-How are we different from other "craft" soda brands?
-
-**Most "Craft" Brands:**
-- Use "natural flavors" (still chemicals)
-- Plastic bottles
-- Outsourced production
-- Mass-market distribution
-- Focus on marketing over quality
-
-**ZfO:**
-- Only real, whole ingredients
-- Glass bottles exclusively
-- In-house production
-- Direct-to-consumer (lower prices)
-- Product quality is our marketing
-
-### Our Impact Goals
-
-We're not just selling soda. We're working toward:
-
-**Environmental:**
-- Eliminate 1 million plastic bottles from circulation by 2027
-- Carbon-neutral production by 2028
-- Zero-waste manufacturing
-- Support glass recycling infrastructure
-
-**Social:**
-- Create 500+ jobs in local communities
-- Source 80% of ingredients from Indian farmers
-- Support traditional spice-growing regions
-- Advocate for beverage industry transparency
-
-**Health:**
-- Provide a truly healthy soda alternative
-- Educate consumers about ingredients
-- Push industry toward honest labeling
-- Reduce sugar-related health issues
-
-### The Challenges We Face
-
-Building ZfO isn't easy. Here's what we're up against:
-
-**Economic:**
-- Glass costs 3x more than plastic
-- Real ingredients cost more than artificial
-- Small batches = higher per-unit costs
-- We're competing with billion-dollar brands
-
-**Logistical:**
-- Glass is heavier (higher shipping costs)
-- Fragile (breakage risk)
-- Limited recycling infrastructure in some areas
-
-**Cultural:**
-- Consumer habit: "soda = plastic bottle"
-- Price sensitivity in price-conscious market
-- Brand loyalty to established players
-- Education needed about ingredients
-
-**Industry Pushback:**
-- Large distributors favor established brands
-- Retail slotting fees favor big players
-- Marketing noise hard to cut through
-- Misinformation about "natural" products
-
-But every challenge is an opportunity. And we're here for it.
-
-### Our Vision for the Future
-
-Where is ZfO headed?
-
-**Year 1: Foundation**
-- Perfect our core masala recipe
-- Build loyal customer base
-- Establish glass-only brand identity
-- Prove the model works
-
-**Year 2: Expansion**
-- Launch regional variations (Mumbai style, Delhi style, etc.)
-- Expand distribution
-- Introduce subscription model
-- Build community events
-
-**Year 3: Scale**
-- National presence
-- Multiple product lines
-- Sustainable profitability
-- Industry recognition
-
-**Year 5: Impact**
-- Measurable environmental impact
-- Industry-leading transparency
-- Model for craft beverage success
-- Pushing Big Soda to change
-
-### Join the Movement
-
-ZfO isn't just a brand. It's a statement:
-
-- That you deserve better ingredients
-- That the planet deserves better packaging
-- That corporations should be transparent
-- That craft beats commodity
-- That taste matters
-- That your choices make a difference
-
-**When you choose ZfO, you're choosing:**
-- Real over artificial
-- Glass over plastic
-- Health over convenience
-- Planet over profit
-- Quality over quantity
-- Integrity over marketing
+We're not saying quit soda (we literally make it, so that'd be weird). We're saying: choose soda that lets your taste buds work properly.
+
+**What to look for:**
+- Ingredient lists you can actually read
+- Real spices and fruit
+- Natural sweeteners (or at least reasonable amounts)
+- Glass bottles (plastic affects taste too)
+
+**What to avoid:**
+- High fructose corn syrup
+- "Natural flavors" hiding chemicals
+- Artificial colors (why does soda need to be neon?)
+- Plastic bottles sitting in hot warehouses
 
 ### The Bottom Line
 
-The beverage industry has been lying to you for decades. They've convinced you that cheap, chemical, plastic-wrapped products are normal.
+Your taste buds aren't broken. They've been hijacked by industrial food engineering. Once you reset them with real ingredients, you'll wonder how you ever thought that artificial stuff tasted good.
 
-They're not.
+We did. Now we can't go back.
 
-You deserve better. The planet deserves better. Future generations deserve better.
+**Want to actually taste your drink?** [Try ZfO with real spices](/)`
+    },
+    {
+        id: 2,
+        title: "We Were Tired of Being Lied To About 'Healthy' Drinks",
+        excerpt: "Watched every drink marketed as 'healthy' turn out to be 90% sugar and chemicals. Got mad. Started making our own. Here's what happened.",
+        date: "Jan 25, 2026",
+        category: "TRUTH BOMB",
+        image: "/truth-bomb-thumbnail.jpg",
+        metaDescription: "The truth about healthy drink marketing lies. How to actually read labels, spot fake health claims, and find genuinely better beverage options without artificial ingredients.",
+        keywords: "healthy drink lies, fake health drinks, sugar in healthy beverages, reading nutrition labels, craft soda health, natural soda alternatives",
+        content: `## The Thing That Made Us Start This Whole Company
 
-We're building that future—one glass bottle at a time.
+Picture this: We're at the gym, trying to be healthy. Grab a "vitamin water" because it says "vitamin" right there in the name.
 
-**Ready to join the revolution?** [Get ZfO Today](/)
+Later that night, actually read the label. 32 grams of sugar. That's more than a regular soda.
 
----
+That's when we realized: <span className='font-bold text-black'>we've been played</span>.
 
-*Have questions about our mission? Reach out: beverages@zfo.co.in*
+### Every 'Healthy' Drink Is Lying to You
 
-**Related Articles:**
-- [What's Really In Your Soda?](/fizzroom/5)
-- [The History of Masala Soda](/fizzroom/2)
-- [Why Glass Bottles Matter](/fizzroom/3)`
+Spent the next month checking every "better for you" beverage. Sports drinks. Vitamin waters. "Natural" sodas. Kombucha (which we liked, but still).
+
+**What we found:**
+- "Organic" sodas with same sugar as regular
+- "Natural" flavors = lab-created chemicals
+- "Vitamin-enhanced"= sugar water with B vitamins (which you pee out anyway)
+- "Low calorie" = artificial sweeteners with sketchy research
+- "Electrolyte" drinks = salt water with food coloring
+
+The more "healthy" claims on the front, the worse the ingredient list on the back. Every single time.
+
+### We Got Really Angry About This
+
+Here's what made us mad: These companies KNOW what they're doing. They:
+
+- Hire psychologists to design addictive products
+- Pay for studies that make their drinks look healthy
+- Use confusing labels to hide bad ingredients
+- Market to people genuinely trying to be healthier
+- Sue smaller brands that threaten them
+
+And we're just supposed to... accept it? Keep buying their lies?
+
+Nah.
+
+### So We Made What We Actually Wanted
+
+We sat down and asked: If we were making a drink for ourselves—no corporate pressure, no shortcuts—what would it be?
+
+**Our list:**
+- Real ingredients only (like, <span className='font-bold italic text-black'>ingredients that are actually food</span>)
+- Actual spices, not flavor extracts
+- No artificial anything
+- Glass bottles (because plastic leaches chemicals)
+- Fair pricing (not exploitative)
+- Honest about what's inside
+
+Took us FOREVER to get right. Made probably 50 different batches. Friends got tired of taste-testing. But eventually...
+
+We made something that was <span className='font-black text-black'>actually better</span>. Not "better for you" in some marketing BS way. Actually better.
+
+### What Real Ingredients Actually Cost
+
+Real talk: Our soda costs more to make. Way more.
+
+**Why:**
+- Real spices cost more than chemical flavors
+- Glass bottles cost 3 times what plastic costs
+- Small batches are more expensive than factory production
+- Quality control actually costs money
+
+Could we use cheaper ingredients and make way more profit? Yes.
+
+Will we? No. Because that would make us exactly what we're fighting against.
+
+### The Part Where We Admit We're Not Perfect
+
+Look, we're not claiming we've solved everything. We're a small company trying to do better. Sometimes we mess up. Sometimes we can't get it exactly right.
+
+But here's the difference: **We actually tell you when that happens.**
+
+No corporate spin. No hiding behind "proprietary formulas." If something's not perfect, we say so. If we're working on improving something, we'll tell you.
+
+That's the bare minimum of honesty we wish every company had.
+
+### What You Actually Deserve
+
+You deserve to know what you're drinking. You deserve ingredients that are food, not science experiments. You deserve companies that don't treat you like you're stupid.
+
+**What we promise:**
+- Every ingredient listed clearly
+- No "natural flavors" hiding chemicals
+- If we can't explain what something is, we don't use it
+- Glass bottles always
+- Honest about costs and pricing
+
+Is this revolutionary? No. It's just... <span className='font-bold text-black'>basic respect</span>. Which apparently is revolutionary in the beverage industry.
+
+### Try This Challenge
+
+Next time you're at a store:
+
+1. Pick up a "healthy" drink
+2. Read the BACK label, not the front
+3. Google ingredients you don't recognize
+4. Check how much sugar is actually in it
+5. Ask yourself: Is this actually better?
+
+We bet 9 times out of 10, the answer is no.
+
+### Why We're Still Doing This
+
+Sometimes we wonder if it's worth it. Fighting against billion-dollar companies. Paying more for real ingredients. Dealing with people who think we're overpriced (until they actually try it and get it).
+
+Then someone emails us saying they can finally drink soda again because we don't use the artificial stuff that bothers them. Or someone says their kid actually likes the real spice flavor. Or someone tells us they quit regular soda after trying ours.
+
+That's why we keep going.
+
+**Ready to try something honest?** [Get ZfO with real ingredients](/)`
+    },
+    {
+        id: 3,
+        title: "The Drink We Grew Up With Just... Disappeared",
+        excerpt: "Remember masala soda from street vendors? Glass bottles, real spices, that perfect fizz? We spent years trying to find it again. Couldn't. So we made it ourselves.",
+        date: "Jan 24, 2026",
+        category: "STORY TIME",
+        image: "/article-2-thumbnail.png",
+        metaDescription: "The disappearance and revival of authentic masala soda. A personal story about reclaiming India's heritage drink from mass production and bringing back craft quality.",
+        keywords: "masala soda nostalgia, traditional Indian drinks, masala soda history, craft beverage revival, authentic masala soda, Indian street food drinks",
+        content: `## This Is Kind Of Personal
+
+So, we grew up drinking masala soda. Not the bottled stuff—the real deal. Street vendors with glass siphons. Hand-mixed spices. That hiss when they opened it.
+
+It was <span className='font-bold text-black'>pure magic</span>.
+
+Then one day... we realized we couldn't find it anymore.
+
+### When Did Everything Change?
+
+Tried to pinpoint exactly when it happened. Best we can figure: late 90s, early 2000s.
+
+**What changed:**
+- Big corporations flooded the market
+- Local vendors couldn't compete
+- Plastic bottles replaced glass
+- Chemical flavors replaced real spices
+- Mass production replaced craft
+
+Within maybe 10 years, that drink we remembered? Gone. Replaced by something that looked similar but tasted completely different.
+
+### We Became Low-Key Obsessed
+
+Started seeking out old-school vendors. Tracked down people who remembered the original recipes. Asked our grandparents what it used to taste like.
+
+**What we learned:**
+
+Original masala soda was:
+- Made fresh, <span className='font-bold italic text-black'>not pre-bottled months earlier</span>
+- Mixed with actual spices ground that day 
+- Carbonated on the spot with hand-pulled siphons
+- Served in thick glass bottles
+- Different in every city, every neighborhood
+
+It wasn't a product. It was a craft.
+
+### The More We Searched, The Sadder It Got
+
+Found a few vendors still doing it the old way. They were all like 60-70 years old. Running tiny operations. Barely surviving.
+
+Asked one guy why he still bothers when he could just sell corporate sodas and make more money.
+
+He said: "This is how my father did it. How his father did it. If I stop, it's gone forever."
+
+That hit different.
+
+### So We Decided to Bring It Back
+
+Not in some nostalgic, fake vintage way. For real. With the actual methods, actual ingredients, actual care.
+
+**What we did:**
+- Spent months with traditional vendors learning their methods
+- Tested spice combinations from different regions
+- Figured out modern production while keeping quality
+- Sourced real ingredients (black salt from Himachal, cumin from Gujarat)
+- Only used glass bottles (no compromises)
+
+Made probably 100 different batches before we got it right.
+
+### When We Finally Nailed It
+
+The batch that became our recipe—we knew immediately. It tasted like <span className='font-black text-black'>memory</span>. Like summer evenings. Like celebrating after exams. Like that specific India that we thought was gone.
+
+Friends tried it and got quiet. One person actually teared up a little (won't say who, but you know who you are).
+
+That's when we knew: We're not making soda. We're bringing something back that shouldn't have disappeared.
+
+### What We're Actually Trying To Do
+
+This isn't business as usual. We're trying to:
+
+- Keep a 150-year tradition alive
+- Give traditional vendors credit for what they created
+- Show that craft can compete with corporate
+- Make younger people care about heritage drinks
+- Prove that "old school" can be premium
+
+Is it working? Ask us in 5 years.
+
+### The Part Where We Get Real
+
+Sometimes people say we're overpriced. Or ask why we don't just use plastic bottles like everyone else. Or suggest we scale up faster.
+
+And we get it. We could make more money doing it differently.
+
+But then we'd just be making another corporate soda with a "craft" label slapped on it. And the whole point is that we're NOT that.
+
+**We're trying to be worthy of the legacy.** The vendors who spent decades perfecting their craft. The tradition that deserves to survive.
+
+If that means we stay small, that's fine. Better to do it right than big.
+
+### Why This Matters (Maybe)
+
+You might be thinking: It's just soda. Why so serious?
+
+Here's why: When we lose traditional crafts—whether it's hand-pulled soda, hand-woven textiles, traditional recipes—we lose part of who we are. Part of our story.
+
+Every time a vendor closes shop and no one replaces them, that knowledge disappears. Those flavors are gone. That connection to our past is lost.
+
+We're not trying to be heroes. We're just... trying to keep one small tradition alive. In glass bottles. With real spices. The way it was meant to be.
+
+### What You're Actually Drinking
+
+When you drink our masala soda, you're drinking:
+
+- 150 years of tradition
+- Recipes passed down through generations
+- Real ingredients sourced from India
+- A craft that almost died out
+- <span className='font-bold text-black'>Something that connects you to where you're from</span>
+
+Or, you know, it's just a really good soda. Either way works.
+
+**Want to taste the tradition?** [Try ZfO's masala soda](/)`
+    },
+    {
+        id: 4,
+        title: "Fighting a $400 Billion Industry With Glass Bottles",
+        excerpt: "Could've made generic cola in plastic and gotten rich. Instead we're doing the hardest thing possible: honest ingredients in glass. Here's why we're probably crazy.",
+        date: "Jan 22, 2026",
+        category: "WHY WE'RE HERE",
+        image: "/article-4-thumbnail.png",
+        metaDescription: "The ZfO story: Why we chose craft masala soda in glass bottles over easy profits. Fighting corporate soda culture with transparency, real ingredients, and zero compromises.",
+        keywords: "ZfO story, craft soda mission, fighting big soda, glass bottle soda brand, honest beverage company, sustainable soda brand",
+        content: `## We Probably Should Have Started an App Company
+
+Everyone told us to do something else. Literally everyone.
+
+"Make an app." "Do crypto." "Start a consulting business." "Anything but beverages—the market's too competitive."
+
+We started making soda anyway. <span className='font-bold text-black'>In glass bottles. With real ingredients. Taking on billion-dollar corporations.</span>
+
+Yeah, we might be insane.
+
+### The Moment We Decided to Do This
+
+Was at a family thing. Someone handed us a soda—mass-market brand, plastic bottle, you know the type.
+
+Took one sip and just... couldn't finish it. It tasted wrong. Chemical-y. Fake. Made our teeth feel weird.
+
+Looked around. Everyone else was drinking it without question. Like this was normal.
+
+That's when it hit: We've been conditioned to accept garbage and call it refreshment.
+
+Went home that night and decided: Someone needs to make actual good soda. If no one else will, we'll do it.
+
+### Everyone Said We Were Making Mistakes
+
+Talked to "experts." Industry people. Business advisors. You know what they all said?
+
+**"Don't use glass—too expensive."**  
+We used glass anyway.
+
+**"Don't use real ingredients—margins are too thin."**  
+Real ingredients only.
+
+**"Don't be transparent about costs—customers don't care."**  
+We tell you exactly what things cost and why.
+
+**"Don't fight Big Soda—you'll lose."**  
+We might. But we're fighting anyway.
+
+### Why We're Doing It The Hard Way
+
+Could we make more money using plastic bottles? Yes. About 3x more profit margin.
+
+Could we use flavor extracts instead of real spices? Absolutely. Cut costs by like 60%.
+
+Could we outsource production to the cheapest factory? Of course.
+
+**So why don't we?**
+
+Because then we'd be exactly what we're fighting against. Another company that talks about quality but cuts corners the moment it affects profit.
+
+We started this because we were <span className='font-bold italic text-black'>tired of companies lying</span>. If we start lying too, what's the point?
+
+### What We're Actually Up Against
+
+The global soda industry is worth over $400 billion. We're competing against companies with:
+
+- Marketing budgets bigger than our entire company
+- Distribution networks spanning countries
+- Decades of brand loyalty
+- Ability to undercut us on price whenever they want
+
+**Our advantages:**
+- We actually give a damn
+- Real ingredients
+- People are tired of corporate BS
+- Transparency resonates
+- Quality speaks for itself
+
+Is it enough? We're about to find out.
+
+### The Cost of Doing This Right
+
+Real talk about what this costs us:
+
+**Glass bottles:** 3x more expensive than plastic  
+**Real spices:** 5x more than extracts  
+**Small batches:** Higher per-unit costs  
+**Quality control:** Expensive AF  
+**Honest marketing:** Can't cut corners with claims
+
+We could be so much more profitable if we compromised. We've chosen not to.
+
+### What's Actually At Stake
+
+This isn't just about soda. It's about whether there's still room for companies that:
+
+- Tell the truth
+- Use real ingredients
+- Care about the planet
+- Treat customers with respect
+- Build quality products
+
+If we fail, it sends a message: You can't compete with Big Corporate by actually being better. You have to play dirty to win.
+
+**We refuse to accept that.**
+
+### Why Glass Bottles Matter (Like, Actually)
+
+People ask us all the time: "Why are you obsessed with glass?"
+
+Because <span className='font-black text-black'>everything else is a lie</span>:
+
+- Plastic leaches chemicals into your drink
+- Plastic never actually gets recycled (it's downcycled then trashed)
+- Plastic is poisoning the ocean
+- Plastic affects taste
+- Plastic is literally giving us microplastics in our blood
+
+Glass is:
+- Inert (no chemical leaching)
+- Infinitely recyclable
+- Better for taste
+- Sustainable
+- The way beverages should be
+
+Using plastic would save us money but cost us integrity. Not worth it.
+
+### What We're Building Toward
+
+Where are we trying to go with this?
+
+**Short term:**  
+Make enough sales to survive
+
+**Medium term:**  
+Prove that craft can compete with corporate  
+Show there's demand for honest beverages
+
+**Long term:**  
+Force Big Soda to get better  
+Make glass bottles normal again  
+Keep traditional crafts alive  
+Build a company that doesn't suck
+
+Ambitious? Maybe. Impossible? We'll see.
+
+### The Part Where We Might Fail
+
+Let's be honest: There's a good chance this doesn't work.
+
+Glass costs might price us out.  
+People might not care enough to pay premium.  
+Big companies might crush us with marketing.  
+Distribution might be impossible to scale.
+
+**But here's the thing:** Even if we fail, we tried. We didn't compromise. We built something we're proud of. We proved it's possible to compete without lying.
+
+That counts for something.
+
+### Why We're Telling You All This
+
+Most companies hide their struggles. Pretend everything's perfect. Act like success is inevitable.
+
+We're not doing that. You deserve to know:
+
+- This is hard
+- We're figuring it out as we go
+- We don't have all the answers
+- We're betting everything on you caring about quality
+
+**We believe you do care.** Otherwise you wouldn't be reading this.
+
+### What Happens Next Is Up To You
+
+We can make the best soda in the world (we think we did). But if people keep buying chemical garbage in plastic bottles because it's 20 rupees cheaper... we can't compete.
+
+This only works if enough people decide: <span className='font-bold text-black'>Quality matters. Honesty matters. Glass bottles matter. Real ingredients matter.</span>
+
+If you believe that too, then we have a shot.
+
+**Join us in fighting for better.** [Get ZfO in glass bottles](/)`
     }
 ];
