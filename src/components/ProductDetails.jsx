@@ -8,7 +8,7 @@ const products = [
     headings: ["Reclaiming the soul of soda"],
     description:
       "Soda was never meant to be a <span className='font-bold text-red-500'>sugar bomb</span> in plastic. It began as a ritual — glass bottles, crown caps, and immaculate vibes. Mass production gave us the ick. ZfO is the <span className='font-bold text-black'>clapback</span>. Crafted thoughtfully, balanced carefully, for people who pass the vibe check.",
-    image: "/product-0bg.jpeg",
+    image: "/product-0bg.png",
   },
   {
     name: "The Art of Fizz",
