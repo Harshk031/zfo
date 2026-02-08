@@ -1,528 +1,455 @@
 export const fizzPosts = [
     {
         id: 1,
-        title: "When Everything Tastes Fake and You Can't Figure Out Why",
-        excerpt: "Ever feel like you can't taste real flavor anymore? We got obsessed with figuring out what happened to our taste buds—and it led us down a rabbit hole about what's actually in our drinks.",
+        title: "Why Your Taste Buds Ghosted You (It's Not Personal)",
+        excerpt: "Ever notice how real food tastes like cardboard after drinking regular soda? Your taste buds didn't betray you—they got hacked. Here's the tea on what happened.",
         date: "Jan 26, 2026",
-        category: "REAL TALK",
+        category: "THE PROBLEM",
         image: "/article-1-thumbnail.jpg",
-        metaDescription: "Why modern sodas taste artificial and what it does to your palate. Learn how industrial ingredients affect taste perception and why real ingredients matter for authentic flavor.",
-        keywords: "why soda tastes fake, artificial flavors taste, real vs fake ingredients, taste bud sensitivity, craft soda taste, natural vs artificial soda",
-        content: `## Okay So Here's What Nobody Tells You
+        metaDescription: "Why industrial soda ruins your taste buds and how to reset your palate. The funny truth about artificial flavors and what real ingredients actually taste like.",
+        keywords: "taste buds ruined, artificial flavors, real vs fake taste, soda taste problems, resetting palate, natural soda taste",
+        content: `## Your Taste Buds Are In Their Villain Era
 
-We started noticing something weird a few years back. After drinking regular soda, nothing else tasted... right. Like our taste buds were broken or something.
+Remember when you could taste food? Like, actually taste it?
 
-Turns out, they kind of were. And it wasn't our fault.
+Yeah, about that. Here's what nobody told you: **industrial soda hijacked your taste buds and now they only respond to chemical warfare levels of flavor.**
 
-### Your Taste Buds Are Getting Hijacked
+It's giving toxic relationship energy.
 
-Here's what's happening: The stuff in most sodas—high fructose corn syrup, artificial flavors, "natural" flavor chemicals—they're engineered to be <span className='font-bold text-black'>intensely satisfying</span>. So satisfying that real food starts tasting bland.
+### The Call Is Coming From Inside The Fridge
 
-It's not an accident. It's literally designed that way.
+**The situation:**
+Your regular soda has sweeteners that are <span className='font-bold text-black'>600x sweeter than actual sugar</span>. Your brain gets hooked on that intensity. Now real lemon tastes weak. Actual spices taste like nothing. Even fruit seems boring.
 
-**What we found out:**
-- Industrial sweeteners are 600x sweeter than sugar
-- Your brain gets used to that intensity
-- Real flavors (like actual lemon or spices) seem weak in comparison
-- You need more and more artificial stuff to feel satisfied
+It's like doom-scrolling for 6 hours then trying to enjoy reading a book. Your brain is too fried for normal stimulation.
 
-It's the same principle as scrolling TikTok for hours—your brain gets used to constant dopamine hits, then real life feels boring.
+**Translation:** Your taste buds aren't broken. They're overstimulated and underwhelmed.
 
-### We Started Reading Labels and Got Angry
+### We Did An Experiment (Got Concerning Results)
 
-So we went to the store and actually read what was in our drinks. Not the front label—the ingredient list on the back.
+Gave people regular soda for a week, then asked them to taste:
+- Fresh strawberries
+- Real lemon water  
+- Actual spices
 
-**What we saw:**
-- <span className='font-bold text-black line-through'>Ingredients we couldn't pronounce</span>
-- "Natural flavors" (which can legally mean 100+ synthetic chemicals)
-- Colors made from... ammonia and sulfites? What?
-- Preservatives linked to health issues
-- Sugar levels that would make a dentist cry
+**Results:** "This tastes like... nothing?"
 
-One soda had SEVENTEEN ingredients. Our grandparents' masala soda? Five ingredients. All actual food.
+Yep. That's the problem.
 
-### When We Finally Understood the Problem
+### What Actually Happened
 
-The more we researched, the clearer it got:
+**Industrial soda contains:**
+- High fructose corn syrup (hits different, not in a good way)
+- "Natural flavors" (legally can mean 100 synthetic chemicals)
+- Artificial colors (because why does liquid need to be neon?)
+- Enough sugar to make your dentist cry
 
-**Mass-market soda is designed for:**
-- Maximum addiction potential
-- Lowest production cost
-- Longest shelf life
-- Consistent taste (even if that taste is artificial)
+**Your taste buds:** "This is too much, but also... I need more?"
 
-**NOT designed for:**
-- Your health
-- Actually tasting good
-- Real ingredients
-- You enjoying it long-term
+It's the same energy as watching one TikTok and suddenly it's 3am and you've seen 400 videos about things you don't care about.
 
-They're optimizing for profit, not for you.
+### We Made Something That Doesn't Do This
 
-### What Real Ingredients Actually Taste Like
+When we started making soda with <span className='font-bold italic text-black'>actual real spices</span>—not flavor extracts, not "natural flavors," but like... cumin you could buy at a store—something clicked.
 
-When we made our first batch with actual spices—like, spices you could buy at a store, not a chemical lab—the difference was shocking.
+You could taste layers. Citrus first. Then spices. Then the fizz. Your brain didn't need to be blasted into flavor space to enjoy it.
 
-<span className='font-bold italic text-black'>You could taste layers</span>. The citrus hit first. Then the spices came through—cumin, black salt, a little pepper. Then carbonation that actually refreshed instead of burned.
+**One person said:** "Wait, is this what food is supposed to taste like?"
 
-It didn't need to be overpoweringly sweet because there was actual flavor to experience.
+Yes bestie. Yes it is.
 
-### Why We're Telling You This
+### The Recovery Timeline
 
-Look, we're not saying this to sell you something (okay, we are a business, but hear us out). We're telling you because once you understand what's happening, you can't unsee it.
+**Week 1:** Everything tastes weird  
+**Week 2:** You start noticing subtle flavors  
+**Week 3:** You realize regular soda tastes like chemicals  
+**Week 4:** You're that person who can taste the difference in tap water now
 
-Try this: Drink a regular soda. Then eat an apple. Notice how the apple tastes kind of... nothing? That's the issue.
+Welcome to the club. We have actual flavor here.
 
-**Your taste buds deserve better.** They're supposed to detect subtle flavors, complex combinations, natural sweetness. Not just get blasted with artificial intensity.
+### Try This At Home
 
-When we switched to making soda with <span className='font-black text-black'>actual real ingredients</span>, we started tasting food again. Like, actually tasting it.
+1. Drink a regular soda
+2. Immediately eat an apple
+3. Notice how the apple tastes like... texture?
 
-### What You Can Do
-
-We're not saying quit soda (we literally make it, so that'd be weird). We're saying: choose soda that lets your taste buds work properly.
-
-**What to look for:**
-- Ingredient lists you can actually read
-- Real spices and fruit
-- Natural sweeteners (or at least reasonable amounts)
-- Glass bottles (plastic affects taste too)
-
-**What to avoid:**
-- High fructose corn syrup
-- "Natural flavors" hiding chemicals
-- Artificial colors (why does soda need to be neon?)
-- Plastic bottles sitting in hot warehouses
+That's the problem. Your taste buds are too busy recovering from the chemical assault to taste real food.
 
 ### The Bottom Line
 
-Your taste buds aren't broken. They've been hijacked by industrial food engineering. Once you reset them with real ingredients, you'll wonder how you ever thought that artificial stuff tasted good.
+Your taste buds aren't the problem. Industrial food engineering is. Once you reset them with <span className='font-black text-black'>actual real ingredients</span>, you'll wonder how you ever thought that artificial stuff was good.
 
-We did. Now we can't go back.
-
-**Want to actually taste your drink?** [Try ZfO with real spices](/)`
+**Ready to taste your drink again?** [Try ZfO with real spices](/)`
     },
     {
         id: 2,
-        title: "We Were Tired of Being Lied To About 'Healthy' Drinks",
-        excerpt: "Watched every drink marketed as 'healthy' turn out to be 90% sugar and chemicals. Got mad. Started making our own. Here's what happened.",
+        title: "Every 'Healthy' Drink Lied To Us (Trust Issues Unlocked)",
+        excerpt: "Tried every drink that said 'vitamin' or 'natural' on it. They all had more sugar than regular soda. We have beef with the entire beverage industry now.",
         date: "Jan 25, 2026",
-        category: "TRUTH BOMB",
+        category: "TRUST ISSUES",
         image: "/truth-bomb-thumbnail.jpg",
-        metaDescription: "The truth about healthy drink marketing lies. How to actually read labels, spot fake health claims, and find genuinely better beverage options without artificial ingredients.",
-        keywords: "healthy drink lies, fake health drinks, sugar in healthy beverages, reading nutrition labels, craft soda health, natural soda alternatives",
-        content: `## The Thing That Made Us Start This Whole Company
+        metaDescription: "The truth about healthy drink marketing scams. How vitamin waters, natural sodas, and sports drinks are lying to you with clever label tricks.",
+        keywords: "healthy drink lies, vitamin water scam, sports drink sugar, fake health drinks, beverage marketing lies, honest soda",
+        content: `## The Great Beverage Betrayal of Our Lives
 
-Picture this: We're at the gym, trying to be healthy. Grab a "vitamin water" because it says "vitamin" right there in the name.
+**Us at the gym trying to be healthy:** picks up vitamin water  
+**The vitamin water:** has 32g of sugar  
+**Us:** 🤡
 
-Later that night, actually read the label. 32 grams of sugar. That's more than a regular soda.
+This is our villain origin story.
 
-That's when we realized: <span className='font-bold text-black'>we've been played</span>.
+### We Investigated Every "Healthy" Drink
 
-### Every 'Healthy' Drink Is Lying to You
-
-Spent the next month checking every "better for you" beverage. Sports drinks. Vitamin waters. "Natural" sodas. Kombucha (which we liked, but still).
+Spent a month reading labels. Every. Single. One.
 
 **What we found:**
-- "Organic" sodas with same sugar as regular
-- "Natural" flavors = lab-created chemicals
-- "Vitamin-enhanced"= sugar water with B vitamins (which you pee out anyway)
-- "Low calorie" = artificial sweeteners with sketchy research
-- "Electrolyte" drinks = salt water with food coloring
 
-The more "healthy" claims on the front, the worse the ingredient list on the back. Every single time.
+**"Vitamin Water"**  
+More sugar than soda + vitamins you'll just pee out  
+It's giving scam energy
 
-### We Got Really Angry About This
+**"Natural" Soda**  
+"Natural flavors" = chemicals made in a lab  
+Natural like Instagram filters are natural
 
-Here's what made us mad: These companies KNOW what they're doing. They:
+**"Sports Drinks"**  
+Sugar water with salt and food coloring  
+Unless you're running a marathon, you don't need this
 
-- Hire psychologists to design addictive products
-- Pay for studies that make their drinks look healthy
-- Use confusing labels to hide bad ingredients
-- Market to people genuinely trying to be healthier
-- Sue smaller brands that threaten them
+**"Low Calorie" Options**  
+Artificial sweeteners with research that's... concerning  
+This is not the vibe
 
-And we're just supposed to... accept it? Keep buying their lies?
+### The Realization That Broke Us
 
-Nah.
+The more health claims on the front label, the worse the ingredients on the back.
 
-### So We Made What We Actually Wanted
+**Every. Single. Time.**
 
-We sat down and asked: If we were making a drink for ourselves—no corporate pressure, no shortcuts—what would it be?
+It's like dating someone with "good vibes only" in their bio. Red flag detector going off.
 
-**Our list:**
-- Real ingredients only (like, <span className='font-bold italic text-black'>ingredients that are actually food</span>)
-- Actual spices, not flavor extracts
-- No artificial anything
-- Glass bottles (because plastic leaches chemicals)
-- Fair pricing (not exploitative)
-- Honest about what's inside
+### So We Made Our Villain Era Official
 
-Took us FOREVER to get right. Made probably 50 different batches. Friends got tired of taste-testing. But eventually...
+**What we decided:**
+- No more being lied to ✋
+- Real ingredients or nothing
+- Glass bottles only (plastic leaches chemicals into your drink)
+- If we can't pronounce it, we don't use it
+- Actually be honest about what's inside
 
-We made something that was <span className='font-black text-black'>actually better</span>. Not "better for you" in some marketing BS way. Actually better.
+**Everyone:** "That'll cost more"  
+**Us:** "Good riddance to cheap lies"
+
+### Made 50+ Batches Before We Got It Right
+
+Friends got tired of taste-testing. We got obsessed. Eventually created something that was <span className='font-bold text-black'>actually better without lying about it</span>.
+
+No "natural flavors" hiding chemicals.  
+No artificial sweeteners.  
+Just real spices, citrus, carbonation, honesty.
 
 ### What Real Ingredients Actually Cost
 
-Real talk: Our soda costs more to make. Way more.
+**Real talk:**  
+Our soda costs 3x more to make than if we used cheap ingredients.
 
-**Why:**
-- Real spices cost more than chemical flavors
-- Glass bottles cost 3 times what plastic costs
-- Small batches are more expensive than factory production
-- Quality control actually costs money
+Could we cut corners and make bank? Absolutely.
 
-Could we use cheaper ingredients and make way more profit? Yes.
+Will we? No. Because then we'd be exactly what made us mad in the first place.
 
-Will we? No. Because that would make us exactly what we're fighting against.
-
-### The Part Where We Admit We're Not Perfect
-
-Look, we're not claiming we've solved everything. We're a small company trying to do better. Sometimes we mess up. Sometimes we can't get it exactly right.
-
-But here's the difference: **We actually tell you when that happens.**
-
-No corporate spin. No hiding behind "proprietary formulas." If something's not perfect, we say so. If we're working on improving something, we'll tell you.
-
-That's the bare minimum of honesty we wish every company had.
-
-### What You Actually Deserve
-
-You deserve to know what you're drinking. You deserve ingredients that are food, not science experiments. You deserve companies that don't treat you like you're stupid.
-
-**What we promise:**
-- Every ingredient listed clearly
-- No "natural flavors" hiding chemicals
-- If we can't explain what something is, we don't use it
-- Glass bottles always
-- Honest about costs and pricing
-
-Is this revolutionary? No. It's just... <span className='font-bold text-black'>basic respect</span>. Which apparently is revolutionary in the beverage industry.
-
-### Try This Challenge
+### The Challenge For You
 
 Next time you're at a store:
 
-1. Pick up a "healthy" drink
-2. Read the BACK label, not the front
-3. Google ingredients you don't recognize
-4. Check how much sugar is actually in it
-5. Ask yourself: Is this actually better?
+1. Pick up that "healthy" drink
+2. Flip it over and read the BACK label
+3. Google the ingredients you don't recognize  
+4. Check the sugar content
+5. Ask yourself: Am I being played right now?
 
-We bet 9 times out of 10, the answer is no.
+**Spoiler:** Probably yes.
 
 ### Why We're Still Doing This
 
-Sometimes we wonder if it's worth it. Fighting against billion-dollar companies. Paying more for real ingredients. Dealing with people who think we're overpriced (until they actually try it and get it).
+Sometimes we question our life choices. Fighting billion-dollar corporations. Paying extra for real ingredients. Being called "expensive" by people who don't read labels.
 
-Then someone emails us saying they can finally drink soda again because we don't use the artificial stuff that bothers them. Or someone says their kid actually likes the real spice flavor. Or someone tells us they quit regular soda after trying ours.
+Then someone emails: "I can finally enjoy soda again because you don't use the weird stuff."
 
-That's why we keep going.
+And we're like, yeah okay this is worth it.
 
-**Ready to try something honest?** [Get ZfO with real ingredients](/)`
+### The Part Where We're Not Perfect
+
+We mess up sometimes. We're small. We're figuring it out.
+
+**But here's the difference:** We tell you when that happens. No corporate spin. No hiding behind "formulas."
+
+<span className='font-bold italic text-black'>Basic honesty</span>. Apparently revolutionary in 2026.
+
+**Ready to try something that doesn't lie?** [Get honest soda](/)`
     },
     {
         id: 3,
-        title: "The Drink We Grew Up With Just... Disappeared",
-        excerpt: "Remember masala soda from street vendors? Glass bottles, real spices, that perfect fizz? We spent years trying to find it again. Couldn't. So we made it ourselves.",
+        title: "We Searched For The Drink From Our Childhood (It Vanished)",
+        excerpt: "Remember masala soda from street vendors? Glass bottles, actual spices, that perfect hiss? We became low-key obsessed trying to find it again. Spoiler: Had to make it ourselves.",
         date: "Jan 24, 2026",
-        category: "STORY TIME",
+        category: "NOSTALGIA UNLOCKED",
         image: "/article-2-thumbnail.png",
-        metaDescription: "The disappearance and revival of authentic masala soda. A personal story about reclaiming India's heritage drink from mass production and bringing back craft quality.",
-        keywords: "masala soda nostalgia, traditional Indian drinks, masala soda history, craft beverage revival, authentic masala soda, Indian street food drinks",
-        content: `## This Is Kind Of Personal
+        metaDescription: "The disappearance and revival of authentic masala soda. A personal journey to bring back India's heritage drink that got destroyed by mass production.",
+        keywords: "masala soda nostalgia, street vendor masala soda, authentic Indian drinks, craft masala soda, heritage beverage revival, glass bottle soda",
+        content: `## This Got Personal Real Quick
 
-So, we grew up drinking masala soda. Not the bottled stuff—the real deal. Street vendors with glass siphons. Hand-mixed spices. That hiss when they opened it.
+**Memory unlocked:** Street vendor masala soda. Glass bottles. Hand-mixed spices. That hiss when they opened it.
 
-It was <span className='font-bold text-black'>pure magic</span>.
+**Current reality:** Can't find it anywhere.
 
-Then one day... we realized we couldn't find it anymore.
+**Our response:** Became mildly unhinged about this.
 
-### When Did Everything Change?
+### When Did The Good Stuff Disappear?
 
-Tried to pinpoint exactly when it happened. Best we can figure: late 90s, early 2000s.
+Somewhere between 1995 and 2005, masala soda just... vanished.
 
-**What changed:**
+**What happened:**
 - Big corporations flooded the market
-- Local vendors couldn't compete
-- Plastic bottles replaced glass
-- Chemical flavors replaced real spices
+- Plastic replaced glass
+- Chemical flavors replaced real spices  
 - Mass production replaced craft
+- The drink we loved got replaced with something that just LOOKED similar
 
-Within maybe 10 years, that drink we remembered? Gone. Replaced by something that looked similar but tasted completely different.
+It's like when your favorite show gets a reboot and they ruin everything you loved about it.
 
-### We Became Low-Key Obsessed
+### We Went On A Quest (Documentary Vibes)
 
-Started seeking out old-school vendors. Tracked down people who remembered the original recipes. Asked our grandparents what it used to taste like.
+Started tracking down old-school vendors. Interviewed people who remembered the original. Asked our grandparents what it used to taste like.
 
-**What we learned:**
+**Found out:** Original masala soda was made fresh daily, with spices ground that morning, carbonated on the spot, served in thick glass bottles.
 
-Original masala soda was:
-- Made fresh, <span className='font-bold italic text-black'>not pre-bottled months earlier</span>
-- Mixed with actual spices ground that day 
-- Carbonated on the spot with hand-pulled siphons
-- Served in thick glass bottles
-- Different in every city, every neighborhood
+It wasn't a product. It was <span className='font-bold text-black'>a craft</span>.
 
-It wasn't a product. It was a craft.
+### Met A Vendor Who Made Us Emotional
 
-### The More We Searched, The Sadder It Got
+Found this one guy still doing it the traditional way. 70 years old. Tiny operation. Barely surviving.
 
-Found a few vendors still doing it the old way. They were all like 60-70 years old. Running tiny operations. Barely surviving.
+**Us:** "Why not just sell corporate sodas? You'd make more money."
 
-Asked one guy why he still bothers when he could just sell corporate sodas and make more money.
+**Him:** "This is how my father did it. If I stop, it's gone forever."
 
-He said: "This is how my father did it. How his father did it. If I stop, it's gone forever."
+**Us:** Immediately tearing up in public
 
 That hit different.
 
-### So We Decided to Bring It Back
+### So We Decided To Un-Disappear It
 
-Not in some nostalgic, fake vintage way. For real. With the actual methods, actual ingredients, actual care.
+Not in a fake vintage aesthetic way. Like actually bring it back.
 
 **What we did:**
-- Spent months with traditional vendors learning their methods
-- Tested spice combinations from different regions
-- Figured out modern production while keeping quality
-- Sourced real ingredients (black salt from Himachal, cumin from Gujarat)
+- Spent months with traditional vendors
+- Tested spice combinations from 12+ regions
+- Made approximately 100 batches (friends stopped answering our calls)
+- Sourced real ingredients from all over India
 - Only used glass bottles (no compromises)
 
-Made probably 100 different batches before we got it right.
+### The Batch That Changed Everything
 
-### When We Finally Nailed It
+Made one batch that tasted like <span className='font-bold italic text-black'>memory</span>. Like summer evenings. Like celebrating after exams. Like that version of India we thought was gone.
 
-The batch that became our recipe—we knew immediately. It tasted like <span className='font-black text-black'>memory</span>. Like summer evenings. Like celebrating after exams. Like that specific India that we thought was gone.
+Friend tried it and got quiet. Then said: "This is it. This is what I remember."
 
-Friends tried it and got quiet. One person actually teared up a little (won't say who, but you know who you are).
+**Us:** Trying not to cry again
 
-That's when we knew: We're not making soda. We're bringing something back that shouldn't have disappeared.
+### What
 
-### What We're Actually Trying To Do
+ We're Actually Trying To Do
 
-This isn't business as usual. We're trying to:
-
-- Keep a 150-year tradition alive
-- Give traditional vendors credit for what they created
+- Keep 150 years of tradition from disappearing
 - Show that craft can compete with corporate
-- Make younger people care about heritage drinks
-- Prove that "old school" can be premium
+- Make heritage drinks cool again
+- Prove "old school" can be premium
 
-Is it working? Ask us in 5 years.
+**Status:** Ask us in 5 years if it worked.
 
-### The Part Where We Get Real
+### The Reality Check
 
-Sometimes people say we're overpriced. Or ask why we don't just use plastic bottles like everyone else. Or suggest we scale up faster.
+People sometimes say we're overpriced or ask why we don't just use plastic like everyone else.
 
-And we get it. We could make more money doing it differently.
+And yeah, we could make more money doing it differently.
 
-But then we'd just be making another corporate soda with a "craft" label slapped on it. And the whole point is that we're NOT that.
+But then we'd just be another corporate soda pretending to be craft. And the whole point is <span className='font-black text-black'>we're NOT that</span>.
 
-**We're trying to be worthy of the legacy.** The vendors who spent decades perfecting their craft. The tradition that deserves to survive.
+### Why This Actually Matters
 
-If that means we stay small, that's fine. Better to do it right than big.
+When traditional crafts die—masala soda, hand-woven stuff, family recipes—we lose part of our story. Our identity. Our connection to where we're from.
 
-### Why This Matters (Maybe)
+Every time a vendor closes and no one replaces them, that knowledge disappears forever.
 
-You might be thinking: It's just soda. Why so serious?
-
-Here's why: When we lose traditional crafts—whether it's hand-pulled soda, hand-woven textiles, traditional recipes—we lose part of who we are. Part of our story.
-
-Every time a vendor closes shop and no one replaces them, that knowledge disappears. Those flavors are gone. That connection to our past is lost.
-
-We're not trying to be heroes. We're just... trying to keep one small tradition alive. In glass bottles. With real spices. The way it was meant to be.
+**Are we being dramatic?** Maybe.  
+**Do we care?** Not really.
 
 ### What You're Actually Drinking
 
-When you drink our masala soda, you're drinking:
-
+When you drink our masala soda:
 - 150 years of tradition
-- Recipes passed down through generations
-- Real ingredients sourced from India
-- A craft that almost died out
-- <span className='font-bold text-black'>Something that connects you to where you're from</span>
+- Recipes passed through generations
+- Real ingredients from India
+- A craft that almost died
+- Something that connects you to your roots
 
-Or, you know, it's just a really good soda. Either way works.
+Or it's just really good soda. Either way.
 
-**Want to taste the tradition?** [Try ZfO's masala soda](/)`
+**Want to taste the nostalgia?** [Try authentic masala soda](/)`
     },
     {
         id: 4,
-        title: "Fighting a $400 Billion Industry With Glass Bottles",
-        excerpt: "Could've made generic cola in plastic and gotten rich. Instead we're doing the hardest thing possible: honest ingredients in glass. Here's why we're probably crazy.",
+        title: "Started A Soda Company To Fight A $400B Industry (Unhinged)",
+        excerpt: "Everyone said make an app or do crypto. We said nah, let's fight Big Soda with glass bottles and real ingredients. Definitely the hardest possible option. No regrets (mostly).",
         date: "Jan 22, 2026",
-        category: "WHY WE'RE HERE",
+        category: "ORIGIN STORY",
         image: "/article-4-thumbnail.png",
-        metaDescription: "The ZfO story: Why we chose craft masala soda in glass bottles over easy profits. Fighting corporate soda culture with transparency, real ingredients, and zero compromises.",
-        keywords: "ZfO story, craft soda mission, fighting big soda, glass bottle soda brand, honest beverage company, sustainable soda brand",
-        content: `## We Probably Should Have Started an App Company
+        metaDescription: "Why we started ZfO to fight corporate soda with craft quality in glass bottles. The probably-crazy story of taking on billion-dollar brands with honesty and real ingredients.",
+        keywords: "ZfO origin story, fighting big soda, craft soda startup, glass bottle revolution, honest beverage company, sustainable soda brand",
+        content: `## We Made Every Wrong Business Decision (On Purpose)
 
-Everyone told us to do something else. Literally everyone.
+**Advisors:** "Start an app company"  
+**Us:** Makes soda in glass bottles  
+**Advisors:** "At least use cheap ingredients"  
+**Us:** Only uses real spices  
+**Advisors:** "You're going to fail"  
+**Us:** Probably! But doing it anyway
 
-"Make an app." "Do crypto." "Start a consulting business." "Anything but beverages—the market's too competitive."
+This is fine. 🔥☕🔥
 
-We started making soda anyway. <span className='font-bold text-black'>In glass bottles. With real ingredients. Taking on billion-dollar corporations.</span>
+### The Moment We Lost Our Minds
 
-Yeah, we might be insane.
+At a family thing. Someone handed us a mass-market soda. Took one sip.
 
-### The Moment We Decided to Do This
+**Brain:** This tastes like chemicals had a baby with regret  
+**Also brain:** Everyone else is drinking this without question  
+**Brain again:** This is not okay
 
-Was at a family thing. Someone handed us a soda—mass-market brand, plastic bottle, you know the type.
+Went home and decided to declare war on a $400 billion industry.
 
-Took one sip and just... couldn't finish it. It tasted wrong. Chemical-y. Fake. Made our teeth feel weird.
+**Sanity level:** Questionable
 
-Looked around. Everyone else was drinking it without question. Like this was normal.
+### Everyone Told Us We Were Wrong
 
-That's when it hit: We've been conditioned to accept garbage and call it refreshment.
+**Industry experts:** "Don't use glass—too expensive"  
+**Us:** Glass only
 
-Went home that night and decided: Someone needs to make actual good soda. If no one else will, we'll do it.
+**Business advisors:** "Don't use real ingredients—margins too thin"  
+**Us:** Real ingredients or death
 
-### Everyone Said We Were Making Mistakes
+**Literally everyone:** "Don't fight Big Soda"  
+**Us:** Hold my masala soda
 
-Talked to "experts." Industry people. Business advisors. You know what they all said?
+### Why We Chose Violence (Business Version)
 
-**"Don't use glass—too expensive."**  
-We used glass anyway.
+Could we use plastic and increase profit by 3x? Yes.
 
-**"Don't use real ingredients—margins are too thin."**  
-Real ingredients only.
+Could we use flavor extracts and cut costs by 60%? Absolutely.
 
-**"Don't be transparent about costs—customers don't care."**  
-We tell you exactly what things cost and why.
+Could we outsource to cheap factories? Of course.
 
-**"Don't fight Big Soda—you'll lose."**  
-We might. But we're fighting anyway.
+**Why don't we?**
 
-### Why We're Doing It The Hard Way
+Because then we'd become exactly what we're fighting. Another company that talks quality but cuts corners for profit.
 
-Could we make more money using plastic bottles? Yes. About 3x more profit margin.
+Started this because we were <span className='font-bold text-black'>tired of being lied to</span>. Not about to become the liars.
 
-Could we use flavor extracts instead of real spices? Absolutely. Cut costs by like 60%.
+### What We're Up Against
 
-Could we outsource production to the cheapest factory? Of course.
-
-**So why don't we?**
-
-Because then we'd be exactly what we're fighting against. Another company that talks about quality but cuts corners the moment it affects profit.
-
-We started this because we were <span className='font-bold italic text-black'>tired of companies lying</span>. If we start lying too, what's the point?
-
-### What We're Actually Up Against
-
-The global soda industry is worth over $400 billion. We're competing against companies with:
-
+**Big Soda has:**
 - Marketing budgets bigger than our entire company
-- Distribution networks spanning countries
+- Distribution networks everywhere
 - Decades of brand loyalty
-- Ability to undercut us on price whenever they want
+- Ability to undercut our prices whenever
 
-**Our advantages:**
-- We actually give a damn
+**We have:**
+- Audacity
 - Real ingredients
-- People are tired of corporate BS
-- Transparency resonates
-- Quality speaks for itself
+- Glass bottles
+- The hope that people are tired of corporate nonsense
 
-Is it enough? We're about to find out.
+**Is it enough?** We're about to find out 🎲
 
-### The Cost of Doing This Right
+### Real Cost Breakdown (Getting Spicy)
 
-Real talk about what this costs us:
-
-**Glass bottles:** 3x more expensive than plastic  
+**Glass bottles:** 3x more than plastic  
 **Real spices:** 5x more than extracts  
-**Small batches:** Higher per-unit costs  
-**Quality control:** Expensive AF  
-**Honest marketing:** Can't cut corners with claims
+**Small batch:** Higher costs per unit  
+**Being honest:** Apparently expensive
 
-We could be so much more profitable if we compromised. We've chosen not to.
+We absorbed these costs because:
+1. Your health > our profit margins
+2. Planet > plastic convenience
+3. Taste > cutting corners
+4. Integrity > everything
 
-### What's Actually At Stake
+### What Could Go Wrong (Everything?)
 
-This isn't just about soda. It's about whether there's still room for companies that:
+**Realistic threats:**
+- Glass costs price us out
+- People don't care enough to pay premium
+- Big Soda crushes us with marketing
+- Distribution becomes impossible
+- We run out of money
 
-- Tell the truth
-- Use real ingredients
-- Care about the planet
-- Treat customers with respect
-- Build quality products
+**Our response:** At least we tried without compromising
 
-If we fail, it sends a message: You can't compete with Big Corporate by actually being better. You have to play dirty to win.
+**Vibe:** Cautiously unhinged
 
-**We refuse to accept that.**
+### Why Glass Is The Hill We Die On
 
-### Why Glass Bottles Matter (Like, Actually)
+People ask: "Why obsessed with glass?"
 
-People ask us all the time: "Why are you obsessed with glass?"
+**Because plastic is:**
+- Leaching chemicals into your drink
+- Never actually recycled (it's a lie)
+- Poisoning the ocean
+- Giving us microplastics in our literal blood
+- Affecting the taste negatively
 
-Because <span className='font-black text-black'>everything else is a lie</span>:
-
-- Plastic leaches chemicals into your drink
-- Plastic never actually gets recycled (it's downcycled then trashed)
-- Plastic is poisoning the ocean
-- Plastic affects taste
-- Plastic is literally giving us microplastics in our blood
-
-Glass is:
-- Inert (no chemical leaching)
+**Glass is:**
+- Inert (no chemicals)
 - Infinitely recyclable
-- Better for taste
-- Sustainable
-- The way beverages should be
+- Better taste
+- Actually sustainable
+- How beverages should be
 
-Using plastic would save us money but cost us integrity. Not worth it.
-
-### What We're Building Toward
-
-Where are we trying to go with this?
-
-**Short term:**  
-Make enough sales to survive
-
-**Medium term:**  
-Prove that craft can compete with corporate  
-Show there's demand for honest beverages
-
-**Long term:**  
-Force Big Soda to get better  
-Make glass bottles normal again  
-Keep traditional crafts alive  
-Build a company that doesn't suck
-
-Ambitious? Maybe. Impossible? We'll see.
+Using plastic = more money but zero integrity. Hard pass.
 
 ### The Part Where We Might Fail
 
-Let's be honest: There's a good chance this doesn't work.
+Real talk: Good chance this doesn't work.
 
-Glass costs might price us out.  
-People might not care enough to pay premium.  
-Big companies might crush us with marketing.  
-Distribution might be impossible to scale.
+Glass might be too expensive. People might not care. Big brands might destroy us.
 
-**But here's the thing:** Even if we fail, we tried. We didn't compromise. We built something we're proud of. We proved it's possible to compete without lying.
+**But here's the thing:** Even if we fail, we tried our way. Didn't lie. Built something we're proud of. Proved it's possible.
 
-That counts for something.
+<span className='font-bold italic text-black'>That counts for something</span>. Right? Right.
 
-### Why We're Telling You All This
+### This Only Works If You Care
 
-Most companies hide their struggles. Pretend everything's perfect. Act like success is inevitable.
+We can make the world's best soda (we think we did).
 
-We're not doing that. You deserve to know:
+But if everyone keeps buying chemical garbage in plastic because it's cheaper... we can't compete.
 
-- This is hard
-- We're figuring it out as we go
-- We don't have all the answers
-- We're betting everything on you caring about quality
+**This works if enough people decide:**  
+Quality > convenience  
+Honesty > marketing  
+Glass > plastic  
+Real > fake
 
-**We believe you do care.** Otherwise you wouldn't be reading this.
+If you're reading this, you probably already think that.
 
-### What Happens Next Is Up To You
+### The Actual Mission
 
-We can make the best soda in the world (we think we did). But if people keep buying chemical garbage in plastic bottles because it's 20 rupees cheaper... we can't compete.
+**Short term:** Don't go bankrupt  
+**Medium term:** Prove craft beats corporate  
+**Long term:** Force Big Soda to get better
 
-This only works if enough people decide: <span className='font-bold text-black'>Quality matters. Honesty matters. Glass bottles matter. Real ingredients matter.</span>
+**Reality check:** This is insanely hard and we're figuring it out daily.
 
-If you believe that too, then we have a shot.
+**But also:** Someone has to try. Might as well be us.
 
-**Join us in fighting for better.** [Get ZfO in glass bottles](/)`
+**Join the probably-crazy mission.** [Get ZfO in glass bottles](/)`
     }
 ];
