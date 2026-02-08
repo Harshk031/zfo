@@ -1,22 +1,22 @@
 export const fizzPosts = [
     {
         id: 1,
-        title: "Why Your Taste Buds Ghosted You (It's Not Personal)",
-        excerpt: "Ever notice how real food tastes like cardboard after drinking regular soda? Your taste buds didn't betray you—they got hacked. Here's the tea on what happened.",
+        title: "Your Taste Buds Have Been Compromised (Here's The Evidence)",
+        excerpt: "Ever notice how real food tastes oddly bland after drinking regular soda? Industrial sweeteners hijacked your palate. Here's the science—and how to fix it.",
         date: "Jan 26, 2026",
-        category: "THE PROBLEM",
+        category: "THE SCIENCE",
         image: "/article-1-thumbnail.jpg",
-        metaDescription: "Why industrial soda ruins your taste buds and how to reset your palate. The funny truth about artificial flavors and what real ingredients actually taste like.",
+        metaDescription: "Why industrial soda ruins your taste buds and how to reset your palate. The science of artificial flavors and what real ingredients actually taste like.",
         keywords: "taste buds ruined, artificial flavors, real vs fake taste, soda taste problems, resetting palate, natural soda taste",
-        content: `## Your Taste Buds Are In Their Villain Era
+        content: `## Your Taste Buds Have Been Compromised
 
 Remember when you could taste food? Like, actually taste it?
 
-Yeah, about that. Here's what nobody told you: **industrial soda hijacked your taste buds and now they only respond to chemical warfare levels of flavor.**
+Here's what nobody told you: **Industrial soda hijacked your taste buds and now they only respond to chemical warfare levels of flavor.**
 
 It's giving toxic relationship energy.
 
-### The Call Is Coming From Inside The Fridge
+### The Science of Flavor Hijacking
 
 **The situation:**
 Your regular soda has sweeteners that are <span className='font-bold text-black'>600x sweeter than actual sugar</span>. Your brain gets hooked on that intensity. Now real lemon tastes weak. Actual spices taste like nothing. Even fruit seems boring.
@@ -25,7 +25,7 @@ It's like doom-scrolling for 6 hours then trying to enjoy reading a book. Your b
 
 **Translation:** Your taste buds aren't broken. They're overstimulated and underwhelmed.
 
-### We Did An Experiment (Got Concerning Results)
+### We Ran An Experiment (Results Were Concerning)
 
 Gave people regular soda for a week, then asked them to taste:
 - Fresh strawberries
@@ -36,7 +36,7 @@ Gave people regular soda for a week, then asked them to taste:
 
 Yep. That's the problem.
 
-### What Actually Happened
+### What's Actually In There
 
 **Industrial soda contains:**
 - High fructose corn syrup (hits different, not in a good way)
@@ -83,10 +83,10 @@ Your taste buds aren't the problem. Industrial food engineering is. Once you res
     },
     {
         id: 2,
-        title: "Every 'Healthy' Drink Lied To Us (Trust Issues Unlocked)",
-        excerpt: "Tried every drink that said 'vitamin' or 'natural' on it. They all had more sugar than regular soda. We have beef with the entire beverage industry now.",
+        title: "The 'Healthy' Drink Illusion (A Marketing Autopsy)",
+        excerpt: "Investigated every drink with 'vitamin' or 'natural' on the label. Turns out they all have more sugar than regular soda. Here's the audit nobody asked for.",
         date: "Jan 25, 2026",
-        category: "TRUST ISSUES",
+        category: "THE AUDIT",
         image: "/truth-bomb-thumbnail.jpg",
         metaDescription: "The truth about healthy drink marketing scams. How vitamin waters, natural sodas, and sports drinks are lying to you with clever label tricks.",
         keywords: "healthy drink lies, vitamin water scam, sports drink sugar, fake health drinks, beverage marketing lies, honest soda",
@@ -189,10 +189,10 @@ We mess up sometimes. We're small. We're figuring it out.
     },
     {
         id: 3,
-        title: "We Searched For The Drink From Our Childhood (It Vanished)",
-        excerpt: "Remember masala soda from street vendors? Glass bottles, actual spices, that perfect hiss? We became low-key obsessed trying to find it again. Spoiler: Had to make it ourselves.",
+        title: "In Search of the Masala Soda We Remembered (An Archive)",
+        excerpt: "Remember masala soda from street vendors? Glass bottles, actual spices, that perfect hiss? We traced its disappearance—and brought it back.",
         date: "Jan 24, 2026",
-        category: "NOSTALGIA UNLOCKED",
+        category: "THE ARCHIVE",
         image: "/article-2-thumbnail.png",
         metaDescription: "The disappearance and revival of authentic masala soda. A personal journey to bring back India's heritage drink that got destroyed by mass production.",
         keywords: "masala soda nostalgia, street vendor masala soda, authentic Indian drinks, craft masala soda, heritage beverage revival, glass bottle soda",
@@ -299,12 +299,12 @@ Or it's just really good soda. Either way.
     },
     {
         id: 4,
-        title: "Started A Soda Company To Fight A $400B Industry (Unhinged)",
-        excerpt: "Everyone said make an app or do crypto. We said nah, let's fight Big Soda with glass bottles and real ingredients. Definitely the hardest possible option. No regrets (mostly).",
+        title: "Why We're Fighting a $400B Industry With Glass Bottles (The Manifesto)",
+        excerpt: "Everyone said start an app company. We chose to fight Big Soda with real ingredients instead. Here's why we picked the hardest possible path.",
         date: "Jan 22, 2026",
-        category: "ORIGIN STORY",
+        category: "THE STORY",
         image: "/article-4-thumbnail.png",
-        metaDescription: "Why we started ZfO to fight corporate soda with craft quality in glass bottles. The probably-crazy story of taking on billion-dollar brands with honesty and real ingredients.",
+        metaDescription: "Why we started ZfO to fight corporate soda with craft quality in glass bottles. The mission behind taking on billion-dollar brands with honesty and real ingredients.",
         keywords: "ZfO origin story, fighting big soda, craft soda startup, glass bottle revolution, honest beverage company, sustainable soda brand",
         content: `## We Made Every Wrong Business Decision (On Purpose)
 
