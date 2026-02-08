@@ -1,21 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const ProgressiveImage = ({ src, alt, className, ...props }) => {
-    const [imgSrc, setImgSrc] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => {
-            setImgSrc(src);
-            setIsLoaded(true);
-        };
-    }, [src]);
+const ProgressiveImage = ({ src, alt, className, bgColor = "bg-gray-900", ...props }) => {
+    // ... logic ...
 
     return (
-        <div className={`relative overflow-hidden bg-gray-900 ${className}`}>
+        <div className={`relative overflow-hidden ${bgColor} ${className}`}>
             {/* Pulse Skeleton / Low Res Placeholder */}
             <div
                 className={`absolute inset-0 bg-gray-800 animate-pulse transition-opacity duration-700 ${isLoaded ? "opacity-0" : "opacity-100"
