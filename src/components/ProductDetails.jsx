@@ -3,27 +3,27 @@ import ProgressiveImage from "./ProgressiveImage";
 
 const products = [
   {
-    name: "NO CAP.",
-    tagline: "The Lore Behind the Fizz",
-    headings: ["Reclaiming the soul of soda"],
+    name: "The Legacy",
+    tagline: "Where it all started",
+    headings: ["From street corners to craft movement"],
     description:
-      "Soda was never meant to be a <span className='font-bold text-red-500'>sugar bomb</span> in plastic. It began as a ritual — glass bottles, crown caps, and immaculate vibes. Mass production gave us the ick. ZfO is the <span className='font-bold text-black'>clapback</span>. Crafted thoughtfully, balanced carefully, for people who pass the vibe check.",
+      "Masala soda used to mean something. Glass bottles that clinked. Crown caps that hissed. Spices you could <span className='font-bold text-black'>actually taste</span>. Then mass production turned it into <span className='font-bold text-black line-through'>fizzy regret</span>. We're bringing back the ritual—crafted with real ingredients, balanced flavor profiles, and the kind of <span className='font-black text-black'>attention to detail</span> your childhood drink deserved all along.",
     image: "/product-1.jpeg",
   },
   {
-    name: "The Art of Fizz",
-    tagline: "Where craft meets restraint",
-    headings: ["Soda treated like a culinary product"],
+    name: "The Craft",
+    tagline: "Obsessive attention to detail",
+    headings: ["When soda becomes culinary art"],
     description:
-      "ZfO treats soda as high art, not content. From controlled carbonation to layered spice profiles, every element is engineered for <span className='font-bold italic'>sensory satisfaction</span>. This is fizz with depth, not noise. It's giving <span className='font-black'>luxury</span>.",
+      "We don't fill bottles and call it a day. Every batch starts with <span className='font-bold italic text-black'>real spices</span>—not flavor extracts. Carbonation levels are dialed in with precision. Acid balance gets tasted, adjusted, tasted again. This is what happens when you treat masala soda like a <span className='font-black text-black'>craft product</span>, not a commodity. The result? Layers of flavor that actually deserve your attention.",
     image: "/product-2.jpeg",
   },
   {
-    name: "Masala Soda, Reimagined",
-    tagline: "India's classic, refined",
-    headings: ["A modern expression of a street icon"],
+    name: "The Experience",
+    tagline: "Made for moments that matter",
+    headings: ["Your drink grew up with you"],
     description:
-      "Our first drop redefines masala soda for modern taste. Crisp citrus acidity, subtle spice warmth, and a clean finish — no syrupy heaviness, no artificial punch. It hits different at street food spots, cafés, or just <span className='font-bold text-yellow-600'>doomscrolling</span> at home.",
+      "Whether you're at a street food joint, unwinding after work, or just scrolling through life—this isn't background noise. Clean citrus notes. Warm spice depth. A finish that doesn't leave you thirsty again in 5 minutes. No <span className='font-bold text-black line-through'>sugar crash</span>. No artificial aftertaste. Just a masala soda that <span className='font-black text-black'>passes the vibe check</span> every single time.",
     image: "/product-1.jpeg",
   },
 ];
@@ -72,7 +72,7 @@ const ProductDetails = () => {
                 {prod.headings.map((heading, idx) => (
                   <h4
                     key={idx}
-                    className="text-lg font-bold mb-4 uppercase tracking-wider text-black border-l-2 border-yellow-400 pl-4"
+                    className="text-lg font-bold mb-4 uppercase tracking-wider text-black border-l-2 border-black pl-4"
                   >
                     {heading}
                   </h4>
