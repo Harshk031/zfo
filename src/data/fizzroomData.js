@@ -117,7 +117,7 @@ Your crush might not be texting because they're busy. Or because you showed up d
         excerpt: "Investigated every drink with 'vitamin' or 'natural' on the label. Turns out they all have more sugar than regular soda. Here's the audit nobody asked for.",
         date: "Jan 24, 2026",
         category: "THE AUDIT",
-        image: "/truth-bomb-thumbnail.jpg",
+        image: "/article-3-thumbnail.png",
         metaDescription: "The truth about healthy drink marketing scams. How vitamin waters, natural sodas, and sports drinks are lying to you with clever label tricks.",
         keywords: "healthy drink lies, vitamin water scam, sports drink sugar, fake health drinks, beverage marketing lies, honest soda",
         content: `## The Great Beverage Betrayal
