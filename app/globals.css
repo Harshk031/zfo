@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+/* RUKOLA TYPOGRAPHY - Kept for specific branding but primary headers now Syne */
+.font-display {
+  font-family: 'Syne', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* ALL HEADINGS USE SYNE - Art Gallery Vibe */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -1px;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* DISTRESSED TEXT EFFECT WITH TEXTURE */
+.text-distressed {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  background-position: center;
+  background-size: cover;
+  background-color: #ffffff;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-distressed-red {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  background-position: center;
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #c41e3a;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADLINE STYLES - SYNE */
+.headline-xl {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.headline-lg {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 6vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+/* SUBTITLE STYLES */
+.subtitle-script {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* GLOBAL FONT RESET */
+* {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* FAST BUBBLE FLOAT */
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-140%);
+    opacity: 1;
+  }
+}
+
+.animate-bubble {
+  animation: bubble linear infinite;
+}
+
+/* BUBBLE STYLE */
+.bubble {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 1);
+  pointer-events: none;
+}
