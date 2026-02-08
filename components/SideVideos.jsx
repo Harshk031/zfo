@@ -1,8 +1,6 @@
 'use client';
 
 import { motion, useTransform } from "framer-motion";
-import video1 from "../assets/video1.mp4";
-import video4 from "../assets/video4.mp4";
 
 const SideVideos = ({ scrollYProgress }) => {
   const leftY = useTransform(scrollYProgress, [0, 1], [0, -200]);
@@ -17,7 +15,7 @@ const SideVideos = ({ scrollYProgress }) => {
         className="hidden lg:block absolute left-10 top-1/2 -translate-y-1/2 z-40"
       >
         <video
-          src={video1}
+          src="/polar-bear.mp4"
           className="w-72 h-96 rounded-xl object-cover transition-opacity duration-700 opacity-0"
           autoPlay
           muted
@@ -26,7 +24,7 @@ const SideVideos = ({ scrollYProgress }) => {
           preload="auto"
           onCanPlay={(e) => e.currentTarget.style.opacity = 1}
         >
-          <source src={video1} type="video/mp4" />
+          <source src="/polar-bear.mp4" type="video/mp4" />
         </video>
       </motion.div>
 
@@ -36,7 +34,7 @@ const SideVideos = ({ scrollYProgress }) => {
         className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-40"
       >
         <video
-          src={video4}
+          src="/polar-bear.mp4"
           className="w-72 h-96 rounded-xl object-cover transition-opacity duration-700 opacity-0"
           autoPlay
           muted
@@ -45,7 +43,7 @@ const SideVideos = ({ scrollYProgress }) => {
           preload="auto"
           onCanPlay={(e) => e.currentTarget.style.opacity = 1}
         >
-          <source src={video4} type="video/mp4" />
+          <source src="/polar-bear.mp4" type="video/mp4" />
         </video>
       </motion.div>
     </>
@@ -53,5 +51,3 @@ const SideVideos = ({ scrollYProgress }) => {
 };
 
 export default SideVideos;
-
-
