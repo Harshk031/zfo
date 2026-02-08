@@ -5,27 +5,27 @@ import ProgressiveImage from "@/components/ProgressiveImage";
 
 const products = [
   {
-    name: "THE ORIGIN STORY",
-    tagline: "Why this even exists",
-    headings: ["When you realize your childhood was a scam"],
+    name: "THE INNOVATION",
+    tagline: "What makes this different",
+    headings: ["Engineered, not replicated"],
     description:
-      "Remember when masala soda came in <span class='font-bold text-black'>glass bottles</span> from that uncle's thela? The fizz hit different. The spices were <span class='italic'>actually spices</span>. Then Coca-Cola convinced everyone that <span class='font-bold text-red-500'>red dye #40</span> and plastic was progress. We said nah. ZfO is what happens when you refuse to accept downgraded vibes.",
+      "Street vendors had the idea. We had the obsession to perfect it. <span class='font-bold text-black'>Lab-tested carbonation levels</span>. <span class='font-bold text-black'>Precision spice extraction</span>. Ingredients sourced from farms that supply <span class='italic'>Michelin restaurants</span>, not soda factories. This isn't nostalgia—it's evolution. Premium masala soda that didn't exist until now.",
     image: "/bottle.png",
   },
   {
     name: "THE CRAFT",
-    tagline: "How we make this thing",
-    headings: ["Treating soda like your mom treats biryani"],
+    tagline: "How we create the experience",
+    headings: ["Small batches, zero shortcuts"],
     description:
-      "Every batch gets the <span class='font-bold italic'>obsessive attention</span> your mom gives masala ratios. We source <span class='font-bold'>premium cumin</span>, <span class='font-bold'>Himalayan black salt</span>, real citrus—ingredients that cost more because they're <span class='italic'>actually real</span>. The carbonation? Controlled down to the bubble. This is what happens when craft beer energy meets Indian  street culture.",
+      "Every batch is <span class='font-bold italic'>limited</span> because quality doesn't scale. We cold-press <span class='font-bold'>Nagpur oranges</span>, source <span class='font-bold'>Himalayan black salt</span> (not table salt), and carbonate to <span class='font-bold'>exact PSI levels</span> craft brewers use. Glass bottles aren't aesthetic—they preserve the flavor profile plastic destroys. This is craft soda energy with Indian soul.",
     image: "/bottle.png",
   },
   {
-    name: "THE MOMENT",
-    tagline: "When you should drink this",
-    headings: ["Life's too short for mid beverages"],
+    name: "THE STATUS",
+    tagline: "Who this is for",
+    headings: ["Exclusive by design, not accident"],
     description:
-      "That 3pm energy crash when chai isn't cutting it. Post-gym when you earned something better than Sprite. During your doom-scroll sessions when you need <span class='font-bold'>actual refreshment</span>, not sugar water. With <span class='font-bold'>pani puri</span>, <span class='font-bold'>vada pav</span>, or just because you pass the vibe check. Basically, whenever plastic-bottle soda feels like settling.",
+      "Not everyone gets why paying premium for soda matters. You do. You recognize the difference between <span class='font-bold'>real cumin</span> and cumin 'flavor'. You choose experiences, not just drinks. ZfO is for  people who won't settle for <span class='italic'>mass-produced mediocrity</span>. Limited availability. No subscriptions. Just rare drops for those in the know.",
     image: "/bottle.png",
   },
 ];
@@ -34,7 +34,7 @@ const ProductDetails = () => {
   return (
     <section id="productdetails" className="bg-[#f5f5f0] py-20 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <h2 className="sr-only">The ZfO Story - Premium Masala Soda in Glass Bottles</h2>
+        <h2 className="sr-only">Premium Craft Masala Soda - ZfO Limited Batches</h2>
         {products.map((prod, index) => {
           const isEven = index % 2 === 0;
           return (
@@ -52,16 +52,16 @@ const ProductDetails = () => {
                   <div className="absolute inset-0 bg-black rounded-full scale-90" />
                   <ProgressiveImage
                     src={prod.image}
-                    alt="ZfO Premium Craft Masala Soda in Glass Bottles - Made with Real Indian Spices"
+                    alt="ZfO Premium Small-Batch Craft Masala Soda in Glass - Limited Edition"
                     className="relative object-contain h-[120%] -rotate-12 hover:rotate-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   />
                 </div>
               </div>
 
-              {/* TEXT SIDE - Story Format */}
+              {/* TEXT SIDE - Premium Positioning */}
               <div className="w-full md:w-1/2 text-center md:text-left">
                 <span className="inline-block py-1 px-3 border border-black/20 rounded-full text-xs font-bold tracking-widest uppercase mb-6 text-black/60">
-                  Chapter 0{index + 1}
+                  Act {index + 1}
                 </span>
 
                 <h3 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-black leading-[0.95] tracking-tight">
