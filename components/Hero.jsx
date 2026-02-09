@@ -141,6 +141,23 @@ const Hero = () => {
             Masala soda that <span className="text-white font-bold italic">actually</span> <span className="text-[#ffcc00] font-black">SLAPS</span>. <br className="hidden md:block" />
             No <span className="text-red-500 font-bold line-through decoration-2 decoration-red-500">NPCs</span> allowed.
           </p>
+
+          {/* PRICE REVEAL - PREMIUM STYLE */}
+          <div className="mt-8 flex flex-col md:flex-row items-center gap-6 justify-center md:justify-start">
+            <div className="flex items-baseline gap-4">
+              <span className="text-2xl text-white/40 line-through decoration-red-500/80 decoration-2 font-light">₹80</span>
+              <span className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#ffcc00] to-white drop-shadow-[0_0_15px_rgba(255,204,0,0.3)]">
+                ₹50
+              </span>
+            </div>
+
+            <div className="h-px w-12 bg-white/20 hidden md:block" />
+
+            <p className="text-white/60 text-sm tracking-wide font-light max-w-[200px] text-center md:text-left">
+              Exclusive launch price. <br />
+              <span className="text-white/90 font-medium">Limited batch only.</span>
+            </p>
+          </div>
         </motion.div>
 
         {/* CURSOR BOTTLE */}

@@ -93,6 +93,38 @@ export default function RootLayout({ children }) {
                         }),
                     }}
                 />
+                {/* Structured Data - Product */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'Product',
+                            name: 'ZfO Premium Masala Soda in Glass Bottles',
+                            brand: {
+                                '@type': 'Brand',
+                                name: 'ZfO',
+                            },
+                            category: 'Beverages > Soda > Craft Soda',
+                            description: "India's finest craft soda in glass bottles. Premium beverage with authentic masala flavors, zero artificial ingredients. The best soda in glass bottles.",
+                            image: 'https://www.zfo.co.in/bottle3.png',
+                            material: 'Glass',
+                            offers: {
+                                '@type': 'Offer',
+                                url: 'https://www.zfo.co.in',
+                                priceCurrency: 'INR',
+                                price: '50.00',
+                                priceValidUntil: '2027-12-31',
+                                itemCondition: 'https://schema.org/NewCondition',
+                                availability: 'https://schema.org/InStoreOnly',
+                                seller: {
+                                    '@type': 'Organization',
+                                    name: 'ZfO',
+                                },
+                            },
+                        }),
+                    }}
+                />
             </head>
             <body className="bg-black text-white w-full min-h-screen">
                 <ErrorBoundary>
