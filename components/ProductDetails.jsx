@@ -5,27 +5,27 @@ import ProgressiveImage from "@/components/ProgressiveImage";
 
 const products = [
   {
-    name: "THE INNOVATION",
-    tagline: "What makes this different",
-    headings: ["Precision-crafted for the discerning palate"],
+    name: "THE GAP",
+    tagline: "Massive market. Zero respectable options.",
+    headings: ["India's beverage dilemma"],
     description:
-      "Street vendors had the idea. We had the obsession to perfect it. <span class='font-bold text-black'>Lab-tested carbonation levels</span>. <span class='font-bold text-black'>Precision spice extraction</span>. Ingredients sourced from farms that supply <span class='italic'>Michelin restaurants</span>, not soda factories. This isn't nostalgia—it's evolution. Premium masala soda that didn't exist until now.",
+      "At the bottom: <span class='font-bold text-black'>cheap, high-sugar, mass sodas</span>. At the top: international brands with <span class='italic'>standardized flavors</span>. ZfO is built exactly in the middle. Clean flavor. Modern presentation. Respect for the Indian palate.",
     image: "/bottle3.png",
   },
   {
-    name: "THE CRAFT",
-    tagline: "How we create the experience",
-    headings: ["Limited by intention, refined by obsession"],
+    name: "THE PRODUCT",
+    tagline: "A layered flavor experience",
+    headings: ["Not aggressive. Just balanced."],
     description:
-      "Every batch is <span class='font-bold italic'>limited</span> because quality doesn't scale. We cold-press <span class='font-bold'>Nagpur oranges</span>, source <span class='font-bold'>Himalayan black salt</span> (not table salt), and carbonate to <span class='font-bold'>exact PSI levels</span> craft brewers use. Glass bottles aren't aesthetic—they preserve the flavor profile plastic destroys. This is craft soda energy with Indian soul.",
+      "First, <span class='font-bold text-black'>citrus brightness</span>. Then, <span class='font-bold text-black'>spice warmth</span> opens up. Finally, a clean finish without syrupy heaviness. It's carbonated. It's sharp. It's Indian. But it's controlled.",
     image: "/bottle3.png",
   },
   {
-    name: "THE STATUS",
-    tagline: "Who this is for",
-    headings: ["For those who demand excellence, not convenience"],
+    name: "THE STRATEGY",
+    tagline: "honest growth. no fake hype.",
+    headings: ["Built inside college ecosystems"],
     description:
-      "Not everyone gets why paying premium for soda matters. You do. You recognize the difference between <span class='font-bold'>real cumin</span> and cumin 'flavor'. You choose experiences, not just drinks. ZfO is for  people who won't settle for <span class='italic'>mass-produced mediocrity</span>. Limited availability. No subscriptions. Just rare drops for those in the know.",
+      "We aren't buying celebrity ads. We're launching where it matters—<span class='font-bold text-black'>college festivals</span> and <span class='italic'>student communities</span>. Real testing. Real data. We build repeat buyers first, then we scale. ZfO is built to last, not just to shout.",
     image: "/bottle3.png",
   },
 ];

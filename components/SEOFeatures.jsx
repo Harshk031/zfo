@@ -6,24 +6,24 @@ import { useInView } from "framer-motion";
 
 const features = [
     {
-        title: "Premium Glass Bottles",
-        description: "Taste purity in every sip. Glass preserves the <span className='font-bold text-white'>authentic flavor</span>. <span className='text-red-400 font-bold'>Plastic is a 🚩</span>. Zero leaching, just premium craft soda.",
-        keywords: ["glass bottles", "premium soda", "craft beverages", "recyclable packaging"]
+        title: "Bold Indian Flavor",
+        description: "Masala, citrus, subtle spice. <span className='font-bold text-white'>Not overpowering</span>, not flat. Designed for a generation that knows the difference.",
+        keywords: ["bold flavor", "masala soda", "indian craft soda"]
     },
     {
-        title: "Authentic Masala Flavors",
-        description: "Real spices, real taste. No fake flavors or artificial nasties. We reimagined traditional masala soda with balanced fizz and honest ingredients. <span className='text-gray-300 font-bold'>It hits different.</span>",
-        keywords: ["masala soda", "Indian soda", "authentic flavors", "natural ingredients"]
+        title: "Balanced Formulation",
+        description: "Clean sweetness profile. <span className='font-bold text-gray-300'>No heavy aftertaste.</span> Engineered for sessionability, not just a sugar rush.",
+        keywords: ["balanced soda", "clean ingredients", "low sugar feel"]
     },
     {
-        title: "Craft Soda Excellence",
-        description: "Soda treated as culinary art. Controlled carbonation, layered spice profiles, and artisanal quality. <span className='font-bold italic'>Main character energy</span> in a bottle.",
-        keywords: ["craft soda", "premium beverages", "artisanal soda", "Indian craft drinks"]
+        title: "Glass Bottle Experience",
+        description: "Because some drinks deserve <span className='italic font-bold'>better packaging</span>. Preserving carbonation and flavor integrity.",
+        keywords: ["glass bottle", "premium packaging", "sustainable"]
     },
     {
-        title: "Perfect for Every Occasion",
-        description: "From street food to sophisticated dinners. ZfO elevates the moment. Whether it's spicy chaat or a house party, it's the <span className='font-bold text-green-400'>green flag</span> you need.",
-        keywords: ["beverage pairing", "refreshing drinks", "premium soft drinks", "glass bottle soda"]
+        title: "Community-First",
+        description: "Starting with <span className='font-bold text-[#ffcc00]'>college ecosystems</span>. Testing, learning, and refining with the people who matter.",
+        keywords: ["community brand", "college launch", "student ecosystem"]
     }
 ];
 
@@ -46,11 +46,11 @@ const SEOFeatures = () => {
                     className="text-center mb-16 md:mb-24"
                 >
                     <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-white mb-8 leading-[0.9] tracking-tight">
-                        Why Choose ZfO Premium <br className="hidden md:block" />
-                        <span className="text-[#ffcc00]">Craft Soda in Glass Bottles</span>
+                        OUR APPROACH <br className="hidden md:block" />
+                        <span className="text-[#ffcc00]">CAREFULLY CRAFTED</span>
                     </h2>
                     <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                        India's finest masala soda crafted with authentic ingredients, premium quality, and sustainable glass packaging. Experience the best soda in glass bottles.
+                        We're not trying to be everything. We're building carefully with bold flavors, balanced formulations, and a community-first mindset.
                     </p>
                 </motion.div>
 
@@ -87,10 +87,10 @@ const SEOFeatures = () => {
                     className="mt-16 md:mt-24 text-center"
                 >
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        The Best Soda in Glass Bottles - Made in India
+                        Mid-Premium Soda for the Modern Indian
                     </h3>
                     <p className="text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
-                        ZfO represents the pinnacle of Indian craft beverages. Our premium masala soda combines traditional flavors with modern craftsmanship, delivered in sustainable glass bottles. Every sip celebrates India's rich beverage heritage while setting new standards for quality, taste, and environmental responsibility. Choose ZfO for an authentic, premium soda experience that's unapologetically bold.
+                        ZfO bridges the gap between mass-market beverages and luxury imports. We deliver a mid-premium experience that respects your palate and your wallet. Authentic masala soda, elevated.
                     </p>
                 </motion.div>
             </div>
@@ -99,5 +99,3 @@ const SEOFeatures = () => {
 };
 
 export default SEOFeatures;
-
-

@@ -25,12 +25,12 @@ const PromoSection = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-5xl sm:text-7xl md:text-[9rem] font-black text-black tracking-[-0.03em] leading-[0.88] uppercase"
+        className="relative z-10 text-4xl sm:text-6xl md:text-[5rem] font-black text-black tracking-[-0.03em] leading-[0.95] uppercase max-w-5xl"
       >
-        WHERE CRAFT
+        WE GREW UP WITH
         <br />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-black">
-          BECOMES CULT
+          TWO BAD CHOICES.
         </span>
       </motion.h2>
 
@@ -41,21 +41,20 @@ const PromoSection = () => {
         transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 mt-12 md:mt-16 flex flex-col items-center"
       >
-        <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900 max-w-4xl px-4 leading-tight tracking-tight">
-          India had masala soda in glass. Then, cheap plastic won.
+        <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 max-w-4xl px-4 leading-relaxed tracking-tight">
+          Cheap ₹10 sodas that tasted loud but empty.
           <br className="hidden md:block" />
-          We engineered what <span className="font-bold text-black">corporations couldn't scale</span>—
-          <span className="italic"> perfection in a bottle</span>.
+          Or global colas that didn't feel Indian at all.
         </p>
 
         {/* Separator */}
-        <div className="w-1 bg-black/10 h-20 my-10 md:my-14" />
+        <div className="w-1 bg-black/10 h-16 my-8 md:my-12" />
 
         {/* Description - Premium Craft */}
-        <p className="text-sm sm:text-base md:text-lg font-bold text-gray-700 max-w-2xl px-6 leading-relaxed tracking-wider">
-          Small-batch masala soda crafted like fine spirits.
-          <br className="hidden md:block" />
-          Premium spices. Glass-only. Zero compromise on ingredients or integrity.
+        <p className="text-base sm:text-lg md:text-xl font-medium text-gray-700 max-w-3xl px-6 leading-relaxed">
+          There was no mid-premium Indian soda — one that respected flavor, respected branding, and didn't treat consumers like they wouldn't notice.
+          <br /><br />
+          <span className="font-bold text-black text-xl md:text-2xl">ZfO was built to fill that gap.</span>
         </p>
       </motion.div>
     </section>

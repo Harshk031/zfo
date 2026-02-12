@@ -127,19 +127,17 @@ const Hero = () => {
         >
           {/* Brand identity */}
           <p className="subtitle-script text-[#c41e3a] mb-3 md:mb-2 uppercase tracking-widest text-xs sm:text-sm font-bold">
-            INDIA'S FIRST PREMIUM CRAFT SODA.
+            MODERN INDIAN CRAFT BEVERAGE.
           </p>
 
-          {/* Hero emotion line - Lagunitas Style with Texture */}
-          <h1 className="headline-xl text-distressed drop-shadow-2xl break-words text-white px-2 md:px-0">
+          {/* Hero headline - Rotates via text.js */}
+          <h1 className="headline-xl text-distressed drop-shadow-2xl break-words text-white px-2 md:px-0 leading-[0.9]">
             {heroLines[index]}
           </h1>
 
-          {/* SUB-TEXT / DESCRIPTION */}
-          {/* SUB-TEXT / DESCRIPTION - Adjusted for readability with new fonts */}
-          <p className="mt-6 md:mt-8 text-[#a0a0a0] text-lg sm:text-xl md:text-2xl font-light max-w-md mx-auto md:mx-0 leading-relaxed tracking-wide">
-            Masala soda that <span className="text-white font-bold italic">actually</span> <span className="text-[#ffcc00] font-black">SLAPS</span>. <br className="hidden md:block" />
-            No <span className="text-red-500 font-bold line-through decoration-2 decoration-red-500">NPCs</span> allowed.
+          {/* SUB-TEXT / DESCRIPTION - New Tone */}
+          <p className="mt-6 md:mt-8 text-[#a0a0a0] text-lg sm:text-xl md:text-2xl font-light max-w-lg mx-auto md:mx-0 leading-relaxed tracking-wide">
+            ZfO is a modern Indian craft beverage brand starting with a <span className="text-white font-medium">bold, balanced masala soda</span> in a glass bottle — built for a generation that wants <span className="text-[#ffcc00] font-medium">better taste</span>, not louder marketing.
           </p>
 
           {/* PRICE REVEAL - PREMIUM STYLE */}
