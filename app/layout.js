@@ -7,11 +7,11 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 export const metadata = {
     metadataBase: new URL('https://www.zfo.co.in'),
     title: {
-        default: 'ZfO - Premium Masala Soda in Glass Bottles | Indian Craft Beverages',
+        default: 'ZfO - Modern Indian Craft Soda | Real Spices. Glass Bottles.',
         template: '%s | ZfO'
     },
-    description: "ZfO - India's premium craft soda in glass bottles. Experience the finest beverage with authentic masala flavors, zero artificial ingredients. The best soda in glass bottles. Shop ZfO now.",
-    keywords: 'ZfO, zfo soda, zfo beverage, beverage, soda, glass bottles, premium soda, craft soda, Indian soda, masala soda, glass bottle soda, glass bottled beverages, artisanal soda, craft beverages, fizzy drinks, Indian beverages, soft drinks India, premium beverages, natural soda, handcrafted soda, traditional soda, street soda, fizzy beverages India',
+    description: "Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, bottled in glass. A beverage built on honest ingredients and premium taste.",
+    keywords: 'ZfO, zfo soda, craft soda, indian masala soda, glass bottle soda, real ingredients, premium beverage india, modern indian craft',
     authors: [{ name: 'Freshozz Beverages' }],
     creator: 'Freshozz Beverages',
     publisher: 'ZfO',
@@ -30,9 +30,9 @@ export const metadata = {
         type: 'website',
         locale: 'en_IN',
         url: 'https://www.zfo.co.in/',
-        siteName: 'ZfO - The Art of Fizz',
-        title: 'ZfO - Premium Masala Soda in Glass Bottles | The Art of Fizz',
-        description: 'Reclaiming the soul of soda. ZfO delivers premium masala soda with balanced fizz, refined masala, and honest flavors in elegant glass bottles.',
+        siteName: 'ZfO - Modern Indian Craft',
+        title: 'ZfO - Modern Indian Craft Soda | Real Spices. Glass Bottles.',
+        description: 'Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, bottled in glass.',
         images: [
             {
                 url: '/logo.png',
@@ -44,8 +44,8 @@ export const metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'ZfO - Premium Masala Soda in Glass Bottles',
-        description: 'Crafted soda. Honest flavour. Real refreshment. Experience premium masala soda in glass bottles.',
+        title: 'ZfO - Modern Indian Craft Soda',
+        description: 'Real spices. Glass bottles. No nonsense.',
         images: ['/logo.png'],
     },
     verification: {
