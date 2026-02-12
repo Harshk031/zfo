@@ -123,7 +123,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full md:w-1/2 text-center md:text-left z-10 mb-8 md:mb-0"
+          className="w-full md:w-1/2 text-left z-10 mb-8 md:mb-0"
         >
           {/* Brand identity */}
           <p className="subtitle-script text-[#c41e3a] mb-3 md:mb-2 uppercase tracking-widest text-xs sm:text-sm font-bold">
@@ -136,12 +136,12 @@ const Hero = () => {
           </h1>
 
           {/* SUB-TEXT / DESCRIPTION - New Tone */}
-          <p className="mt-6 md:mt-8 text-[#a0a0a0] text-lg sm:text-xl md:text-2xl font-light max-w-lg mx-auto md:mx-0 leading-relaxed tracking-wide">
+          <p className="mt-6 md:mt-8 text-[#a0a0a0] text-lg sm:text-xl md:text-2xl font-light max-w-lg leading-relaxed tracking-wide">
             ZfO is a modern Indian craft beverage brand starting with a <span className="text-white font-medium">bold, balanced masala soda</span> in a glass bottle — built for a generation that wants <span className="text-[#ffcc00] font-medium">better taste</span>, not louder marketing.
           </p>
 
           {/* PRICE REVEAL - PREMIUM STYLE */}
-          <div className="mt-8 flex flex-col md:flex-row items-center gap-6 justify-center md:justify-start">
+          <div className="mt-8 flex flex-col md:flex-row items-start md:items-center gap-6 justify-start">
             <div className="flex items-baseline gap-4">
               <span className="text-2xl text-white/40 line-through decoration-red-500/80 decoration-2 font-light">₹80</span>
               <span className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#ffcc00] to-white drop-shadow-[0_0_15px_rgba(255,204,0,0.3)]">
@@ -151,7 +151,7 @@ const Hero = () => {
 
             <div className="h-px w-12 bg-white/20 hidden md:block" />
 
-            <p className="text-white/60 text-sm tracking-wide font-light max-w-[200px] text-center md:text-left">
+            <p className="text-white/60 text-sm tracking-wide font-light max-w-[200px] text-left">
               Exclusive launch price. <br />
               <span className="text-white/90 font-medium">Limited batch only.</span>
             </p>
