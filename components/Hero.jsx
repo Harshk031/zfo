@@ -67,6 +67,7 @@ const Hero = () => {
         loop
         playsInline
         preload="metadata"
+        poster="/polar-bear-poster.jpg"
         onCanPlay={() => {
           if (videoRef.current) videoRef.current.style.opacity = 1;
         }}

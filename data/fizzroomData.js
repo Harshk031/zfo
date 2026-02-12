@@ -5,7 +5,7 @@ export const fizzPosts = [
         excerpt: "Bestie, that 'natural flavor' is a whole lie. We're exposing the sugar scam and serving the tea on why glass bottles are the only green flag.",
         date: "Jan 26, 2026",
         category: "REAL TALK",
-        image: "/truth-bomb-thumbnail.jpg",
+        image: "/truth-bomb-thumbnail.webp",
         metaDescription: "The truth about soda ingredients. Why High Fructose Corn Syrup is a red flag and why 'Natural Flavors' aren't real. The ZfO receipt check.",
         keywords: "soda ingredients exposed, high fructose corn syrup truth, honest soda review, zfo ingredients",
         content: `## The "Natural" Scam
@@ -39,7 +39,7 @@ You deserve a drink that isn't catfishing you. Read the label. If you need a che
         excerpt: "Brain fog? Bad skin? Zero energy? That's not burnout, that's your body ghosting you because you haven't drank water in 6 hours.",
         date: "Jan 25, 2026",
         category: "WELLNESS",
-        image: "/article-1-thumbnail.jpg",
+        image: "/article-1-thumbnail.webp",
         metaDescription: "Dehydration is killing your vibe. How staying hydrated clears your skin, boosts your focus, and gives you main character energy.",
         keywords: "hydration tips, clear skin secrets, brain fog fix, zfo benefits",
         content: `## Main Character Energy Requires Water
@@ -74,7 +74,7 @@ It’s functional hydration that doesn't taste like medicine. Drink it, get your
         excerpt: "Masala Soda was trending in India 100 years before TikTok. It’s the original craft beverage, the original street cred, and the original refresher.",
         date: "Jan 24, 2026",
         category: "LORE",
-        image: "/article-2-thumbnail.png",
+        image: "/article-2-thumbnail.webp",
         metaDescription: "The history of Masala Soda. How it started as the OG Indian street drink and why ZfO is bringing it back.",
         keywords: "masala soda history, indian street food culture, zfo story",
         content: `## The Original "Craft" Beverage
@@ -107,7 +107,7 @@ We’re rewriting the timeline where mass-market soda won. It didn’t.`
         excerpt: "Plastic bottles give toxic ex energy. They leach chemicals, pollute the ocean, and ruin the flavor. Glass is the loyal partner you deserve.",
         date: "Jan 23, 2026",
         category: "VIBES",
-        image: "/article-3-thumbnail.png",
+        image: "/article-3-thumbnail.webp",
         metaDescription: "Why plastic bottles are toxic and why ZfO uses glass. The environmental and taste benefits of going plastic-free.",
         keywords: "glass vs plastic, sustainable vibes, eco friendly soda",
         content: `## Stop Dating Plastic
@@ -142,7 +142,7 @@ But it’s the only green flag we accept. If we wouldn't drink from it, we won't
         excerpt: "We could have made a generic cola and chilled. Instead, we chose to fight the $400B soda industry. Welcome to the rebellion.",
         date: "Jan 22, 2026",
         category: "MANIFESTO",
-        image: "/article-4-thumbnail.png",
+        image: "/article-4-thumbnail.webp",
         metaDescription: "The ZfO mission. Why we are fighting against generic, mass-produced sodas and building a brand for the new generation.",
         keywords: "zfo manifesto, startup story, founder journey, craft soda revolution",
         content: `## We Woke Up and Chose Violence

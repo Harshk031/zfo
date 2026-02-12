@@ -8,25 +8,22 @@ const products = [
     name: "THE GAP",
     tagline: "Massive market. Zero respectable options.",
     headings: ["India's beverage dilemma"],
-    description:
-      "At the bottom: <span class='font-bold text-black'>cheap, high-sugar, mass sodas</span>. At the top: international brands with <span class='italic'>standardized flavors</span>. ZfO is built exactly in the middle. Clean flavor. Modern presentation. Respect for the Indian palate.",
-    image: "/bottle3.png",
+    description: "At the bottom: <span class='font-bold text-black'>cheap, high-sugar, mass sodas</span>. At the top: international brands with <span class='italic'>standardized flavors</span>. ZfO is built exactly in the middle. Clean flavor. Modern presentation. Respect for the Indian palate.",
+    image: "/bottle3.webp",
   },
   {
     name: "THE PRODUCT",
     tagline: "A layered flavor experience",
     headings: ["Not aggressive. Just balanced."],
-    description:
-      "First, <span class='font-bold text-black'>citrus brightness</span>. Then, <span class='font-bold text-black'>spice warmth</span> opens up. Finally, a clean finish without syrupy heaviness. It's carbonated. It's sharp. It's Indian. But it's controlled.",
-    image: "/bottle3.png",
+    description: "First, <span class='font-bold text-black'>citrus brightness</span>. Then, <span class='font-bold text-black'>spice warmth</span> opens up. Finally, a clean finish without syrupy heaviness. It's carbonated. It's sharp. It's Indian. But it's controlled.",
+    image: "/bottle3.webp",
   },
   {
     name: "THE STRATEGY",
     tagline: "honest growth. no fake hype.",
     headings: ["Built inside college ecosystems"],
-    description:
-      "We aren't buying celebrity ads. We're launching where it matters—<span class='font-bold text-black'>college festivals</span> and <span class='italic'>student communities</span>. Real testing. Real data. We build repeat buyers first, then we scale. ZfO is built to last, not just to shout.",
-    image: "/bottle3.png",
+    description: "We aren't buying celebrity ads. We're launching where it matters—<span class='font-bold text-black'>college festivals</span> and <span class='italic'>student communities</span>. Real testing. Real data. We build repeat buyers first, then we scale. ZfO is built to last, not just to shout.",
+    image: "/bottle3.webp",
   },
 ];
 
