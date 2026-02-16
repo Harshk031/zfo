@@ -22,8 +22,9 @@ const FizzroomPost = () => {
         "image": post.image,
         "datePublished": "2024-01-01", // Placeholder, ideally from post data
         "author": {
-            "@type": "Organization",
-            "name": "ZfO Team"
+            "@type": "Person",
+            "name": "Harsh Katiyar",
+            "url": "https://www.linkedin.com/in/harsh-k-13a5a1340"
         },
         "description": post.excerpt
     };
