@@ -20,6 +20,15 @@ const ScrollStory = dynamic(() => import('@/components/ScrollStory'), {
 export default function Home() {
   return (
     <>
+      {/* SEO-Only Server Rendered Text (Invisible to humans, read by Googlebot) */}
+      <div className="sr-only">
+        <h1>ZfO - Modern Indian Craft Soda</h1>
+        <p>
+          Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, 
+          bottled in premium glass. Send the fizz, taste the Jeera Storm, Electric Nimbu, and Masala Mojito.
+        </p>
+      </div>
+
       {/* Hero replaces with full WebGL scroll experience */}
       <ScrollStory />
 
