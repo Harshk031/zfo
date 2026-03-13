@@ -81,10 +81,15 @@ export default function PromoSection() {
       </div>
 
       {/* Staggered heading */}
-      <h2 ref={h2Ref} className="relative z-10 flex flex-wrap justify-center gap-x-5 gap-y-2 max-w-5xl mb-0">
+      <h2 
+        ref={h2Ref} 
+        className="relative z-10 flex flex-wrap justify-center gap-x-5 gap-y-2 max-w-5xl mb-0"
+        aria-label="We grew up with two bad choices."
+      >
         {words.map((w, i) => (
           <span
             key={i}
+            aria-hidden="true"
             ref={el => wordsRef.current[i] = el}
             className={`font-black uppercase tracking-tight leading-none text-black ${
               i >= 4 ? 'text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-black' : ''

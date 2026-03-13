@@ -11,8 +11,17 @@ import LaunchTeaser from '@/components/LaunchTeaser';
 const ScrollStory = dynamic(() => import('@/components/ScrollStory'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-screen bg-[#050508] flex items-center justify-center">
-      <div className="w-2 h-2 rounded-full bg-white animate-ping" />
+    <div className="w-full min-h-screen bg-[#050508] flex flex-col items-center justify-center p-8 text-center">
+      <div className="w-4 h-4 rounded-full bg-[#ffcc00] animate-ping mb-12" />
+      <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6">
+        ZfO - Modern Indian Craft Soda
+      </h1>
+      <h2 className="text-2xl md:text-4xl font-bold text-[#ffcc00] mb-8">
+        Enter The Fizz. Masala Soda. Electric Nimbu. Jeera Storm.
+      </h2>
+      <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
+        Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, bottled in premium glass. We are building the next generation of mid-premium beverage experiences.
+      </p>
     </div>
   ),
 });
@@ -20,15 +29,6 @@ const ScrollStory = dynamic(() => import('@/components/ScrollStory'), {
 export default function Home() {
   return (
     <>
-      {/* SEO-Only Server Rendered Text (Invisible to humans, read by Googlebot) */}
-      <div className="sr-only">
-        <h1>ZfO - Modern Indian Craft Soda</h1>
-        <p>
-          Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, 
-          bottled in premium glass. Send the fizz, taste the Jeera Storm, Electric Nimbu, and Masala Mojito.
-        </p>
-      </div>
-
       {/* Hero replaces with full WebGL scroll experience */}
       <ScrollStory />
 
