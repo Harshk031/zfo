@@ -1,11 +1,67 @@
 'use client';
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const PromoSection = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function PromoSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const h2Ref = useRef(null);
+  const wordsRef = useRef([]);
+  const bodyRef = useRef(null);
+  const bgTextRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Staggered word entrance
+      if (wordsRef.current.length) {
+        gsap.fromTo(wordsRef.current,
+          { opacity: 0, y: 80, rotationX: -30 },
+          {
+            opacity: 1, y: 0, rotationX: 0,
+            duration: 1.0,
+            stagger: 0.08,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top 70%',
+            },
+          }
+        );
+      }
+
+      // Body text fade
+      if (bodyRef.current) {
+        gsap.fromTo(bodyRef.current,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1, y: 0, duration: 1.2, ease: 'power2.out',
+            scrollTrigger: { trigger: ref.current, start: 'top 60%' },
+          }
+        );
+      }
+
+      // Background watermark parallax
+      if (bgTextRef.current) {
+        gsap.to(bgTextRef.current, {
+          x: '-8%',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: ref.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
+    }, ref);
+
+    return () => ctx.revert();
+  }, []);
+
+  const words = ['WE', 'GREW', 'UP', 'WITH', 'TWO', 'BAD', 'CHOICES.'];
 
   return (
     <section
@@ -13,52 +69,57 @@ const PromoSection = () => {
       id="promosection"
       className="relative py-32 md:py-48 bg-[#f5f5f0] flex flex-col items-center text-center px-6 overflow-hidden"
     >
-      {/* DECORATIVE BACKGROUND TEXT */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03]">
-        <span className="text-[15vw] md:text-[20vw] font-black leading-none text-black select-none">
-          RARE
+      {/* GSAP-parallax background watermark */}
+      <div
+        ref={bgTextRef}
+        className="absolute top-1/2 left-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.035]"
+        style={{ willChange: 'transform' }}
+      >
+        <span className="text-[18vw] font-black leading-none text-black select-none whitespace-nowrap">
+          FRESHOZZ FRESHOZZ
         </span>
       </div>
 
-      {/* Main Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-4xl sm:text-6xl md:text-[5rem] font-black text-black tracking-[-0.03em] leading-[0.95] uppercase max-w-5xl"
-      >
-        WE GREW UP WITH
-        <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-black">
-          TWO BAD CHOICES.
-        </span>
-      </motion.h2>
+      {/* Staggered heading */}
+      <h2 ref={h2Ref} className="relative z-10 flex flex-wrap justify-center gap-x-5 gap-y-2 max-w-5xl mb-0">
+        {words.map((w, i) => (
+          <span
+            key={i}
+            ref={el => wordsRef.current[i] = el}
+            className={`font-black uppercase tracking-tight leading-none text-black ${
+              i >= 4 ? 'text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-black' : ''
+            }`}
+            style={{
+              fontSize: 'clamp(2.8rem, 7vw, 6.5rem)',
+              display: 'inline-block',
+              opacity: 0,
+              transformOrigin: 'bottom center',
+              perspective: '600px',
+            }}
+          >
+            {w}
+          </span>
+        ))}
+      </h2>
 
-      {/* Supporting Text - Premium Innovation Story */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 mt-12 md:mt-16 flex flex-col items-center"
-      >
+      {/* Supporting content */}
+      <div ref={bodyRef} className="relative z-10 mt-14 md:mt-20 flex flex-col items-center opacity-0">
         <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 max-w-4xl px-4 leading-relaxed tracking-tight">
           Cheap ₹10 sodas that tasted loud but empty.
           <br className="hidden md:block" />
-          Or global colas that didn't feel Indian at all.
+          Or global colas that didn&apos;t feel Indian at all.
         </p>
 
-        {/* Separator */}
-        <div className="w-1 bg-black/10 h-16 my-8 md:my-12" />
+        <div className="w-px bg-black/10 h-16 my-8 md:my-12" />
 
-        {/* Description - Premium Craft */}
         <p className="text-base sm:text-lg md:text-xl font-medium text-gray-700 max-w-3xl px-6 leading-relaxed">
-          There was no mid-premium Indian soda — one that respected flavor, respected branding, and didn't treat consumers like they wouldn't notice.
+          There was no mid-premium Indian soda — one that respected flavor, branding, and the Indian palate.
           <br /><br />
-          <span className="font-bold text-black text-xl md:text-2xl">ZfO was built to fill that gap.</span>
+          <span className="font-black text-black text-xl md:text-2xl">
+            Freshozz was built to fill that gap.
+          </span>
         </p>
-      </motion.div>
+      </div>
     </section>
   );
-};
-
-export default PromoSection;
+}

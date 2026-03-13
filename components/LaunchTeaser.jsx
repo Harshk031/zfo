@@ -1,92 +1,82 @@
 'use client';
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Burst canvas lazy loaded
+const WebGLScene = dynamic(() => import('@/components/webgl/WebGLScene'), { ssr: false });
 
 const LaunchTeaser = () => {
-  const [bubbles, setBubbles] = useState([]);
+  const [burst, setBurst] = useState(false);
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
 
-  const explodeFizz = () => {
-    const newBubbles = Array.from({ length: 70 }).map((_, i) => {
-      const size = Math.random() * 30 + 12;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Staggered heading reveal
+      if (headingRef.current) {
+        gsap.fromTo(headingRef.current,
+          { opacity: 0, y: 60 },
+          {
+            opacity: 1, y: 0, duration: 1.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 75%',
+            }
+          }
+        );
+      }
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
 
-      return {
-        id: Date.now() + i,
-        size,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        driftX: (Math.random() - 0.5) * 300,
-        driftY: -(Math.random() * 400 + 150),
-        blur: Math.random() * 2 + 0.5,
-        duration: Math.max(3, 7 - size / 40),
-      };
-    });
-
-    setBubbles((b) => [...b, ...newBubbles]);
+  const handleBurst = () => {
+    setBurst(true);
+    setTimeout(() => setBurst(false), 3000);
   };
 
   return (
-    <section className="relative h-screen bg-black flex flex-col items-center justify-center text-center overflow-hidden px-6">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-50" />
+    <section
+      ref={sectionRef}
+      className="relative h-screen bg-[#050508] flex flex-col items-center justify-center text-center overflow-hidden px-6"
+    >
+      {/* WebGL particle burst canvas */}
+      <div className="absolute inset-0">
+        <WebGLScene
+          scrollProgress={0.38}   // citrus chapter always shown
+          burstActive={burst}
+        />
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-4xl"
-      >
-        <h2 className="text-5xl sm:text-7xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-gray-500 tracking-tighter mb-8 leading-none uppercase">
+      {/* Dark vignette */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(5,5,8,0.2) 0%, rgba(5,5,8,0.85) 100%)' }} />
+
+      <div ref={headingRef} className="relative z-10 max-w-4xl opacity-0">
+        <p className="text-white/40 uppercase tracking-[0.3em] text-xs font-bold mb-6">
+          Built to last
+        </p>
+        <h2 className="text-5xl sm:text-7xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-500 tracking-tighter mb-8 leading-none uppercase">
           BUILT TO LAST.
         </h2>
 
-        <p className="text-white/60 text-lg md:text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
-          ZfO is not built to shout. It's built to last. We're just getting started.
+        <p className="text-white/60 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+          ZfO is not built to shout. It&apos;s built to last. We&apos;re just getting started.
         </p>
 
-        <motion.button
-          onClick={explodeFizz}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-10 py-5 rounded-full bg-gray-200 text-black font-black tracking-widest uppercase text-lg hover:bg-white transition-colors duration-300 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
+        <button
+          onClick={handleBurst}
+          className="group relative px-10 py-5 rounded-full bg-white text-black font-black tracking-widest uppercase text-sm hover:bg-[#ffcc00] transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.15)] hover:shadow-[0_0_80px_rgba(255,204,0,0.4)] overflow-hidden"
         >
-          FOLLOW THE JOURNEY →
-        </motion.button>
-      </motion.div>
-
-      {bubbles.map((b) => (
-        <motion.span
-          key={b.id}
-          className="absolute rounded-full pointer-events-none"
-          style={{
-            width: b.size,
-            height: b.size,
-            left: `${b.x}%`,
-            top: `${b.y}%`,
-            filter: `blur(${b.blur}px)`,
-            background: `
-              radial-gradient(
-                circle at 25% 25%,
-                rgba(255,255,255,0.95),
-                rgba(255,255,255,0.45) 35%,
-                rgba(255,255,255,0.15) 60%,
-                rgba(255,255,255,0.05)
-              )
-            `,
-          }}
-          initial={{ scale: 0.2, opacity: 0 }}
-          animate={{
-            scale: [0.3, 1, 1.05, 0.85],
-            x: [0, b.driftX * 0.4, b.driftX],
-            y: [0, b.driftY * 0.6, b.driftY],
-            opacity: [0.9, 0.7, 0.3, 0],
-          }}
-          transition={{
-            duration: b.duration,
-            ease: "easeOut",
-          }}
-        />
-      ))}
+          <span className="relative z-10">FOLLOW THE JOURNEY →</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+        </button>
+      </div>
     </section>
   );
 };

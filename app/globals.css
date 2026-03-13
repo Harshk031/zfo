@@ -1,6 +1,32 @@
 @import "tailwindcss";
 
 /* ============================================
+   GSAP SCROLL - hand control to GSAP
+   ============================================ */
+html {
+  scroll-behavior: auto !important;
+}
+
+/* ============================================
+   SPACE GROTESK — PRIMARY DISPLAY FONT
+   ============================================ */
+:root {
+  --font-display: 'Space Grotesk', 'Futura Bold', sans-serif;
+}
+
+/* WebGL canvas perf hints */
+canvas {
+  will-change: transform;
+  image-rendering: auto;
+}
+
+/* Prevent iOS bounce on scroll-driven sections */
+.scroll-story-wrapper {
+  overscroll-behavior: none;
+  touch-action: pan-y;
+}
+
+/* ============================================
    PREMIUM TYPOGRAPHY - FUTURA BOOK
    ============================================ */
 
