@@ -47,11 +47,7 @@ export async function POST(req) {
         console.error('SMS dispatch failed for Order #', internalOrderId, ':', err);
       }
     }
-        console.log('SMS Result for Order #', internalOrderId, ':', smsResult);
-      } catch (err) {
-        console.error('SMS dispatch failed for Order #', internalOrderId, ':', err);
-      }
-    }
+
 
     return Response.json({ success: true });
 
