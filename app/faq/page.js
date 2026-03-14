@@ -25,7 +25,7 @@ const faqs = [
     },
     {
         question: 'Where can I buy ZfO?',
-        answer: 'ZfO is currently in pre-launch phase. Sign up on our homepage to be notified when we go live. We\'ll be available at select premium retailers, cafes, and online.',
+        answer: 'You can order ZfO directly from our website at zfo.co.in. We deliver nationwide across India. Single bottles and combos are available.',
     },
     {
         question: 'Why glass bottles?',
