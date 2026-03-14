@@ -7,32 +7,34 @@ import Script from 'next/script';
 
 const WebGLScene = dynamic(() => import('@/components/webgl/WebGLScene'), { ssr: false });
 
+const DELIVERY_CHARGE = 30;
+
 const OPTIONS = [
   {
     id: 'single',
     qty: 1,
     name: 'Single',
     tagline: 'THE SOLO MISSION',
-    sub: '275ml Glass Breezer Bottle · ₹30 Delivery',
-    price: 75,
-    originalPrice: 110,
+    sub: '275ml Glass Breezer Bottle',
+    price: 45,
+    originalPrice: 80,
     burst: 0.3,
     glow: '#facc15',
     accent: 'rgba(250,204,21,0.12)',
-    savings: 32,
+    savings: 44,
   },
   {
     id: 'combo',
     qty: 4,
     name: 'Combo ×4',
     tagline: 'SQUAD GOALS',
-    sub: '4 × 275ml Glass Bottles · ₹30 Delivery',
-    price: 199,
-    originalPrice: 350,
+    sub: '4 × 275ml Glass Bottles',
+    price: 169,
+    originalPrice: 320,
     burst: 0.55,
     glow: '#f97316',
     accent: 'rgba(249,115,22,0.12)',
-    savings: 43,
+    savings: 47,
   },
 ];
 
@@ -185,7 +187,7 @@ export default function OrderRitual() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           optionId: selectedOption.id,
-          amount: selectedOption.price,
+          amount: selectedOption.price + DELIVERY_CHARGE, // bottle + delivery
           customerDetails,
         }),
       });
@@ -200,7 +202,7 @@ export default function OrderRitual() {
 
       const options = {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-        amount: selectedOption.price * 100,
+        amount: (selectedOption.price + DELIVERY_CHARGE) * 100,
         currency: 'INR',
         name: 'ZfO',
         description: `${selectedOption.name} — ${selectedOption.sub}`,
@@ -466,8 +468,18 @@ export default function OrderRitual() {
               className="flex-1 rounded-2xl px-6 py-4 border flex flex-col justify-center"
               style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.08)' }}
             >
-              <p className="text-white/30 text-xs uppercase tracking-widest mb-1">Total</p>
-              <p className="text-3xl font-black text-white">₹{selectedOption.price}</p>
+              <div className="flex justify-between items-center mb-1">
+                <p className="text-white/30 text-xs uppercase tracking-widest">Bottle</p>
+                <p className="text-white/60 text-sm font-bold">₹{selectedOption.price}</p>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <p className="text-white/30 text-xs uppercase tracking-widest">Delivery</p>
+                <p className="text-white/60 text-sm font-bold">₹{DELIVERY_CHARGE}</p>
+              </div>
+              <div className="border-t border-white/10 pt-2 flex justify-between items-center">
+                <p className="text-white/40 text-xs uppercase tracking-widest">Total</p>
+                <p className="text-2xl font-black text-white">₹{selectedOption.price + DELIVERY_CHARGE}</p>
+              </div>
             </div>
 
             <button
@@ -482,7 +494,7 @@ export default function OrderRitual() {
               }}
             >
               <span className="relative z-10 pointer-events-none">
-                {phase === 'loading' ? '⚡ LAUNCHING...' : `LET IT POP → ₹${selectedOption.price}`}
+                {phase === 'loading' ? '⚡ LAUNCHING...' : `LET IT POP → ₹${selectedOption.price + DELIVERY_CHARGE}`}
               </span>
               <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12 pointer-events-none" />
             </button>
