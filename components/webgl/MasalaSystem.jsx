@@ -4,7 +4,6 @@ import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// GPU shader masala spice system — same approach as CarbonationSystem
 const vertexShader = /* glsl */`
   attribute float aRadius;
   attribute float aAngle;
@@ -25,13 +24,13 @@ const vertexShader = /* glsl */`
       return;
     }
 
-    float angle = aAngle + uTime * aAngularSpeed * (1.0 + uScrollProgress * 0.5);
+    float angle = aAngle + uTime * aAngularSpeed * (1.0 + uScrollProgress * 0.4);
     float x = cos(angle) * aRadius;
     float z = sin(angle) * aRadius;
     float y = mod(aY + uTime * aYSpeed + aPhase * 6.0, 6.0) - 3.0;
 
     vec4 mvPosition = modelViewMatrix * vec4(x, y, z, 1.0);
-    gl_PointSize = aSize * uIntensity * (200.0 / -mvPosition.z);
+    gl_PointSize = aSize * uIntensity * (100.0 / -mvPosition.z);
     gl_Position = projectionMatrix * mvPosition;
   }
 `;
@@ -43,16 +42,16 @@ const fragmentShader = /* glsl */`
     vec2 uv = gl_PointCoord - vec2(0.5);
     float d = length(uv);
     if (d > 0.5) discard;
-    float alpha = (1.0 - smoothstep(0.3, 0.5, d)) * uIntensity * 0.7;
+    float alpha = (1.0 - smoothstep(0.25, 0.5, d)) * uIntensity * 0.55;
     gl_FragColor = vec4(1.0, 0.42, 0.0, alpha);
   }
 `;
 
-export default function MasalaSystem({ count = 300, intensity = 0, scrollProgress = 0 }) {
+export default function MasalaSystem({ count = 250, intensity = 0, scrollProgress = 0 }) {
   const pointsRef = useRef();
 
   const { geometry, material } = useMemo(() => {
-    const n = Math.min(count, 300);
+    const n = Math.min(count, 250);
 
     const positions     = new Float32Array(n * 3);
     const radii         = new Float32Array(n);
@@ -71,18 +70,18 @@ export default function MasalaSystem({ count = 300, intensity = 0, scrollProgres
       ys[i]            = (Math.random() - 0.5) * 5;
       ySpeeds[i]       = (Math.random() - 0.5) * 0.003;
       phases[i]        = Math.random();
-      sizes[i]         = 3 + Math.random() * 5;
+      sizes[i]         = 1.5 + Math.random() * 3.0; // small
     }
 
     const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position',     new THREE.BufferAttribute(positions,     3));
-    geo.setAttribute('aRadius',      new THREE.BufferAttribute(radii,         1));
-    geo.setAttribute('aAngle',       new THREE.BufferAttribute(angles,        1));
-    geo.setAttribute('aAngularSpeed',new THREE.BufferAttribute(angularSpeeds, 1));
-    geo.setAttribute('aY',           new THREE.BufferAttribute(ys,            1));
-    geo.setAttribute('aYSpeed',      new THREE.BufferAttribute(ySpeeds,       1));
-    geo.setAttribute('aPhase',       new THREE.BufferAttribute(phases,        1));
-    geo.setAttribute('aSize',        new THREE.BufferAttribute(sizes,         1));
+    geo.setAttribute('position',      new THREE.BufferAttribute(positions,     3));
+    geo.setAttribute('aRadius',       new THREE.BufferAttribute(radii,         1));
+    geo.setAttribute('aAngle',        new THREE.BufferAttribute(angles,        1));
+    geo.setAttribute('aAngularSpeed', new THREE.BufferAttribute(angularSpeeds, 1));
+    geo.setAttribute('aY',            new THREE.BufferAttribute(ys,            1));
+    geo.setAttribute('aYSpeed',       new THREE.BufferAttribute(ySpeeds,       1));
+    geo.setAttribute('aPhase',        new THREE.BufferAttribute(phases,        1));
+    geo.setAttribute('aSize',         new THREE.BufferAttribute(sizes,         1));
 
     const mat = new THREE.ShaderMaterial({
       vertexShader,
@@ -94,7 +93,7 @@ export default function MasalaSystem({ count = 300, intensity = 0, scrollProgres
       },
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
     });
 
     return { geometry: geo, material: mat };
@@ -102,7 +101,7 @@ export default function MasalaSystem({ count = 300, intensity = 0, scrollProgres
 
   useFrame((_, delta) => {
     if (!material) return;
-    material.uniforms.uTime.value           += Math.min(delta, 0.05);
+    material.uniforms.uTime.value          += Math.min(delta, 0.05);
     material.uniforms.uIntensity.value       = intensity;
     material.uniforms.uScrollProgress.value  = scrollProgress;
   });

@@ -30,12 +30,11 @@ function Scene({ scrollProgress, burstActive }) {
 
   return (
     <>
-      {/* Lighting — warm amber key + cool blue rim = glass looks premium */}
-      <ambientLight intensity={0.4} />
-      <pointLight position={[3, 5, 3]}  intensity={2.5} color="#ffdd99" />
-      <pointLight position={[-4, -2, 3]} intensity={1.2} color="#88aaff" />
-      {/* Strong rim backlight makes glass glow */}
-      <pointLight position={[0, -3, -4]} intensity={2.0} color="#ff6600" />
+      {/* Soft, premium lighting — not blinding */}
+      <ambientLight intensity={0.5} />
+      <pointLight position={[3, 5, 3]}  intensity={1.2} color="#ffdd99" />
+      <pointLight position={[-4, -2, 3]} intensity={0.8} color="#88aaff" />
+      <pointLight position={[0, -2, -3]} intensity={0.6} color="#ff8844" />
 
       <Suspense fallback={null}>
         <CarbonationSystem count={bubbleCount} scrollProgress={scrollProgress} />

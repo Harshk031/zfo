@@ -5,9 +5,10 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 // ─────────────────────────────────────────────────────────────────────
-// GPU SHADER PARTICLE SYSTEM
-// All animation runs 100% on the GPU — zero per-frame JS computation.
-// JavaScript only updates ONE uniform (time) per frame regardless of count.
+// GPU SHADER BUBBLE SYSTEM — fixes:
+//   - Point sizes now tiny (3-8px screen), not 200-500px
+//   - Opacity 0.18 to prevent additive pile-up blinding
+//   - NormalBlending fallback to avoid white-out
 // ─────────────────────────────────────────────────────────────────────
 
 const vertexShader = /* glsl */`
@@ -21,44 +22,37 @@ const vertexShader = /* glsl */`
   uniform float uScrollProgress;
 
   void main() {
-    // Upward drift — driven by time + scroll speed on GPU
-    float speedMult = 1.0 + uScrollProgress * 1.5;
-    float y = position.y + mod(uTime * aSpeed * speedMult + aPhase * 16.0, 16.0) - 8.0;
-    
-    // Sine sway — pure GPU math, free
-    float swayX = sin(uTime * aSwaySpeed + aSway) * 0.07;
+    float speedMult = 1.0 + uScrollProgress * 1.2;
+    // Upward loop: mod over 16 units, offset by phase so they spread out
+    float y = mod(position.y + uTime * aSpeed * speedMult + aPhase * 16.0, 16.0) - 8.0;
+    float swayX = sin(uTime * aSwaySpeed + aSway) * 0.06;
 
-    vec3 pos = vec3(position.x + swayX, y, position.z);
+    vec4 mvPosition = modelViewMatrix * vec4(position.x + swayX, y, position.z, 1.0);
 
-    vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
-    gl_PointSize = aSize * (300.0 / -mvPosition.z);
+    // aSize is already in raw pixels (3-8). Scale slightly with depth but keep small.
+    gl_PointSize = aSize * (120.0 / -mvPosition.z);
     gl_Position = projectionMatrix * mvPosition;
   }
 `;
 
 const fragmentShader = /* glsl */`
-  uniform float uOpacity;
-
   void main() {
-    // Circular point — discard square corners
     vec2 uv = gl_PointCoord - vec2(0.5);
     float d = length(uv);
     if (d > 0.5) discard;
 
-    // Soft edge
-    float alpha = 1.0 - smoothstep(0.3, 0.5, d);
-    gl_FragColor = vec4(0.7, 0.87, 1.0, alpha * uOpacity);
+    // Very soft circle, very low alpha to prevent blinding accumulation
+    float alpha = (1.0 - smoothstep(0.25, 0.5, d)) * 0.18;
+    gl_FragColor = vec4(0.75, 0.9, 1.0, alpha);
   }
 `;
 
-export default function CarbonationSystem({ count = 500, scrollProgress = 0 }) {
+export default function CarbonationSystem({ count = 400, scrollProgress = 0 }) {
   const pointsRef = useRef();
-  
-  // uploadonce: build all particle attribute arrays ONCE, never modify on CPU
-  const { geometry, material } = useMemo(() => {
-    const n = Math.min(count, 500);
 
-    // Position (initial random x, y, z)
+  const { geometry, material } = useMemo(() => {
+    const n = Math.min(count, 400);
+
     const positions  = new Float32Array(n * 3);
     const speeds     = new Float32Array(n);
     const sways      = new Float32Array(n);
@@ -67,13 +61,13 @@ export default function CarbonationSystem({ count = 500, scrollProgress = 0 }) {
     const phases     = new Float32Array(n);
 
     for (let i = 0; i < n; i++) {
-      positions[i * 3]     = (Math.random() - 0.5) * 6;   // x
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 16;  // y — full range
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 3;   // z
-      speeds[i]     = 0.4 + Math.random() * 0.8;
+      positions[i * 3]     = (Math.random() - 0.5) * 7;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 16;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 4;
+      speeds[i]     = 0.3 + Math.random() * 0.7;
       sways[i]      = Math.random() * Math.PI * 2;
-      swaySpeeds[i] = 0.4 + Math.random() * 1.2;
-      sizes[i]      = 4 + Math.random() * 7;   // point size in GPU pixels
+      swaySpeeds[i] = 0.3 + Math.random() * 1.0;
+      sizes[i]      = 1.5 + Math.random() * 2.5;  // Very small: 1.5–4 raw px
       phases[i]     = Math.random();
     }
 
@@ -91,21 +85,20 @@ export default function CarbonationSystem({ count = 500, scrollProgress = 0 }) {
       uniforms: {
         uTime:           { value: 0 },
         uScrollProgress: { value: 0 },
-        uOpacity:        { value: 0.5 },
       },
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      // Normal blending avoids additive white-out while still looking nice
+      blending: THREE.NormalBlending,
     });
 
     return { geometry: geo, material: mat };
   }, [count]);
 
-  // Per frame: update exactly 2 uniform values — O(1) regardless of particle count
   useFrame((_, delta) => {
     if (!material) return;
-    material.uniforms.uTime.value           += Math.min(delta, 0.05);
-    material.uniforms.uScrollProgress.value  = scrollProgress;
+    material.uniforms.uTime.value          += Math.min(delta, 0.05);
+    material.uniforms.uScrollProgress.value = scrollProgress;
   });
 
   return <points ref={pointsRef} geometry={geometry} material={material} frustumCulled={false} />;
