@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import { getDb } from '@/lib/db';
+import { sendOrderConfirmationSMS } from '@/lib/sms';
 
 export async function POST(req) {
   try {
@@ -35,17 +36,13 @@ export async function POST(req) {
         ? 'Combo of 4 × 275ml Glass Bottles'
         : '1 × 275ml Glass Bottle';
 
-      // Fire async SMS, don't await so payment response is instant
-      fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/sms/send`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          phone: order.customerPhone,
-          customerName: order.customerName,
-          orderDetails,
-          amount: order.amount,
-        }),
-      }).catch(err => console.error('SMS trigger failed (non-blocking):', err));
+      // Use the internal utility instead of a network fetch to ourselves
+      sendOrderConfirmationSMS({
+        phone: order.customerPhone,
+        customerName: order.customerName,
+        orderDetails,
+        amount: order.amount,
+      }).catch(err => console.error('Delayed SMS dispatch failed:', err));
     }
 
     return Response.json({ success: true });
