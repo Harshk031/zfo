@@ -69,13 +69,15 @@ const LaunchTeaser = () => {
           ZfO is not built to shout. It&apos;s built to last. We&apos;re just getting started.
         </p>
 
-        <button
-          onClick={handleBurst}
-          className="group relative px-10 py-5 rounded-full bg-white text-black font-black tracking-widest uppercase text-sm hover:bg-[#ffcc00] transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.15)] hover:shadow-[0_0_80px_rgba(255,204,0,0.4)] overflow-hidden"
+        <a
+          href="https://www.instagram.com/drinkzfo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative inline-block px-10 py-5 rounded-full bg-white text-black font-black tracking-widest uppercase text-sm hover:bg-[#ffcc00] transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.15)] hover:shadow-[0_0_80px_rgba(255,204,0,0.4)] overflow-hidden"
         >
           <span className="relative z-10">FOLLOW THE JOURNEY →</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-        </button>
+        </a>
       </div>
     </section>
   );
