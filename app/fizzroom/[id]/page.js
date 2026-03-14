@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation';
 import { fizzPosts } from '@/data/fizzroomData';
 import FizzroomPostClient from '@/components/FizzroomPostClient';
 
-export default function FizzroomPost({ params }) {
-    const post = fizzPosts.find((p) => p.id === parseInt(params.id));
+export default async function FizzroomPost({ params }) {
+    const { id } = await params;
+    const post = fizzPosts.find((p) => p.id === parseInt(id));
 
     if (!post) {
         notFound();
@@ -20,13 +21,12 @@ export function generateStaticParams() {
 }
 
 // Generate metadata for each post
-export function generateMetadata({ params }) {
-    const post = fizzPosts.find((p) => p.id === parseInt(params.id));
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+    const post = fizzPosts.find((p) => p.id === parseInt(id));
 
     if (!post) {
-        return {
-            title: 'Post Not Found',
-        };
+        return { title: 'Post Not Found' };
     }
 
     return {
