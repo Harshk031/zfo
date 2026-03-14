@@ -34,6 +34,12 @@ export async function POST(req) {
       amount: amount * 100,
       currency: 'INR',
       receipt: `rcpt_${Date.now()}`,
+      notes: {
+        product: optionId === 'combo' ? '4 x 275ml Bottles' : '1 x 275ml Bottle',
+        customerName: customerDetails.name,
+        customerPhone: customerDetails.phone,
+        customerAddress: customerDetails.address,
+      }
     };
 
     let rzpOrder;
