@@ -6,36 +6,52 @@ export async function POST(req) {
     const body = await req.json();
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature, internalOrderId } = body;
 
-    // 1. Verify Signature (Skip if using mock keys in dev)
+    // 1. Verify Signature
     const secret = process.env.RAZORPAY_KEY_SECRET;
     const isLiveMode = secret && !secret.includes('placeholder');
-    
+
     if (isLiveMode) {
       const hmac = crypto.createHmac('sha256', secret);
       hmac.update(razorpay_order_id + '|' + razorpay_payment_id);
       const generatedSignature = hmac.digest('hex');
-
       if (generatedSignature !== razorpay_signature) {
-        return new Response(JSON.stringify({ error: 'Invalid signature' }), { status: 400 });
+        return Response.json({ error: 'Invalid signature' }, { status: 400 });
       }
     } else {
       console.warn('MOCK MODE: Skipping signature verification.');
     }
 
-    // 2. Update order status in local SQLite DB
+    // 2. Update order in DB and fetch customer details for SMS
     const db = getDb();
-    const stmt = db.prepare(`
-      UPDATE orders 
-      SET status = 'PAID', razorpayPaymentId = ? 
-      WHERE id = ?
-    `);
-    
-    stmt.run(razorpay_payment_id || 'mock_payment_id', internalOrderId);
+    db.prepare(`UPDATE orders SET status = 'PAID', razorpayPaymentId = ? WHERE id = ?`)
+      .run(razorpay_payment_id || 'mock_payment_id', internalOrderId);
 
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
+    // Fetch the order from DB to get customer details for SMS
+    const order = db.prepare(`SELECT * FROM orders WHERE id = ?`).get(internalOrderId);
+
+    // 3. Trigger SMS notification (fire & forget — don't block payment success)
+    if (order && order.customerPhone) {
+      const orderDetails = order.optionId === 'combo'
+        ? 'Combo of 4 × 275ml Glass Bottles'
+        : '1 × 275ml Glass Bottle';
+
+      // Fire async SMS, don't await so payment response is instant
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/sms/send`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phone: order.customerPhone,
+          customerName: order.customerName,
+          orderDetails,
+          amount: order.amount,
+        }),
+      }).catch(err => console.error('SMS trigger failed (non-blocking):', err));
+    }
+
+    return Response.json({ success: true });
 
   } catch (error) {
-    console.error("Verification error:", error);
-    return new Response(JSON.stringify({ error: "Error verifying payment" }), { status: 500 });
+    console.error('Verification error:', error);
+    return Response.json({ error: 'Error verifying payment' }, { status: 500 });
   }
 }

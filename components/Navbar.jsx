@@ -130,6 +130,24 @@ const Navbar = () => {
                     ))}
                 </motion.ul>
 
+                {/* ORDER NOW CTA */}
+                <motion.div
+                    variants={itemVariants}
+                    className="mt-12"
+                >
+                    <a
+                        href="/order"
+                        onClick={() => setIsOpen(false)}
+                        className="inline-block px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm text-black transition-all duration-300 hover:scale-105"
+                        style={{
+                            background: 'linear-gradient(135deg, #facc15, #f97316)',
+                            boxShadow: '0 0 60px rgba(250,204,21,0.4)',
+                        }}
+                    >
+                        ⚡ ORDER NOW →
+                    </a>
+                </motion.div>
+
                 {/* Footer Info in Menu */}
                 <motion.div
                     variants={itemVariants}
