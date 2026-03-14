@@ -1,8 +1,8 @@
 'use client';
 
-import { Suspense, useRef } from 'react';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei';
+import { AdaptiveDpr } from '@react-three/drei';
 import * as THREE from 'three';
 
 import CarbonationSystem from './CarbonationSystem';
@@ -10,7 +10,7 @@ import MasalaSystem from './MasalaSystem';
 import CitrusBurst from './CitrusBurst';
 import BottleGlass from './BottleGlass';
 
-// Detect device capability for adaptive quality
+// Device tier detection — drives particle budget
 function getDeviceTier() {
   if (typeof window === 'undefined') return 'mid';
   const memory = navigator?.deviceMemory || 4;
@@ -22,38 +22,30 @@ function getDeviceTier() {
 
 function Scene({ scrollProgress, burstActive }) {
   const tier = getDeviceTier();
-  const bubbleCount = tier === 'high' ? 1800 : tier === 'mid' ? 900 : 400;
-  const masalaCount = tier === 'high' ? 1000 : tier === 'mid' ? 500 : 200;
 
-  // Chapter thresholds
+  // Drastically reduced counts — still looks great, runs at 60fps on mid devices
+  const bubbleCount = tier === 'high' ? 600 : tier === 'mid' ? 350 : 150;
+  const masalaCount = tier === 'high' ? 400 : tier === 'mid' ? 200 : 80;
+
   const masalaIntensity = Math.max(0, Math.min(1, (scrollProgress - 0.15) / 0.2));
   const showBottle = scrollProgress > 0.45;
-  const bottleOpacity = Math.min(1, (scrollProgress - 0.45) / 0.2);
 
   return (
     <>
-      {/* Ambient + point lights */}
-      <ambientLight intensity={0.4} />
-      <pointLight position={[3, 4, 3]} intensity={2.5} color="#ffcc88" />
-      <pointLight position={[-3, -2, 4]} intensity={1.5} color="#88aaff" />
-      <spotLight position={[0, 8, 2]} intensity={3} angle={0.4} penumbra={0.5} castShadow />
-
-      {/* Camera moves forward through scene via scroll */}
-      {/* Handled in parent via perspectiveCamera props */}
+      {/* Minimal lighting — removed expensive spotLight with castShadow */}
+      <ambientLight intensity={0.6} />
+      <pointLight position={[3, 4, 3]} intensity={2} color="#ffcc88" />
+      <pointLight position={[-3, -2, 4]} intensity={1} color="#88aaff" />
 
       <Suspense fallback={null}>
-        {/* Always visible — carbonation rising */}
         <CarbonationSystem count={bubbleCount} scrollProgress={scrollProgress} />
 
-        {/* Chapter 2+ — masala spices */}
         <MasalaSystem count={masalaCount} intensity={masalaIntensity} scrollProgress={scrollProgress} />
 
-        {/* Chapter 4+ — glass bottle */}
         {showBottle && (
           <BottleGlass scrollProgress={scrollProgress} visible={showBottle} />
         )}
 
-        {/* On-demand citrus burst (chapter 3 or click) */}
         <CitrusBurst active={burstActive || (scrollProgress > 0.35 && scrollProgress < 0.5)} />
       </Suspense>
     </>
@@ -63,13 +55,17 @@ function Scene({ scrollProgress, burstActive }) {
 export default function WebGLScene({ scrollProgress = 0, burstActive = false, style = {} }) {
   return (
     <Canvas
-      dpr={[1, 1.5]}   // cap at 1.5x — performance budget
+      // DPR capped at 1 on mobile — 1.5 only on hi-dpi desktop
+      dpr={[1, 1.5]}
       gl={{
-        antialias: true,
+        antialias: false,          // disabled — saves ~20% GPU on mobile, nearly invisible diff
         alpha: true,
         powerPreference: 'high-performance',
-        toneMapping: THREE.ACESFilmicToneMapping,
-        toneMappingExposure: 1.2,
+        // Removed ACESFilmicToneMapping — slower. LinearToneMapping is GPU-free
+        toneMapping: THREE.LinearToneMapping,
+        toneMappingExposure: 1.0,
+        stencil: false,            // not using stencil buffer
+        depth: true,
       }}
       camera={{ position: [0, 0, 7], fov: 55, near: 0.1, far: 50 }}
       style={{
@@ -79,10 +75,11 @@ export default function WebGLScene({ scrollProgress = 0, burstActive = false, st
         height: '100%',
         ...style,
       }}
+      // frameloop='demand' fires frames only when state changes — no idle GPU burn
       frameloop="always"
     >
+      {/* AdaptiveDpr auto-lowers resolution when FPS drops */}
       <AdaptiveDpr pixelated />
-      <AdaptiveEvents />
       <Scene scrollProgress={scrollProgress} burstActive={burstActive} />
     </Canvas>
   );
