@@ -218,6 +218,8 @@ export default function OrderRitual() {
                 razorpay_payment_id: response.razorpay_payment_id,
                 razorpay_signature: response.razorpay_signature,
                 internalOrderId: order.internalId,
+                customerDetails: customerDetails,
+                amount: selectedOption.price + DELIVERY_CHARGE
               }),
             });
             if (verifyRes.ok) {
