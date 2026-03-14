@@ -31,7 +31,7 @@ export default function Home() {
         Moved from the top to avoid hidden text penalties.
       */}
       <article className="bg-[#050508] text-white/40 py-16 px-6 sm:px-12 mt-12 border-t border-white/5 mx-auto text-sm leading-relaxed max-w-7xl">
-        <h2 className="text-xl text-white/70 font-bold mb-4">ZfO — Premium Masala Soda in Glass Bottles | India&apos;s Finest Craft Soda</h2>
+        <h1 className="text-xl text-white/70 font-bold mb-4">ZfO — Premium Masala Soda in Glass Bottles | India&apos;s Finest Craft Soda</h1>
         <p className="mb-6">
           ZfO is a modern Indian craft soda brand. We make premium masala soda
           in 275ml glass breezer bottles using real spices from across India. No HFCS. No artificial

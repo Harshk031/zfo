@@ -32,6 +32,9 @@ export async function generateMetadata({ params }) {
     return {
         title: `${post.title} | ZfO Fizzroom`,
         description: post.excerpt,
+        alternates: {
+            canonical: `https://www.zfo.co.in/fizzroom/${post.id}`,
+        },
         openGraph: {
             title: post.title,
             description: post.excerpt,

@@ -137,7 +137,7 @@ export default function RootLayout({ children }) {
                                 '@type': 'Offer',
                                 url: 'https://www.zfo.co.in',
                                 priceCurrency: 'INR',
-                                price: '50.00',
+                                price: '45.00',
                                 priceValidUntil: '2027-12-31',
                                 itemCondition: 'https://schema.org/NewCondition',
                                 availability: 'https://schema.org/InStoreOnly',
