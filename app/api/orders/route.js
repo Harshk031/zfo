@@ -16,19 +16,19 @@ export async function GET() {
     
     // Map Razorpay data to the Admin Dashboard format
     const orders = rzpOrders.items
-      .filter(o => o.notes && o.notes.customerName) // Only show website checkout orders
+      .filter(o => o.receipt && o.receipt.startsWith('rcpt_')) // Filter for our website's orders based on receipt prefix
       .map(o => {
         let status = 'CREATED';
         if (o.status === 'paid') status = 'PAID';
-        if (o.notes.status) status = o.notes.status; // Override with our custom fulfillment status
+        if (o.notes && o.notes.status) status = o.notes.status; // Override with our custom fulfillment status
 
         return {
           id: o.id,
-          optionId: o.notes.product?.includes('4') ? 'combo' : 'single',
+          optionId: o.notes?.product?.includes('4') ? 'combo' : 'single (or legacy)',
           amount: o.amount / 100, // Convert from paise to rupees
-          customerName: o.notes.customerName,
-          customerPhone: o.notes.customerPhone,
-          customerAddress: o.notes.customerAddress,
+          customerName: o.notes?.customerName || 'Legacy Order (No Name Saved)',
+          customerPhone: o.notes?.customerPhone || 'N/A',
+          customerAddress: o.notes?.customerAddress || 'Check Razorpay Dashboard for details',
           status: status,
           createdAt: new Date(o.created_at * 1000).toISOString(),
         };
