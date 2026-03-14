@@ -32,11 +32,17 @@ export async function POST(req) {
 
     let rzpOrder;
     const isLiveMode = key_id && !key_id.includes('placeholder') && key_secret && !key_secret.includes('placeholder');
+    let debugReason = 'unknown';
+    if (!key_id) debugReason = 'no_key_id';
+    else if (!key_secret) debugReason = 'no_secret';
+    else if (key_id.includes('placeholder')) debugReason = 'id_is_placeholder';
+    else if (key_secret.includes('placeholder')) debugReason = 'secret_is_placeholder';
+
     if (isLiveMode) {
       rzpOrder = await razorpay.orders.create(orderOptions);
     } else {
-      console.warn('MOCK MODE: No real Razorpay order created.');
-      rzpOrder = { id: `order_mock_${Date.now()}` };
+      console.warn('MOCK MODE: No real Razorpay order created. Reason:', debugReason);
+      rzpOrder = { id: `order_mock_${debugReason}_${Date.now()}` };
     }
 
     // 3. Save to local SQLite database
