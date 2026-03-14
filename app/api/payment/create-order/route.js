@@ -75,6 +75,9 @@ export async function POST(req) {
 
   } catch (error) {
     console.error("Order creation error:", error);
-    return new Response(JSON.stringify({ error: "Error creating order" }), { status: 500 });
+    return new Response(JSON.stringify({ 
+      error: "Error creating order", 
+      details: error?.error?.description || error.message || error.toString() 
+    }), { status: 500 });
   }
 }
