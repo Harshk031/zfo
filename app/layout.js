@@ -149,6 +149,10 @@ export default function RootLayout({ children }) {
                         }),
                     }}
                 />
+                {/* WebSite schema: tells Google this is the official ZfO brand homepage */}
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'ZfO', alternateName: ['ZfO Beverages', 'ZfO Masala Soda'], url: 'https://www.zfo.co.in' }) }} />
+                {/* Clear old service worker caches on mobile */}
+                <script dangerouslySetInnerHTML={{ __html: "if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(r=>r.forEach(sw=>sw.unregister()));}" }} />
             </head>
             <body className="bg-black text-white w-full min-h-screen">
                 <ErrorBoundary>
