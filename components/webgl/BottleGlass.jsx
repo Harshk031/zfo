@@ -5,143 +5,196 @@ import { useFrame } from '@react-three/fiber';
 import { Float, Text } from '@react-three/drei';
 import * as THREE from 'three';
 
-// ZfO 275ml Breezer-style bottle
-// - Wide & squat shape (breezer not beer)
-// - ZfO label in yellow
-// - Crown cap
-// - Scroll drives rotation 0→360°
-// - Liquid level drops as scrollProgress goes 0.45→0.9
+// ─────────────────────────────────────────────────────────────────────────────
+// ZfO 275ml Craft Soda Bottle — modeled from the real product photo:
+//   • Tall & slender glass bottle (like a Breezer / craft soda bottle)
+//   • Long tapering neck into a wide body, squared base
+//   • Golden amber liquid inside
+//   • Black label band with "ZfO" gold text + "The Art of fizz"
+//   • Black crown cap
+//   • Scroll drives: 360° rotation + liquid drain/refill
+// ─────────────────────────────────────────────────────────────────────────────
+
 export default function BottleGlass({ scrollProgress = 0, visible = true }) {
-  const groupRef   = useRef();
-  const liquidRef  = useRef();
+  const groupRef     = useRef();
+  const liquidRef    = useRef();
   const liquidMatRef = useRef();
 
-  // Breezer bottle profile — wide and squat
+  // ── Real ZfO bottle profile ─────────────────────────────────────────────
+  // Based strictly on the actual product photo: tall elegant bottle,
+  // wide-ish body (not a beer bottle, not a fat breezer), long neck.
   const bottleGeo = useMemo(() => {
     const pts = [
-      new THREE.Vector2(0.00, 0.00),
-      new THREE.Vector2(0.32, 0.02),
-      new THREE.Vector2(0.50, 0.10),
-      new THREE.Vector2(0.56, 0.22),
-      new THREE.Vector2(0.58, 0.45),
-      new THREE.Vector2(0.58, 0.80),
-      new THREE.Vector2(0.57, 1.10),
-      new THREE.Vector2(0.52, 1.32),
-      new THREE.Vector2(0.40, 1.46),
-      new THREE.Vector2(0.26, 1.54),
-      new THREE.Vector2(0.22, 1.60),
-      new THREE.Vector2(0.21, 1.76),
-      new THREE.Vector2(0.23, 1.86),
-      new THREE.Vector2(0.24, 1.90),
+      // Flat base
+      new THREE.Vector2(0.000, 0.000),
+      new THREE.Vector2(0.200, 0.010),
+      new THREE.Vector2(0.320, 0.040),
+      // Body — straight-ish sides, slightly wider at bottom
+      new THREE.Vector2(0.360, 0.100),
+      new THREE.Vector2(0.375, 0.220),
+      new THREE.Vector2(0.380, 0.500),
+      new THREE.Vector2(0.378, 0.850),
+      new THREE.Vector2(0.375, 1.100),
+      new THREE.Vector2(0.370, 1.250),
+      // Shoulder — gradual taper up to neck
+      new THREE.Vector2(0.350, 1.380),
+      new THREE.Vector2(0.310, 1.480),
+      new THREE.Vector2(0.250, 1.570),
+      new THREE.Vector2(0.180, 1.630),
+      // Neck — long and slender (classic craft soda)
+      new THREE.Vector2(0.140, 1.680),
+      new THREE.Vector2(0.130, 1.800),
+      new THREE.Vector2(0.128, 1.950),
+      new THREE.Vector2(0.130, 2.100),
+      new THREE.Vector2(0.132, 2.220),
+      // Crown lip
+      new THREE.Vector2(0.148, 2.270),
+      new THREE.Vector2(0.150, 2.300),
     ];
-    return new THREE.LatheGeometry(pts, 24);
+    return new THREE.LatheGeometry(pts, 26);
   }, []);
 
-  // Liquid fill — slightly smaller radius
-  const liquidGeos = useMemo(() => {
-    return [0.0, 0.2, 0.4, 0.6, 0.8, 1.0].map((fillLevel) => {
-      const topY = 0.04 + fillLevel * 1.05;
-      const pts = [
-        new THREE.Vector2(0.00, 0.04),
-        new THREE.Vector2(0.30, 0.06),
-        new THREE.Vector2(0.48, 0.13),
-        new THREE.Vector2(0.53, 0.24),
-        new THREE.Vector2(0.54, 0.46),
-        new THREE.Vector2(0.54, Math.min(topY, 1.08)),
-      ];
-      return new THREE.LatheGeometry(pts, 18);
-    });
+  // ── Liquid inside ────────────────────────────────────────────────────────
+  const liquidGeo = useMemo(() => {
+    const pts = [
+      new THREE.Vector2(0.000, 0.012),
+      new THREE.Vector2(0.190, 0.020),
+      new THREE.Vector2(0.305, 0.050),
+      new THREE.Vector2(0.342, 0.105),
+      new THREE.Vector2(0.356, 0.230),
+      new THREE.Vector2(0.360, 0.520),
+      new THREE.Vector2(0.356, 0.880),
+      new THREE.Vector2(0.352, 1.120),
+      new THREE.Vector2(0.340, 1.260),
+      new THREE.Vector2(0.290, 1.470),
+      new THREE.Vector2(0.220, 1.555),
+      new THREE.Vector2(0.162, 1.610),
+      new THREE.Vector2(0.122, 1.660),
+    ];
+    return new THREE.LatheGeometry(pts, 22);
   }, []);
 
   useFrame(() => {
     if (!groupRef.current) return;
 
-    // 360° rotation on scroll
+    // Full 360° rotation tied to scroll  
     groupRef.current.rotation.y = scrollProgress * Math.PI * 2;
 
-    // Liquid fill level: full at 0.45 scroll → empty at 0.9 scroll
+    // Liquid drains from full (scroll 0.45) to empty (scroll 0.90)
     if (liquidRef.current && liquidMatRef.current) {
-      const t = Math.max(0, Math.min(1, (scrollProgress - 0.45) / 0.45));
-      // Scale Y of liquid mesh down as it drains
-      liquidRef.current.scale.y = Math.max(0.02, 1 - t);
-      liquidMatRef.current.opacity = t > 0.97 ? 0 : 0.88;
+      const fillT = Math.max(0, Math.min(1, (scrollProgress - 0.45) / 0.45));
+      liquidRef.current.scale.y = Math.max(0.01, 1 - fillT * 0.98);
+      liquidRef.current.position.y = 0; // anchored at base
+      liquidMatRef.current.opacity = fillT > 0.97 ? 0 : 0.90;
     }
   });
 
   if (!visible) return null;
 
   return (
-    <Float speed={1.0} rotationIntensity={0.03} floatIntensity={0.10}>
-      <group ref={groupRef} position={[0, -1.0, 0]}>
+    <Float speed={1.0} rotationIntensity={0.03} floatIntensity={0.12}>
+      <group ref={groupRef} position={[0, -1.15, 0]}>
 
-        {/* Glass shell */}
+        {/* ── Glass bottle shell ──────────────────────────────────── */}
         <mesh geometry={bottleGeo}>
           <meshStandardMaterial
-            color="#c8e8ff"
+            color="#d8eeff"
             roughness={0.04}
-            metalness={0.08}
+            metalness={0.10}
             transparent
-            opacity={0.60}
+            opacity={0.55}
             side={THREE.DoubleSide}
           />
         </mesh>
 
-        {/* Liquid — uses liquidGeos[5] (full) and we scale Y to drain */}
-        <mesh ref={liquidRef} geometry={liquidGeos[5]}>
+        {/* ── Golden amber liquid (masala soda) ───────────────────── */}
+        <mesh ref={liquidRef} geometry={liquidGeo}>
           <meshStandardMaterial
             ref={liquidMatRef}
-            color="#b84000"
-            roughness={0.18}
+            color="#c47a00"
+            roughness={0.12}
+            metalness={0.05}
             transparent
-            opacity={0.88}
+            opacity={0.90}
           />
         </mesh>
 
-        {/* Dark label band */}
-        <mesh position={[0, 0.65, 0]}>
-          <cylinderGeometry args={[0.568, 0.568, 0.72, 22, 1, true]} />
+        {/* ── Black label band ─────────────────────────────────────── */}
+        {/* Bottom of label at y=0.30, top at y=1.22 — covers body */}
+        <mesh position={[0, 0.76, 0]}>
+          <cylinderGeometry args={[0.382, 0.375, 0.95, 24, 1, true]} />
           <meshStandardMaterial
-            color="#0d0d0d"
-            roughness={0.7}
+            color="#080808"
+            roughness={0.6}
             transparent
-            opacity={0.95}
+            opacity={0.96}
             side={THREE.FrontSide}
           />
         </mesh>
 
-        {/* ZfO label text */}
+        {/* Gold top border stripe on label */}
+        <mesh position={[0, 1.24, 0]}>
+          <cylinderGeometry args={[0.384, 0.384, 0.018, 24, 1, true]} />
+          <meshStandardMaterial color="#c8960c" roughness={0.3} metalness={0.6} side={THREE.FrontSide} />
+        </mesh>
+
+        {/* Gold bottom border stripe on label */}
+        <mesh position={[0, 0.285, 0]}>
+          <cylinderGeometry args={[0.378, 0.378, 0.018, 24, 1, true]} />
+          <meshStandardMaterial color="#c8960c" roughness={0.3} metalness={0.6} side={THREE.FrontSide} />
+        </mesh>
+
+        {/* ── "ZfO" gold text on label ─────────────────────────────── */}
         <Text
-          position={[0, 0.72, 0.572]}
-          fontSize={0.18}
-          color="#ffcc00"
+          position={[0, 0.72, 0.385]}
+          fontSize={0.195}
+          color="#f0c030"
           anchorX="center"
           anchorY="middle"
-          letterSpacing={0.08}
-          outlineWidth={0.005}
-          outlineColor="#000000"
+          letterSpacing={0.05}
         >
           ZfO
         </Text>
 
+        {/* "The Art of fizz" italic tagline */}
         <Text
-          position={[0, 0.54, 0.572]}
-          fontSize={0.058}
-          color="rgba(255,255,255,0.8)"
+          position={[0, 0.50, 0.384]}
+          fontSize={0.062}
+          color="#e8b020"
           anchorX="center"
           anchorY="middle"
-          letterSpacing={0.07}
+          letterSpacing={0.02}
         >
-          MASALA SODA
+          The Art of fizz
         </Text>
 
-        {/* Crown cap */}
-        <mesh position={[0, 1.92, 0]}>
-          <cylinderGeometry args={[0.25, 0.27, 0.05, 18]} />
-          <meshStandardMaterial color="#1c1c1c" roughness={0.4} metalness={0.5} />
+        {/* "CRAFTED MASALA SODA" top of label */}
+        <Text
+          position={[0, 1.15, 0.384]}
+          fontSize={0.044}
+          color="rgba(200,150,12,0.9)"
+          anchorX="center"
+          anchorY="middle"
+          letterSpacing={0.09}
+        >
+          CRAFTED MASALA SODA
+        </Text>
+
+        {/* ── Black crown cap ──────────────────────────────────────── */}
+        <mesh position={[0, 2.315, 0]}>
+          <cylinderGeometry args={[0.152, 0.162, 0.055, 18]} />
+          <meshStandardMaterial color="#111" roughness={0.4} metalness={0.5} />
         </mesh>
-        <mesh position={[0, 1.895, 0]}>
-          <torusGeometry args={[0.24, 0.022, 6, 18]} />
-          <meshStandardMaterial color="#333" roughness={0.5} metalness={0.4} />
+        {/* Serrated crown ring */}
+        <mesh position={[0, 2.29, 0]}>
+          <torusGeometry args={[0.148, 0.018, 6, 18]} />
+          <meshStandardMaterial color="#222" roughness={0.5} metalness={0.45} />
+        </mesh>
+
+        {/* ── Base glass thickening (kick-up detail) ───────────────── */}
+        <mesh position={[0, 0.012, 0]}>
+          <cylinderGeometry args={[0.195, 0.195, 0.022, 20]} />
+          <meshStandardMaterial color="#aaccee" roughness={0.1} transparent opacity={0.5} />
         </mesh>
 
       </group>
