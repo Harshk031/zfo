@@ -8,17 +8,18 @@ export async function POST(req) {
 
     // 1. Verify Signature (Skip if using mock keys in dev)
     const secret = process.env.RAZORPAY_KEY_SECRET;
+    const isLiveMode = secret && !secret.includes('placeholder');
     
-    if (secret && secret !== 'secret_placeholder') {
+    if (isLiveMode) {
       const hmac = crypto.createHmac('sha256', secret);
-      hmac.update(razorpay_order_id + "|" + razorpay_payment_id);
+      hmac.update(razorpay_order_id + '|' + razorpay_payment_id);
       const generatedSignature = hmac.digest('hex');
 
       if (generatedSignature !== razorpay_signature) {
-        return new Response(JSON.stringify({ error: "Invalid signature" }), { status: 400 });
+        return new Response(JSON.stringify({ error: 'Invalid signature' }), { status: 400 });
       }
     } else {
-      console.warn("Skipping signature verification due to mock mode.");
+      console.warn('MOCK MODE: Skipping signature verification.');
     }
 
     // 2. Update order status in local SQLite DB

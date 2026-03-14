@@ -10,26 +10,33 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400 });
     }
 
-    // 1. Initialise Razorpay
+    // 1. Initialise Razorpay — support both NEXT_PUBLIC_ and plain key names
+    const key_id = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID;
+    const key_secret = process.env.RAZORPAY_KEY_SECRET;
+
+    if (!key_id || !key_secret || key_id.includes('placeholder') || key_secret.includes('placeholder')) {
+      console.warn('Razorpay keys missing or placeholder — running in MOCK mode.');
+    }
+
     const razorpay = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID || 'rzp_test_placeholder',
-      key_secret: process.env.RAZORPAY_KEY_SECRET || 'secret_placeholder'
+      key_id: key_id || 'rzp_test_placeholder',
+      key_secret: key_secret || 'secret_placeholder',
     });
 
     // 2. Create order on Razorpay
-    const options = {
-      amount: amount * 100, // amount in smallest currency unit (paise)
-      currency: "INR",
-      receipt: `receipt_order_${Date.now()}`
+    const orderOptions = {
+      amount: amount * 100,
+      currency: 'INR',
+      receipt: `rcpt_${Date.now()}`,
     };
 
     let rzpOrder;
-    // Only attempt Razorpay API if we have actual keys configured, otherwise mock it for dev
-    if (process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_ID !== 'rzp_test_placeholder') {
-      rzpOrder = await razorpay.orders.create(options);
+    const isLiveMode = key_id && !key_id.includes('placeholder') && key_secret && !key_secret.includes('placeholder');
+    if (isLiveMode) {
+      rzpOrder = await razorpay.orders.create(orderOptions);
     } else {
-      console.warn("Using Razorpay mock mode (No API keys provided).");
-      rzpOrder = { id: `order_mock_${Date.now()}` }; 
+      console.warn('MOCK MODE: No real Razorpay order created.');
+      rzpOrder = { id: `order_mock_${Date.now()}` };
     }
 
     // 3. Save to local SQLite database
