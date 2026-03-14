@@ -150,7 +150,7 @@ export default function ScrollStory() {
         <img
           src="/logo.png"
           alt="ZfO"
-          style={{ height: '44px', width: 'auto', filter: 'invert(1) brightness(2)' }}
+          style={{ height: '72px', width: 'auto', filter: 'invert(1) brightness(2)' }}
         />
       </div>
     </div>

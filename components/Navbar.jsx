@@ -90,7 +90,7 @@ const Navbar = () => {
 
             {/* Brand Logo (Fixed, visible always) */}
             <div className="fixed top-6 left-6 z-50">
-                <a href="/"><img src="/logo.png" alt="ZfO" style={{height:"42px",width:"auto",filter:"invert(1) brightness(10)"}} /></a>
+                <a href="/"><img src="/logo.png" alt="ZfO" style={{height:"68px",width:"auto",filter:"invert(1) brightness(10)"}} /></a>
             </div>
 
             {/* Full Screen Menu */}
