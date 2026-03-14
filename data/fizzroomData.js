@@ -171,4 +171,28 @@ We built ZfO for the people who check the receipt. The ones who care about aesth
 
 We’re not here to take part. We’re here to take over.`
     }
+,
+    {
+        id: 6,
+        title: "The Kanpur Brand Making India's Coolest Craft Soda",
+        excerpt: "From a college campus to a glass bottle — meet ZfO Beverages, the Kanpur craft soda startup building India's next great beverage brand.",
+        date: "Mar 10, 2026",
+        category: "BRAND STORY",
+        image: "/bottle3.png",
+        metaDescription: "ZfO Beverages is a Kanpur-based craft soda startup making premium masala soda in 275ml glass bottles. The story of India's boldest new beverage brand.",
+        keywords: "ZfO beverages, ZFO soda, Kanpur craft soda, new beverage brand India, ZfO Kanpur, Indian craft soda brand, glass bottle soda india, zfo.co.in",
+        content: "ZfO Beverages started in Kanpur with one goal: build India's best craft masala soda in a 275ml glass bottle. Real spices. Real fizz. No compromise. Available at zfo.co.in for just Rs.50. ZfO is not just a drink — it is a movement. Kanpur's answer to India's premium beverage gap. The Art of Fizz."
+    },
+    {
+        id: 7,
+        title: "Why ZfO Uses Glass Bottles — And Why It Makes Your Soda Better",
+        excerpt: "Glass is not just packaging. It is a philosophy. The science behind why ZfO glass bottles make masala soda taste better than plastic.",
+        date: "Mar 12, 2026",
+        category: "THE PRODUCT",
+        image: "/bottle3.png",
+        metaDescription: "Why ZfO Beverages uses 275ml glass bottles for masala soda. The science of glass packaging and how it improves taste and freshness over plastic.",
+        keywords: "glass bottle soda india, masala soda glass bottle, ZfO glass bottle, premium soda glass india, best masala soda india, ZfO 275ml, craft soda india, buy ZfO",
+        content: "ZfO Masala Soda comes in a 275ml glass bottle because glass is chemically inert — it keeps the carbonation sharper, the spice notes cleaner, and the taste completely honest. Plastic leaches. Glass preserves. When you open a ZfO, you taste exactly what we made. Nothing more, nothing less. Order online at zfo.co.in."
+    }
+
 ];
