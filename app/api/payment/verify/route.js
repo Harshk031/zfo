@@ -36,13 +36,18 @@ export async function POST(req) {
         ? 'Combo of 4 × 275ml Glass Bottles'
         : '1 × 275ml Glass Bottle';
 
-      // Use the internal utility instead of a network fetch to ourselves
-      sendOrderConfirmationSMS({
-        phone: order.customerPhone,
-        customerName: order.customerName,
-        orderDetails,
-        amount: order.amount,
-      }).catch(err => console.error('Delayed SMS dispatch failed:', err));
+      // In Vercel, we MUST await this or use edge waitUntil, otherwise the process kills before SMS sends.
+      try {
+        const smsResult = await sendOrderConfirmationSMS({
+          phone: order.customerPhone,
+          customerName: order.customerName,
+          orderDetails,
+          amount: order.amount,
+        });
+        console.log('SMS Result for Order #', internalOrderId, ':', smsResult);
+      } catch (err) {
+        console.error('SMS dispatch failed for Order #', internalOrderId, ':', err);
+      }
     }
 
     return Response.json({ success: true });
