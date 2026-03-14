@@ -4,65 +4,108 @@ import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// Masala spice dust — warm amber particles swirling around center
-// Performance: meshBasicMaterial + AdditiveBlending = no lighting cost, no shadow cost
-export default function MasalaSystem({ count = 400, intensity = 0, scrollProgress = 0 }) {
-  const meshRef = useRef();
-  const clock = useRef(0);
+// GPU shader masala spice system — same approach as CarbonationSystem
+const vertexShader = /* glsl */`
+  attribute float aRadius;
+  attribute float aAngle;
+  attribute float aAngularSpeed;
+  attribute float aY;
+  attribute float aYSpeed;
+  attribute float aPhase;
+  attribute float aSize;
 
-  const safeCount = Math.min(count, 400);
+  uniform float uTime;
+  uniform float uIntensity;
+  uniform float uScrollProgress;
 
-  const particles = useMemo(() => {
-    const arr = [];
-    for (let i = 0; i < safeCount; i++) {
-      arr.push({
-        angle: (i / safeCount) * Math.PI * 2,
-        radius: 1.2 + Math.random() * 2.2,
-        y: (Math.random() - 0.5) * 5,
-        ySpeed: (Math.random() - 0.5) * 0.003,
-        angularSpeed: 0.002 + Math.random() * 0.005,
-        size: 0.009 + Math.random() * 0.016,
-      });
+  void main() {
+    if (uIntensity < 0.01) {
+      gl_Position = vec4(0.0, 0.0, -999.0, 1.0);
+      gl_PointSize = 0.0;
+      return;
     }
-    return arr;
-  }, [safeCount]);
 
-  const dummy = useMemo(() => new THREE.Object3D(), []);
+    float angle = aAngle + uTime * aAngularSpeed * (1.0 + uScrollProgress * 0.5);
+    float x = cos(angle) * aRadius;
+    float z = sin(angle) * aRadius;
+    float y = mod(aY + uTime * aYSpeed + aPhase * 6.0, 6.0) - 3.0;
+
+    vec4 mvPosition = modelViewMatrix * vec4(x, y, z, 1.0);
+    gl_PointSize = aSize * uIntensity * (200.0 / -mvPosition.z);
+    gl_Position = projectionMatrix * mvPosition;
+  }
+`;
+
+const fragmentShader = /* glsl */`
+  uniform float uIntensity;
+
+  void main() {
+    vec2 uv = gl_PointCoord - vec2(0.5);
+    float d = length(uv);
+    if (d > 0.5) discard;
+    float alpha = (1.0 - smoothstep(0.3, 0.5, d)) * uIntensity * 0.7;
+    gl_FragColor = vec4(1.0, 0.42, 0.0, alpha);
+  }
+`;
+
+export default function MasalaSystem({ count = 300, intensity = 0, scrollProgress = 0 }) {
+  const pointsRef = useRef();
+
+  const { geometry, material } = useMemo(() => {
+    const n = Math.min(count, 300);
+
+    const positions     = new Float32Array(n * 3);
+    const radii         = new Float32Array(n);
+    const angles        = new Float32Array(n);
+    const angularSpeeds = new Float32Array(n);
+    const ys            = new Float32Array(n);
+    const ySpeeds       = new Float32Array(n);
+    const phases        = new Float32Array(n);
+    const sizes         = new Float32Array(n);
+
+    for (let i = 0; i < n; i++) {
+      positions[i * 3] = 0; positions[i * 3 + 1] = 0; positions[i * 3 + 2] = 0;
+      radii[i]         = 1.2 + Math.random() * 2.2;
+      angles[i]        = (i / n) * Math.PI * 2;
+      angularSpeeds[i] = 0.002 + Math.random() * 0.005;
+      ys[i]            = (Math.random() - 0.5) * 5;
+      ySpeeds[i]       = (Math.random() - 0.5) * 0.003;
+      phases[i]        = Math.random();
+      sizes[i]         = 3 + Math.random() * 5;
+    }
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position',     new THREE.BufferAttribute(positions,     3));
+    geo.setAttribute('aRadius',      new THREE.BufferAttribute(radii,         1));
+    geo.setAttribute('aAngle',       new THREE.BufferAttribute(angles,        1));
+    geo.setAttribute('aAngularSpeed',new THREE.BufferAttribute(angularSpeeds, 1));
+    geo.setAttribute('aY',           new THREE.BufferAttribute(ys,            1));
+    geo.setAttribute('aYSpeed',      new THREE.BufferAttribute(ySpeeds,       1));
+    geo.setAttribute('aPhase',       new THREE.BufferAttribute(phases,        1));
+    geo.setAttribute('aSize',        new THREE.BufferAttribute(sizes,         1));
+
+    const mat = new THREE.ShaderMaterial({
+      vertexShader,
+      fragmentShader,
+      uniforms: {
+        uTime:           { value: 0 },
+        uIntensity:      { value: 0 },
+        uScrollProgress: { value: 0 },
+      },
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    });
+
+    return { geometry: geo, material: mat };
+  }, [count]);
 
   useFrame((_, delta) => {
-    if (!meshRef.current || intensity < 0.01) return;
-
-    clock.current += Math.min(delta, 0.05);
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-      p.angle += p.angularSpeed * (1 + scrollProgress * 0.5);
-      p.y += p.ySpeed;
-      if (p.y > 3) p.y = -3;
-      if (p.y < -3) p.y = 3;
-
-      dummy.position.x = Math.cos(p.angle) * p.radius;
-      dummy.position.y = p.y;
-      dummy.position.z = Math.sin(p.angle) * p.radius;
-      dummy.scale.setScalar(p.size * intensity);
-      dummy.updateMatrix();
-      meshRef.current.setMatrixAt(i, dummy.matrix);
-    }
-    meshRef.current.instanceMatrix.needsUpdate = true;
+    if (!material) return;
+    material.uniforms.uTime.value           += Math.min(delta, 0.05);
+    material.uniforms.uIntensity.value       = intensity;
+    material.uniforms.uScrollProgress.value  = scrollProgress;
   });
 
-  if (intensity < 0.01) return null;
-
-  return (
-    <instancedMesh ref={meshRef} args={[null, null, safeCount]} frustumCulled={false}>
-      <sphereGeometry args={[1, 4, 4]} />
-      <meshBasicMaterial
-        color="#ff6b00"
-        transparent
-        opacity={0.6 * intensity}
-        blending={THREE.AdditiveBlending}
-        depthWrite={false}
-      />
-    </instancedMesh>
-  );
+  return <points ref={pointsRef} geometry={geometry} material={material} frustumCulled={false} />;
 }

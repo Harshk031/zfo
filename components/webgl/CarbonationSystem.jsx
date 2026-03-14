@@ -1,87 +1,112 @@
 'use client';
 
-import { useRef, useMemo, useEffect } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useRef, useMemo } from 'react';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// GPU-instanced bubble system — single draw call, no per-frame JS allocation
-export default function CarbonationSystem({ count = 600, scrollProgress = 0 }) {
-  const meshRef = useRef();
-  const mouse = useRef({ x: 0, y: 0 });
-  const clock = useRef(0);
+// ─────────────────────────────────────────────────────────────────────
+// GPU SHADER PARTICLE SYSTEM
+// All animation runs 100% on the GPU — zero per-frame JS computation.
+// JavaScript only updates ONE uniform (time) per frame regardless of count.
+// ─────────────────────────────────────────────────────────────────────
 
-  // Clamp count to reasonable mobile-safe value
-  const safeCount = Math.min(count, 600);
+const vertexShader = /* glsl */`
+  attribute float aSpeed;
+  attribute float aSway;
+  attribute float aSwaySpeed;
+  attribute float aSize;
+  attribute float aPhase;
 
-  // Pre-compute random attributes ONCE
-  const particles = useMemo(() => {
-    const arr = [];
-    for (let i = 0; i < safeCount; i++) {
-      arr.push({
-        x: (Math.random() - 0.5) * 6,
-        y: (Math.random() - 0.5) * 12,
-        z: (Math.random() - 0.5) * 3,
-        speed: 0.004 + Math.random() * 0.007,
-        sway: Math.random() * Math.PI * 2,
-        swaySpeed: 0.4 + Math.random() * 1.2,
-        size: 0.014 + Math.random() * 0.022,
-      });
+  uniform float uTime;
+  uniform float uScrollProgress;
+
+  void main() {
+    // Upward drift — driven by time + scroll speed on GPU
+    float speedMult = 1.0 + uScrollProgress * 1.5;
+    float y = position.y + mod(uTime * aSpeed * speedMult + aPhase * 16.0, 16.0) - 8.0;
+    
+    // Sine sway — pure GPU math, free
+    float swayX = sin(uTime * aSwaySpeed + aSway) * 0.07;
+
+    vec3 pos = vec3(position.x + swayX, y, position.z);
+
+    vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+    gl_PointSize = aSize * (300.0 / -mvPosition.z);
+    gl_Position = projectionMatrix * mvPosition;
+  }
+`;
+
+const fragmentShader = /* glsl */`
+  uniform float uOpacity;
+
+  void main() {
+    // Circular point — discard square corners
+    vec2 uv = gl_PointCoord - vec2(0.5);
+    float d = length(uv);
+    if (d > 0.5) discard;
+
+    // Soft edge
+    float alpha = 1.0 - smoothstep(0.3, 0.5, d);
+    gl_FragColor = vec4(0.7, 0.87, 1.0, alpha * uOpacity);
+  }
+`;
+
+export default function CarbonationSystem({ count = 500, scrollProgress = 0 }) {
+  const pointsRef = useRef();
+  
+  // uploadonce: build all particle attribute arrays ONCE, never modify on CPU
+  const { geometry, material } = useMemo(() => {
+    const n = Math.min(count, 500);
+
+    // Position (initial random x, y, z)
+    const positions  = new Float32Array(n * 3);
+    const speeds     = new Float32Array(n);
+    const sways      = new Float32Array(n);
+    const swaySpeeds = new Float32Array(n);
+    const sizes      = new Float32Array(n);
+    const phases     = new Float32Array(n);
+
+    for (let i = 0; i < n; i++) {
+      positions[i * 3]     = (Math.random() - 0.5) * 6;   // x
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 16;  // y — full range
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 3;   // z
+      speeds[i]     = 0.4 + Math.random() * 0.8;
+      sways[i]      = Math.random() * Math.PI * 2;
+      swaySpeeds[i] = 0.4 + Math.random() * 1.2;
+      sizes[i]      = 4 + Math.random() * 7;   // point size in GPU pixels
+      phases[i]     = Math.random();
     }
-    return arr;
-  }, [safeCount]);
 
-  // Shared dummy object — reused every frame, no allocation
-  const dummy = useMemo(() => new THREE.Object3D(), []);
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position',   new THREE.BufferAttribute(positions,  3));
+    geo.setAttribute('aSpeed',     new THREE.BufferAttribute(speeds,     1));
+    geo.setAttribute('aSway',      new THREE.BufferAttribute(sways,      1));
+    geo.setAttribute('aSwaySpeed', new THREE.BufferAttribute(swaySpeeds, 1));
+    geo.setAttribute('aSize',      new THREE.BufferAttribute(sizes,      1));
+    geo.setAttribute('aPhase',     new THREE.BufferAttribute(phases,     1));
 
-  useEffect(() => {
-    const onMouseMove = (e) => {
-      mouse.current.x = (e.clientX / window.innerWidth - 0.5) * 1.5;
-      mouse.current.y = -(e.clientY / window.innerHeight - 0.5) * 1.5;
-    };
-    window.addEventListener('mousemove', onMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', onMouseMove);
-  }, []);
+    const mat = new THREE.ShaderMaterial({
+      vertexShader,
+      fragmentShader,
+      uniforms: {
+        uTime:           { value: 0 },
+        uScrollProgress: { value: 0 },
+        uOpacity:        { value: 0.5 },
+      },
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    });
 
+    return { geometry: geo, material: mat };
+  }, [count]);
+
+  // Per frame: update exactly 2 uniform values — O(1) regardless of particle count
   useFrame((_, delta) => {
-    if (!meshRef.current) return;
-
-    // Clamp delta to avoid spiral of death on tab-switch
-    const dt = Math.min(delta, 0.05);
-    clock.current += dt;
-
-    const mx = mouse.current.x * 0.25;
-    const my = mouse.current.y * 0.25;
-    const speedMult = 1 + scrollProgress * 1.5;
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-      p.y += p.speed * speedMult;
-      if (p.y > 8) p.y = -8;
-
-      const swayX = Math.sin(clock.current * p.swaySpeed + p.sway) * 0.07;
-
-      dummy.position.x = p.x + swayX + mx;
-      dummy.position.y = p.y + my * 0.08;
-      dummy.position.z = p.z;
-      dummy.scale.setScalar(p.size);
-      dummy.updateMatrix();
-      meshRef.current.setMatrixAt(i, dummy.matrix);
-    }
-
-    meshRef.current.instanceMatrix.needsUpdate = true;
+    if (!material) return;
+    material.uniforms.uTime.value           += Math.min(delta, 0.05);
+    material.uniforms.uScrollProgress.value  = scrollProgress;
   });
 
-  return (
-    // meshBasicMaterial instead of meshPhysicalMaterial = 10x cheaper GPU cost per bubble
-    <instancedMesh ref={meshRef} args={[null, null, safeCount]} frustumCulled={false}>
-      <sphereGeometry args={[1, 4, 4]} />
-      <meshBasicMaterial
-        color="#aaddff"
-        transparent
-        opacity={0.35}
-        depthWrite={false}
-        blending={THREE.AdditiveBlending}
-      />
-    </instancedMesh>
-  );
+  return <points ref={pointsRef} geometry={geometry} material={material} frustumCulled={false} />;
 }
