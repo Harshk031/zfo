@@ -133,7 +133,7 @@ export default function AboutPage() {
                         '@type': 'AboutPage',
                         mainEntity: {
                             '@type': 'Organization',
-                            name: 'ZfO - Freshozz Beverages',
+                            name: 'ZfO Beverages',
                             foundingDate: '2024',
                             founder: {
                                 '@type': 'Person',

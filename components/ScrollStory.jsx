@@ -33,14 +33,14 @@ const CHAPTERS = [
   },
   {
     progress: 0.38,
-    title: 'CAFFEINE HITS DIFFERENT',
+    title: 'SPICE MEETS FIZZ',
     sub: 'Not just fizzy. Electrically alive.',
     className: 'text-yellow-300',
   },
   {
     progress: 0.55,
-    title: 'FRESHOZZ',
-    sub: 'Masala Soda. With Caffeine. In Glass.',
+    title: 'ZfO',
+    sub: 'Masala Soda. In Glass. For Real Ones.',
     className: 'text-white',
     cta: false,
   },
@@ -202,10 +202,10 @@ export default function ScrollStory() {
       <div className="absolute top-8 left-8 z-10 pointer-events-none">
         <span className="text-white/90 font-black uppercase tracking-widest text-sm"
           style={{ letterSpacing: '0.25em' }}>
-          FRESHOZZ
+          ZfO
         </span>
         <div className="text-white/30 text-[10px] uppercase tracking-widest mt-0.5">
-          Masala Soda · Caffeine · Glass
+          Masala Soda · Real Spices · Glass
         </div>
       </div>
     </div>

@@ -76,7 +76,7 @@ export default function PromoSection() {
         style={{ willChange: 'transform' }}
       >
         <span className="text-[18vw] font-black leading-none text-black select-none whitespace-nowrap">
-          FRESHOZZ FRESHOZZ
+          ZfO ZfO
         </span>
       </div>
 
@@ -121,7 +121,7 @@ export default function PromoSection() {
           There was no mid-premium Indian soda — one that respected flavor, branding, and the Indian palate.
           <br /><br />
           <span className="font-black text-black text-xl md:text-2xl">
-            Freshozz was built to fill that gap.
+            ZfO was built to fill that gap.
           </span>
         </p>
       </div>

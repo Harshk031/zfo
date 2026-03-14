@@ -12,8 +12,8 @@ export const metadata = {
     },
     description: "Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, bottled in glass. A beverage built on honest ingredients and premium taste.",
     keywords: 'ZfO, zfo soda, craft soda, indian masala soda, glass bottle soda, real ingredients, premium beverage india, modern indian craft',
-    authors: [{ name: 'Freshozz Beverages' }],
-    creator: 'Freshozz Beverages',
+    authors: [{ name: 'ZfO Beverages' }],
+    creator: 'ZfO Beverages',
     publisher: 'ZfO',
     robots: {
         index: true,
@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
                         __html: JSON.stringify({
                             '@context': 'https://schema.org',
                             '@type': 'Organization',
-                            name: 'ZfO - Freshozz Beverages',
+                            name: 'ZfO Beverages',
                             brand: 'ZfO',
                             url: 'https://www.zfo.co.in',
                             logo: 'https://www.zfo.co.in/logo.png',
@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
                             },
                             sameAs: [
                                 'https://www.instagram.com/drinkzfo',
-                                'https://www.linkedin.com/company/freshozz-beverages/',
+                                'https://www.linkedin.com/company/zfo-beverages/',
                             ],
                             contactPoint: {
                                 '@type': 'ContactPoint',

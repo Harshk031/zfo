@@ -85,7 +85,7 @@ export default function OrderRitual() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_placeholder', // fallback to prevent crash in dev
         amount: selectedOption.price * 100, // amount in paise
         currency: 'INR',
-        name: 'Freshozz (ZfO)',
+        name: 'ZfO',
         description: `Order for ${selectedOption.name}`,
         image: 'https://www.zfo.co.in/logo.png',
         order_id: order.id,
@@ -187,7 +187,7 @@ export default function OrderRitual() {
               Send The Fizz
             </h1>
             <p className="text-white/50 text-base font-light mb-8 max-w-sm">
-              Real spices. Glass bottles. Caffeine kick. Crafted for the modern palate.
+              Real spices. Glass bottles. Crafted for the modern palate.
             </p>
 
             <div className="flex flex-col gap-4 w-full max-w-sm">

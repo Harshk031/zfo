@@ -23,7 +23,7 @@ export default function FizzroomPostClient({ post }) {
             },
             publisher: {
                 '@type': 'Organization',
-                name: 'ZfO - Freshozz Beverages',
+                name: 'ZfO Beverages',
                 logo: {
                     '@type': 'ImageObject',
                     url: 'https://www.zfo.co.in/logo.png',

@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="flex gap-8">
             {[
               { icon: <FaInstagram />, href: "https://www.instagram.com/drinkzfo" },
-              { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/freshozz-beverages/" }
+              { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/company/zfo-beverages/" }
             ].map((social, i) => (
               <a
                 key={i}
