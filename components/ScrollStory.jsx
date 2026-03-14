@@ -145,14 +145,13 @@ export default function ScrollStory() {
         </div>
       </div>
 
-      {/* Brand mark */}
-      <div className="absolute top-8 left-8 z-10 pointer-events-none">
-        <span className="text-white/90 font-black uppercase tracking-widest text-sm" style={{ letterSpacing: '0.25em' }}>
-          ZfO
-        </span>
-        <div className="text-white/30 text-[10px] uppercase tracking-widest mt-0.5">
-          Masala Soda · Real Spices · Glass
-        </div>
+      {/* Brand mark — use actual logo image, not text (font rendering issues) */}
+      <div className="absolute top-6 left-6 z-10 pointer-events-none">
+        <img
+          src="/logo.png"
+          alt="ZfO"
+          style={{ height: '44px', width: 'auto', filter: 'invert(1) brightness(2)' }}
+        />
       </div>
     </div>
   );
