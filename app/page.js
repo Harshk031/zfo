@@ -1,5 +1,6 @@
 // Server Component — NO 'use client' so Googlebot gets full SSR HTML
 import HeroClient from '@/components/HeroClient';
+import TickerStrip from '@/components/TickerStrip';
 import PromoSection from '@/components/PromoSection';
 import ProductDetails from '@/components/ProductDetails';
 import FizzroomTeaser from '@/components/FizzroomTeaser';
@@ -43,6 +44,9 @@ export default function Home() {
 
       {/* WebGL hero — rendered client-side only via HeroClient wrapper */}
       <HeroClient />
+
+      {/* Breaking news ticker strip */}
+      <TickerStrip />
 
       {/* Regular SSR sections */}
       <div id="about">
