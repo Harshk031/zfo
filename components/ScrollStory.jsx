@@ -131,12 +131,14 @@ export default function ScrollStory() {
       {/* Scroll driver — extra height outside the pinned window */}
       <div style={{ height: '700vh', position: 'absolute', top: 0, left: 0, width: '1px', pointerEvents: 'none' }} />
 
-      {/* Full-screen WebGL canvas */}
-      <div className="absolute inset-0 bg-[#050508]">
+      {/* Full-screen WebGL canvas — fixed to viewport so particles bleed edge to edge */}
+      <div
+        className="bg-[#050508]"
+        style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}
+      >
         {webglReady && (
           <WebGLScene scrollProgress={scrollProgress} burstActive={burstActive} />
         )}
-        {/* Loading state — shown before WebGL is ready */}
         {!webglReady && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-2 h-2 rounded-full bg-white animate-ping" />

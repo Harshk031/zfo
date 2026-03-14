@@ -11,88 +11,104 @@ const OPTIONS = [
   {
     id: 'single',
     qty: 1,
-    name: 'Single Bottle',
+    name: 'Single',
+    tagline: 'THE SOLO MISSION',
     sub: '275ml Glass Breezer Bottle',
     price: 45,
     originalPrice: 80,
     burst: 0.3,
-    glow: 'rgba(250,204,21,0.5)',
-    color: '#facc15',
+    glow: '#facc15',
+    accent: 'rgba(250,204,21,0.15)',
+    savings: 44,
   },
   {
     id: 'combo',
     qty: 4,
-    name: 'Combo of 4',
+    name: 'Combo ×4',
+    tagline: 'SQUAD GOALS',
     sub: '4 × 275ml Glass Bottles',
     price: 169,
     originalPrice: 320,
-    burst: 0.4,
-    glow: 'rgba(239,68,68,0.5)',
-    color: '#ef4444',
+    burst: 0.55,
+    glow: '#f97316',
+    accent: 'rgba(249,115,22,0.15)',
+    savings: 47,
   },
-];
-
-const CTA_TEXTS = [
-  'SEND THE FIZZ →',
-  'DROP THE BOTTLE →',
-  'FUEL MY THIRST →',
-  'LET IT POP →',
 ];
 
 export default function OrderRitual() {
   const [selectedId, setSelectedId] = useState('single');
-  const [phase, setPhase] = useState('idle'); // idle | loading | confirmed | error
-  const [ctaText] = useState(() => CTA_TEXTS[Math.floor(Math.random() * CTA_TEXTS.length)]);
-  
-  // Custom details for the order
-  const [customerDetails, setCustomerDetails] = useState({ name: '', phone: '', email: '', address: '' });
-  
+  const [phase, setPhase] = useState('idle');
+  const [customerDetails, setCustomerDetails] = useState({ name: '', phone: '', address: '' });
+  const [activeField, setActiveField] = useState(null);
+  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
+
   const containerRef = useRef(null);
-  const bottleRef = useRef(null);
+  const formRef = useRef(null);
   const confirmRef = useRef(null);
+  const cardRefs = useRef([]);
 
   const selectedOption = OPTIONS.find(o => o.id === selectedId) || OPTIONS[0];
 
+  // Reactive cursor glow on the page
+  useEffect(() => {
+    const handleMove = (e) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      setGlowPos({ x, y });
+    };
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, []);
+
+  // Animate card selection
+  useEffect(() => {
+    cardRefs.current.forEach((ref, i) => {
+      if (!ref) return;
+      const isActive = OPTIONS[i].id === selectedId;
+      gsap.to(ref, {
+        scale: isActive ? 1.03 : 1,
+        y: isActive ? -4 : 0,
+        duration: 0.4,
+        ease: 'power3.out',
+      });
+    });
+  }, [selectedId]);
+
   const handlePayment = async () => {
-    // Basic validation
     if (!customerDetails.name || !customerDetails.phone || !customerDetails.address) {
-      alert("Please fill your basic details to summon the bottle.");
+      // Shake the form
+      gsap.fromTo(formRef.current,
+        { x: -8 }, { x: 0, duration: 0.4, ease: 'elastic.out(1,0.3)', repeat: 3, yoyo: true }
+      );
       return;
     }
-
     setPhase('loading');
-    
+
     try {
-      // 1. Create order on our backend
       const res = await fetch('/api/payment/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           optionId: selectedOption.id,
           amount: selectedOption.price,
-          customerDetails
+          customerDetails,
         }),
       });
-      
       const order = await res.json();
-      
-      if (!order || !order.id) {
-        throw new Error("Failed to create Razorpay Order");
-      }
+      if (!order || !order.id) throw new Error('Failed to create order');
 
-      // 2. Open Razorpay Checkout
       const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_placeholder', // fallback to prevent crash in dev
-        amount: selectedOption.price * 100, // amount in paise
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_placeholder',
+        amount: selectedOption.price * 100,
         currency: 'INR',
         name: 'ZfO',
-        description: `Order for ${selectedOption.name}`,
+        description: `${selectedOption.name} — ${selectedOption.sub}`,
         image: 'https://www.zfo.co.in/logo.png',
         order_id: order.id,
-        handler: async function (response) {
-          // Payment Success
-          
-          // Verify signature on backend
+        handler: async (response) => {
           const verifyRes = await fetch('/api/payment/verify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -100,211 +116,235 @@ export default function OrderRitual() {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
-              internalOrderId: order.internalId
-            })
+              internalOrderId: order.internalId,
+            }),
           });
-          
-          if (verifyRes.ok) {
-            handleSuccess();
-          } else {
-            alert("Payment verification failed. If money was deducted, it will be refunded.");
-            setPhase('idle');
-          }
+          if (verifyRes.ok) handleSuccess();
+          else { alert('Verification failed. Refund will be processed.'); setPhase('idle'); }
         },
-        prefill: {
-          name: customerDetails.name,
-          email: customerDetails.email || '',
-          contact: customerDetails.phone
-        },
-        theme: {
-          color: '#facc15'
-        },
-        modal: {
-          ondismiss: function() {
-            setPhase('idle');
-          }
-        }
+        prefill: { name: customerDetails.name, contact: customerDetails.phone },
+        theme: { color: selectedOption.glow },
+        modal: { ondismiss: () => setPhase('idle') },
       };
 
       const rzp = new window.Razorpay(options);
-      rzp.on('payment.failed', function (response){
-        alert("Payment Failed: " + response.error.description);
-        setPhase('idle');
-      });
+      rzp.on('payment.failed', (r) => { alert('Payment Failed: ' + r.error.description); setPhase('idle'); });
       rzp.open();
-      
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong initializing the payment.");
+    } catch (err) {
+      console.error(err);
+      alert('Something went wrong. Please try again.');
       setPhase('idle');
     }
   };
 
   const handleSuccess = () => {
-    setPhase('summon');
-    if (bottleRef.current) {
-      gsap.to(bottleRef.current, {
-        scale: 1.08, y: -12, duration: 0.5, ease: 'power2.out',
-        yoyo: true, repeat: 1,
-      });
-    }
+    setPhase('confirmed');
     setTimeout(() => {
-      setPhase('confirmed');
       if (confirmRef.current) {
-        gsap.fromTo(confirmRef.current,
-          { opacity: 0, scale: 0.8 },
-          { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.5)' }
-        );
+        gsap.fromTo(confirmRef.current, { opacity: 0, scale: 0.85, y: 40 }, {
+          opacity: 1, scale: 1, y: 0, duration: 1, ease: 'back.out(1.7)',
+        });
       }
-    }, 1800);
+    }, 50);
   };
 
-  const scrollP = selectedOption.burst;
+  if (phase === 'confirmed') {
+    return (
+      <div className="relative min-h-screen bg-[#050508] flex items-center justify-center overflow-hidden" ref={containerRef}>
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" />
+        <div className="absolute inset-0" style={{ width: '100vw', height: '100vh' }}>
+          <WebGLScene scrollProgress={0.8} burstActive={true} />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
+        <div ref={confirmRef} className="relative z-10 text-center px-6 max-w-xl mx-auto opacity-0">
+          <div className="text-7xl mb-8">🍾</div>
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-4 leading-none">
+            IT'S FIZZING<br/>
+            <span style={{ color: selectedOption.glow }}>YOUR WAY.</span>
+          </h1>
+          <p className="text-white/50 text-lg mb-2">Order confirmed for <span className="text-white font-bold">{customerDetails.name}</span></p>
+          <p className="text-white/40 mb-12">{selectedOption.name} · ₹{selectedOption.price} paid</p>
+          <a href="/" className="inline-block px-10 py-4 border border-white/20 text-white/70 font-bold uppercase tracking-widest text-sm rounded-full hover:bg-white hover:text-black transition-all duration-300">
+            ← Back to the Universe
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen bg-[#050508] flex flex-col items-center justify-center px-6 py-16 overflow-x-hidden"
+      className="relative min-h-screen bg-[#050508] overflow-hidden"
+      style={{ cursor: 'none' }}
     >
       <Script src="https://checkout.razorpay.com/v1/checkout.js" />
-      
-      {/* WebGL background */}
-      <div className="absolute inset-0">
-        <WebGLScene scrollProgress={scrollP} burstActive={phase === 'summon'} />
+
+      {/* FULL-BLEED WebGL canvas — position fixed so it truly fills viewport */}
+      <div className="fixed inset-0 w-screen h-screen pointer-events-none" style={{ zIndex: 0 }}>
+        <WebGLScene scrollProgress={selectedOption.burst} burstActive={phase === 'loading'} />
       </div>
-      <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(5,5,8,0.3) 0%, rgba(5,5,8,0.9) 100%)' }} />
 
-      {phase !== 'confirmed' && (
-        <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-start justify-center pt-10">
-          
-          {/* LEFT: Product Selection */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="text-white/30 uppercase tracking-[0.4em] text-xs font-bold mb-4">
-              Masala Soda
-            </p>
-            <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-white leading-none mb-4">
-              Send The Fizz
-            </h1>
-            <p className="text-white/50 text-base font-light mb-8 max-w-sm">
-              Real spices. Glass bottles. Crafted for the modern palate.
-            </p>
+      {/* Reactive cursor glow orb */}
+      <div
+        className="fixed pointer-events-none transition-opacity duration-300"
+        style={{
+          width: 400,
+          height: 400,
+          borderRadius: '50%',
+          background: `radial-gradient(circle, ${selectedOption.glow}30 0%, transparent 70%)`,
+          transform: 'translate(-50%, -50%)',
+          left: `${glowPos.x}%`,
+          top: `${glowPos.y}%`,
+          zIndex: 1,
+        }}
+      />
 
-            <div className="flex flex-col gap-4 w-full max-w-sm">
-              {OPTIONS.map((opt) => {
-                const isActive = selectedId === opt.id;
-                return (
-                  <button
-                    key={opt.id}
-                    onClick={() => setSelectedId(opt.id)}
-                    className="group relative rounded-2xl border transition-all duration-300 p-5 text-left overflow-hidden flex justify-between items-center"
+      {/* Custom cursor dot */}
+      <div
+        className="fixed pointer-events-none transition-all duration-75"
+        style={{
+          width: 12,
+          height: 12,
+          borderRadius: '50%',
+          background: selectedOption.glow,
+          transform: 'translate(-50%, -50%)',
+          left: `${glowPos.x}%`,
+          top: `${glowPos.y}%`,
+          zIndex: 9999,
+          boxShadow: `0 0 20px ${selectedOption.glow}`,
+        }}
+      />
+
+      {/* Dark overlay */}
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1, background: 'radial-gradient(ellipse at 50% 50%, rgba(5,5,8,0.3) 0%, rgba(5,5,8,0.85) 100%)' }} />
+
+      {/* Main content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20">
+
+        {/* Top label */}
+        <div className="text-center mb-12">
+          <p className="text-white/20 uppercase tracking-[0.5em] text-[10px] font-bold mb-3">
+            ZfO · Masala Soda · 275ml
+          </p>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-none"
+            style={{ textShadow: `0 0 80px ${selectedOption.glow}40` }}>
+            ORDER<br/>
+            <span style={{ color: selectedOption.glow, WebkitTextStroke: '1px transparent' }}>
+              THE<br/>FIZZ
+            </span>
+          </h1>
+        </div>
+
+        {/* Option Cards - Horizontal */}
+        <div className="flex flex-col sm:flex-row gap-5 mb-12 w-full max-w-2xl">
+          {OPTIONS.map((opt, i) => {
+            const isActive = selectedId === opt.id;
+            return (
+              <button
+                key={opt.id}
+                ref={el => cardRefs.current[i] = el}
+                onClick={() => setSelectedId(opt.id)}
+                className="relative flex-1 rounded-3xl p-7 text-left transition-all duration-300 overflow-hidden group"
+                style={{
+                  background: isActive ? opt.accent : 'rgba(255,255,255,0.03)',
+                  border: `1px solid ${isActive ? opt.glow : 'rgba(255,255,255,0.08)'}`,
+                  boxShadow: isActive ? `0 0 60px ${opt.glow}30, inset 0 1px 0 ${opt.glow}20` : 'none',
+                }}
+              >
+                {/* Savings badge */}
+                <div className="absolute top-4 right-4 text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-full"
+                  style={{ background: opt.glow + '20', color: opt.glow, border: `1px solid ${opt.glow}40` }}>
+                  SAVE {opt.savings}%
+                </div>
+
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-2"
+                  style={{ color: isActive ? opt.glow : 'rgba(255,255,255,0.3)' }}>
+                  {opt.tagline}
+                </p>
+                <h3 className="text-3xl font-black uppercase text-white mb-1">{opt.name}</h3>
+                <p className="text-white/30 text-xs mb-6">{opt.sub}</p>
+
+                <div className="flex items-end gap-3">
+                  <span className="text-4xl font-black" style={{ color: isActive ? opt.glow : 'white' }}>
+                    ₹{opt.price}
+                  </span>
+                  <span className="text-white/20 text-sm line-through mb-1">₹{opt.originalPrice}</span>
+                </div>
+
+                {/* Glow border sweep on active */}
+                {isActive && (
+                  <div className="absolute inset-0 rounded-3xl pointer-events-none"
+                    style={{ boxShadow: `inset 0 0 40px ${opt.glow}10` }} />
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Details Form */}
+        <div ref={formRef} className="w-full max-w-2xl">
+          <div className="rounded-3xl p-1 mb-5"
+            style={{ background: `linear-gradient(135deg, ${selectedOption.glow}30, rgba(255,255,255,0.05), ${selectedOption.glow}10)` }}>
+            <div className="rounded-[20px] bg-[#0a0a10] p-6">
+              <p className="text-white/20 uppercase tracking-[0.3em] text-[10px] font-bold mb-5">
+                Drop your details
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { key: 'name', placeholder: 'Your Name', type: 'text', span: false },
+                  { key: 'phone', placeholder: 'Phone Number', type: 'tel', span: false },
+                  { key: 'address', placeholder: 'Delivery Address', type: 'text', span: true },
+                ].map(({ key, placeholder, type, span }) => (
+                  <input
+                    key={key}
+                    type={type}
+                    placeholder={placeholder}
+                    className={`px-5 py-4 rounded-xl text-white text-sm placeholder-white/20 outline-none transition-all duration-300 ${span ? 'col-span-full' : ''}`}
                     style={{
-                      borderColor: isActive ? opt.color : 'rgba(255,255,255,0.08)',
-                      background: isActive ? `rgba(${opt.glow.slice(5,-1)}, 0.08)` : 'rgba(255,255,255,0.02)',
-                      boxShadow: isActive ? `0 0 40px ${opt.glow}, inset 0 0 20px ${opt.glow.replace('0.5', '0.05')}` : 'none',
+                      background: activeField === key ? `${selectedOption.glow}10` : 'rgba(255,255,255,0.04)',
+                      border: `1px solid ${activeField === key ? selectedOption.glow + '60' : 'rgba(255,255,255,0.08)'}`,
                     }}
-                  >
-                    <div className="relative z-10">
-                      <h3 className="text-white font-black uppercase tracking-tight text-lg mb-1">{opt.name}</h3>
-                      <p className="text-white/40 text-xs font-light">{opt.sub}</p>
-                    </div>
-                    
-                    <div className="relative z-10 text-right">
-                      <p className="text-white/30 text-xs line-through mb-0.5">₹{opt.originalPrice}</p>
-                      <p className="text-2xl font-black" style={{ color: isActive ? opt.color : 'white' }}>₹{opt.price}</p>
-                    </div>
-
-                    {/* Particle glow corner */}
-                    <div
-                      className="absolute -right-4 top-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-2xl transition-opacity duration-500 pointer-events-none"
-                      style={{ background: opt.color, opacity: isActive ? 0.3 : 0 }}
-                    />
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* RIGHT: Delivery Details */}
-          <div className="w-full md:w-1/2 flex flex-col gap-6 max-w-sm mt-8 md:mt-0">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
-              <h3 className="text-white uppercase font-bold tracking-widest text-sm mb-4 border-b border-white/10 pb-4">Summoning Details</h3>
-              
-              <div className="flex flex-col gap-4">
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors"
-                  value={customerDetails.name}
-                  onChange={(e) => setCustomerDetails({...customerDetails, name: e.target.value})}
-                />
-                
-                <input 
-                  type="tel" 
-                  placeholder="Phone Number" 
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors"
-                  value={customerDetails.phone}
-                  onChange={(e) => setCustomerDetails({...customerDetails, phone: e.target.value})}
-                />
-                
-                <textarea 
-                  placeholder="Delivery Address" 
-                  rows={3}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors resize-none"
-                  value={customerDetails.address}
-                  onChange={(e) => setCustomerDetails({...customerDetails, address: e.target.value})}
-                />
+                    value={customerDetails[key]}
+                    onChange={(e) => setCustomerDetails({ ...customerDetails, [key]: e.target.value })}
+                    onFocus={() => setActiveField(key)}
+                    onBlur={() => setActiveField(null)}
+                  />
+                ))}
               </div>
             </div>
+          </div>
 
-            <div className="flex items-center justify-between px-2">
-              <span className="text-white/50 text-sm">Total to pay:</span>
-              <span className="text-3xl font-black text-white">₹{selectedOption.price}</span>
+          {/* Total + CTA */}
+          <div className="flex items-center gap-4">
+            <div className="flex-1 bg-white/5 rounded-2xl px-6 py-4 border border-white/8">
+              <p className="text-white/30 text-xs uppercase tracking-widest mb-1">Total</p>
+              <p className="text-3xl font-black text-white">₹{selectedOption.price}</p>
             </div>
 
-            {/* CTA */}
             <button
-              ref={bottleRef}
               onClick={handlePayment}
               disabled={phase === 'loading'}
-              className="relative group w-full py-5 rounded-full font-black text-black uppercase tracking-widest text-base transition-all duration-500 overflow-hidden disabled:opacity-50"
+              className="flex-[2] relative overflow-hidden rounded-2xl py-5 font-black uppercase tracking-widest text-base transition-all duration-300 disabled:opacity-50"
               style={{
-                background: `linear-gradient(135deg, ${selectedOption.color}, white)`,
-                boxShadow: `0 0 40px ${selectedOption.glow}`
+                background: `linear-gradient(135deg, ${selectedOption.glow}, ${selectedOption.glow}cc)`,
+                color: '#050508',
+                boxShadow: `0 0 50px ${selectedOption.glow}50`,
               }}
             >
-              <span className="relative z-10 text-center block w-full">
-                {phase === 'loading' ? 'SUMMONING...' : `${ctaText} ₹${selectedOption.price}`}
+              <span className="relative z-10">
+                {phase === 'loading' ? '⚡ LAUNCHING...' : `LET IT POP → ₹${selectedOption.price}`}
               </span>
-              <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
+              <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12" />
             </button>
-            <p className="text-white/20 text-xs text-center">Secure payments via Razorpay</p>
           </div>
-          
-        </div>
-      )}
 
-      {/* Confirmation screen */}
-      {phase === 'confirmed' && (
-        <div ref={confirmRef} className="relative z-10 text-center opacity-0 max-w-2xl mx-auto">
-          <div className="text-6xl mb-8 animate-bounce">🍾</div>
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white mb-6 leading-none">
-            Your Fizz Has Escaped The Factory.
-          </h2>
-          <p className="text-white/50 text-lg mb-2">
-            Order confirmed for {customerDetails.name}
+          <p className="text-center text-white/15 text-xs mt-4 uppercase tracking-widest">
+            🔒 Secure payments via Razorpay
           </p>
-          <p className="text-white/70 font-bold text-xl mb-12">
-            {selectedOption.name} · Paid ₹{selectedOption.price}
-          </p>
-          <a
-            href="/"
-            className="inline-block px-10 py-4 border border-white/30 text-white font-bold uppercase tracking-widest text-sm rounded-full hover:bg-white hover:text-black transition-all duration-300"
-          >
-            Back to the Universe
-          </a>
         </div>
-      )}
+
+      </div>
     </div>
   );
 }
