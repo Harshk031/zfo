@@ -21,7 +21,7 @@ export async function POST(req) {
     const cleanPhone = phone.replace(/\D/g, '').slice(-10);
 
     // Short creative message (Quick SMS has 160 char limit)
-    const message = `ZfO Order Confirmed! Hey ${customerName}, your ${orderDetails || 'order'} is locked in. Amount: Rs.${amount}. Dispatch soon! -Team ZfO`;
+    const message = `ZfO Order Confirmed! Hey ${customerName}, your ${orderDetails || 'order'} is locked in. Total paid: Rs.${amount} (incl. Rs.30 delivery). Dispatching soon! -Team ZfO`;
 
     console.log(`Sending SMS to ${cleanPhone} via Fast2SMS Quick SMS API`);
 
