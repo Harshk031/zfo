@@ -12,7 +12,13 @@ export async function POST(req) {
 
     // 1. Initialise Razorpay — support both NEXT_PUBLIC_ and plain key names
     const key_id = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID;
-    const key_secret = process.env.RAZORPAY_KEY_SECRET;
+    const key_secret = process.env.RAZORPAY_KEY_SECRET || process.env.RAZORPAY_SECRET_KEY;
+
+    let debugReason = 'unknown';
+    if (!key_id) debugReason = 'no_key_id';
+    else if (!key_secret) debugReason = 'no_secret';
+    else if (key_id.includes('placeholder')) debugReason = 'id_is_placeholder';
+    else if (key_secret.includes('placeholder')) debugReason = 'secret_is_placeholder';
 
     if (!key_id || !key_secret || key_id.includes('placeholder') || key_secret.includes('placeholder')) {
       console.warn('Razorpay keys missing or placeholder — running in MOCK mode.');
@@ -32,11 +38,7 @@ export async function POST(req) {
 
     let rzpOrder;
     const isLiveMode = key_id && !key_id.includes('placeholder') && key_secret && !key_secret.includes('placeholder');
-    let debugReason = 'unknown';
-    if (!key_id) debugReason = 'no_key_id';
-    else if (!key_secret) debugReason = 'no_secret';
-    else if (key_id.includes('placeholder')) debugReason = 'id_is_placeholder';
-    else if (key_secret.includes('placeholder')) debugReason = 'secret_is_placeholder';
+
 
     if (isLiveMode) {
       rzpOrder = await razorpay.orders.create(orderOptions);
