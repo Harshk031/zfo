@@ -247,3 +247,89 @@ h6 {
   color: #000000;
   border-color: #ffffff;
 }
+
+/* ============================================
+   PERFORMANCE: PREFERS REDUCED MOTION
+   Disables heavy animations for users who
+   prefer them off (also helps low-end devices)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Hide WebGL canvas entirely if reduce motion — static bg shows */
+  canvas {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   PERFORMANCE: CONTENT VISIBILITY
+   Below-fold sections render lazily — major
+   paint speed improvement on mobile
+   ============================================ */
+#about,
+.product-details-section,
+.fizzroom-teaser,
+.launch-teaser {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px; /* estimated height */
+}
+
+/* ============================================
+   PERFORMANCE: WEBGL / CANVAS HINTS
+   ============================================ */
+canvas {
+  will-change: transform;
+  image-rendering: auto;
+  transform: translateZ(0); /* GPU layer */
+  backface-visibility: hidden;
+}
+
+/* ============================================
+   PERFORMANCE: IMAGE OPTIMIZATIONS
+   ============================================ */
+img {
+  image-rendering: auto;
+  content-visibility: auto;
+}
+
+/* Prevent layout shift on image load */
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* ============================================
+   PERFORMANCE: MOBILE SPECIFIC
+   ============================================ */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  canvas {
+    /* Lower GPU pressure on mobile */
+    image-rendering: optimizeSpeed;
+  }
+
+  /* Remove expensive box shadows on mobile */
+  .glow-effect {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Optimise scroll performance */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -72,10 +72,20 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
-                {/* Space Grotesk — premium geometric font */}
+                {/* Preconnect to font CDN for faster loading */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+                {/* Space Grotesk with display=swap to avoid invisible text flash */}
+                <link
+                  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap"
+                  rel="stylesheet"
+                />
+                {/* Preconnect to Razorpay for faster checkout load */}
+                <link rel="preconnect" href="https://api.razorpay.com" />
+                <link rel="preconnect" href="https://checkout.razorpay.com" />
+                {/* Theme color for mobile browser chrome */}
+                <meta name="theme-color" content="#050508" />
+                <meta name="color-scheme" content="dark" />
                 {/* Structured Data - Organization */}
                 <script
                     type="application/ld+json"
