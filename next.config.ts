@@ -54,29 +54,10 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['gsap', 'three', '@react-three/fiber', '@react-three/drei'],
   },
 
-  // ─── Webpack: Split Three.js into its own async chunk ─────────────
-  webpack(config) {
-    config.optimization.splitChunks = {
-      ...config.optimization.splitChunks,
-      cacheGroups: {
-        // @ts-ignore
-        ...(config.optimization.splitChunks?.cacheGroups || {}),
-        three: {
-          test: /[\\/]node_modules[\\/](three|@react-three)[\\/]/,
-          name: 'three-bundle',
-          chunks: 'async',  // only load when the component actually needs it
-          priority: 30,
-        },
-        gsap: {
-          test: /[\\/]node_modules[\\/]gsap[\\/]/,
-          name: 'gsap-bundle',
-          chunks: 'async',
-          priority: 20,
-        },
-      },
-    };
-    return config;
-  },
+  // ─── Turbopack (Next.js 16 default bundler) ───────────────────────
+  // Turbopack handles bundle splitting automatically — no manual config needed.
+  // The empty object here tells Next.js to use Turbopack without webpack fallback.
+  turbopack: {},
 };
 
 export default nextConfig;
