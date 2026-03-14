@@ -10,7 +10,6 @@ import MasalaSystem from './MasalaSystem';
 import CitrusBurst from './CitrusBurst';
 import BottleGlass from './BottleGlass';
 
-// Device tier detection — drives particle budget
 function getDeviceTier() {
   if (typeof window === 'undefined') return 'mid';
   const memory = navigator?.deviceMemory || 4;
@@ -22,24 +21,24 @@ function getDeviceTier() {
 
 function Scene({ scrollProgress, burstActive }) {
   const tier = getDeviceTier();
-
-  // Drastically reduced counts — still looks great, runs at 60fps on mid devices
   const bubbleCount = tier === 'high' ? 600 : tier === 'mid' ? 350 : 150;
   const masalaCount = tier === 'high' ? 400 : tier === 'mid' ? 200 : 80;
 
   const masalaIntensity = Math.max(0, Math.min(1, (scrollProgress - 0.15) / 0.2));
-  const showBottle = scrollProgress > 0.45;
+  // Show bottle earlier (0.38) so it's visible in the hero
+  const showBottle = scrollProgress > 0.38;
 
   return (
     <>
-      {/* Minimal lighting — removed expensive spotLight with castShadow */}
-      <ambientLight intensity={0.6} />
-      <pointLight position={[3, 4, 3]} intensity={2} color="#ffcc88" />
-      <pointLight position={[-3, -2, 4]} intensity={1} color="#88aaff" />
+      {/* Lighting — warm amber key + cool blue rim = glass looks premium */}
+      <ambientLight intensity={0.4} />
+      <pointLight position={[3, 5, 3]}  intensity={2.5} color="#ffdd99" />
+      <pointLight position={[-4, -2, 3]} intensity={1.2} color="#88aaff" />
+      {/* Strong rim backlight makes glass glow */}
+      <pointLight position={[0, -3, -4]} intensity={2.0} color="#ff6600" />
 
       <Suspense fallback={null}>
         <CarbonationSystem count={bubbleCount} scrollProgress={scrollProgress} />
-
         <MasalaSystem count={masalaCount} intensity={masalaIntensity} scrollProgress={scrollProgress} />
 
         {showBottle && (
@@ -55,19 +54,19 @@ function Scene({ scrollProgress, burstActive }) {
 export default function WebGLScene({ scrollProgress = 0, burstActive = false, style = {} }) {
   return (
     <Canvas
-      // DPR capped at 1 on mobile — 1.5 only on hi-dpi desktop
       dpr={[1, 1.5]}
       gl={{
-        antialias: false,          // disabled — saves ~20% GPU on mobile, nearly invisible diff
+        antialias: false,
         alpha: true,
         powerPreference: 'high-performance',
-        // Removed ACESFilmicToneMapping — slower. LinearToneMapping is GPU-free
         toneMapping: THREE.LinearToneMapping,
         toneMappingExposure: 1.0,
-        stencil: false,            // not using stencil buffer
+        stencil: false,
         depth: true,
+        // REQUIRED for THREE.Plane clipping to work on materials
+        localClippingEnabled: true,
       }}
-      camera={{ position: [0, 0, 7], fov: 55, near: 0.1, far: 50 }}
+      camera={{ position: [0, 0, 6.5], fov: 52, near: 0.1, far: 50 }}
       style={{
         position: 'absolute',
         inset: 0,
@@ -75,10 +74,8 @@ export default function WebGLScene({ scrollProgress = 0, burstActive = false, st
         height: '100%',
         ...style,
       }}
-      // frameloop='demand' fires frames only when state changes — no idle GPU burn
       frameloop="always"
     >
-      {/* AdaptiveDpr auto-lowers resolution when FPS drops */}
       <AdaptiveDpr pixelated />
       <Scene scrollProgress={scrollProgress} burstActive={burstActive} />
     </Canvas>
