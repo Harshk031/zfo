@@ -1,9 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://www.zfo.co.in/sitemap.xml
 
-# Disallow admin or test pages (if any in future)
-# User-agent: *
-# Disallow: /admin/
+# Googlebot specific settings
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/

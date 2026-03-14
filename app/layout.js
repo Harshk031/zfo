@@ -7,14 +7,23 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 export const metadata = {
     metadataBase: new URL('https://www.zfo.co.in'),
     title: {
-        default: 'ZfO - Modern Indian Craft Soda | Real Spices. Glass Bottles.',
+        default: 'ZfO - Modern Indian Craft Soda | Buy Masala Soda in Glass Bottles',
         template: '%s | ZfO'
     },
-    description: "Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, bottled in glass. A beverage built on honest ingredients and premium taste.",
-    keywords: 'ZfO, zfo soda, craft soda, indian masala soda, glass bottle soda, real ingredients, premium beverage india, modern indian craft',
-    authors: [{ name: 'ZfO Beverages' }],
+    description: "ZfO is India's best masala soda in glass bottles. Buy craft masala soda online — real spices, no artificial flavours, premium 275ml glass breezer bottles. Order now from Delhi.",
+    keywords: [
+        'ZfO', 'zfo soda', 'ZFO craft soda', 'masala soda india', 'buy masala soda online',
+        'indian craft soda', 'glass bottle soda india', 'masala soda glass bottle',
+        'premium masala soda', 'craft soda delhi', 'real spice soda', 'breezer glass bottle',
+        'artisan soda india', 'buy soda online india', 'best indian craft soda'
+    ].join(', '),
+    authors: [{ name: 'ZfO Beverages', url: 'https://www.zfo.co.in' }],
     creator: 'ZfO Beverages',
     publisher: 'ZfO',
+    category: 'Food & Beverage',
+    alternates: {
+        canonical: 'https://www.zfo.co.in',
+    },
     robots: {
         index: true,
         follow: true,
@@ -30,23 +39,24 @@ export const metadata = {
         type: 'website',
         locale: 'en_IN',
         url: 'https://www.zfo.co.in/',
-        siteName: 'ZfO - Modern Indian Craft',
-        title: 'ZfO - Modern Indian Craft Soda | Real Spices. Glass Bottles.',
-        description: 'Bold masala soda crafted for the modern Indian palate. Real spices, no artificial nonsense, bottled in glass.',
+        siteName: 'ZfO - Indian Craft Soda',
+        title: 'ZfO - Buy Masala Soda in Glass Bottles | India Craft Soda Brand',
+        description: "India's boldest craft masala soda. Real spices. 275ml glass bottles. No artificial ingredients. Order online.",
         images: [
             {
-                url: '/logo.png',
+                url: 'https://www.zfo.co.in/logo.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZfO Logo',
+                alt: 'ZfO Masala Soda - Premium Indian Craft Soda in Glass Bottles',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
+        site: '@drinkzfo',
         title: 'ZfO - Modern Indian Craft Soda',
-        description: 'Real spices. Glass bottles. No nonsense.',
-        images: ['/logo.png'],
+        description: 'Real masala. Glass bottles. India\'s boldest craft soda. Order now.',
+        images: ['https://www.zfo.co.in/logo.png'],
     },
     verification: {
         google: 'PS7lpRtCNnbYaIZo40fhRnFnz-o7NZ8N0FCNWdM3Npc',
