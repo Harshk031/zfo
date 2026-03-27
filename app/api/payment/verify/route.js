@@ -32,9 +32,8 @@ export async function POST(req) {
       // Proceed anyway, DB might be ephemeral on Vercel
     }
 
-    // 3. Trigger SMS notification (fire & forget — don't block payment success)
+    // 3. Trigger customer SMS notification
     if (customerDetails && customerDetails.phone) {
-      // In Vercel, we MUST await this or use edge waitUntil, otherwise the process kills before SMS sends.
       try {
         const smsResult = await sendOrderConfirmationSMS({
           phone: customerDetails.phone,
@@ -42,10 +41,21 @@ export async function POST(req) {
           orderDetails: 'ZfO Premium Masala Soda',
           amount: amount || 0,
         });
-        console.log('SMS Result for Order #', internalOrderId, ':', smsResult);
+        console.log('Customer SMS Result for Order #', internalOrderId, ':', smsResult);
       } catch (err) {
-        console.error('SMS dispatch failed for Order #', internalOrderId, ':', err);
+        console.error('Customer SMS dispatch failed for Order #', internalOrderId, ':', err);
       }
+    }
+
+    // 4. Notify the owner on every new order
+    try {
+      const { sendRawSMS } = await import('@/lib/sms');
+      await sendRawSMS({
+        phone: '9335147466',
+        message: `ZfO NEW ORDER! Customer: ${customerDetails?.name || 'N/A'} | Phone: ${customerDetails?.phone || 'N/A'} | Amount: Rs.${amount || 0} | Address: ${customerDetails?.address || 'N/A'} | PayID: ${razorpay_payment_id || 'N/A'}`,
+      });
+    } catch (err) {
+      console.error('Owner SMS dispatch failed:', err);
     }
 
 

@@ -145,7 +145,7 @@ export default function ScrollStory() {
         </div>
       </div>
 
-      {/* Brand mark — use actual logo image, not text (font rendering issues) */}
+      {/* Brand mark */}
       <div className="absolute top-6 left-6 z-10 pointer-events-none">
         <img
           src="/logo.png"
@@ -153,6 +153,18 @@ export default function ScrollStory() {
           style={{ height: '72px', width: 'auto', filter: 'invert(1) brightness(2)' }}
         />
       </div>
+
+      {/* Permanent Order Now CTA — always visible from first second */}
+      <div className="absolute top-6 right-6 z-10">
+        <a
+          href="/order"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffcc00] text-black font-black uppercase tracking-widest text-xs rounded-full shadow-lg hover:bg-white hover:scale-105 transition-all duration-200"
+          style={{ boxShadow: '0 0 20px rgba(255,204,0,0.5)' }}
+        >
+          ⚡ ORDER NOW
+        </a>
+      </div>
     </div>
+
   );
 }
