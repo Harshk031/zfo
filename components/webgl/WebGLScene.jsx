@@ -30,11 +30,16 @@ function Scene({ scrollProgress, burstActive }) {
 
   return (
     <>
-      {/* Soft, premium lighting — not blinding */}
-      <ambientLight intensity={0.5} />
-      <pointLight position={[3, 5, 3]}  intensity={1.2} color="#ffdd99" />
-      <pointLight position={[-4, -2, 3]} intensity={0.8} color="#88aaff" />
-      <pointLight position={[0, -2, -3]} intensity={0.6} color="#ff8844" />
+      {/* Premium bottle lighting — tuned for MeshPhysicalMaterial glass */}
+      <ambientLight intensity={0.7} />
+      {/* Strong warm key light — main light source that creates the refraction sparkle */}
+      <pointLight position={[3, 6, 4]}  intensity={3.5} color="#fff8e0" />
+      {/* Cool rim light — backlit silhouette to make the glass edges glow */}
+      <pointLight position={[-4, 3, -3]} intensity={2.2} color="#88ccff" />
+      {/* Warm orange fill — reflects off the amber liquid */}
+      <pointLight position={[0, -2, 4]} intensity={1.5} color="#ff7722" />
+      {/* Top-down accent for crown cap sheen */}
+      <pointLight position={[0, 8, 1]} intensity={1.0} color="#ffffff" />
 
       <Suspense fallback={null}>
         <CarbonationSystem count={bubbleCount} scrollProgress={scrollProgress} />

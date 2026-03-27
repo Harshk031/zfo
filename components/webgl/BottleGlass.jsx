@@ -6,13 +6,11 @@ import { Float, Text } from '@react-three/drei';
 import * as THREE from 'three';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ZfO 275ml Craft Soda Bottle — modeled from the real product photo:
-//   • Tall & slender glass bottle (like a Breezer / craft soda bottle)
-//   • Long tapering neck into a wide body, squared base
-//   • Golden amber liquid inside
-//   • Black label band with "ZfO" gold text + "The Art of fizz"
-//   • Black crown cap
-//   • Scroll drives: 360° rotation + liquid drain/refill
+// ZfO 275ml Craft Soda Bottle — upgraded with premium materials:
+//   • MeshPhysicalMaterial grass with transmission + IOR for real refraction
+//   • Emissive warm amber liquid that glows from within
+//   • Bright metallic gold label stripes
+//   • Shinier crown cap with gold rim accent
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function BottleGlass({ scrollProgress = 0, visible = true }) {
@@ -21,37 +19,30 @@ export default function BottleGlass({ scrollProgress = 0, visible = true }) {
   const liquidMatRef = useRef();
 
   // ── Real ZfO bottle profile ─────────────────────────────────────────────
-  // Based strictly on the actual product photo: tall elegant bottle,
-  // wide-ish body (not a beer bottle, not a fat breezer), long neck.
   const bottleGeo = useMemo(() => {
     const pts = [
-      // Flat base
       new THREE.Vector2(0.000, 0.000),
       new THREE.Vector2(0.200, 0.010),
       new THREE.Vector2(0.320, 0.040),
-      // Body — straight-ish sides, slightly wider at bottom
       new THREE.Vector2(0.360, 0.100),
       new THREE.Vector2(0.375, 0.220),
       new THREE.Vector2(0.380, 0.500),
       new THREE.Vector2(0.378, 0.850),
       new THREE.Vector2(0.375, 1.100),
       new THREE.Vector2(0.370, 1.250),
-      // Shoulder — gradual taper up to neck
       new THREE.Vector2(0.350, 1.380),
       new THREE.Vector2(0.310, 1.480),
       new THREE.Vector2(0.250, 1.570),
       new THREE.Vector2(0.180, 1.630),
-      // Neck — long and slender (classic craft soda)
       new THREE.Vector2(0.140, 1.680),
       new THREE.Vector2(0.130, 1.800),
       new THREE.Vector2(0.128, 1.950),
       new THREE.Vector2(0.130, 2.100),
       new THREE.Vector2(0.132, 2.220),
-      // Crown lip
       new THREE.Vector2(0.148, 2.270),
       new THREE.Vector2(0.150, 2.300),
     ];
-    return new THREE.LatheGeometry(pts, 26);
+    return new THREE.LatheGeometry(pts, 32);
   }, []);
 
   // ── Liquid inside ────────────────────────────────────────────────────────
@@ -71,80 +62,86 @@ export default function BottleGlass({ scrollProgress = 0, visible = true }) {
       new THREE.Vector2(0.162, 1.610),
       new THREE.Vector2(0.122, 1.660),
     ];
-    return new THREE.LatheGeometry(pts, 22);
+    return new THREE.LatheGeometry(pts, 26);
   }, []);
 
   useFrame(() => {
     if (!groupRef.current) return;
 
-    // Full 360° rotation tied to scroll  
+    // Full 360° rotation tied to scroll
     groupRef.current.rotation.y = scrollProgress * Math.PI * 2;
 
     // Liquid drains from full (scroll 0.45) to empty (scroll 0.90)
     if (liquidRef.current && liquidMatRef.current) {
       const fillT = Math.max(0, Math.min(1, (scrollProgress - 0.45) / 0.45));
       liquidRef.current.scale.y = Math.max(0.01, 1 - fillT * 0.98);
-      liquidRef.current.position.y = 0; // anchored at base
-      liquidMatRef.current.opacity = fillT > 0.97 ? 0 : 0.90;
+      liquidRef.current.position.y = 0;
+      liquidMatRef.current.opacity = fillT > 0.97 ? 0 : 0.92;
     }
   });
 
   if (!visible) return null;
 
   return (
-    <Float speed={1.0} rotationIntensity={0.03} floatIntensity={0.12}>
+    <Float speed={1.0} rotationIntensity={0.03} floatIntensity={0.14}>
       <group ref={groupRef} position={[0, -1.15, 0]}>
 
-        {/* ── Glass bottle shell ──────────────────────────────────── */}
+        {/* ── Glass bottle shell — MeshPhysicalMaterial for real refraction */}
         <mesh geometry={bottleGeo}>
-          <meshStandardMaterial
-            color="#d8eeff"
-            roughness={0.04}
-            metalness={0.10}
+          <meshPhysicalMaterial
+            color="#c8e8ff"
+            roughness={0.02}
+            metalness={0.0}
+            transmission={0.90}
+            thickness={0.4}
+            ior={1.52}
+            reflectivity={0.55}
             transparent
-            opacity={0.55}
+            opacity={0.88}
             side={THREE.DoubleSide}
+            envMapIntensity={1.8}
           />
         </mesh>
 
-        {/* ── Golden amber liquid (masala soda) ───────────────────── */}
+        {/* ── Glowing warm amber liquid (masala soda) */}
         <mesh ref={liquidRef} geometry={liquidGeo}>
           <meshStandardMaterial
             ref={liquidMatRef}
-            color="#c47a00"
-            roughness={0.12}
-            metalness={0.05}
+            color="#d4730a"
+            emissive="#b84500"
+            emissiveIntensity={0.35}
+            roughness={0.08}
+            metalness={0.03}
             transparent
-            opacity={0.90}
+            opacity={0.92}
           />
         </mesh>
 
-        {/* ── Black label band ─────────────────────────────────────── */}
-        {/* Bottom of label at y=0.30, top at y=1.22 — covers body */}
+        {/* ── Black label band */}
         <mesh position={[0, 0.76, 0]}>
-          <cylinderGeometry args={[0.382, 0.375, 0.95, 24, 1, true]} />
+          <cylinderGeometry args={[0.382, 0.375, 0.95, 32, 1, true]} />
           <meshStandardMaterial
             color="#080808"
-            roughness={0.6}
+            roughness={0.55}
             transparent
-            opacity={0.96}
+            opacity={0.97}
             side={THREE.FrontSide}
           />
         </mesh>
 
-        {/* Gold top border stripe on label */}
+        {/* Bright gold top border stripe */}
         <mesh position={[0, 1.24, 0]}>
-          <cylinderGeometry args={[0.384, 0.384, 0.018, 24, 1, true]} />
-          <meshStandardMaterial color="#c8960c" roughness={0.3} metalness={0.6} side={THREE.FrontSide} />
+          <cylinderGeometry args={[0.384, 0.384, 0.022, 32, 1, true]} />
+          <meshStandardMaterial color="#ffd700" roughness={0.1} metalness={0.95} envMapIntensity={2} side={THREE.FrontSide} />
         </mesh>
 
-        {/* Gold bottom border stripe on label */}
+        {/* Bright gold bottom border stripe */}
         <mesh position={[0, 0.285, 0]}>
-          <cylinderGeometry args={[0.378, 0.378, 0.018, 24, 1, true]} />
-          <meshStandardMaterial color="#c8960c" roughness={0.3} metalness={0.6} side={THREE.FrontSide} />
+          <cylinderGeometry args={[0.378, 0.378, 0.022, 32, 1, true]} />
+          <meshStandardMaterial color="#ffd700" roughness={0.1} metalness={0.95} envMapIntensity={2} side={THREE.FrontSide} />
         </mesh>
 
-        {/* ── "ZfO" gold text on label ─────────────────────────────── */}
+        {/* ── "ZfO" gold text on label */}
         <Text
           position={[0, 0.72, 0.385]}
           fontSize={0.195}
@@ -172,7 +169,7 @@ export default function BottleGlass({ scrollProgress = 0, visible = true }) {
         <Text
           position={[0, 1.15, 0.384]}
           fontSize={0.044}
-          color="rgba(200,150,12,0.9)"
+          color="rgba(255,200,20,0.95)"
           anchorX="center"
           anchorY="middle"
           letterSpacing={0.09}
@@ -180,21 +177,26 @@ export default function BottleGlass({ scrollProgress = 0, visible = true }) {
           CRAFTED MASALA SODA
         </Text>
 
-        {/* ── Black crown cap ──────────────────────────────────────── */}
+        {/* ── Premium black crown cap */}
         <mesh position={[0, 2.315, 0]}>
-          <cylinderGeometry args={[0.152, 0.162, 0.055, 18]} />
-          <meshStandardMaterial color="#111" roughness={0.4} metalness={0.5} />
+          <cylinderGeometry args={[0.152, 0.162, 0.055, 24]} />
+          <meshStandardMaterial color="#1a1a1a" roughness={0.2} metalness={0.85} />
         </mesh>
         {/* Serrated crown ring */}
         <mesh position={[0, 2.29, 0]}>
-          <torusGeometry args={[0.148, 0.018, 6, 18]} />
-          <meshStandardMaterial color="#222" roughness={0.5} metalness={0.45} />
+          <torusGeometry args={[0.148, 0.018, 6, 24]} />
+          <meshStandardMaterial color="#333" roughness={0.2} metalness={0.9} />
+        </mesh>
+        {/* Gold crown rim accent */}
+        <mesh position={[0, 2.345, 0]}>
+          <cylinderGeometry args={[0.155, 0.155, 0.008, 24, 1, true]} />
+          <meshStandardMaterial color="#ffd700" roughness={0.15} metalness={0.95} />
         </mesh>
 
-        {/* ── Base glass thickening (kick-up detail) ───────────────── */}
+        {/* ── Base glass thickening (kick-up detail) */}
         <mesh position={[0, 0.012, 0]}>
           <cylinderGeometry args={[0.195, 0.195, 0.022, 20]} />
-          <meshStandardMaterial color="#aaccee" roughness={0.1} transparent opacity={0.5} />
+          <meshStandardMaterial color="#aaccee" roughness={0.08} transparent opacity={0.55} />
         </mesh>
 
       </group>
