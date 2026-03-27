@@ -159,9 +159,9 @@ export default function ScrollStory() {
         <a
           href="/order"
           style={{
-            background: 'linear-gradient(135deg, #00e5ff 0%, #7c4dff 100%)',
-            boxShadow: '0 0 30px rgba(0,229,255,0.5), 0 0 60px rgba(124,77,255,0.3)',
-            color: '#fff',
+            background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 60%, #fbbf24 100%)',
+            boxShadow: '0 0 28px rgba(251,191,36,0.45), 0 0 55px rgba(253,230,138,0.25)',
+            color: '#1a0f00',
             fontWeight: 900,
             fontSize: '0.8rem',
             letterSpacing: '0.18em',
@@ -173,10 +173,10 @@ export default function ScrollStory() {
             alignItems: 'center',
             gap: '8px',
             transition: 'all 0.25s ease',
-            border: '1px solid rgba(0,229,255,0.4)',
+            border: '1px solid rgba(251,191,36,0.5)',
           }}
-          onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.07)'; e.currentTarget.style.boxShadow = '0 0 50px rgba(0,229,255,0.7), 0 0 90px rgba(124,77,255,0.5)'; }}
-          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(0,229,255,0.5), 0 0 60px rgba(124,77,255,0.3)'; }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.07)'; e.currentTarget.style.boxShadow = '0 0 50px rgba(251,191,36,0.65), 0 0 90px rgba(253,230,138,0.4)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 0 28px rgba(251,191,36,0.45), 0 0 55px rgba(253,230,138,0.25)'; }}
         >
           ⚡ ORDER NOW
         </a>
