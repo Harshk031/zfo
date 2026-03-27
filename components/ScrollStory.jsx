@@ -154,7 +154,7 @@ export default function ScrollStory() {
         />
       </div>
 
-      {/* Permanent Order Now CTA — centered on screen, always visible */}
+      {/* Permanent Order Now CTA — HIDDEN PER USER REQUEST
       <div className="absolute bottom-16 left-0 right-0 flex justify-center z-10">
         <a
           href="/order"
@@ -181,6 +181,7 @@ export default function ScrollStory() {
           ⚡ ORDER NOW
         </a>
       </div>
+      */}
     </div>
 
   );
