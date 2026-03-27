@@ -154,12 +154,29 @@ export default function ScrollStory() {
         />
       </div>
 
-      {/* Permanent Order Now CTA — always visible from first second */}
-      <div className="absolute top-6 right-6 z-10">
+      {/* Permanent Order Now CTA — centered on screen, always visible */}
+      <div className="absolute bottom-16 left-0 right-0 flex justify-center z-10">
         <a
           href="/order"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffcc00] text-black font-black uppercase tracking-widest text-xs rounded-full shadow-lg hover:bg-white hover:scale-105 transition-all duration-200"
-          style={{ boxShadow: '0 0 20px rgba(255,204,0,0.5)' }}
+          style={{
+            background: 'linear-gradient(135deg, #00e5ff 0%, #7c4dff 100%)',
+            boxShadow: '0 0 30px rgba(0,229,255,0.5), 0 0 60px rgba(124,77,255,0.3)',
+            color: '#fff',
+            fontWeight: 900,
+            fontSize: '0.8rem',
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            padding: '14px 44px',
+            borderRadius: '999px',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            transition: 'all 0.25s ease',
+            border: '1px solid rgba(0,229,255,0.4)',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.07)'; e.currentTarget.style.boxShadow = '0 0 50px rgba(0,229,255,0.7), 0 0 90px rgba(124,77,255,0.5)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(0,229,255,0.5), 0 0 60px rgba(124,77,255,0.3)'; }}
         >
           ⚡ ORDER NOW
         </a>
